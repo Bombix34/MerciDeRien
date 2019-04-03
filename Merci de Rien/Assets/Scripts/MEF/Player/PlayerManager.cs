@@ -23,17 +23,20 @@ public class PlayerManager : ObjectManager
         inputs = GetComponent<PlayerInputManager>();
         mainCamera = Camera.main.transform;
         character = GetComponent<CharacterController>();
+
         //placeholder
         animPlaceholder = GetComponent<Animator>();
     }
 
-    private void FixedUpdate()
+    void Start()
     {
-        Move();
+        ChangeState(new PlayerBaseState(this));
     }
-
+    
     private void Update()
     {
+        currentState.Execute();
+
         UpdateAnim();
 
         if (inputs.GetInteractInput())
@@ -83,6 +86,38 @@ public class PlayerManager : ObjectManager
             animPlaceholder.SetBool("Grounded", character.isGrounded);
 
         animPlaceholder.SetFloat("MoveSpeed", currentVelocity.magnitude/0.1f);
+    }
+
+//RAYCAST OBJECTS___________________________________________________________________________________
+
+    public GameObject RaycastObject()
+    {
+        GameObject raycastObject = null;
+        RaycastHit hit;
+      //  Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward));
+        Vector3 testPosition = new Vector3(transform.position.x + transform.TransformDirection(Vector3.forward).x,
+            transform.position.y + transform.TransformDirection(Vector3.forward).y,
+            transform.position.z + transform.TransformDirection(Vector3.forward).z);
+        Ray ray = new Ray(testPosition, transform.TransformDirection(Vector3.forward));
+        Debug.DrawLine(transform.position, testPosition);
+
+        if(Physics.SphereCast(ray,5f,out hit ))
+        {
+            Debug.Log(hit.transform.gameObject);
+        }
+       /* if(Physics.Raycast(transform.position,transform.TransformDirection(Vector3.forward),out hit, 10f))
+        {
+            if(hit.transform.gameObject.tag!="BringObject")
+            {
+                return raycastObject;
+            }
+            else
+            {
+                raycastObject = hit.transform.gameObject;
+                Debug.Log(hit.transform.gameObject.name);
+            }
+        }*/
+        return raycastObject;
     }
 
 }
