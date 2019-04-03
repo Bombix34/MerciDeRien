@@ -7,7 +7,18 @@ public class CameraManager : MonoBehaviour
 {
     public CinemachineVirtualCamera baseCamera;
     public CinemachineVirtualCamera zoomCamera;
-    public CinemachineFreeLook dialogueCamera;
+    public CinemachineVirtualCamera dialogueCamera;
+
+    public Quaternion currentRotation;
+
+    private void Start()
+    {
+        SetNewCamera(CameraType.Base);
+    }
+
+    private void Update()
+    {
+    }
 
     public void SetNewCamera(CameraType newCameraType)
     {
@@ -17,18 +28,21 @@ public class CameraManager : MonoBehaviour
         switch(newCameraType)
         {
             case CameraType.Base:
-               // transform.rotation = Quaternion.Euler(45f, 0f, 0f);
+                transform.rotation = Quaternion.Euler(45f, 0f, 0f);
                 baseCamera.Priority = 20;
                 break;
             case CameraType.Zoom:
-               // transform.rotation = Quaternion.Euler(45f, 0f, 0f);
+                transform.rotation = Quaternion.Euler(45f, 0f, 0f);
                 zoomCamera.Priority = 20;
                 break;
             case CameraType.Dialogue:
+                transform.rotation = Quaternion.Euler(35f, -25f, 0f);
                 dialogueCamera.Priority = 20;
                 break;
         }
     }
+
+   
     
     public enum CameraType
     {
