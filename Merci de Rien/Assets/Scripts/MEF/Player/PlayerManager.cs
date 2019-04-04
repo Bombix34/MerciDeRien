@@ -102,6 +102,8 @@ public class PlayerManager : ObjectManager
             if (CanInteract(hitColliders[i].tag))
             {
                 isResult = true;
+                if (interactObject != null)
+                    interactObject.GetComponent<InteractObject>().UpdateFeedback(false);
                 interactObject = hitColliders[i].gameObject;
                 interactObject.GetComponent<InteractObject>().UpdateFeedback(true);
             }
@@ -116,16 +118,25 @@ public class PlayerManager : ObjectManager
         return raycastObject;
     }
 
-    public bool IsObstacle()
+    public GameObject IsObstacle(Vector3 testPosition)
     {
-        Vector3 testPosition = GetFrontPosition();
-        Collider[] hitColliders = Physics.OverlapSphere(testPosition, 0.3f,0);
-        if(hitColliders.Length>0)
-         Debug.Log(hitColliders[0]);
-        return hitColliders.Length != 0;
+        List<GameObject> finalList = new List<GameObject>();
+        Collider[] hitColliders = Physics.OverlapSphere(testPosition, 0.3f);
+        for (int i = 0; i < hitColliders.Length; i++)
+        {
+            if (hitColliders[i].gameObject.tag=="BringObject")
+            {
+                finalList.Add(hitColliders[i].gameObject);
+            }
+        }
+        if (finalList.Count > 0)
+            return finalList[0];
+        else
+            return null;
+       // return finalList.Count != 0;
     }
 
-    public bool CanInteract( string tag)
+    public bool CanInteract(string tag)
     {
         //AJOUTER LES TAGS LIEE A LINTERACTION ICI
         //PNJ, OUTILS, PORTES...
@@ -142,7 +153,7 @@ public class PlayerManager : ObjectManager
         return testPosition;
     }
 
-    //GET & SET_____________________________________________________________________________________
+    //GET & SET________________________________________________________________________________________
 
     public PlayerInputManager GetInputManager()
     {
