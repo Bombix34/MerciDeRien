@@ -23,6 +23,19 @@ public class PlayerBaseState : State
     {
         curPlayer.Move();
         curPlayer.RaycastObject();
+        if (curPlayer.GetInputManager().GetInteractInput())
+        {
+            if (curPlayer.GetNearInteractObject() != null)
+            {
+                curPlayer.ChangeState(new PlayerBringObjectState(curPlayer, curPlayer.GetNearInteractObject()));
+                curPlayer.GetNearInteractObject().GetComponent<InteractObject>().UpdateFeedback(false);
+                curPlayer.SetNearInteractObject(null);
+            }
+            else
+            {
+                curPlayer.GetAnimator().SetTrigger("Wave");
+            }
+        }
     }
 
     public override void Exit()
