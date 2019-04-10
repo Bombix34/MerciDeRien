@@ -11,17 +11,17 @@ public class CameraManager : MonoBehaviour
 
     public Quaternion currentRotation;
 
+    CameraType currentCamera;
+
     private void Start()
     {
+        currentCamera = CameraType.Base;
         SetNewCamera(CameraType.Base);
-    }
-
-    private void Update()
-    {
     }
 
     public void SetNewCamera(CameraType newCameraType)
     {
+        //SetPreviousCamera();
         baseCamera.Priority = 10;
         zoomCamera.Priority = 10;
         dialogueCamera.Priority = 10;
@@ -36,14 +36,25 @@ public class CameraManager : MonoBehaviour
                 zoomCamera.Priority = 20;
                 break;
             case CameraType.Dialogue:
-                transform.rotation = Quaternion.Euler(35f, -25f, 0f);
+              //  transform.rotation = Quaternion.Euler(35f, -25f, 0f);
                 dialogueCamera.Priority = 20;
                 break;
         }
+        currentCamera = newCameraType;
     }
 
-   
-    
+    public void SetDialogueCamera(GameObject target)
+    {
+       // Debug.Log(dialogueCamera.m_Follow);
+        dialogueCamera.m_Follow = target.transform;
+        SetNewCamera(CameraType.Dialogue);
+    }
+
+    public CameraType GetCurrentCameraType()
+    {
+        return currentCamera;
+    }
+
     public enum CameraType
     {
         Base,

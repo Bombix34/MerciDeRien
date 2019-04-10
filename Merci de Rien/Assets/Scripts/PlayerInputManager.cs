@@ -38,9 +38,19 @@ public class PlayerInputManager : MonoBehaviour
 
 //BUTTONS INPUTS____________________________
 
-    public bool GetInteractInput()
+    public bool GetInteractInputDown()
     {
         return player.GetButtonDown("interact");
+    }
+
+    public bool GetInteractInput()
+    {
+        return player.GetButton("interact");
+    }
+
+    public bool GetInteractInputUp()
+    {
+        return player.GetButtonUp("interact");
     }
 
     public bool GetCancelInput()

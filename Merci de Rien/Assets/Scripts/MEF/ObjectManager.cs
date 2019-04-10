@@ -11,6 +11,8 @@ public abstract class ObjectManager : MonoBehaviour {
 		//newState==null permet de traiter les Idles des différentes config' : IA ou joueur
 		if(newState==null)
 			return;
+        if(currentState!=null)
+            currentState.Exit();
 		currentState=newState;
 		newState.Enter();
 	}

@@ -133,24 +133,29 @@ public class PlayerManager : ObjectManager
             return finalList[0];
         else
             return null;
-       // return finalList.Count != 0;
     }
 
     public bool CanInteract(string tag)
     {
         //AJOUTER LES TAGS LIEE A LINTERACTION ICI
         //PNJ, OUTILS, PORTES...
-        return (tag == "BringObject");
+        return ((tag == "BringObject")||(tag=="PNJ"));
     }
 
     public Vector3 GetFrontPosition()
     {
-        //FONCTION POUR POSER LES OBJETS DEVANT LUI
+        //FONCTION POUR OBTENIR LA POSITION DEVANT LE PERSONNAGE
+        //POSITION OU INTERAGIR ET POSER LES OBJETS
         Vector3 forwardPos = transform.TransformDirection(Vector3.forward) * 0.5f;
         Vector3 testPosition = new Vector3(transform.position.x + forwardPos.x,
             transform.position.y + forwardPos.y,
             transform.position.z + forwardPos.z);
         return testPosition;
+    }
+
+    public Vector3 GetHeadingDirection()
+    {
+        return transform.TransformDirection(Vector3.forward);
     }
 
     //GET & SET________________________________________________________________________________________

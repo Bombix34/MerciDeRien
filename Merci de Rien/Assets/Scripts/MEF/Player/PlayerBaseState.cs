@@ -13,6 +13,22 @@ public class PlayerBaseState : State
         curPlayer = (PlayerManager)this.curObject;
     }
 
+    public void ChangeState(GameObject interactedObject)
+    {
+        //ATTENTION -> interactedObject ne doit pas être null
+        switch(interactedObject.tag)
+        {
+            case "BringObject":
+                curPlayer.ChangeState(new PlayerBringObjectState(curPlayer, curPlayer.GetNearInteractObject()));
+                break;
+            case "PNJ":
+                curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject()));
+                break;
+        }
+        interactedObject.GetComponent<InteractObject>().UpdateFeedback(false);
+        curPlayer.SetNearInteractObject(null);
+    }
+
 //STATE GESTION______________________________________________________________________________
 
     public override void Enter()
@@ -23,13 +39,11 @@ public class PlayerBaseState : State
     {
         curPlayer.Move();
         curPlayer.RaycastObject();
-        if (curPlayer.GetInputManager().GetInteractInput())
+        if (curPlayer.GetInputManager().GetInteractInputDown())
         {
             if (curPlayer.GetNearInteractObject() != null)
             {
-                curPlayer.ChangeState(new PlayerBringObjectState(curPlayer, curPlayer.GetNearInteractObject()));
-                curPlayer.GetNearInteractObject().GetComponent<InteractObject>().UpdateFeedback(false);
-                curPlayer.SetNearInteractObject(null);
+                ChangeState(curPlayer.GetNearInteractObject());
             }
             else
             {
