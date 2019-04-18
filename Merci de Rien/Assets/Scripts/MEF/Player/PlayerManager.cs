@@ -38,8 +38,6 @@ public class PlayerManager : ObjectManager
     private void Update()
     {
         currentState.Execute();
-
-        UpdateAnim();
     }
 
     public override void ChangeState(State newState)
@@ -55,6 +53,7 @@ public class PlayerManager : ObjectManager
         if (directionController == Vector3.zero)
         {
             currentVelocity = Vector3.zero;
+            UpdateAnim();
             return;
         }
         //init values
@@ -71,6 +70,13 @@ public class PlayerManager : ObjectManager
         currentVelocity = Vector3.zero;
         currentVelocity += heading * reglages.moveSpeed;
         character.Move(currentVelocity);
+        UpdateAnim();
+    }
+
+    public void ResetVelocity()
+    {
+        character.Move(Vector3.zero);
+        animPlaceholder.SetFloat("MoveSpeed", 0f);
     }
 
     private void RotatePlayer(float x, float y)
@@ -81,9 +87,7 @@ public class PlayerManager : ObjectManager
 
     private void UpdateAnim()
     {
-        if (currentVelocity.magnitude == 0)
-            animPlaceholder.SetBool("Grounded", character.isGrounded);
-
+        animPlaceholder.SetBool("Grounded", true);
         animPlaceholder.SetFloat("MoveSpeed", currentVelocity.magnitude / 0.1f);
     }
 

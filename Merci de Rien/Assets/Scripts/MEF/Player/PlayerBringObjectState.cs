@@ -42,7 +42,8 @@ public class PlayerBringObjectState : State
         this.bringingObject.GetComponent<Rigidbody>().useGravity = true;
         this.bringingObject.transform.position = posePosition;
         this.bringingObject.GetComponent<BringObject>().ResetMass();
-        curPlayer.ChangeState(new PlayerBaseState(curPlayer));
+        endState = true;
+        curPlayer.ResetVelocity();
     }
 
     public void ShootObject()
@@ -56,7 +57,7 @@ public class PlayerBringObjectState : State
         body.AddForce(launchDirection*200f,ForceMode.Impulse);
         this.bringingObject.GetComponent<BringObject>().LaunchObject();
         endState = true;
-      //  curPlayer.ChangeState(new PlayerBaseState(curPlayer));
+        curPlayer.ResetVelocity();
     }
 
     public void InteractInput()
@@ -68,7 +69,8 @@ public class PlayerBringObjectState : State
 
         if (curPlayer.GetInputManager().GetInteractInputUp())
         {
-            if(interactInputLenght>0.3f)
+            curPlayer.ResetVelocity();
+            if (interactInputLenght>0.3f)
             {
                 ShootObject();
             }
@@ -93,28 +95,28 @@ public class PlayerBringObjectState : State
 
     public override void Execute()
     {
-        if(!endState)
-            curPlayer.Move();
-
-        if (tempoTime > 0)
+        if (!endState)
         {
-            tempoTime -= Time.deltaTime;
-            return;
+            curPlayer.Move();
+            this.bringingObject.transform.position = new Vector3(curPlayer.transform.position.x, 1.17f, curPlayer.transform.position.z);
+
+            if (tempoTime > 0)
+            {
+                tempoTime -= Time.deltaTime;
+                return;
+            }
+            InteractInput();
         }
-        InteractInput();
 
 
-        if (endState)
+        else
         {
             chronoEnd -= Time.deltaTime;
+            curPlayer.ResetVelocity();
             if (chronoEnd <= 0)
                 curPlayer.ChangeState(new PlayerBaseState(curPlayer));
         }
-
-        /* if (curPlayer.GetInputManager().GetInteractInput())
-          {
-             TryPoseObject();
-          }*/
+        
     }
 
     public override void Exit()
