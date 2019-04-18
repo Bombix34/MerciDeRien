@@ -47,7 +47,7 @@ public class PlayerBaseState : State
             }
             else
             {
-                curPlayer.GetAnimator().SetTrigger("Wave");
+               // curPlayer.GetAnimator().SetTrigger("Wave");
             }
         }
     }

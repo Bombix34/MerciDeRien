@@ -5,11 +5,12 @@ using Cinemachine;
 
 public class CameraManager : MonoBehaviour
 {
+    [SerializeField]
+    private CameraReglages reglages;
     public CinemachineVirtualCamera baseCamera;
     public CinemachineVirtualCamera zoomCamera;
     public CinemachineVirtualCamera dialogueCamera;
-
-    public Quaternion currentRotation;
+ 
 
     CameraType currentCamera;
 
@@ -17,6 +18,12 @@ public class CameraManager : MonoBehaviour
     {
         currentCamera = CameraType.Base;
         SetNewCamera(CameraType.Base);
+        transform.rotation = Quaternion.Euler(reglages.cameraRotation, 0f, 0f);
+    }
+
+    private void Update()
+    {
+        transform.rotation = Quaternion.Euler(reglages.cameraRotation, 0f, 0f);
     }
 
     public void SetNewCamera(CameraType newCameraType)
@@ -28,11 +35,9 @@ public class CameraManager : MonoBehaviour
         switch(newCameraType)
         {
             case CameraType.Base:
-                transform.rotation = Quaternion.Euler(45f, 0f, 0f);
                 baseCamera.Priority = 20;
                 break;
             case CameraType.Zoom:
-                transform.rotation = Quaternion.Euler(45f, 0f, 0f);
                 zoomCamera.Priority = 20;
                 break;
             case CameraType.Dialogue:
