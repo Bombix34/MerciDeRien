@@ -1,0 +1,525 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74ba4caee626ad74986e5ba196200123, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 8a5a48d8e31c8247b8b5f47a9faa81b7
+    GuidInternal: 
+    m_lastTime: -8586459227547170482
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 6cf04c7a12d8a246858fbbddacc42630
+    GuidInternal: 
+    m_lastTime: -8586459227547280187
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: f3a3d1dd1b65eb42b844401fce711e09
+    GuidInternal: 
+    m_lastTime: -8586459227547200402
+    List: []
+  - PhysicalPath: SoundBanks\MDR_WU.wwu
+    ParentPhysicalPath: 
+    guid: 4c22335bacdda047a47c33864f4f5c6d
+    GuidInternal: 
+    m_lastTime: -8586459227547190430
+    List:
+    - name: Main
+      guid: ae9737604a5de0449df00235e12d5976
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Main
+        ObjectType: 7
+      Path: MDR_WU\Main
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 7cd09b477f168642a36a6844479c282a
+    GuidInternal: 
+    m_lastTime: -8586459227547340027
+    List: []
+  - PhysicalPath: Events\MDR_WU.wwu
+    ParentPhysicalPath: 
+    guid: f6e287a964ee8f40bdd10f41bdfebff6
+    GuidInternal: 
+    m_lastTime: -8586459227547320079
+    List:
+    - name: ENV_amb_beach_play
+      guid: 3bac836c95255c42bb1f3d578b0c37de
+      id: 173647080
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: ENVIRONMENT
+        ObjectType: 4
+      - ElementName: ENV_amb_beach_play
+        ObjectType: 3
+      Path: MDR_WU\ENVIRONMENT\ENV_amb_beach_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: ENV_amb_ext_play
+      guid: 5d53e1f96e3e7449a229e9e5952e892f
+      id: 1275933152
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: ENVIRONMENT
+        ObjectType: 4
+      - ElementName: ENV_amb_ext_play
+        ObjectType: 3
+      Path: MDR_WU\ENVIRONMENT\ENV_amb_ext_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: ENV_amb_int_play
+      guid: 7a1fb683f724c34daf18c77ca496505b
+      id: 2306680942
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: ENVIRONMENT
+        ObjectType: 4
+      - ElementName: ENV_amb_int_play
+        ObjectType: 3
+      Path: MDR_WU\ENVIRONMENT\ENV_amb_int_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: ENV_door_close_play
+      guid: d1795345f84bfc48a79f8756e819522d
+      id: 96362093
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: ENVIRONMENT
+        ObjectType: 4
+      - ElementName: ENV_door_close_play
+        ObjectType: 3
+      Path: MDR_WU\ENVIRONMENT\ENV_door_close_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: ENV_door_open_play
+      guid: 71e82adf77cf2d4b9e54a2e2e70daa9d
+      id: 1881369153
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: ENVIRONMENT
+        ObjectType: 4
+      - ElementName: ENV_door_open_play
+        ObjectType: 3
+      Path: MDR_WU\ENVIRONMENT\ENV_door_open_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: ENV_fire_play
+      guid: dfbbbb015cd3054e898f8108d429e4fc
+      id: 2989807018
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: ENVIRONMENT
+        ObjectType: 4
+      - ElementName: ENV_fire_play
+        ObjectType: 3
+      Path: MDR_WU\ENVIRONMENT\ENV_fire_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: ENV_fire_stop
+      guid: f87ee6dc381e4c4681b2671335509f91
+      id: 99041748
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: ENVIRONMENT
+        ObjectType: 4
+      - ElementName: ENV_fire_stop
+        ObjectType: 3
+      Path: MDR_WU\ENVIRONMENT\ENV_fire_stop
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: ENV_pot_break_play
+      guid: 355af256f4e0f44bbaaf2dc2ea37df1f
+      id: 2141874203
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: ENVIRONMENT
+        ObjectType: 4
+      - ElementName: ENV_pot_break_play
+        ObjectType: 3
+      Path: MDR_WU\ENVIRONMENT\ENV_pot_break_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: GAME_launch
+      guid: e5da7b60fd1fdd428e7b2ded3040d700
+      id: 2732978883
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: GAME
+        ObjectType: 4
+      - ElementName: GAME_launch
+        ObjectType: 3
+      Path: MDR_WU\GAME\GAME_launch
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: GAME_over
+      guid: 535cd0254a27744db49228a5aa702897
+      id: 1432716332
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: GAME
+        ObjectType: 4
+      - ElementName: GAME_over
+        ObjectType: 3
+      Path: MDR_WU\GAME\GAME_over
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: GAME_start
+      guid: f8d0d8a63825ec47a95f7476ca16ec0e
+      id: 733168346
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: GAME
+        ObjectType: 4
+      - ElementName: GAME_start
+        ObjectType: 3
+      Path: MDR_WU\GAME\GAME_start
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MC_attack_play
+      guid: 0cb7fb801adb4c44bc8114e53ce030af
+      id: 538908709
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MAIN CHARACTER
+        ObjectType: 4
+      - ElementName: MC_attack_play
+        ObjectType: 3
+      Path: MDR_WU\MAIN CHARACTER\MC_attack_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MC_idle_anim_play
+      guid: 6816c93868f3344295fe0468e5e23ed7
+      id: 87855283
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MAIN CHARACTER
+        ObjectType: 4
+      - ElementName: MC_idle_anim_play
+        ObjectType: 3
+      Path: MDR_WU\MAIN CHARACTER\MC_idle_anim_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MC_pick_big_item_play
+      guid: 426ba16a3f220744bed4e7ea53fe9f9c
+      id: 2287292191
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MAIN CHARACTER
+        ObjectType: 4
+      - ElementName: MC_pick_big_item_play
+        ObjectType: 3
+      Path: MDR_WU\MAIN CHARACTER\MC_pick_big_item_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MC_pick_item_play
+      guid: f55dcefb447fd349bcd97132ac1f5944
+      id: 2246829044
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MAIN CHARACTER
+        ObjectType: 4
+      - ElementName: MC_pick_item_play
+        ObjectType: 3
+      Path: MDR_WU\MAIN CHARACTER\MC_pick_item_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MC_talk_play
+      guid: 46c2f909b318594a962907e5df7d5342
+      id: 2826582739
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MAIN CHARACTER
+        ObjectType: 4
+      - ElementName: MC_talk_play
+        ObjectType: 3
+      Path: MDR_WU\MAIN CHARACTER\MC_talk_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MC_talk_stop
+      guid: 2a61e1f84bcd6743ab15942d1c8cb83b
+      id: 1956601529
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MAIN CHARACTER
+        ObjectType: 4
+      - ElementName: MC_talk_stop
+        ObjectType: 3
+      Path: MDR_WU\MAIN CHARACTER\MC_talk_stop
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MC_walk_end_play
+      guid: 3da9aeeea2c763438a3f913069836e49
+      id: 112690910
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MAIN CHARACTER
+        ObjectType: 4
+      - ElementName: MC_walk_end_play
+        ObjectType: 3
+      Path: MDR_WU\MAIN CHARACTER\MC_walk_end_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MC_walk_play
+      guid: 532a9fb29c2f8742bfb215b5112c97e0
+      id: 1011903932
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MAIN CHARACTER
+        ObjectType: 4
+      - ElementName: MC_walk_play
+        ObjectType: 3
+      Path: MDR_WU\MAIN CHARACTER\MC_walk_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: NPC_talk_play
+      guid: 17a9c2d4f7414a4383097828574da083
+      id: 787023996
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: NPC
+        ObjectType: 4
+      - ElementName: GENERIC NPC
+        ObjectType: 4
+      - ElementName: NPC_talk_play
+        ObjectType: 3
+      Path: MDR_WU\NPC\GENERIC NPC\NPC_talk_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: NPC_talk_stop
+      guid: 8884befd07ebb741a89cf22d0b0fb8e9
+      id: 3835799014
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: NPC
+        ObjectType: 4
+      - ElementName: GENERIC NPC
+        ObjectType: 4
+      - ElementName: NPC_talk_stop
+        ObjectType: 3
+      Path: MDR_WU\NPC\GENERIC NPC\NPC_talk_stop
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: NPC_walk_play
+      guid: 63c199846074704cb334eaa1eae89a36
+      id: 2227517075
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: NPC
+        ObjectType: 4
+      - ElementName: GENERIC NPC
+        ObjectType: 4
+      - ElementName: NPC_walk_play
+        ObjectType: 3
+      Path: MDR_WU\NPC\GENERIC NPC\NPC_walk_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: NPC_walk_stop
+      guid: 482b658adf51514797a13f83f13a9334
+      id: 1357639289
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: NPC
+        ObjectType: 4
+      - ElementName: GENERIC NPC
+        ObjectType: 4
+      - ElementName: NPC_walk_stop
+        ObjectType: 3
+      Path: MDR_WU\NPC\GENERIC NPC\NPC_walk_stop
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: TEST
+      guid: c237081ca18ddf4a872a0929e431c6ce
+      id: 3157003241
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: TEST
+        ObjectType: 3
+      Path: MDR_WU\TEST
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UI_camera_dezoom_play
+      guid: 4d8eda426eebc942a44eefe920fa23b3
+      id: 4008763347
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: UI_camera_dezoom_play
+        ObjectType: 3
+      Path: MDR_WU\UI\UI_camera_dezoom_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UI_camera_zoom_play
+      guid: 094919d0bb4de8458563c67ea773f051
+      id: 2038710544
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: UI_camera_zoom_play
+        ObjectType: 3
+      Path: MDR_WU\UI\UI_camera_zoom_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UI_cancel_play
+      guid: 0955988fcb1a8d4a92fd4a916323c696
+      id: 658987741
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: UI_cancel_play
+        ObjectType: 3
+      Path: MDR_WU\UI\UI_cancel_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UI_pause_menu_play
+      guid: b93134c92ea1a44b90380a213015e826
+      id: 2578355359
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: UI_pause_menu_play
+        ObjectType: 3
+      Path: MDR_WU\UI\UI_pause_menu_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UI_select_confirm_play
+      guid: b2ff1f976f23dc4884d7b27dcf76b030
+      id: 401277688
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: UI_select_confirm_play
+        ObjectType: 3
+      Path: MDR_WU\UI\UI_select_confirm_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UI_select_hover_play
+      guid: 7fa7b4c7a9f8664cba1571e7263720f4
+      id: 4033886834
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: UI_select_hover_play
+        ObjectType: 3
+      Path: MDR_WU\UI\UI_select_hover_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 1eab88a8ff6df14c86dbcf415a5370ec
+    GuidInternal: 
+    m_lastTime: -8586459227547330053
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 2e77c38989a7ee45a251c2bd740db235
+    GuidInternal: 
+    m_lastTime: -8586459227547180456
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: aa8fe8b2f6d86342a5cfef7c4b449052
+    GuidInternal: 
+    m_lastTime: -8586459227547160503
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: a686aeca2c1d7c4995658c79ad91aa2d
+    GuidInternal: 
+    m_lastTime: -8586459227547170482
+    List: []
+  ExpandedItems:
+  - /MercDeRien
+  - /MercDeRien/Events
+  - /MercDeRien/Events/MDR_WU
+  - /MercDeRien/SoundBanks
+  - /MercDeRien/SoundBanks/MDR_WU
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 
