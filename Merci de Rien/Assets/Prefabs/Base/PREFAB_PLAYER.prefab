@@ -1355,8 +1355,9 @@ GameObject:
   - component: {fileID: 4810576944459112982}
   - component: {fileID: 321128334}
   - component: {fileID: 4810576944468525393}
+  - component: {fileID: 571004748}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PREFAB_PLAYER
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1436,10 +1437,10 @@ CharacterController:
   m_Height: 1
   m_Radius: 0.2
   m_SlopeLimit: 45
-  m_StepOffset: 0.2
+  m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.57, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &4810576944468525393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1454,3 +1455,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   render: {fileID: 4725545153921916223}
   silhouettedMaterial: {fileID: 2100000, guid: ae7285fcf88304b42b153b360d00fbca, type: 2}
+--- !u!114 &571004748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4810576944468525392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05658f83150d04298b0bfa2cf4776871, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vasePrefab: {fileID: 1467842231145066462, guid: 517add37c110e0f49b228914a4ab0332,
+    type: 3}

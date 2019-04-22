@@ -30,7 +30,7 @@ public class PlayerManager : ObjectManager
         animPlaceholder = GetComponent<Animator>();
     }
 
-    void Start()
+    private void Start()
     {
         ChangeState(new PlayerBaseState(this));
     }
