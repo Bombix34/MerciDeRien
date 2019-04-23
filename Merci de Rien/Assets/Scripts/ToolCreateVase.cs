@@ -32,5 +32,6 @@ public class ToolCreateVase : MonoBehaviour
         curPlayer.ChangeState(new PlayerBringObjectState(curPlayer, vase));
         vase.GetComponent<InteractObject>().UpdateFeedback(false);
         curPlayer.SetNearInteractObject(null);
+        AkSoundEngine.PostEvent("MC_pick_big_item_play", gameObject);
     }
 }
