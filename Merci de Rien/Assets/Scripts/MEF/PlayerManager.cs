@@ -110,6 +110,7 @@ public class PlayerManager : ObjectManager
                     interactObject.GetComponent<InteractObject>().UpdateFeedback(false);
                 interactObject = hitColliders[i].gameObject;
                 interactObject.GetComponent<InteractObject>().UpdateFeedback(true);
+                i = hitColliders.Length;
             }
             i++;
         }
@@ -124,6 +125,7 @@ public class PlayerManager : ObjectManager
 
     public GameObject IsObstacle(Vector3 testPosition)
     {
+        //NON UTILISE
         List<GameObject> finalList = new List<GameObject>();
         Collider[] hitColliders = Physics.OverlapSphere(testPosition, 0.3f);
         for (int i = 0; i < hitColliders.Length; i++)

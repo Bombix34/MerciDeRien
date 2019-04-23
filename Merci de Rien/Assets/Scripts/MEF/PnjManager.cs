@@ -17,7 +17,7 @@ public class PnjManager : ObjectManager
     private void Start()
     {
         anim.SetBool("Grounded", true);
-        ChangeState(new WanderState(this));
+        ChangeState(new WanderAroundState(this,this.transform.position));
     }
 
     private void Update()
