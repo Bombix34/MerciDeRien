@@ -48,6 +48,13 @@ public class BringObject : MonoBehaviour
         if (!isLaunch)
             return;
         this.StartCoroutineAsync(Explode());
+        if(collision.gameObject.tag=="PNJ")
+        {
+            PnjManager pnj = collision.gameObject.GetComponent<PnjManager>();
+            if (pnj.GetCurrentState().stateName == "PURSUIT_PLAYER_STATE")
+                return;
+            pnj.ChangeState(new PursuitPlayerState(pnj,pnj.GetCurrentState()));
+        }
     }
 
     //SOURCE : https://github.com/unitycoder/SimpleMeshExploder

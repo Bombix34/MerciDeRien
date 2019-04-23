@@ -40,6 +40,7 @@ public class PnjDialogueState : State
     public override void Enter()
     {
         curPnj.GetAgent().SetDestination(curPnj.transform.position);
+        curPnj.GetAnimator().SetFloat("MoveSpeed", 0f);
         curPnj.transform.LookAt(curPlayer.gameObject.transform);
     }
 

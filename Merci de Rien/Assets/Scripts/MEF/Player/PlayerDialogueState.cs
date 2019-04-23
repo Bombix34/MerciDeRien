@@ -29,6 +29,8 @@ public class PlayerDialogueState : State
     public override void Enter()
     {
         Camera.main.GetComponent<CameraManager>().SetDialogueCamera(pnj.gameObject);
+        curPlayer.transform.LookAt(pnj.transform.position);
+        curPlayer.GetAnimator().SetFloat("MoveSpeed", 0f);
         pnj.ChangeState(new PnjDialogueState(pnj, curPlayer, pnj.GetCurrentState()));
     }
 

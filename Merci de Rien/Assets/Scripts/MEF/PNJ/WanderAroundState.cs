@@ -32,7 +32,7 @@ public class WanderAroundState : State
         wanderRadius = Random.Range(2f, 3f);
         timer = wanderTimer;
         this.target = target;
-        maxDistanceFromTarget = wanderRadius * 2f;
+        maxDistanceFromTarget = wanderRadius * 1.5f;
     }
 
     //STATE GESTION______________________________________________________________________________
