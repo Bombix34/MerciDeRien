@@ -66,7 +66,6 @@ public class WanderAroundState : State
         }
         else
         {
-            Debug.Log("je me rapproche");
             newPos = GetPositionNearTarget(curObject.transform.position, target, wanderRadius);
         }
         curPnj.GetAgent().SetDestination(newPos);
