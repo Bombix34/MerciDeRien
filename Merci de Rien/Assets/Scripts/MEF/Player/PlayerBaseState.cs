@@ -22,7 +22,7 @@ public class PlayerBaseState : State
                 curPlayer.ChangeState(new PlayerBringObjectState(curPlayer, curPlayer.GetNearInteractObject()));
                 break;
             case "PNJ":
-                curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject()));
+                curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(),curPlayer.GetCurrentState()));
                 break;
         }
         interactedObject.GetComponent<InteractObject>().UpdateFeedback(false);

@@ -15,7 +15,7 @@ public class WanderAroundState : State
 
     public WanderAroundState(ObjectManager curObject) : base(curObject)
     {
-        stateName = "WANDER_STATE";
+        stateName = "WANDER_AROUND_STATE";
         this.curObject = curObject;
         curPnj = (PnjManager)this.curObject;
         wanderTimer = Random.Range(2f, 5f);
@@ -25,14 +25,14 @@ public class WanderAroundState : State
 
     public WanderAroundState(ObjectManager curObject, Vector3 target) : base(curObject)
     {
-        stateName = "WANDER_STATE";
+        stateName = "WANDER_AROUND_STATE";
         this.curObject = curObject;
         curPnj = (PnjManager)this.curObject;
         wanderTimer = Random.Range(2f, 5f);
         wanderRadius = Random.Range(2f, 3f);
         timer = wanderTimer;
         this.target = target;
-        maxDistanceFromTarget = wanderRadius * 1.5f;
+        maxDistanceFromTarget = wanderRadius*2.1f;
     }
 
     //STATE GESTION______________________________________________________________________________
@@ -66,7 +66,7 @@ public class WanderAroundState : State
         }
         else
         {
-            newPos = GetPositionNearTarget(curObject.transform.position, target, wanderRadius);
+            newPos = target;
         }
         curPnj.GetAgent().SetDestination(newPos);
         timer = 0;
@@ -82,22 +82,42 @@ public class WanderAroundState : State
         return distFromTarget > maxDistanceFromTarget;
     }
 
-    public static Vector3 GetPositionNearTarget(Vector3 origin, Vector3 target, float radius)
+  /*  public Vector3 GetPositionNearTarget(Vector3 origin, Vector3 target, float radius)
     {
         Vector3 newPos = new Vector3(target.x - origin.x,
                                     target.x - origin.y,
                                     target.x - origin.x);
+        
         newPos.Normalize();
-        newPos *= radius;
+        UnityEngine.AI.NavMeshHit navHit;
+        UnityEngine.AI.NavMesh.SamplePosition(newPos, out navHit, radius,0);
         return newPos;
-    }
+    }*/
 
-    public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
+    public Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
     {
         Vector3 randDirection = Random.insideUnitSphere * dist;
         randDirection += origin;
         UnityEngine.AI.NavMeshHit navHit;
         UnityEngine.AI.NavMesh.SamplePosition(randDirection, out navHit, dist, layermask);
         return navHit.position;
+    }
+
+    //GET & SET__________________________________________________________________________
+
+    public Vector3 InitPosition
+    {
+        get
+        {
+            return target;
+        }
+    }
+
+    public float Radius
+    {
+        get
+        {
+            return maxDistanceFromTarget;
+        }
     }
 }

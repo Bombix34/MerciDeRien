@@ -12,7 +12,7 @@ public class PlayerBringObjectState : State
     float interactInputLenght=0;
 
     //pour empêcher le prendre/déposer dans la même frame
-    float tempoTime = 0.15f;
+    float tempoTime = 0.3f;
 
 
     bool endState = false;

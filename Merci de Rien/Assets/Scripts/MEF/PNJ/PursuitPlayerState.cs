@@ -36,7 +36,7 @@ public class PursuitPlayerState : State
 
     public void LaunchDialogueWithPlayer()
     {
-        curPlayer.ChangeState(new PlayerDialogueState(curPlayer,curPnj.gameObject));
+        curPlayer.ChangeState(new PlayerDialogueState(curPlayer,curPnj.gameObject,curPlayer.GetCurrentState()));
         curPnj.ChangeState(new PnjDialogueState(curPnj,curPlayer,this.prevState));
     }
     

@@ -9,6 +9,8 @@ public class PlayerDialogueState : State
     PnjManager pnj;
     Quaternion pnjBaseRotation;
 
+    State prevState;
+
     public PlayerDialogueState(ObjectManager curObject) : base(curObject)
     {
         stateName = "PLAYER_DIALOGUE_STATE";
@@ -16,12 +18,13 @@ public class PlayerDialogueState : State
         curPlayer = (PlayerManager)this.curObject;
     }
 
-    public PlayerDialogueState(ObjectManager curObject, GameObject pnj) : base(curObject)
+    public PlayerDialogueState(ObjectManager curObject, GameObject pnj, State prevState) : base(curObject)
     {
         stateName = "PLAYER_DIALOGUE_STATE";
         this.curObject = curObject;
         curPlayer = (PlayerManager)this.curObject;
         this.pnj = pnj.GetComponent<PnjManager>();
+        this.prevState = prevState;
     }
 
     //STATE GESTION______________________________________________________________________________
@@ -41,7 +44,7 @@ public class PlayerDialogueState : State
             Camera.main.GetComponent<CameraManager>().SetNewCamera(CameraManager.CameraType.Base);
             PnjDialogueState pnjCurrentState =(PnjDialogueState)pnj.GetComponent<PnjManager>().GetCurrentState();
             pnjCurrentState.EndDialogue();
-            curPlayer.ChangeState(new PlayerBaseState(curPlayer));
+            curPlayer.ChangeState(prevState);
         }
     }
 

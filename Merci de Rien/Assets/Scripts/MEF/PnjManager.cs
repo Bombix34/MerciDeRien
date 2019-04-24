@@ -24,7 +24,6 @@ public class PnjManager : ObjectManager
     {
         currentState.Execute();
         UpdateAnim();
-        Debug.Log(currentState.stateName);
     }
 
     public override void ChangeState(State newState)
@@ -35,6 +34,20 @@ public class PnjManager : ObjectManager
     public void UpdateAnim()
     {
         anim.SetFloat("MoveSpeed", (navAgent.velocity.magnitude / 0.1f)*0.03f);
+    }
+
+    private void OnDrawGizmos()
+    {
+        //TOOL DEBUG
+        if (!Application.isPlaying)
+            return;
+        if (currentState.stateName == "WANDER_AROUND_STATE")
+        {
+            Gizmos.color = new Color(1f, 1f, 0f, 0.2f);
+            WanderAroundState curtState = (WanderAroundState)currentState;
+            Gizmos.DrawSphere(curtState.InitPosition, curtState.Radius);
+        }
+
     }
 
     //RAYCAST________________________________________________________

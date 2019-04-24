@@ -131,8 +131,6 @@ public class PlayerManager : ObjectManager
                 interactObject.GetComponent<InteractObject>().UpdateFeedback(false);
             interactObject = null;
         }
-
-        Debug.Log(interactObject);
         return raycastObject;
     }
 
