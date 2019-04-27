@@ -44,6 +44,9 @@ public class PlayerBringObjectState : State
         this.bringingObject.GetComponent<BringObject>().ResetMass();
         endState = true;
         curPlayer.ResetVelocity();
+
+        //SFX
+        AkSoundEngine.PostEvent("ENV_pot_put_down_play", this.bringingObject);
     }
 
     public void ShootObject()
@@ -58,6 +61,9 @@ public class PlayerBringObjectState : State
         this.bringingObject.GetComponent<BringObject>().LaunchObject();
         endState = true;
         curPlayer.ResetVelocity();
+
+        //SFX
+        AkSoundEngine.PostEvent("MC_throw_play", this.bringingObject);
     }
 
     public void InteractInput()
@@ -91,6 +97,9 @@ public class PlayerBringObjectState : State
         this.bringingObject.GetComponent<Rigidbody>().useGravity = false;
         this.bringingObject.GetComponent<Rigidbody>().mass = 1;
         this.bringingObject.transform.position = new Vector3(curPlayer.transform.position.x, curPlayer.transform.position.y+ 1.17f, curPlayer.transform.position.z);
+
+        //SFX
+        AkSoundEngine.PostEvent("MC_pick_big_item_play", this.bringingObject);
     }
 
     public override void Execute()
@@ -116,7 +125,6 @@ public class PlayerBringObjectState : State
             if (chronoEnd <= 0)
                 curPlayer.ChangeState(new PlayerBaseState(curPlayer));
         }
-        
     }
 
     public override void Exit()

@@ -61,6 +61,8 @@ public class BringObject : MonoBehaviour
 
     IEnumerator Explode()
     {
+        
+
         yield return Ninja.JumpToUnity;
         GetComponent<MeshRenderer>().enabled = false;
         Mesh mesh = GetComponent<MeshFilter>().mesh;
@@ -97,6 +99,9 @@ public class BringObject : MonoBehaviour
         }
         // destroy original
         Destroy(gameObject);
+
+        //SFX
+        AkSoundEngine.PostEvent("ENV_pot_break_play", gameObject);
     }
 
     void CreateMeshPiece(float extrudeSize, Vector3 pos, Material mat, int index, Vector3 faceNormal, Vector3 v1, Vector3 v2, Vector3 v3, Vector2 uv1, Vector2 uv2, Vector2 uv3)

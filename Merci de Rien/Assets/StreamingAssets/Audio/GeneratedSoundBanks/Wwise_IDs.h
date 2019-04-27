@@ -21,6 +21,7 @@ namespace AK
         static const AkUniqueID ENV_FIRE_PLAY = 2989807018U;
         static const AkUniqueID ENV_FIRE_STOP = 99041748U;
         static const AkUniqueID ENV_POT_BREAK_PLAY = 2141874203U;
+        static const AkUniqueID ENV_POT_PUT_DOWN_PLAY = 2760972584U;
         static const AkUniqueID GAME_LAUNCH = 2732978883U;
         static const AkUniqueID GAME_OVER = 1432716332U;
         static const AkUniqueID GAME_START = 733168346U;
@@ -30,7 +31,10 @@ namespace AK
         static const AkUniqueID MC_PICK_ITEM_PLAY = 2246829044U;
         static const AkUniqueID MC_TALK_PLAY = 2826582739U;
         static const AkUniqueID MC_TALK_STOP = 1956601529U;
+        static const AkUniqueID MC_THROW_PLAY = 1796000097U;
+        static const AkUniqueID MC_WALK_END_PH_PLAY = 1030438041U;
         static const AkUniqueID MC_WALK_END_PLAY = 112690910U;
+        static const AkUniqueID MC_WALK_PH_PLAY = 287668871U;
         static const AkUniqueID MC_WALK_PLAY = 1011903932U;
         static const AkUniqueID NPC_TALK_PLAY = 787023996U;
         static const AkUniqueID NPC_TALK_STOP = 3835799014U;
@@ -40,10 +44,42 @@ namespace AK
         static const AkUniqueID UI_CAMERA_DEZOOM_PLAY = 4008763347U;
         static const AkUniqueID UI_CAMERA_ZOOM_PLAY = 2038710544U;
         static const AkUniqueID UI_CANCEL_PLAY = 658987741U;
+        static const AkUniqueID UI_ITEM_HIGHLIGHT_PLAY = 1277176383U;
         static const AkUniqueID UI_PAUSE_MENU_PLAY = 2578355359U;
         static const AkUniqueID UI_SELECT_CONFIRM_PLAY = 401277688U;
         static const AkUniqueID UI_SELECT_HOVER_PLAY = 4033886834U;
     } // namespace EVENTS
+
+    namespace SWITCHES
+    {
+        namespace FLOOR_TYPE
+        {
+            static const AkUniqueID GROUP = 4168292868U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID GRASS = 4248645337U;
+                static const AkUniqueID GRAVEL = 2185786256U;
+                static const AkUniqueID MUD = 712897245U;
+                static const AkUniqueID ROCK = 2144363834U;
+                static const AkUniqueID SAND = 803837735U;
+                static const AkUniqueID WATER = 2654748154U;
+                static const AkUniqueID WOOD = 2058049674U;
+            } // namespace SWITCH
+        } // namespace FLOOR_TYPE
+
+    } // namespace SWITCHES
+
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID GAME_TIME = 1870090125U;
+        static const AkUniqueID VOLUME_MASTER = 3695994288U;
+        static const AkUniqueID VOLUME_MUSIC = 3891337659U;
+        static const AkUniqueID VOLUME_SFX = 3673881719U;
+        static const AkUniqueID VOLUME_VOICES = 3190188375U;
+        static const AkUniqueID WATER_DISTANCE = 1642165204U;
+        static const AkUniqueID WATER_FAR_DISTANCE = 1920428182U;
+    } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {

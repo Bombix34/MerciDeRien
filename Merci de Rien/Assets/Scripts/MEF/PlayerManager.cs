@@ -20,6 +20,8 @@ public class PlayerManager : ObjectManager
 
     GameObject interactObject;
 
+    bool isWalkingPlaceholeder;
+
     void Awake()
     {
         inputs = GetComponent<PlayerInputManager>();
@@ -33,6 +35,10 @@ public class PlayerManager : ObjectManager
     private void Start()
     {
         ChangeState(new PlayerBaseState(this));
+
+        //PLACEHOLDER SON.
+        //- Abdoul
+        isWalkingPlaceholeder = false;
     }
 
     private void Update()
@@ -65,6 +71,12 @@ public class PlayerManager : ObjectManager
         {
             currentVelocity = Vector3.zero;
             UpdateAnim();
+
+            //PLACEHOLDER SON.
+            //- Abdoul
+            AkSoundEngine.PostEvent("MC_walk_end_PH_play", gameObject);
+            isWalkingPlaceholeder = false;
+
             return;
         }
         //init values
@@ -82,7 +94,18 @@ public class PlayerManager : ObjectManager
         currentVelocity += heading * reglages.moveSpeed;
         character.Move(currentVelocity);
         UpdateAnim();
+
+        //PLACEHOLDER SON.
+        //- Abdoul
+        if (!isWalkingPlaceholeder)
+        {
+            isWalkingPlaceholeder = true;
+            AkSoundEngine.PostEvent("MC_walk_PH_play", gameObject);
+        }
     }
+
+
+
 
     public void ResetVelocity()
     {
