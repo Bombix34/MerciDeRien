@@ -74,8 +74,11 @@ public class PlayerManager : ObjectManager
 
             //PLACEHOLDER SON.
             //- Abdoul
-            AkSoundEngine.PostEvent("MC_walk_end_PH_play", gameObject);
-            isWalkingPlaceholeder = false;
+            if (isWalkingPlaceholeder)
+            {
+                AkSoundEngine.PostEvent("MC_walk_end_PH_play", gameObject);
+                isWalkingPlaceholeder = false;
+            }
 
             return;
         }

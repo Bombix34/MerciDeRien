@@ -13,31 +13,31 @@ MonoBehaviour:
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
-  - PhysicalPath: Virtual Acoustics/Default Work Unit.wwu
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 8a5a48d8e31c8247b8b5f47a9faa81b7
     GuidInternal: 
-    m_lastTime: -8586459218994775808
+    m_lastTime: -8586459277924878370
     List: []
   AuxBusWwu:
-  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 6cf04c7a12d8a246858fbbddacc42630
     GuidInternal: 
-    m_lastTime: -8586459218994775808
+    m_lastTime: -8586459277924678908
     List: []
   BankWwu:
-  - PhysicalPath: SoundBanks/Default Work Unit.wwu
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: f3a3d1dd1b65eb42b844401fce711e09
     GuidInternal: 
-    m_lastTime: -8586459218994775808
+    m_lastTime: -8586459277925161462
     List: []
-  - PhysicalPath: SoundBanks/MDR_WU.wwu
+  - PhysicalPath: SoundBanks\MDR_WU.wwu
     ParentPhysicalPath: 
     guid: 4c22335bacdda047a47c33864f4f5c6d
     GuidInternal: 
-    m_lastTime: -8586459218994775808
+    m_lastTime: -8586466217218702847
     List:
     - name: Main
       guid: ae9737604a5de0449df00235e12d5976
@@ -47,19 +47,19 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Main
         ObjectType: 7
-      Path: MDR_WU/Main
+      Path: MDR_WU\Main
   EventWwu:
-  - PhysicalPath: Events/Default Work Unit.wwu
+  - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7cd09b477f168642a36a6844479c282a
     GuidInternal: 
-    m_lastTime: -8586459218994775808
+    m_lastTime: -8586452474977545158
     List: []
-  - PhysicalPath: Events/MDR_WU.wwu
+  - PhysicalPath: Events\MDR_WU.wwu
     ParentPhysicalPath: 
     guid: f6e287a964ee8f40bdd10f41bdfebff6
     GuidInternal: 
-    m_lastTime: -8586459218994775808
+    m_lastTime: -8586449715111042424
     List:
     - name: ENV_amb_beach_play
       guid: 3bac836c95255c42bb1f3d578b0c37de
@@ -71,7 +71,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: ENV_amb_beach_play
         ObjectType: 3
-      Path: MDR_WU/ENVIRONMENT/ENV_amb_beach_play
+      Path: MDR_WU\ENVIRONMENT\ENV_amb_beach_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: ENV_amb_ext_play
         ObjectType: 3
-      Path: MDR_WU/ENVIRONMENT/ENV_amb_ext_play
+      Path: MDR_WU\ENVIRONMENT\ENV_amb_ext_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: ENV_amb_int_play
         ObjectType: 3
-      Path: MDR_WU/ENVIRONMENT/ENV_amb_int_play
+      Path: MDR_WU\ENVIRONMENT\ENV_amb_int_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: ENV_door_close_play
         ObjectType: 3
-      Path: MDR_WU/ENVIRONMENT/ENV_door_close_play
+      Path: MDR_WU\ENVIRONMENT\ENV_door_close_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: ENV_door_open_play
         ObjectType: 3
-      Path: MDR_WU/ENVIRONMENT/ENV_door_open_play
+      Path: MDR_WU\ENVIRONMENT\ENV_door_open_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: ENV_fire_play
         ObjectType: 3
-      Path: MDR_WU/ENVIRONMENT/ENV_fire_play
+      Path: MDR_WU\ENVIRONMENT\ENV_fire_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: ENV_fire_stop
         ObjectType: 3
-      Path: MDR_WU/ENVIRONMENT/ENV_fire_stop
+      Path: MDR_WU\ENVIRONMENT\ENV_fire_stop
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -169,7 +169,35 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: ENV_pot_break_play
         ObjectType: 3
-      Path: MDR_WU/ENVIRONMENT/ENV_pot_break_play
+      Path: MDR_WU\ENVIRONMENT\ENV_pot_break_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: ENV_pot_put_down_play
+      guid: 169c4e9bc381e74fb2b1ab670de143a2
+      id: 2760972584
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: ENVIRONMENT
+        ObjectType: 4
+      - ElementName: ENV_pot_put_down_play
+        ObjectType: 3
+      Path: MDR_WU\ENVIRONMENT\ENV_pot_put_down_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: GAME_fake_fight
+      guid: 9a4bebe378a042459ef46a7d191da27e
+      id: 1100552122
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: GAME
+        ObjectType: 4
+      - ElementName: GAME_fake_fight
+        ObjectType: 3
+      Path: MDR_WU\GAME\GAME_fake_fight
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -183,7 +211,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: GAME_launch
         ObjectType: 3
-      Path: MDR_WU/GAME/GAME_launch
+      Path: MDR_WU\GAME\GAME_launch
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -197,7 +225,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: GAME_over
         ObjectType: 3
-      Path: MDR_WU/GAME/GAME_over
+      Path: MDR_WU\GAME\GAME_over
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -211,7 +239,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: GAME_start
         ObjectType: 3
-      Path: MDR_WU/GAME/GAME_start
+      Path: MDR_WU\GAME\GAME_start
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -225,7 +253,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: MC_attack_play
         ObjectType: 3
-      Path: MDR_WU/MAIN CHARACTER/MC_attack_play
+      Path: MDR_WU\MAIN CHARACTER\MC_attack_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -239,7 +267,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: MC_idle_anim_play
         ObjectType: 3
-      Path: MDR_WU/MAIN CHARACTER/MC_idle_anim_play
+      Path: MDR_WU\MAIN CHARACTER\MC_idle_anim_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -253,7 +281,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: MC_pick_big_item_play
         ObjectType: 3
-      Path: MDR_WU/MAIN CHARACTER/MC_pick_big_item_play
+      Path: MDR_WU\MAIN CHARACTER\MC_pick_big_item_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -267,7 +295,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: MC_pick_item_play
         ObjectType: 3
-      Path: MDR_WU/MAIN CHARACTER/MC_pick_item_play
+      Path: MDR_WU\MAIN CHARACTER\MC_pick_item_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -281,7 +309,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: MC_talk_play
         ObjectType: 3
-      Path: MDR_WU/MAIN CHARACTER/MC_talk_play
+      Path: MDR_WU\MAIN CHARACTER\MC_talk_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -295,7 +323,35 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: MC_talk_stop
         ObjectType: 3
-      Path: MDR_WU/MAIN CHARACTER/MC_talk_stop
+      Path: MDR_WU\MAIN CHARACTER\MC_talk_stop
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MC_throw_play
+      guid: 28edf9fca5c1f945b6cefeb65c569485
+      id: 1796000097
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: ENVIRONMENT
+        ObjectType: 4
+      - ElementName: MC_throw_play
+        ObjectType: 3
+      Path: MDR_WU\ENVIRONMENT\MC_throw_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MC_walk_end_PH_play
+      guid: 72a4a219ae381e4fb0114e2501499af5
+      id: 1030438041
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MAIN CHARACTER
+        ObjectType: 4
+      - ElementName: MC_walk_end_PH_play
+        ObjectType: 3
+      Path: MDR_WU\MAIN CHARACTER\MC_walk_end_PH_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -309,7 +365,21 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: MC_walk_end_play
         ObjectType: 3
-      Path: MDR_WU/MAIN CHARACTER/MC_walk_end_play
+      Path: MDR_WU\MAIN CHARACTER\MC_walk_end_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MC_walk_PH_play
+      guid: ca28b70397743943a212e14a2948c1d9
+      id: 287668871
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MAIN CHARACTER
+        ObjectType: 4
+      - ElementName: MC_walk_PH_play
+        ObjectType: 3
+      Path: MDR_WU\MAIN CHARACTER\MC_walk_PH_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -323,7 +393,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: MC_walk_play
         ObjectType: 3
-      Path: MDR_WU/MAIN CHARACTER/MC_walk_play
+      Path: MDR_WU\MAIN CHARACTER\MC_walk_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -339,7 +409,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: NPC_talk_play
         ObjectType: 3
-      Path: MDR_WU/NPC/GENERIC NPC/NPC_talk_play
+      Path: MDR_WU\NPC\GENERIC NPC\NPC_talk_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -355,7 +425,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: NPC_talk_stop
         ObjectType: 3
-      Path: MDR_WU/NPC/GENERIC NPC/NPC_talk_stop
+      Path: MDR_WU\NPC\GENERIC NPC\NPC_talk_stop
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -371,7 +441,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: NPC_walk_play
         ObjectType: 3
-      Path: MDR_WU/NPC/GENERIC NPC/NPC_walk_play
+      Path: MDR_WU\NPC\GENERIC NPC\NPC_walk_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -387,7 +457,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: NPC_walk_stop
         ObjectType: 3
-      Path: MDR_WU/NPC/GENERIC NPC/NPC_walk_stop
+      Path: MDR_WU\NPC\GENERIC NPC\NPC_walk_stop
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -399,7 +469,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: TEST
         ObjectType: 3
-      Path: MDR_WU/TEST
+      Path: MDR_WU\TEST
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -413,7 +483,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: UI_camera_dezoom_play
         ObjectType: 3
-      Path: MDR_WU/UI/UI_camera_dezoom_play
+      Path: MDR_WU\UI\UI_camera_dezoom_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -427,7 +497,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: UI_camera_zoom_play
         ObjectType: 3
-      Path: MDR_WU/UI/UI_camera_zoom_play
+      Path: MDR_WU\UI\UI_camera_zoom_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -441,7 +511,21 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: UI_cancel_play
         ObjectType: 3
-      Path: MDR_WU/UI/UI_cancel_play
+      Path: MDR_WU\UI\UI_cancel_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UI_item_highlight_play
+      guid: b95198b42abe4845aebbd265e074bfa0
+      id: 1277176383
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: UI_item_highlight_play
+        ObjectType: 3
+      Path: MDR_WU\UI\UI_item_highlight_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -455,7 +539,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: UI_pause_menu_play
         ObjectType: 3
-      Path: MDR_WU/UI/UI_pause_menu_play
+      Path: MDR_WU\UI\UI_pause_menu_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -469,7 +553,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: UI_select_confirm_play
         ObjectType: 3
-      Path: MDR_WU/UI/UI_select_confirm_play
+      Path: MDR_WU\UI\UI_select_confirm_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -483,42 +567,298 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: UI_select_hover_play
         ObjectType: 3
-      Path: MDR_WU/UI/UI_select_hover_play
+      Path: MDR_WU\UI\UI_select_hover_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
   RtpcWwu:
-  - PhysicalPath: Game Parameters/Default Work Unit.wwu
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 1eab88a8ff6df14c86dbcf415a5370ec
     GuidInternal: 
-    m_lastTime: -8586459218994775808
+    m_lastTime: -8586449786278805635
     List: []
+  - PhysicalPath: Game Parameters\MDR_WU.wwu
+    ParentPhysicalPath: 
+    guid: c5074d7c1882b04f8e7132f183b4dfb2
+    GuidInternal: 
+    m_lastTime: -8586449784104478949
+    List:
+    - name: DEBUG_zik_speed
+      guid: d52f0217d6725b4aa6252706c8ad93d3
+      id: 501502913
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: DEBUG_zik_speed
+        ObjectType: 13
+      Path: MDR_WU\DEBUG_zik_speed
+    - name: game_time
+      guid: a7c64eeb2b7151418e702020ac98ec94
+      id: 1870090125
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: game_time
+        ObjectType: 13
+      Path: MDR_WU\game_time
+    - name: village_karma
+      guid: 0615d60e4aec9a4fa2c875c0adcdcbc1
+      id: 3200455562
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: village_karma
+        ObjectType: 13
+      Path: MDR_WU\village_karma
+    - name: volume_master
+      guid: 0dc8a6af8832ef4f8f91882219d53190
+      id: 3695994288
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Volume control
+        ObjectType: 4
+      - ElementName: volume_master
+        ObjectType: 13
+      Path: MDR_WU\Volume control\volume_master
+    - name: volume_music
+      guid: ebf4143d42abf543bbe6b0c007f55745
+      id: 3891337659
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Volume control
+        ObjectType: 4
+      - ElementName: volume_music
+        ObjectType: 13
+      Path: MDR_WU\Volume control\volume_music
+    - name: volume_SFX
+      guid: 7edf6f5aa2455a44914754d3ae8243d9
+      id: 3673881719
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Volume control
+        ObjectType: 4
+      - ElementName: volume_SFX
+        ObjectType: 13
+      Path: MDR_WU\Volume control\volume_SFX
+    - name: volume_voices
+      guid: fc922267332eb041a3b35d0c05dd2e8b
+      id: 3190188375
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Volume control
+        ObjectType: 4
+      - ElementName: volume_voices
+        ObjectType: 13
+      Path: MDR_WU\Volume control\volume_voices
+    - name: water_distance
+      guid: f1fac3cb8c359946a51f3413841eef41
+      id: 1642165204
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: water_distance
+        ObjectType: 13
+      Path: MDR_WU\water_distance
+    - name: water_far_distance
+      guid: c4c597783512934082af85914075e39e
+      id: 1920428182
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: water_far_distance
+        ObjectType: 13
+      Path: MDR_WU\water_far_distance
   StateWwu:
-  - PhysicalPath: States/Default Work Unit.wwu
+  - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 2e77c38989a7ee45a251c2bd740db235
     GuidInternal: 
-    m_lastTime: -8586459218994775808
+    m_lastTime: -8586459277925828087
+    List: []
+  - PhysicalPath: States\MDR_WU.wwu
+    ParentPhysicalPath: 
+    guid: 452b3f4fbbc2a044b868fe9a48e061a4
+    GuidInternal: 
+    m_lastTime: -8586449884867813953
     List: []
   SwitchWwu:
-  - PhysicalPath: Switches/Default Work Unit.wwu
+  - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: aa8fe8b2f6d86342a5cfef7c4b449052
     GuidInternal: 
-    m_lastTime: -8586459218994775808
+    m_lastTime: -8586449723712003218
     List: []
+  - PhysicalPath: Switches\MDR_WU.wwu
+    ParentPhysicalPath: 
+    guid: c760acc2f3a3024ab705dcbb1ee2a765
+    GuidInternal: 
+    m_lastTime: -8586449786278725848
+    List:
+    - name: day_cycle
+      guid: ff3018a1c4eff94ebbc1873076f9d3f3
+      id: 4021126918
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: day_cycle
+        ObjectType: 11
+      Path: MDR_WU\day_cycle
+      values:
+      - name: evening
+        guid: 541cf2dcdeb4cc4f930f3d4935883fad
+        id: 2905060079
+        PathAndIcons:
+        - ElementName: evening
+          ObjectType: 10
+      - name: morning
+        guid: 05e4e61ec1a0b548af5d7af09fd5ca0a
+        id: 1924633667
+        PathAndIcons:
+        - ElementName: morning
+          ObjectType: 10
+      - name: night
+        guid: f0f03b11f80a3845907281aff33ade68
+        id: 1011622525
+        PathAndIcons:
+        - ElementName: night
+          ObjectType: 10
+      - name: noon
+        guid: 38c62fcf63aada4d9cd4fa950cd5605c
+        id: 765672767
+        PathAndIcons:
+        - ElementName: noon
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: floor_type
+      guid: 319d0155f74e314db29a16359ede7948
+      id: 4168292868
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: floor_type
+        ObjectType: 11
+      Path: MDR_WU\floor_type
+      values:
+      - name: grass
+        guid: 4e189db7bb2b914db206bf8743521a6c
+        id: 4248645337
+        PathAndIcons:
+        - ElementName: grass
+          ObjectType: 10
+      - name: gravel
+        guid: 5f7ba24277633247b589967115e16623
+        id: 2185786256
+        PathAndIcons:
+        - ElementName: gravel
+          ObjectType: 10
+      - name: mud
+        guid: 0404c2a253763e429abafa2a86592c88
+        id: 712897245
+        PathAndIcons:
+        - ElementName: mud
+          ObjectType: 10
+      - name: rock
+        guid: f76d1cae58eb364794034a96ed69ea36
+        id: 2144363834
+        PathAndIcons:
+        - ElementName: rock
+          ObjectType: 10
+      - name: sand
+        guid: c8b4a5c53ea8ee46a30281b25d4d53f0
+        id: 803837735
+        PathAndIcons:
+        - ElementName: sand
+          ObjectType: 10
+      - name: water
+        guid: fa44dcd39a30664b92c6177134d570db
+        id: 2654748154
+        PathAndIcons:
+        - ElementName: water
+          ObjectType: 10
+      - name: wood
+        guid: 71c7c4310c953d40959a9d8b16302746
+        id: 2058049674
+        PathAndIcons:
+        - ElementName: wood
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: music_switch
+      guid: 0f3629d68ad4e74d8ae973743830880e
+      id: 2724869341
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: music_switch
+        ObjectType: 11
+      Path: MDR_WU\music_switch
+      values:
+      - name: battle
+        guid: 08586cb1b21d1c4d92fb044b1de3f64b
+        id: 2937832959
+        PathAndIcons:
+        - ElementName: battle
+          ObjectType: 10
+      - name: village
+        guid: aaa5b71874ed414496255e13b9b0c7a2
+        id: 3945572659
+        PathAndIcons:
+        - ElementName: village
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: village_karma_switch
+      guid: 2f4eba24310a5e429075c7e8db2d088c
+      id: 3887908721
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: village_karma_switch
+        ObjectType: 11
+      Path: MDR_WU\village_karma_switch
+      values:
+      - name: bad
+        guid: 681d0c252ea1984eb311f7906bc3628d
+        id: 513390134
+        PathAndIcons:
+        - ElementName: bad
+          ObjectType: 10
+      - name: good
+        guid: 99966a345c749a4593fa22c62aeabb4a
+        id: 668632890
+        PathAndIcons:
+        - ElementName: good
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
-  - PhysicalPath: Triggers/Default Work Unit.wwu
+  - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: a686aeca2c1d7c4995658c79ad91aa2d
     GuidInternal: 
-    m_lastTime: -8586459218994775808
+    m_lastTime: -8586459277925678734
+    List: []
+  - PhysicalPath: Triggers\MDR_WU.wwu
+    ParentPhysicalPath: 
+    guid: 6ea1de2929405f46ac846b56c5de8119
+    GuidInternal: 
+    m_lastTime: -8586466936764881457
     List: []
   ExpandedItems:
   - /MercDeRien
   - /MercDeRien/Events
   - /MercDeRien/Events/MDR_WU
+  - /MercDeRien/Events/MDR_WU/GAME
   - /MercDeRien/SoundBanks
   - /MercDeRien/SoundBanks/MDR_WU
   autoPopulateEnabled: 1

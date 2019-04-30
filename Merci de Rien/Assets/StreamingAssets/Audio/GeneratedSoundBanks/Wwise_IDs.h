@@ -22,6 +22,7 @@ namespace AK
         static const AkUniqueID ENV_FIRE_STOP = 99041748U;
         static const AkUniqueID ENV_POT_BREAK_PLAY = 2141874203U;
         static const AkUniqueID ENV_POT_PUT_DOWN_PLAY = 2760972584U;
+        static const AkUniqueID GAME_FAKE_FIGHT = 1100552122U;
         static const AkUniqueID GAME_LAUNCH = 2732978883U;
         static const AkUniqueID GAME_OVER = 1432716332U;
         static const AkUniqueID GAME_START = 733168346U;
@@ -36,6 +37,7 @@ namespace AK
         static const AkUniqueID MC_WALK_END_PLAY = 112690910U;
         static const AkUniqueID MC_WALK_PH_PLAY = 287668871U;
         static const AkUniqueID MC_WALK_PLAY = 1011903932U;
+        static const AkUniqueID MUSIC_CHANGE_MORBID = 1416541639U;
         static const AkUniqueID NPC_TALK_PLAY = 787023996U;
         static const AkUniqueID NPC_TALK_STOP = 3835799014U;
         static const AkUniqueID NPC_WALK_PLAY = 2227517075U;
@@ -52,6 +54,19 @@ namespace AK
 
     namespace SWITCHES
     {
+        namespace DAY_CYCLE
+        {
+            static const AkUniqueID GROUP = 4021126918U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID EVENING = 2905060079U;
+                static const AkUniqueID MORNING = 1924633667U;
+                static const AkUniqueID NIGHT = 1011622525U;
+                static const AkUniqueID NOON = 765672767U;
+            } // namespace SWITCH
+        } // namespace DAY_CYCLE
+
         namespace FLOOR_TYPE
         {
             static const AkUniqueID GROUP = 4168292868U;
@@ -68,11 +83,35 @@ namespace AK
             } // namespace SWITCH
         } // namespace FLOOR_TYPE
 
+        namespace MUSIC_SWITCH
+        {
+            static const AkUniqueID GROUP = 2724869341U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID BATTLE = 2937832959U;
+                static const AkUniqueID VILLAGE = 3945572659U;
+            } // namespace SWITCH
+        } // namespace MUSIC_SWITCH
+
+        namespace VILLAGE_KARMA_SWITCH
+        {
+            static const AkUniqueID GROUP = 3887908721U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID BAD = 513390134U;
+                static const AkUniqueID GOOD = 668632890U;
+            } // namespace SWITCH
+        } // namespace VILLAGE_KARMA_SWITCH
+
     } // namespace SWITCHES
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID DEBUG_ZIK_SPEED = 501502913U;
         static const AkUniqueID GAME_TIME = 1870090125U;
+        static const AkUniqueID VILLAGE_KARMA = 3200455562U;
         static const AkUniqueID VOLUME_MASTER = 3695994288U;
         static const AkUniqueID VOLUME_MUSIC = 3891337659U;
         static const AkUniqueID VOLUME_SFX = 3673881719U;
