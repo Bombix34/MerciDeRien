@@ -2,30 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Game_Music_Manager : MonoBehaviour
+public class Game_Music_Manager : Singleton<Game_Music_Manager>
 {
-    public void SetMusic_Morbid()
+    public MusicType CurMusic { get; set; }
+
+    private void Start()
     {
-        AkSoundEngine.SetRTPCValue("village_karma", 100, gameObject);
-        //AkSoundEngine.PostEvent("Music_Change_Morbid", this.gameObject);
+        SwitchMusic(MusicType.Village);
     }
 
-    public void SetMusic_Battle()
+    public void SwitchMusic(MusicType newType)
     {
-        AkSoundEngine.SetSwitch("music_switch", "battle", gameObject);
+        //APPELER CETTE FONCTION POUR CHANGER DE MUSIQUE
+        if (newType == CurMusic)
+            return;
+        CurMusic = newType;
+        PlayMusic();
     }
 
-    public void SetMusic_Night()
+    private void PlayMusic()
     {
-        AkSoundEngine.SetSwitch("music_switch", "village", gameObject);
-        AkSoundEngine.SetRTPCValue("game_time", 24, gameObject);
-        
+        switch(CurMusic)
+        {
+            case MusicType.Village:
+                AkSoundEngine.SetRTPCValue("game_time", 13, gameObject);
+                AkSoundEngine.SetRTPCValue("village_karma", 0, gameObject);
+                AkSoundEngine.SetSwitch("music_switch", "village", gameObject);
+                break;
+            case MusicType.Village_Night:
+                AkSoundEngine.SetSwitch("music_switch", "village", gameObject);
+                AkSoundEngine.SetRTPCValue("game_time", 24, gameObject);
+                break;
+            case MusicType.Battle:
+                AkSoundEngine.SetSwitch("music_switch", "battle", gameObject);
+                break;
+            case MusicType.Morbid:
+                AkSoundEngine.SetRTPCValue("village_karma", 100, gameObject);
+                //AkSoundEngine.PostEvent("Music_Change_Morbid", this.gameObject);
+                break;
+        }
     }
 
-    public void SetMusic_Village()
+    public enum MusicType
     {
-        AkSoundEngine.SetRTPCValue("game_time", 13, gameObject);
-        AkSoundEngine.SetRTPCValue("village_karma", 0, gameObject);
-        AkSoundEngine.SetSwitch("music_switch", "village", gameObject);
+        Village,
+        Village_Night,
+        Battle,
+        Morbid
     }
 }
