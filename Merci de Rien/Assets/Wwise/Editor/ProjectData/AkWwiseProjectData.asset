@@ -59,7 +59,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: f6e287a964ee8f40bdd10f41bdfebff6
     GuidInternal: 
-    m_lastTime: -8586449715111042424
+    m_lastTime: -8586449656172026832
     List:
     - name: ENV_amb_beach_play
       guid: 3bac836c95255c42bb1f3d578b0c37de
@@ -397,6 +397,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Music_Change_Morbid
+      guid: 6f2544f4dcd98641ac632c947554a7c2
+      id: 1416541639
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: _Testing
+        ObjectType: 4
+      - ElementName: Music_Change_Morbid
+        ObjectType: 3
+      Path: MDR_WU\_Testing\Music_Change_Morbid
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: NPC_talk_play
       guid: 17a9c2d4f7414a4383097828574da083
       id: 787023996
@@ -467,9 +481,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
+      - ElementName: _Testing
+        ObjectType: 4
       - ElementName: TEST
         ObjectType: 3
-      Path: MDR_WU\TEST
+      Path: MDR_WU\_Testing\TEST
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -582,7 +598,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: c5074d7c1882b04f8e7132f183b4dfb2
     GuidInternal: 
-    m_lastTime: -8586449784104478949
+    m_lastTime: -8586449645044574338
     List:
     - name: DEBUG_zik_speed
       guid: d52f0217d6725b4aa6252706c8ad93d3
@@ -858,6 +874,7 @@ MonoBehaviour:
   - /MercDeRien
   - /MercDeRien/Events
   - /MercDeRien/Events/MDR_WU
+  - /MercDeRien/Events/MDR_WU/_Testing
   - /MercDeRien/Events/MDR_WU/GAME
   - /MercDeRien/SoundBanks
   - /MercDeRien/SoundBanks/MDR_WU
