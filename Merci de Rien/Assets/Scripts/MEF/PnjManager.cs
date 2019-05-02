@@ -8,6 +8,9 @@ public class PnjManager : ObjectManager
     NavMeshAgent navAgent;
     Animator anim;
 
+    [SerializeField]
+    CharacterType character;
+
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
@@ -31,11 +34,6 @@ public class PnjManager : ObjectManager
         base.ChangeState(newState);
     }
 
-    public void UpdateAnim()
-    {
-        anim.SetFloat("MoveSpeed", (navAgent.velocity.magnitude / 0.1f)*0.03f);
-    }
-
     private void OnDrawGizmos()
     {
         //TOOL DEBUG
@@ -48,6 +46,18 @@ public class PnjManager : ObjectManager
             Gizmos.DrawSphere(curtState.InitPosition, curtState.Radius);
         }
 
+    }
+
+    //ANIM_______________________________________________________
+
+    public Animator GetAnimator()
+    {
+        return anim;
+    }
+
+    public void UpdateAnim()
+    {
+        anim.SetFloat("MoveSpeed", (navAgent.velocity.magnitude / 0.1f)*0.03f);
     }
 
     //RAYCAST________________________________________________________
@@ -90,9 +100,15 @@ public class PnjManager : ObjectManager
         return navAgent;
     }
 
-    public Animator GetAnimator()
-    {
-        return anim;
-    }
+    //CHARACTER____________________________________________________
 
+    public enum CharacterType
+    {
+       Artisan,
+       Paysan,
+       Responsable,
+       Healer,
+       Troubadour,
+       Etranger
+    }
 }
