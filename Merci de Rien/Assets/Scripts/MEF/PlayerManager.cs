@@ -12,6 +12,8 @@ public class PlayerManager : ObjectManager
 
     CharacterController character;
 
+    PlayerSoundManager soundManager;
+
     Vector3 currentVelocity;
 
     Transform mainCamera;
@@ -27,6 +29,7 @@ public class PlayerManager : ObjectManager
         inputs = GetComponent<PlayerInputManager>();
         mainCamera = Camera.main.transform;
         character = GetComponent<CharacterController>();
+        soundManager = GetComponent<PlayerSoundManager>();
 
         //placeholder
         animPlaceholder = GetComponent<Animator>();
@@ -44,6 +47,7 @@ public class PlayerManager : ObjectManager
     private void Update()
     {
         currentState.Execute();
+        
     }
 
     public override void ChangeState(State newState)
@@ -60,6 +64,14 @@ public class PlayerManager : ObjectManager
             Gizmos.color = Color.yellow;
         Gizmos.DrawSphere(GetFrontPosition(), 0.3f);
 
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if(hit.gameObject.GetComponent<Terrain>()!=null)
+        {
+            Terrain ter = hit.gameObject.GetComponent<Terrain>();
+        }
     }
 
     //MOVEMENT FUNCTIONS______________________________________________________________________________
@@ -107,9 +119,6 @@ public class PlayerManager : ObjectManager
         }
     }
 
-
-
-
     public void ResetVelocity()
     {
         character.Move(Vector3.zero);
@@ -148,6 +157,8 @@ public class PlayerManager : ObjectManager
                 interactObject = hitColliders[i].gameObject;
                 interactObject.GetComponent<InteractObject>().UpdateFeedback(true);
                 i = hitColliders.Length;
+                soundManager.PlayInteractFeedbackSound(interactObject);
+             
             }
             i++;
         }
@@ -156,6 +167,7 @@ public class PlayerManager : ObjectManager
             if(interactObject!=null)
                 interactObject.GetComponent<InteractObject>().UpdateFeedback(false);
             interactObject = null;
+            soundManager.ResetInteractObject();
         }
         return raycastObject;
     }
