@@ -61,8 +61,6 @@ public class BringObject : MonoBehaviour
 
     IEnumerator Explode()
     {
-        
-
         yield return Ninja.JumpToUnity;
         GetComponent<MeshRenderer>().enabled = false;
         Mesh mesh = GetComponent<MeshFilter>().mesh;
