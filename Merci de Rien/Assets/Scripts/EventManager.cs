@@ -6,6 +6,8 @@ public class EventManager : MonoBehaviour
 {
     public EventDatabase database;
 
+    //public List<Pnjma>
+
     void Start()
     {
         database.ResetDatabase();
