@@ -97,7 +97,8 @@ public class PlayerBringObjectState : State
         this.bringingObject.GetComponent<Rigidbody>().useGravity = false;
         this.bringingObject.GetComponent<Rigidbody>().mass = 1;
         this.bringingObject.transform.position = new Vector3(curPlayer.transform.position.x, curPlayer.transform.position.y+ 1.17f, curPlayer.transform.position.z);
-
+        tempoTime = 0.3f;
+        chronoEnd = 0.3f;
         //SFX
         AkSoundEngine.PostEvent("MC_pick_big_item_play", this.bringingObject);
     }

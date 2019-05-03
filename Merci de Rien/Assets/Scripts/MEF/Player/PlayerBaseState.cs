@@ -50,10 +50,6 @@ public class PlayerBaseState : State
                // curPlayer.GetAnimator().SetTrigger("Wave");
             }
         }
-
-        //Faudra que je te pose une question à ce sujet Hugo o/ 
-        //-Abdoul
-        //AkSoundEngine.PostEvent("UI_item_highlight_play", ??)
     }
 
     public override void Exit()
