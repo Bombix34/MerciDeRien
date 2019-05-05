@@ -11,6 +11,9 @@ public class BringObject : MonoBehaviour
 
     bool isLaunch = false;
 
+    [SerializeField]
+    bool IsBreaking = false;
+
     Vector3 baseScale;
 
     public GameObject explosionParticles;
@@ -43,18 +46,25 @@ public class BringObject : MonoBehaviour
     {
         //quand l'objet est touché par un autre objet lancé
         if (collision.gameObject.tag == "BringObject" && (collision.gameObject.GetComponent<BringObject>().isLaunch))
-            this.StartCoroutineAsync(Explode());
+            StartBreaking();
         //quand on lance l'objet
         if (!isLaunch)
             return;
-        this.StartCoroutineAsync(Explode());
-        if(collision.gameObject.tag=="PNJ")
+        StartBreaking();
+        if (collision.gameObject.tag=="PNJ")
         {
             PnjManager pnj = collision.gameObject.GetComponent<PnjManager>();
             if (pnj.GetCurrentState().stateName == "PURSUIT_PLAYER_STATE")
                 return;
             pnj.ChangeState(new PursuitPlayerState(pnj,pnj.GetCurrentState()));
         }
+    }
+
+    public void StartBreaking()
+    {
+        if (!IsBreaking)
+            return;
+        this.StartCoroutineAsync(Explode());
     }
 
     //SOURCE : https://github.com/unitycoder/SimpleMeshExploder
@@ -91,7 +101,7 @@ public class BringObject : MonoBehaviour
             CreateMeshPiece(extrudeSize, transform.position, GetComponent<Renderer>().material, index, averageNormal, vertices[triangles[i]], vertices[triangles[i + 1]], vertices[triangles[i + 2]], uvs[triangles[i]], uvs[triangles[i + 1]], uvs[triangles[i + 2]]);
             if (index % 100 == 0)
                 yield return new WaitForEndOfFrame();
-            if (index > triangles.Length / 10)
+            if (index > triangles.Length / 25)
                 i = triangles.Length;
             index++;
         }
