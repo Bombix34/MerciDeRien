@@ -64,6 +64,9 @@ public class BringObject : MonoBehaviour
     {
         if (!IsBreaking)
             return;
+        //SFX
+        AkSoundEngine.PostEvent("ENV_pot_break_play", gameObject);
+
         this.StartCoroutineAsync(Explode());
     }
 
@@ -107,9 +110,6 @@ public class BringObject : MonoBehaviour
         }
         // destroy original
         Destroy(gameObject);
-
-        //SFX
-        AkSoundEngine.PostEvent("ENV_pot_break_play", gameObject);
     }
 
     void CreateMeshPiece(float extrudeSize, Vector3 pos, Material mat, int index, Vector3 faceNormal, Vector3 v1, Vector3 v2, Vector3 v3, Vector2 uv1, Vector2 uv2, Vector2 uv3)

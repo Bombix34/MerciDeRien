@@ -11,6 +11,8 @@ public class PlayerReglages : ScriptableObject
     [Range(0.1f, 5f)]
     public float moveSpeed;
 
+    public float gravity = 9.8f;
+
     [Tooltip("Vitesse de rotation du personnage")]
     [Range(5f, 50f)]
     public float rotationSpeed;

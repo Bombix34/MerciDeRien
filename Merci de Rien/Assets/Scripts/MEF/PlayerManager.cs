@@ -79,6 +79,7 @@ public class PlayerManager : ObjectManager
     public void Move()
     {
         Vector3 directionController = inputs.GetMovementInput();
+        GravitySpeed();
         if (directionController == Vector3.zero)
         {
             currentVelocity = Vector3.zero;
@@ -119,10 +120,21 @@ public class PlayerManager : ObjectManager
         }
     }
 
+    public void GravitySpeed()
+    {
+        if (!character.isGrounded)
+        {
+            currentVelocity = Vector3.zero;
+            float gravity = reglages.gravity * Time.deltaTime;
+            currentVelocity = new Vector3(currentVelocity.x, currentVelocity.y - gravity, currentVelocity.z);
+            character.Move(currentVelocity);
+        }
+    }
+
     public void ResetVelocity()
     {
         character.Move(Vector3.zero);
-        animPlaceholder.SetFloat("MoveSpeed", 0f);
+     //  animPlaceholder.SetFloat("MoveSpeed", 0f);
     }
 
     private void RotatePlayer(float x, float y)

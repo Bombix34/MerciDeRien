@@ -96,7 +96,7 @@ public class PlayerBringObjectState : State
         this.bringingObject.transform.parent = curPlayer.gameObject.transform;
         this.bringingObject.GetComponent<Rigidbody>().useGravity = false;
         this.bringingObject.GetComponent<Rigidbody>().mass = 1;
-        this.bringingObject.transform.position = new Vector3(curPlayer.transform.position.x, curPlayer.transform.position.y+ 1.17f, curPlayer.transform.position.z);
+        this.bringingObject.transform.position = new Vector3(curPlayer.transform.position.x, curPlayer.transform.position.y+ 1.7f, curPlayer.transform.position.z);
         tempoTime = 0.3f;
         chronoEnd = 0.3f;
         //SFX
@@ -108,7 +108,7 @@ public class PlayerBringObjectState : State
         if (!endState)
         {
             curPlayer.Move();
-            this.bringingObject.transform.position = new Vector3(curPlayer.transform.position.x, curPlayer.transform.position.y + 1.17f, curPlayer.transform.position.z);
+            this.bringingObject.transform.position = new Vector3(curPlayer.transform.position.x, curPlayer.transform.position.y + 1.7f, curPlayer.transform.position.z);
 
             if (tempoTime > 0)
             {
