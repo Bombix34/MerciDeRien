@@ -133,6 +133,8 @@ public class PlayerManager : ObjectManager
 
     private void UpdateAnim()
     {
+        if (animPlaceholder == null)
+            return;
         animPlaceholder.SetBool("Grounded", true);
         animPlaceholder.SetFloat("MoveSpeed", currentVelocity.magnitude / 0.1f);
     }
