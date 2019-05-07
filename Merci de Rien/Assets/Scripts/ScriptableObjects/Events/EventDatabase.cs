@@ -36,13 +36,15 @@ public class EventDatabase : ScriptableObject
 
     public void UpdateCharacterEvent(EventType eventTypeGeneral, PnjManager.CharacterType character, int val)
     {
-        if (eventTypeGeneral != EventType.violenceTotal || eventTypeGeneral != EventType.conversationTotal || eventTypeGeneral != EventType.brokeObjectsTotal
-            || eventTypeGeneral != EventType.stealedObjectsTotal || eventTypeGeneral != EventType.questTotal)
+        if (eventTypeGeneral != EventType.violenceTotal && eventTypeGeneral != EventType.conversationTotal && eventTypeGeneral != EventType.brokeObjectsTotal
+            && eventTypeGeneral != EventType.stealedObjectsTotal && eventTypeGeneral != EventType.questTotal)
             return;
         events[(int)eventTypeGeneral].value += val;
         //ATTENTION : LES EVENT PERSO DOIVENT TOUJOURS ETRE DANS LORDRE ART - PAYS - RESP - HEAL - TROUB - ETRANG
         int indexEventCharacter = (int)eventTypeGeneral + (int)character + 1;
         events[indexEventCharacter].value += val;
+
+        Debug.Log(events[indexEventCharacter].value);
 
         UpdateCharactersMet(eventTypeGeneral);
     }
@@ -60,15 +62,15 @@ public class EventDatabase : ScriptableObject
         characterMet.value = 0;
         if (GetEvent(EventType.conversationWithHealer).value > 0)
             characterMet.value++;
-        else if (GetEvent(EventType.conversationWithPaysan).value > 0)
+        if (GetEvent(EventType.conversationWithPaysan).value > 0)
             characterMet.value++;
-        else if (GetEvent(EventType.conversationWithArtisan).value > 0)
+        if (GetEvent(EventType.conversationWithArtisan).value > 0)
             characterMet.value++;
-        else if (GetEvent(EventType.conversationWithEtranger).value > 0)
+        if (GetEvent(EventType.conversationWithEtranger).value > 0)
             characterMet.value++;
-        else if (GetEvent(EventType.conversationWithTroubadour).value > 0)
+        if (GetEvent(EventType.conversationWithTroubadour).value > 0)
             characterMet.value++;
-        else if (GetEvent(EventType.conversationWithResponsable).value > 0)
+        if (GetEvent(EventType.conversationWithResponsable).value > 0)
             characterMet.value++;
     }
 

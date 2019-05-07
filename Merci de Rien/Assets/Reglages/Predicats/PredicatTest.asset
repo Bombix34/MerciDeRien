@@ -13,5 +13,12 @@ MonoBehaviour:
   m_Name: PredicatTest
   m_EditorClassIdentifier: 
   database: {fileID: 11400000, guid: 6bae29087a66e427b81fcbcc8d1df3f1, type: 2}
-  conditions: []
-  consequences: []
+  conditions:
+  - concernedEvent: 1
+    comparaison: 0
+    valToTest: 3
+    comparisonCumul: 0
+  consequences:
+  - consequence: 0
+    characterConcerned: 0
+    actionChoice: 0

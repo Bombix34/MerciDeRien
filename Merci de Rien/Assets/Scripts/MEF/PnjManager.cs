@@ -45,7 +45,6 @@ public class PnjManager : ObjectManager
             WanderAroundState curtState = (WanderAroundState)currentState;
             Gizmos.DrawSphere(curtState.InitPosition, curtState.Radius);
         }
-
     }
 
     //ANIM_______________________________________________________
@@ -102,6 +101,11 @@ public class PnjManager : ObjectManager
 
     //CHARACTER____________________________________________________
 
+    public CharacterType GetCharacterType()
+    {
+        return character;
+    }
+
     public enum CharacterType
     {
        Artisan,
@@ -109,6 +113,7 @@ public class PnjManager : ObjectManager
        Responsable,
        Healer,
        Troubadour,
-       Etranger
+       Etranger,
+       none
     }
 }
