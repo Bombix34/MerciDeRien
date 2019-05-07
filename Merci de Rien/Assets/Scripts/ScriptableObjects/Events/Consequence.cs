@@ -5,8 +5,7 @@ using System.Linq;
 using UnityEngine;
 
 [Serializable]
-[CreateAssetMenu(menuName = "MDR/Consequence")]
-public class Consequence:ScriptableObject
+public class Consequence
 {
 
     public ConsequenceType consequence;
