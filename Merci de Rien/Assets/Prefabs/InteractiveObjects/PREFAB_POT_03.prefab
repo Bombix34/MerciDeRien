@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 2789706170345261138}
   - component: {fileID: 2789706170345261139}
   m_Layer: 0
-  m_Name: Pot03
+  m_Name: PREFAB_POT_03
   m_TagString: BringObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,7 +122,7 @@ Transform:
   m_GameObject: {fileID: 2789706169738658243}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -87.30888, y: 57.421093, z: 250.53784}
-  m_LocalScale: {x: 0.28, y: 0.28, z: 0.28}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 525718388}
   m_Father: {fileID: 0}
@@ -230,6 +230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a751bf5128d49af802f211439662e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsBreaking: 1
+  reglages: {fileID: 11400000, guid: 1973d64a2f1d54ce28959855bd689fa1, type: 2}
   explosionParticles: {fileID: 6145940328336959526, guid: 23ebb89b51a774f76ae5c008e49d7164,
     type: 3}

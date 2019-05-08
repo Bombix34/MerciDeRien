@@ -64,7 +64,6 @@ public class PnjManager : ObjectManager
     public bool RaycastPlayer()
     {
         bool result = false;
-        GameObject raycastObject = null;
         Vector3 testPosition = GetFrontPosition();
 
         Collider[] hitColliders = Physics.OverlapSphere(testPosition, 0.3f);
@@ -90,6 +89,18 @@ public class PnjManager : ObjectManager
             transform.position.y + forwardPos.y,
             transform.position.z + forwardPos.z);
         return testPosition;
+    }
+
+    //EVENT_____________________________________________________________
+
+    public void HurtingEvent()
+    {
+        EventManager.Instance.GetDatas().UpdateCharacterEvent(EventDatabase.EventType.violenceTotal, GetCharacterType(), 1);
+    }
+
+    public void TalkingEvent()
+    {
+        EventManager.Instance.GetDatas().UpdateCharacterEvent(EventDatabase.EventType.conversationTotal, GetCharacterType(), 1);
     }
 
     //AGENT_________________________________________________________

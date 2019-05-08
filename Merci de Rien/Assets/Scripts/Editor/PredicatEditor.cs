@@ -37,6 +37,8 @@ public class PredicatEditor : Editor
 
         if (GUILayout.Button("Add new condition"))
         {
+            if (predicat.conditions == null)
+                predicat.conditions = new List<Condition>();
             predicat.conditions.Add(new Condition());
         }
         EditorGUILayout.Space();
@@ -66,10 +68,13 @@ public class PredicatEditor : Editor
         EditorGUILayout.Space();
         EditorGUILayout.Space();
         EditorGUILayout.Space();
+
         //CONSEQUENCE_______________________________________________________________________________________
         EditorGUILayout.LabelField("CONSEQUENCE(S)", EditorStyles.boldLabel);
         if (GUILayout.Button("Add new consequence"))
         {
+            if (predicat.consequences == null)
+                predicat.consequences = new List<Consequence>();
             predicat.consequences.Add(new Consequence());
         }
         EditorGUILayout.Space();

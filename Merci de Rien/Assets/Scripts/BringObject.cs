@@ -6,13 +6,16 @@ using System.Threading;
 
 public class BringObject : MonoBehaviour
 {
+    [SerializeField]
+    ObjectReglages reglages;
+
+    [SerializeField]
+    PnjManager.CharacterType characterOwner = PnjManager.CharacterType.none;
+
     Rigidbody body;
     float mass;
 
     bool isLaunch = false;
-
-    [SerializeField]
-    bool IsBreaking = false;
 
     Vector3 baseScale;
 
@@ -41,12 +44,21 @@ public class BringObject : MonoBehaviour
         body.freezeRotation = false;
     }
 
+    public ObjectReglages GetObjectReglages()
+    {
+        return reglages;
+    }
+
 
     void OnCollisionEnter(Collision collision)
     {
         //quand l'objet est touché par un autre objet lancé
-        if (collision.gameObject.tag == "BringObject" && (collision.gameObject.GetComponent<BringObject>().isLaunch))
-            StartBreaking();
+        if (collision.gameObject.tag == "BringObject")
+        {
+            BringObject otherObject = collision.gameObject.GetComponent<BringObject>();
+            if(otherObject.GetObjectReglages().IsBreakingThings&&otherObject.isLaunch)
+                StartBreaking();
+        }
         //quand on lance l'objet
         if (!isLaunch)
             return;
@@ -54,18 +66,26 @@ public class BringObject : MonoBehaviour
         if (collision.gameObject.tag=="PNJ")
         {
             PnjManager pnj = collision.gameObject.GetComponent<PnjManager>();
-            if (pnj.GetCurrentState().stateName == "PURSUIT_PLAYER_STATE")
-                return;
-            pnj.ChangeState(new PursuitPlayerState(pnj,pnj.GetCurrentState()));
+            StartHurting(pnj);
         }
+    }
+
+    public void StartHurting(PnjManager pnj)
+    {
+        if (!reglages.IsHurting)
+            return;
+        //event____________
+        pnj.HurtingEvent();
     }
 
     public void StartBreaking()
     {
-        if (!IsBreaking)
+        if (!reglages.IsBreaking)
             return;
         //SFX
         AkSoundEngine.PostEvent("ENV_pot_break_play", gameObject);
+        //event
+        EventManager.Instance.GetDatas().UpdateCharacterEvent(EventDatabase.EventType.brokeObjectsTotal, characterOwner, 1);
 
         this.StartCoroutineAsync(Explode());
     }

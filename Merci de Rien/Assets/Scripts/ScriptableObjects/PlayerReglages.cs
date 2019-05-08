@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "MDR/PlayerRéglages")]
 public class PlayerReglages : ScriptableObject
 {
     [Header("Reglages Mouvements")]

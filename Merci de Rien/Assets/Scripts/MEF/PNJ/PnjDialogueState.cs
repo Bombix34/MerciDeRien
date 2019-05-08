@@ -43,7 +43,8 @@ public class PnjDialogueState : State
         curPnj.GetAnimator().SetFloat("MoveSpeed", 0f);
         curPnj.transform.LookAt(curPlayer.gameObject.transform);
 
-        EventManager.Instance.GetDatas().UpdateCharacterEvent(EventDatabase.EventType.conversationTotal, curPnj.GetCharacterType(), 1);
+        //event_______________
+        curPnj.TalkingEvent();
     }
 
     public override void Execute()

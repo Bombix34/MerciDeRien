@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "MDR/EventDatabase")]
 public class EventDatabase : ScriptableObject
 {
     /*
@@ -18,6 +17,7 @@ public class EventDatabase : ScriptableObject
     //ATTENTION
     //LA LISTE D'EVENT DOIT ETRE DANS LORDRE DE LENUM
     public List<EventContainer> events;
+
 
     public void ResetDatabase()
     {
@@ -39,12 +39,14 @@ public class EventDatabase : ScriptableObject
         if (eventTypeGeneral != EventType.violenceTotal && eventTypeGeneral != EventType.conversationTotal && eventTypeGeneral != EventType.brokeObjectsTotal
             && eventTypeGeneral != EventType.stealedObjectsTotal && eventTypeGeneral != EventType.questTotal)
             return;
+
         events[(int)eventTypeGeneral].value += val;
+
+        if (character == PnjManager.CharacterType.none)
+            return;
         //ATTENTION : LES EVENT PERSO DOIVENT TOUJOURS ETRE DANS LORDRE ART - PAYS - RESP - HEAL - TROUB - ETRANG
         int indexEventCharacter = (int)eventTypeGeneral + (int)character + 1;
         events[indexEventCharacter].value += val;
-
-        Debug.Log(events[indexEventCharacter].value);
 
         UpdateCharactersMet(eventTypeGeneral);
     }
@@ -76,35 +78,35 @@ public class EventDatabase : ScriptableObject
 
     public enum EventType
     {
-        violenceTotal,
-        violenceAgainstArtisan,
-        violenceAgainstPaysan,
-        violenceAgainstResponsable,
-        violenceAgainstHealer,
-        violenceAgainstTroubadour,
-        violenceAgainstEtranger,
+        violenceTotal,                  //DONE
+        violenceAgainstArtisan,         //DONE
+        violenceAgainstPaysan,          //DONE
+        violenceAgainstResponsable,     //DONE
+        violenceAgainstHealer,          //DONE
+        violenceAgainstTroubadour,      //DONE
+        violenceAgainstEtranger,        //DONE
 
         distanceDone,
         zoneDiscovered,
         timePassed,
 
-        conversationTotal,
-        conversationWithArtisan,
-        conversationWithPaysan,
-        conversationWithResponsable,
-        conversationWithHealer,
-        conversationWithTroubadour,
-        conversationWithEtranger,
+        conversationTotal,              //DONE
+        conversationWithArtisan,        //DONE
+        conversationWithPaysan,         //DONE
+        conversationWithResponsable,    //DONE
+        conversationWithHealer,         //DONE
+        conversationWithTroubadour,     //DONE
+        conversationWithEtranger,       //DONE
         charactersMet,                  //DONE
 
-        brokeObjectsTotal,
-        brokeObjectsArtisan,
-        brokeObjectsPaysan,
-        brokeObjectsResponsable,
-        brokeObjectsHealer,
-        brokeObjectsTroubadour,
-        brokeObjectsEtranger,
-        floreBrokeObjects,
+        brokeObjectsTotal,              //DONE
+        brokeObjectsArtisan,            //DONE
+        brokeObjectsPaysan,             //DONE
+        brokeObjectsResponsable,        //DONE
+        brokeObjectsHealer,             //DONE
+        brokeObjectsTroubadour,         //DONE
+        brokeObjectsEtranger,           //DONE
+        floreBrokeObjects,              //DONE
 
         stealedObjectsTotal,
         stealedObjectsArtisan,
