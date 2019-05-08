@@ -1132,6 +1132,7 @@ GameObject:
   - component: {fileID: 1514519888}
   - component: {fileID: 1514519889}
   - component: {fileID: 1514519890}
+  - component: {fileID: 1798414193}
   m_Layer: 0
   m_Name: PREFAB_GAME_CAMERA
   m_TagString: MainCamera
@@ -1364,3 +1365,47 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &1798414193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200208372678885107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ed6cb5a712b8441af6bb416efd3c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_postProcessVolume: {fileID: 1887413636}
+  m_colorOverLightAmount:
+    serializedVersion: 2
+    key0: {r: 0, g: 0.10012603, b: 1, a: 1}
+    key1: {r: 1, g: 0.70689756, b: 0.16509432, a: 1}
+    key2: {r: 1, g: 1, b: 1, a: 0}
+    key3: {r: 1, g: 1, b: 1, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 11565
+    ctime2: 19853
+    ctime3: 65535
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 4
+    m_NumAlphaKeys: 2
+  m_cycleDuration: 10
+  m_currentTime: 0
