@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventManager : MonoBehaviour
+public class EventManager : Singleton<EventManager>
 {
-    public EventDatabase database;
+    [SerializeField]
+    EventDatabase database;
 
-    //public List<Pnjma>
-
+    [SerializeField]
+    List<Predicat> predicats;
+    
     void Start()
     {
         database.ResetDatabase();
     }
 
+    public EventDatabase GetDatas()
+    {
+        return database;
+    }
 }
