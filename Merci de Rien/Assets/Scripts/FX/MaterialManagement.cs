@@ -44,11 +44,11 @@ public class MaterialManagement : MonoBehaviour
 
         if (Physics.Linecast(cam.transform.position, gameObject.GetComponentInChildren<Renderer>().bounds.max, out hit))
         {
-            if (hit.transform.name != gameObject.name)
+            if ((hit.transform.name != this.gameObject.name) && (hit.transform.tag != "TOOL"))
             {
                 if (Physics.Linecast(cam.transform.position, gameObject.GetComponentInChildren<Renderer>().bounds.center, out hit))
                 {
-                    if (hit.transform.name != gameObject.name)
+                    if ((hit.transform.name != this.gameObject.name)&&(hit.transform.tag!="TOOL"))
                     {
                         hitObject = hit.transform.gameObject;
                         if (wasVisible)

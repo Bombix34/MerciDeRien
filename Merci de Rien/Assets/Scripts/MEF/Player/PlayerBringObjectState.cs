@@ -12,7 +12,7 @@ public class PlayerBringObjectState : State
     float interactInputLenght=0;
 
     //pour empêcher le prendre/déposer dans la même frame
-    float tempoTime = 0.15f;
+    float tempoTime = 0.3f;
 
 
     bool endState = false;
@@ -44,6 +44,9 @@ public class PlayerBringObjectState : State
         this.bringingObject.GetComponent<BringObject>().ResetMass();
         endState = true;
         curPlayer.ResetVelocity();
+
+        //SFX
+        AkSoundEngine.PostEvent("ENV_pot_put_down_play", this.bringingObject);
     }
 
     public void ShootObject()
@@ -58,6 +61,9 @@ public class PlayerBringObjectState : State
         this.bringingObject.GetComponent<BringObject>().LaunchObject();
         endState = true;
         curPlayer.ResetVelocity();
+
+        //SFX
+        AkSoundEngine.PostEvent("MC_throw_play", this.bringingObject);
     }
 
     public void InteractInput()
@@ -90,7 +96,11 @@ public class PlayerBringObjectState : State
         this.bringingObject.transform.parent = curPlayer.gameObject.transform;
         this.bringingObject.GetComponent<Rigidbody>().useGravity = false;
         this.bringingObject.GetComponent<Rigidbody>().mass = 1;
-        this.bringingObject.transform.position = new Vector3(curPlayer.transform.position.x, 1.17f, curPlayer.transform.position.z);
+        this.bringingObject.transform.position = new Vector3(curPlayer.transform.position.x, curPlayer.transform.position.y+ 1.7f, curPlayer.transform.position.z);
+        tempoTime = 0.3f;
+        chronoEnd = 0.3f;
+        //SFX
+        AkSoundEngine.PostEvent("MC_pick_big_item_play", this.bringingObject);
     }
 
     public override void Execute()
@@ -98,7 +108,7 @@ public class PlayerBringObjectState : State
         if (!endState)
         {
             curPlayer.Move();
-            this.bringingObject.transform.position = new Vector3(curPlayer.transform.position.x, 1.17f, curPlayer.transform.position.z);
+            this.bringingObject.transform.position = new Vector3(curPlayer.transform.position.x, curPlayer.transform.position.y + 1.7f, curPlayer.transform.position.z);
 
             if (tempoTime > 0)
             {
@@ -116,7 +126,6 @@ public class PlayerBringObjectState : State
             if (chronoEnd <= 0)
                 curPlayer.ChangeState(new PlayerBaseState(curPlayer));
         }
-        
     }
 
     public override void Exit()

@@ -6,8 +6,10 @@ public class PlayerDialogueState : State
 {
     PlayerManager curPlayer;
 
-    GameObject pnj;
+    PnjManager pnj;
     Quaternion pnjBaseRotation;
+
+    State prevState;
 
     public PlayerDialogueState(ObjectManager curObject) : base(curObject)
     {
@@ -16,21 +18,23 @@ public class PlayerDialogueState : State
         curPlayer = (PlayerManager)this.curObject;
     }
 
-    public PlayerDialogueState(ObjectManager curObject, GameObject pnj) : base(curObject)
+    public PlayerDialogueState(ObjectManager curObject, GameObject pnj, State prevState) : base(curObject)
     {
         stateName = "PLAYER_DIALOGUE_STATE";
         this.curObject = curObject;
         curPlayer = (PlayerManager)this.curObject;
-        this.pnj = pnj;
+        this.pnj = pnj.GetComponent<PnjManager>();
+        this.prevState = prevState;
     }
 
     //STATE GESTION______________________________________________________________________________
 
     public override void Enter()
     {
-        pnjBaseRotation = pnj.transform.rotation;
-        pnj.transform.LookAt(curPlayer.gameObject.transform);
-        Camera.main.GetComponent<CameraManager>().SetDialogueCamera(pnj);
+        Camera.main.GetComponent<CameraManager>().SetDialogueCamera(pnj.gameObject);
+        curPlayer.transform.LookAt(pnj.transform.position);
+        //curPlayer.GetAnimator().SetFloat("MoveSpeed", 0f);
+        pnj.ChangeState(new PnjDialogueState(pnj, curPlayer, pnj.GetCurrentState()));
     }
 
     public override void Execute()
@@ -38,8 +42,9 @@ public class PlayerDialogueState : State
         if (curPlayer.GetInputManager().GetInteractInputDown())
         {
             Camera.main.GetComponent<CameraManager>().SetNewCamera(CameraManager.CameraType.Base);
-            pnj.transform.rotation = pnjBaseRotation;
-            curPlayer.ChangeState(new PlayerBaseState(curPlayer));
+            PnjDialogueState pnjCurrentState =(PnjDialogueState)pnj.GetComponent<PnjManager>().GetCurrentState();
+            pnjCurrentState.EndDialogue();
+            curPlayer.ChangeState(prevState);
         }
     }
 

@@ -6,6 +6,12 @@ using System.Threading;
 
 public class BringObject : MonoBehaviour
 {
+    [SerializeField]
+    ObjectReglages reglages;
+
+    [SerializeField]
+    PnjManager.CharacterType characterOwner = PnjManager.CharacterType.none;
+
     Rigidbody body;
     float mass;
 
@@ -38,15 +44,49 @@ public class BringObject : MonoBehaviour
         body.freezeRotation = false;
     }
 
+    public ObjectReglages GetObjectReglages()
+    {
+        return reglages;
+    }
+
 
     void OnCollisionEnter(Collision collision)
     {
         //quand l'objet est touché par un autre objet lancé
-        if (collision.gameObject.tag == "BringObject" && (collision.gameObject.GetComponent<BringObject>().isLaunch))
-            this.StartCoroutineAsync(Explode());
+        if (collision.gameObject.tag == "BringObject")
+        {
+            BringObject otherObject = collision.gameObject.GetComponent<BringObject>();
+            if(otherObject.GetObjectReglages().IsBreakingThings&&otherObject.isLaunch)
+                StartBreaking();
+        }
         //quand on lance l'objet
         if (!isLaunch)
             return;
+        StartBreaking();
+        if (collision.gameObject.tag=="PNJ")
+        {
+            PnjManager pnj = collision.gameObject.GetComponent<PnjManager>();
+            StartHurting(pnj);
+        }
+    }
+
+    public void StartHurting(PnjManager pnj)
+    {
+        if (!reglages.IsHurting)
+            return;
+        //event____________
+        pnj.HurtingEvent();
+    }
+
+    public void StartBreaking()
+    {
+        if (!reglages.IsBreaking)
+            return;
+        //SFX
+        AkSoundEngine.PostEvent("ENV_pot_break_play", gameObject);
+        //event
+        EventManager.Instance.GetDatas().UpdateCharacterEvent(EventDatabase.EventType.brokeObjectsTotal, characterOwner, 1);
+
         this.StartCoroutineAsync(Explode());
     }
 
@@ -84,7 +124,7 @@ public class BringObject : MonoBehaviour
             CreateMeshPiece(extrudeSize, transform.position, GetComponent<Renderer>().material, index, averageNormal, vertices[triangles[i]], vertices[triangles[i + 1]], vertices[triangles[i + 2]], uvs[triangles[i]], uvs[triangles[i + 1]], uvs[triangles[i + 2]]);
             if (index % 100 == 0)
                 yield return new WaitForEndOfFrame();
-            if (index > triangles.Length / 10)
+            if (index > triangles.Length / 25)
                 i = triangles.Length;
             index++;
         }

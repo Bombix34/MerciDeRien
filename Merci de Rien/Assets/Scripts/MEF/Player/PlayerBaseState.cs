@@ -15,14 +15,16 @@ public class PlayerBaseState : State
 
     public void ChangeState(GameObject interactedObject)
     {
-        //ATTENTION -> interactedObject ne doit pas être null
+        if (interactedObject == null)
+            return;
         switch(interactedObject.tag)
         {
             case "BringObject":
-                curPlayer.ChangeState(new PlayerBringObjectState(curPlayer, curPlayer.GetNearInteractObject()));
+                if(interactedObject.GetComponent<BringObject>().GetObjectReglages().IsPortable)
+                    curPlayer.ChangeState(new PlayerBringObjectState(curPlayer, curPlayer.GetNearInteractObject()));
                 break;
             case "PNJ":
-                curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject()));
+                curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(),curPlayer.GetCurrentState()));
                 break;
         }
         interactedObject.GetComponent<InteractObject>().UpdateFeedback(false);
