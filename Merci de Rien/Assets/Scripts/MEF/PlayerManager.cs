@@ -18,7 +18,7 @@ public class PlayerManager : ObjectManager
 
     Transform mainCamera;
 
-    Animator animPlaceholder;
+    Animator animator;
 
     GameObject interactObject;
 
@@ -32,7 +32,7 @@ public class PlayerManager : ObjectManager
         soundManager = GetComponent<PlayerSoundManager>();
 
         //placeholder
-        animPlaceholder = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Start()
@@ -134,7 +134,7 @@ public class PlayerManager : ObjectManager
     public void ResetVelocity()
     {
         character.Move(Vector3.zero);
-     //  animPlaceholder.SetFloat("MoveSpeed", 0f);
+        animator.SetFloat("MoveSpeed", 0f);
     }
 
     private void RotatePlayer(float x, float y)
@@ -145,10 +145,9 @@ public class PlayerManager : ObjectManager
 
     private void UpdateAnim()
     {
-        if (animPlaceholder == null)
+        if (animator == null)
             return;
-        animPlaceholder.SetBool("Grounded", true);
-        animPlaceholder.SetFloat("MoveSpeed", currentVelocity.magnitude / 0.1f);
+        animator.SetFloat("MoveSpeed", currentVelocity.magnitude / 0.1f);
     }
 
     //RAYCAST OBJECTS___________________________________________________________________________________
@@ -241,7 +240,7 @@ public class PlayerManager : ObjectManager
 
     public Animator GetAnimator()
     {
-        return animPlaceholder;
+        return animator;
     }
 
     public void SetNearInteractObject(GameObject newVal)
