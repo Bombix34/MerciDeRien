@@ -9,6 +9,9 @@ public class CSVParsing : ScriptableObject
 
     public PnjManager.CharacterType characterConcerned;
 
+
+    public string assetName = "";
+
 	private char lineSeperater = '\n'; // It defines line seperate character
 	private char fieldSeperator = ','; // It defines field seperate chracter
 
@@ -27,7 +30,7 @@ public class CSVParsing : ScriptableObject
             if (indexLine % 2 == 0)
             {
                 dialogueNb++;
-                string dialogueName = "Dialogue_"+characterConcerned.ToString()+"_"+(dialogueNb).ToString();
+                string dialogueName = assetName+"_"+(dialogueNb).ToString();
                 curDialogue = ScriptableObjectUtility.CreateAsset<Dialogue>(dialogueName);
                 curDialogue.Init(characterConcerned);
             }

@@ -10,6 +10,7 @@ public class CSVParsingEditor : Editor
     CSVParsing parsing;
     SerializedObject GetTarget;
     SerializedProperty csvFile;
+    SerializedProperty assetName;
     SerializedProperty characterConcerned;
 
     void OnEnable()
@@ -18,6 +19,7 @@ public class CSVParsingEditor : Editor
         GetTarget = new SerializedObject(parsing);
         csvFile = GetTarget.FindProperty("csvFile");
         characterConcerned = GetTarget.FindProperty("characterConcerned");
+        assetName = GetTarget.FindProperty("assetName");
     }
 
     public override void OnInspectorGUI()
@@ -34,9 +36,11 @@ public class CSVParsingEditor : Editor
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("Import settings",EditorStyles.boldLabel);
 
+            EditorGUILayout.PropertyField(assetName);
+
             AddPopup(ref characterConcerned, "Character :", typeof(PnjManager.CharacterType));
 
-            if (parsing.characterConcerned != PnjManager.CharacterType.none)
+            if ((parsing.characterConcerned != PnjManager.CharacterType.none)&&(parsing.assetName!=""))
             {
                 if (GUILayout.Button("IMPORT", GUILayout.MaxWidth(130), GUILayout.MaxHeight(20)))
                 {
