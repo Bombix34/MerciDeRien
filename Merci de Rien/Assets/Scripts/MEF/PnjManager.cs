@@ -15,6 +15,8 @@ public class PnjManager : ObjectManager
     {
         navAgent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        if (anim == null)
+            anim = GetComponentInChildren<Animator>();
     }
 
     private void Start()
