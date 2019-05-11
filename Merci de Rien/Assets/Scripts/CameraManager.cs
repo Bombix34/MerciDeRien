@@ -9,8 +9,8 @@ public class CameraManager : MonoBehaviour
     private CameraReglages reglages;
     public CinemachineVirtualCamera baseCamera;
     public CinemachineVirtualCamera zoomCamera;
+    public CinemachineVirtualCamera dezoomCamera;
     public CinemachineVirtualCamera dialogueCamera;
- 
 
     CameraType currentCamera;
 
@@ -40,6 +40,9 @@ public class CameraManager : MonoBehaviour
             case CameraType.Zoom:
                 zoomCamera.Priority = 20;
                 break;
+            case CameraType.Dezoom:
+                dezoomCamera.Priority = 20;
+                break;
             case CameraType.Dialogue:
               //  transform.rotation = Quaternion.Euler(35f, -25f, 0f);
                 dialogueCamera.Priority = 20;
@@ -64,6 +67,7 @@ public class CameraManager : MonoBehaviour
     {
         Base,
         Zoom,
+        Dezoom,
         Dialogue
     }
 }
