@@ -44,7 +44,7 @@ public class EventDatabase : ScriptableObject
 
         if (character == PnjManager.CharacterType.none)
             return;
-        //ATTENTION : LES EVENT PERSO DOIVENT TOUJOURS ETRE DANS LORDRE ART - PAYS - RESP - HEAL - TROUB - ETRANG
+        //ATTENTION : LES EVENT PERSO DOIVENT TOUJOURS ETRE DANS LORDRE ART - PAYS - PECHEUR - RESP - HEAL - TROUB - ETRANG
         int indexEventCharacter = (int)eventTypeGeneral + (int)character + 1;
         events[indexEventCharacter].value += val;
 
@@ -81,6 +81,7 @@ public class EventDatabase : ScriptableObject
         violenceTotal,                  //DONE
         violenceAgainstArtisan,         //DONE
         violenceAgainstPaysan,          //DONE
+        violenceAgainstPecheur,         //DONE
         violenceAgainstResponsable,     //DONE
         violenceAgainstHealer,          //DONE
         violenceAgainstTroubadour,      //DONE
@@ -93,6 +94,7 @@ public class EventDatabase : ScriptableObject
         conversationTotal,              //DONE
         conversationWithArtisan,        //DONE
         conversationWithPaysan,         //DONE
+        conversationWithPecheur,        //DONE
         conversationWithResponsable,    //DONE
         conversationWithHealer,         //DONE
         conversationWithTroubadour,     //DONE
@@ -102,23 +104,26 @@ public class EventDatabase : ScriptableObject
         brokeObjectsTotal,              //DONE
         brokeObjectsArtisan,            //DONE
         brokeObjectsPaysan,             //DONE
+        brokeObjectsPecheur,            //DONE
         brokeObjectsResponsable,        //DONE
         brokeObjectsHealer,             //DONE
         brokeObjectsTroubadour,         //DONE
         brokeObjectsEtranger,           //DONE
         floreBrokeObjects,              //DONE
 
-        stealedObjectsTotal,
-        stealedObjectsArtisan,
-        stealedObjectsPaysan,
-        stealedObjectsResponsable,
-        stealedObjectsHealer,
-        stealedObjectsTroubadour,
-        stealedObjectsEtranger,
+        stealedObjectsTotal,            //DONE
+        stealedObjectsArtisan,          //DONE
+        stealedObjectsPaysan,           //DONE
+        stealedObjectsPecheur,          //DONE              
+        stealedObjectsResponsable,      //DONE
+        stealedObjectsHealer,           //DONE
+        stealedObjectsTroubadour,       //DONE
+        stealedObjectsEtranger,         //DONE
 
         questTotal,
         questArtisan,
         questPaysan,
+        questPecheur,
         questResponsable,
         questHealer,
         questTroubadour,
