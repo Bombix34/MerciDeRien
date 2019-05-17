@@ -22,8 +22,6 @@ public class PlayerManager : ObjectManager
 
     GameObject interactObject;
 
-    bool isWalkingPlaceholeder;
-
     void Awake()
     {
         inputs = GetComponent<PlayerInputManager>();
@@ -38,15 +36,12 @@ public class PlayerManager : ObjectManager
     private void Start()
     {
         ChangeState(new PlayerBaseState(this));
-
-        //PLACEHOLDER SON.
-        //- Abdoul
-        isWalkingPlaceholeder = false;
     }
 
     private void Update()
     {
         currentState.Execute();
+        FootstepRaycast();
         
     }
 
@@ -57,6 +52,7 @@ public class PlayerManager : ObjectManager
 
     private void OnDrawGizmos()
     {
+        Gizmos.DrawLine(transform.position,Vector3.down);
         //TOOL DEBUG
         if (interactObject != null)
             Gizmos.color = Color.red;
@@ -84,15 +80,6 @@ public class PlayerManager : ObjectManager
         {
             currentVelocity = Vector3.zero;
             UpdateAnim();
-
-            //PLACEHOLDER SON.
-            //- Abdoul
-            if (isWalkingPlaceholeder)
-            {
-                AkSoundEngine.PostEvent("MC_walk_end_PH_play", gameObject);
-                isWalkingPlaceholeder = false;
-            }
-
             return;
         }
         //init values
@@ -110,14 +97,6 @@ public class PlayerManager : ObjectManager
         currentVelocity += heading * reglages.moveSpeed;
         character.Move(currentVelocity);
         UpdateAnim();
-
-        //PLACEHOLDER SON.
-        //- Abdoul
-        if (!isWalkingPlaceholeder)
-        {
-            isWalkingPlaceholeder = true;
-            AkSoundEngine.PostEvent("MC_walk_PH_play", gameObject);
-        }
     }
 
     public void GravitySpeed()
@@ -185,6 +164,16 @@ public class PlayerManager : ObjectManager
         return raycastObject;
     }
 
+    public void FootstepRaycast()
+    {
+        RaycastHit hit;
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down));
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, 0))
+        {
+            print(hit.collider.gameObject);
+        }
+    }
+
     public GameObject IsObstacle(Vector3 testPosition)
     {
         //NON UTILISE
@@ -246,6 +235,17 @@ public class PlayerManager : ObjectManager
     public void SetNearInteractObject(GameObject newVal)
     {
         interactObject = newVal;
+    }
+
+    public BringObject IsBringingObject()
+    {
+        BringObject returnVal = null;
+        if(currentState.stateName== "PLAYER_BRING_OBJECT_STATE")
+        {
+            PlayerBringObjectState curState = (PlayerBringObjectState)currentState;
+            returnVal = curState.GetBringingObject();
+        }
+        return returnVal;
     }
 
     //SINGLETON________________________________________________________________________________________________

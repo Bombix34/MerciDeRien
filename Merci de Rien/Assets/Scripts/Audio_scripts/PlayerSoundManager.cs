@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerSoundManager : MonoBehaviour
 {
     PlayerManager manager;
-
     GameObject interactedObject;
 
     private void Awake()
     {
         manager = GetComponent<PlayerManager>();
     }
+
     void Start()
     {
         

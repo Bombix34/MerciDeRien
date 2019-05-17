@@ -70,6 +70,11 @@ public class BringObject : MonoBehaviour
         }
     }
 
+    public PnjManager.CharacterType GetOwner()
+    {
+        return characterOwner;
+    }
+
     public void StartHurting(PnjManager pnj)
     {
         if (!reglages.IsHurting)

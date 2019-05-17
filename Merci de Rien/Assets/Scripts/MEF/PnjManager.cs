@@ -123,6 +123,7 @@ public class PnjManager : ObjectManager
     {
        Artisan,
        Paysan,
+       Pecheur,
        Responsable,
        Healer,
        Troubadour,
