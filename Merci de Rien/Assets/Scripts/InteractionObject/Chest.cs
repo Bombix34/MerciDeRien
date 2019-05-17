@@ -8,6 +8,9 @@ public class Chest : InteractObject
     [SerializeField]
     GameObject particle;
 
+    [SerializeField]
+    PnjManager.CharacterType characterOwner;
+
     protected override void Start()
     {
         base.Start();
