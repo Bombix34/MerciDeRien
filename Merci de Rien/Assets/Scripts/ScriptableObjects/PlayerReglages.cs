@@ -15,4 +15,8 @@ public class PlayerReglages : ScriptableObject
     [Tooltip("Vitesse de rotation du personnage")]
     [Range(5f, 50f)]
     public float rotationSpeed;
+
+    [Header("Reglages Raycast des objets")]
+    [Range(0.2f, 1f)]
+    public float raycastRadius;
 }

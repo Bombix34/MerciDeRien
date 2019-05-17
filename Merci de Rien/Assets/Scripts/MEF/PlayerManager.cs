@@ -29,7 +29,6 @@ public class PlayerManager : ObjectManager
         character = GetComponent<CharacterController>();
         soundManager = GetComponent<PlayerSoundManager>();
 
-        //placeholder
         animator = GetComponentInChildren<Animator>();
     }
 
@@ -58,7 +57,7 @@ public class PlayerManager : ObjectManager
             Gizmos.color = Color.red;
         else
             Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(GetFrontPosition(), 0.3f);
+        Gizmos.DrawSphere(GetFrontPosition(),reglages.raycastRadius);
 
     }
 
@@ -137,11 +136,11 @@ public class PlayerManager : ObjectManager
         GameObject raycastObject = null;
         Vector3 testPosition = GetFrontPosition();
 
-        Collider[] hitColliders = Physics.OverlapSphere(testPosition, 0.3f);
+        Collider[] hitColliders = Physics.OverlapSphere(testPosition, reglages.raycastRadius);
         int i = 0;
         while (i < hitColliders.Length)
         {
-            if (CanInteract(hitColliders[i].tag))
+            if (CanInteract(hitColliders[i].gameObject))
             {
                 isResult = true;
                 if (interactObject != null)
@@ -192,11 +191,12 @@ public class PlayerManager : ObjectManager
             return null;
     }
 
-    public bool CanInteract(string tag)
+    public bool CanInteract(GameObject concerned)
     {
+        return concerned.GetComponent<InteractObject>() != null;
         //AJOUTER LES TAGS LIEE A LINTERACTION ICI
         //PNJ, OUTILS, PORTES...
-        return ((tag == "BringObject")||(tag=="PNJ"));
+        // return ((tag == "BringObject")||(tag=="PNJ"));
     }
 
     public Vector3 GetFrontPosition()

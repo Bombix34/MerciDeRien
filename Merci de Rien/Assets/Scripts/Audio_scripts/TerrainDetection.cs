@@ -15,6 +15,8 @@ public class TerrainDetection : MonoBehaviour
 
     void Start()
     {
+        if (!IsPlayingFootstepSound)
+            return;
         mTerrainData = Terrain.activeTerrain.terrainData;
         alphaMapWidth = mTerrainData.alphamapWidth;
         alphaMapHeight = mTerrainData.alphamapHeight;
