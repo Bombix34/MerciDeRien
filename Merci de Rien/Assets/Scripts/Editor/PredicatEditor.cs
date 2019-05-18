@@ -85,9 +85,12 @@ public class PredicatEditor : Editor
             SerializedProperty consequenceListRef = consequenceList.GetArrayElementAtIndex(j);
             SerializedProperty consequenceTypeRef = consequenceListRef.FindPropertyRelative("consequence");
 
-            //PNJG BEHAVIOR
+            //PNJ BEHAVIOR
             SerializedProperty characterTypeRef = consequenceListRef.FindPropertyRelative("characterConcerned");
             SerializedProperty actionChoiceRef = consequenceListRef.FindPropertyRelative("actionChoice");
+
+            //PNJ MOOD
+            SerializedProperty characterMoodRef = consequenceListRef.FindPropertyRelative("mood");
 
             //DIALOGUE
             SerializedProperty dialogueChoiceRef = consequenceListRef.FindPropertyRelative("dialogueConcerned");
@@ -110,6 +113,10 @@ public class PredicatEditor : Editor
                 case (int)Consequence.ConsequenceType.PnjChangeBehavior:
                     AddPopup(ref characterTypeRef, "Character concerné :", typeof(PnjManager.CharacterType));
                     AddPopup(ref actionChoiceRef, "Action du pnj :", typeof(Consequence.CharacterAction));
+                    break;
+                case (int)Consequence.ConsequenceType.PnjChangeMood:
+                    AddPopup(ref characterTypeRef, "Character concerné :", typeof(PnjManager.CharacterType));
+                    AddPopup(ref characterMoodRef, "Nouveau mood :", typeof(PnjManager.Mood));
                     break;
                 case (int)Consequence.ConsequenceType.AddDialogue:
                     AddPopup(ref characterTypeRef, "Character concerné :", typeof(PnjManager.CharacterType));

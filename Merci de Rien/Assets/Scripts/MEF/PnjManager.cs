@@ -11,6 +11,9 @@ public class PnjManager : ObjectManager
     [SerializeField]
     CharacterType character;
 
+    [SerializeField]
+    public Mood CurrentMood { get; set; } = Mood.neutral;
+
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
@@ -21,7 +24,6 @@ public class PnjManager : ObjectManager
 
     private void Start()
     {
-        anim.SetBool("Grounded", true);
         ChangeState(new WanderAroundState(this,this.transform.position));
     }
 
@@ -129,5 +131,11 @@ public class PnjManager : ObjectManager
        Troubadour,
        Etranger,
        none
+    }
+
+    public enum Mood
+    {
+        neutral,
+        aggressive
     }
 }

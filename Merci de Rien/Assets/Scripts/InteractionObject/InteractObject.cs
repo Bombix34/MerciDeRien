@@ -12,12 +12,11 @@ public class InteractObject : MonoBehaviour
     public Material[] interactMaterial;
     protected Material[] baseMaterial;
 
-   public bool CanStealObject { get; set; }
+    public bool CanStealObject { get; set; } = false;
     public bool CanInteract { get; set; } = true;
 
     protected virtual void Start()
     {
-        CanStealObject = false;
         if(mesh.Count==0)
         {
             mesh = new List<MeshRenderer>

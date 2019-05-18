@@ -15,7 +15,12 @@ MonoBehaviour:
   database: {fileID: 11400000, guid: 6bae29087a66e427b81fcbcc8d1df3f1, type: 2}
   conditions: []
   consequences:
-  - consequence: 0
-    characterConcerned: 0
+  - consequence: 1
+    characterConcerned: 5
     actionChoice: 0
-    dialogueConerne: {fileID: 0}
+    mood: 1
+    dialogueConcerned: {fileID: 0}
+    eventDatabase: {fileID: 0}
+    eventType: 0
+    objectConcerned: {fileID: 0}
+    intModificator: 0

@@ -8,6 +8,9 @@ public class EventManager : Singleton<EventManager>
     EventDatabase database;
 
     [SerializeField]
+    List<PnjManager> pnjs;
+
+    [SerializeField]
     List<Predicat> predicats;
     
     void Start()
@@ -23,5 +26,16 @@ public class EventManager : Singleton<EventManager>
     public EventDatabase ReadDatas()
     {
         return database;
+    }
+
+    public PnjManager GetPNJ(PnjManager.CharacterType concerned)
+    {
+        PnjManager returnVal = null;
+        foreach(var item in pnjs)
+        {
+            if (item.GetCharacterType() == concerned)
+                returnVal = item;
+        }
+        return returnVal;
     }
 }
