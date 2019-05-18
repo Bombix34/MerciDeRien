@@ -6,9 +6,25 @@ public class Game_Music_Manager : Singleton<Game_Music_Manager>
 {
     public MusicType CurMusic { get; set; }
 
+    //Il faudra procéder différamment quand le cycle jour/nuit sera réellement implémenté
+    private DayLightCycle dayLightCycle;
+    private float gameCurrentTime;
+
     private void Start()
     {
         SwitchMusic(MusicType.Village);
+
+        dayLightCycle = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<DayLightCycle>();
+
+    }
+
+    private void Update()
+    {
+        if (dayLightCycle != null)
+        {
+        gameCurrentTime = dayLightCycle.GetCurrentTime() * 24f;
+        AkSoundEngine.SetRTPCValue("game_time", gameCurrentTime, gameObject);
+        }
     }
 
     public void SwitchMusic(MusicType newType)

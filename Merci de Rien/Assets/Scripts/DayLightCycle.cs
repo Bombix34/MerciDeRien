@@ -55,4 +55,9 @@ public class DayLightCycle : MonoBehaviour
             m_colorGradingModule.colorFilter.value = Color.white;
         }
     }
+
+    public float GetCurrentTime()
+    {
+        return m_currentTime;
+    }
 }
