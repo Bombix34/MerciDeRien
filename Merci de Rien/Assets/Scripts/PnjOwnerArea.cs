@@ -12,6 +12,8 @@ public class PnjOwnerArea : MonoBehaviour
     List<GameObject> objectsInZone;     //les objets dans la zone
     List<GameObject> pnjObjectMemory;   // quelles informations a le pnj sur les objets dans la zone
 
+    int otherObjectsStealed = 0;
+
     private void Start()
     {
         pnjObjectMemory = new List<GameObject>();
@@ -23,11 +25,12 @@ public class PnjOwnerArea : MonoBehaviour
 
     void PnjCheckStealedObjects()
     {
-        int stealedObjets = pnjObjectMemory.Count - objectsInZone.Count;
+        int stealedObjets = (pnjObjectMemory.Count - objectsInZone.Count)+otherObjectsStealed;
         if(stealedObjets>0)
         {
             EventManager.Instance.GetDatas().UpdateCharacterEvent(EventDatabase.EventType.stealedObjectsTotal, characterOwner, stealedObjets);
             pnjObjectMemory = objectsInZone;
+            ResetOtherObjectStealed();
         }
     }
 
@@ -36,6 +39,17 @@ public class PnjOwnerArea : MonoBehaviour
        if(other.gameObject.tag=="PNJ" && other.gameObject.GetComponent<PnjManager>().GetCharacterType()==characterOwner)
         {
             PnjCheckStealedObjects();
+        }
+       else if (other.gameObject.tag == "Player" && other.gameObject.GetComponent<PlayerManager>().IsBringingObject() != null)
+        {
+            //SI JE REVIENS DANS LA ZONE AVEC UN OBJET DU PERSO
+            BringObject concernedObj = other.gameObject.GetComponent<PlayerManager>().IsBringingObject();
+            if (concernedObj.GetComponent<InteractObject>().CanStealObject)
+                return;
+            if (concernedObj.GetOwner() == characterOwner)
+            {
+                objectsInZone.Add(concernedObj.gameObject);
+            }
         }
     }
 
@@ -53,11 +67,23 @@ public class PnjOwnerArea : MonoBehaviour
         {
             //QUAND ON SORT DE LA ZONE EN VOLANT UN OBJET
             BringObject concernedObj = other.gameObject.GetComponent<PlayerManager>().IsBringingObject();
+            if (concernedObj.GetComponent<InteractObject>().CanStealObject)
+                return;
             if(concernedObj.GetOwner()==characterOwner)
             {
                 
                 objectsInZone.Remove(concernedObj.gameObject);
             }
         }
+    }
+
+    public void IncrementOtherObjectStealed()
+    {
+        otherObjectsStealed++;
+    }
+
+    public void ResetOtherObjectStealed()
+    {
+        otherObjectsStealed = 0;
     }
 }

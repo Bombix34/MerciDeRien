@@ -13,5 +13,20 @@ MonoBehaviour:
   m_Name: Predicat2
   m_EditorClassIdentifier: 
   database: {fileID: 0}
-  conditions: []
-  consequences: []
+  conditions:
+  - concernedEvent: 25
+    comparaison: 2
+    valToTest: 1
+    comparisonCumul: 0
+  - concernedEvent: 20
+    comparaison: 1
+    valToTest: 1
+    comparisonCumul: 0
+  consequences:
+  - consequence: 3
+    characterConcerned: 0
+    actionChoice: 0
+    dialogueConcerned: {fileID: 0}
+    eventDatabase: {fileID: 0}
+    eventType: 0
+    objectConcerned: {fileID: 0}
