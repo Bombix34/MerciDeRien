@@ -10,6 +10,10 @@ public class Chest : InteractObject
 
     [SerializeField]
     PnjManager.CharacterType characterOwner;
+    [SerializeField]
+    PnjOwnerArea area;
+
+    bool HasBeenOpened = false;
 
     protected override void Start()
     {
@@ -20,13 +24,24 @@ public class Chest : InteractObject
 
     public override void StartInteraction()
     {
+        base.StartInteraction();
         animator.SetBool("IsOpen", true);
         particle.SetActive(true);
+        CheckSteal();
+        HasBeenOpened = true;
     }
 
     public override void EndInteraction()
     {
         animator.SetBool("IsOpen", false);
         particle.SetActive(false);
+    }
+
+    public void CheckSteal()
+    {
+        if((area!=null)&&(!HasBeenOpened)&&(!CanStealObject))
+        {
+            area.IncrementOtherObjectStealed();
+        }
     }
 }

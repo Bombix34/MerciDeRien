@@ -12,6 +12,7 @@ public class Pancarte : InteractObject
 
     public override void StartInteraction()
     {
+        base.StartInteraction();
     }
 
     public override void EndInteraction()

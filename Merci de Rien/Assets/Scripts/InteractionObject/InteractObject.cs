@@ -12,8 +12,12 @@ public class InteractObject : MonoBehaviour
     public Material[] interactMaterial;
     protected Material[] baseMaterial;
 
+   public bool CanStealObject { get; set; }
+    public bool CanInteract { get; set; } = true;
+
     protected virtual void Start()
     {
+        CanStealObject = false;
         if(mesh.Count==0)
         {
             mesh = new List<MeshRenderer>
@@ -32,7 +36,9 @@ public class InteractObject : MonoBehaviour
         {
             if (isOn)
             {
-                foreach(var item in mesh)
+                if (!CanInteract)
+                    return;
+                foreach (var item in mesh)
                 {
                     item.materials = interactMaterial;
                 }
@@ -45,12 +51,21 @@ public class InteractObject : MonoBehaviour
                 }
             }
         }
-        if(feedbackInteraction!=null)
+        if (feedbackInteraction != null)
+        {
+            if (!CanInteract)
+                return;
             feedbackInteraction.SetActive(isOn);
+        }
     }
+    
 
     public virtual void StartInteraction()
-    { }
+    {
+        if (!CanInteract)
+            return;
+    }
     public virtual void EndInteraction()
-    { }
+    {
+    }
 }

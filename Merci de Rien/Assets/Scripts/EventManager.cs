@@ -19,4 +19,9 @@ public class EventManager : Singleton<EventManager>
     {
         return database;
     }
+
+    public EventDatabase ReadDatas()
+    {
+        return database;
+    }
 }

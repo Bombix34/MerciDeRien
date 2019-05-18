@@ -89,6 +89,19 @@ public class PredicatEditor : Editor
             SerializedProperty characterTypeRef = consequenceListRef.FindPropertyRelative("characterConcerned");
             SerializedProperty actionChoiceRef = consequenceListRef.FindPropertyRelative("actionChoice");
 
+            //DIALOGUE
+            SerializedProperty dialogueChoiceRef = consequenceListRef.FindPropertyRelative("dialogueConcerned");
+
+            //EVENT DATABASE
+            SerializedProperty databaseRef = consequenceListRef.FindPropertyRelative("eventDatabase");
+            SerializedProperty eventTypeRef = consequenceListRef.FindPropertyRelative("eventType");
+
+            //INTERACTIVE OBJECTS
+            SerializedProperty interactObjectRef = consequenceListRef.FindPropertyRelative("objectConcerned");
+
+            //GENERAL (INT,FLOAT...)
+            SerializedProperty intValRef = consequenceListRef.FindPropertyRelative("intModificator");
+
             AddPopup(ref consequenceTypeRef, "Consequence type :", typeof(Consequence.ConsequenceType));
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("Réglages conséquence _________");
@@ -100,6 +113,29 @@ public class PredicatEditor : Editor
                     break;
                 case (int)Consequence.ConsequenceType.AddDialogue:
                     AddPopup(ref characterTypeRef, "Character concerné :", typeof(PnjManager.CharacterType));
+                    dialogueChoiceRef.objectReferenceValue = EditorGUILayout.ObjectField("Dialogue à ajouter :", dialogueChoiceRef.objectReferenceValue, typeof(Dialogue), true);
+                    break;
+                case (int)Consequence.ConsequenceType.RemoveDialogue:
+                    AddPopup(ref characterTypeRef, "Character concerné :", typeof(PnjManager.CharacterType));
+                    dialogueChoiceRef.objectReferenceValue = EditorGUILayout.ObjectField("Dialogue à enlever :", dialogueChoiceRef.objectReferenceValue, typeof(Dialogue), true);
+                    break;
+                case (int)Consequence.ConsequenceType.IncrementDatabase:
+                    databaseRef.objectReferenceValue = EditorGUILayout.ObjectField("Event database :", databaseRef.objectReferenceValue, typeof(EventDatabase), true);
+                    AddPopup(ref eventTypeRef, "Event concerné :", typeof(EventDatabase.EventType));
+                    break;
+                case (int)Consequence.ConsequenceType.DecrementDatabase:
+                    databaseRef.objectReferenceValue = EditorGUILayout.ObjectField("Event database :", databaseRef.objectReferenceValue, typeof(EventDatabase), true);
+                    AddPopup(ref eventTypeRef, "Event concerné :", typeof(EventDatabase.EventType));
+                    break;
+                case (int)Consequence.ConsequenceType.AutorisationTakeObject:
+                case (int)Consequence.ConsequenceType.RemoveAutorisationTakeObject:
+                case (int)Consequence.ConsequenceType.AutorisationInteractionObject:
+                case (int)Consequence.ConsequenceType.RemoveAutorisationInteractionObject:
+                    interactObjectRef.objectReferenceValue = EditorGUILayout.ObjectField("Objet concerné :", interactObjectRef.objectReferenceValue, typeof(InteractObject),true);
+                    break;
+                case (int)Consequence.ConsequenceType.GainKey:
+                case (int)Consequence.ConsequenceType.RemoveKey:
+                    intValRef.intValue = EditorGUILayout.IntField("Key ID :", intValRef.intValue);
                     break;
             }
             EditorGUILayout.Space();
