@@ -33,9 +33,6 @@ namespace AK
         static const AkUniqueID MC_TALK_PLAY = 2826582739U;
         static const AkUniqueID MC_TALK_STOP = 1956601529U;
         static const AkUniqueID MC_THROW_PLAY = 1796000097U;
-        static const AkUniqueID MC_WALK_END_PH_PLAY = 1030438041U;
-        static const AkUniqueID MC_WALK_END_PLAY = 112690910U;
-        static const AkUniqueID MC_WALK_PH_PLAY = 287668871U;
         static const AkUniqueID MC_WALK_PLAY = 1011903932U;
         static const AkUniqueID MUSIC_CHANGE_MORBID = 1416541639U;
         static const AkUniqueID NPC_TALK_PLAY = 787023996U;
@@ -73,8 +70,8 @@ namespace AK
 
             namespace SWITCH
             {
+                static const AkUniqueID _GRAVEL = 3363833453U;
                 static const AkUniqueID GRASS = 4248645337U;
-                static const AkUniqueID GRAVEL = 2185786256U;
                 static const AkUniqueID MUD = 712897245U;
                 static const AkUniqueID ROCK = 2144363834U;
                 static const AkUniqueID SAND = 803837735U;
@@ -120,6 +117,11 @@ namespace AK
         static const AkUniqueID WATER_FAR_DISTANCE = 1920428182U;
     } // namespace GAME_PARAMETERS
 
+    namespace TRIGGERS
+    {
+        static const AkUniqueID TEST_FOOTSTEP = 2649590838U;
+    } // namespace TRIGGERS
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
@@ -128,7 +130,11 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID AMBIANCE = 2981377429U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID SFX = 393239870U;
+        static const AkUniqueID VOICES = 3313685232U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

@@ -1721,7 +1721,7 @@ GameObject:
   - component: {fileID: 1859489658}
   - component: {fileID: 1859489661}
   m_Layer: 0
-  m_Name: AudioTrigger(1)
+  m_Name: Village Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1893,7 +1893,7 @@ PrefabInstance:
     - target: {fileID: 691757792148045232, guid: 295b7da04929b4045a3986ea2697919e,
         type: 3}
       propertyPath: m_Name
-      value: AudioTrigger
+      value: Morbid Trigger
       objectReference: {fileID: 0}
     - target: {fileID: 691757792148045247, guid: 295b7da04929b4045a3986ea2697919e,
         type: 3}
@@ -2255,6 +2255,11 @@ PrefabInstance:
     - target: {fileID: 6954660605080506175, guid: 4971167f179fcef4989c8be8b9287a69,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954660605080506162, guid: 4971167f179fcef4989c8be8b9287a69,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

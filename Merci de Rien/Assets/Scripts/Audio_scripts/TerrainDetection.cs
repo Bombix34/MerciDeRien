@@ -40,6 +40,7 @@ public class TerrainDetection : MonoBehaviour
         if (!IsPlayingFootstepSound)
             return;
         int terrainID = GetActiveTerrainTextureIdx();
+
         switch(terrainID)
         {
             case 0:
@@ -68,28 +69,41 @@ public class TerrainDetection : MonoBehaviour
     {
         switch (currentPlayerGroundLayer)
         {
+            case TerrainDetection.GroundLayer.longGrass:
             case TerrainDetection.GroundLayer.shortGrass:
             default:
+                AkSoundEngine.SetSwitch("floor_type", "grass", gameObject);
+                Debug.Log("grass");
                 break;
+                
             case TerrainDetection.GroundLayer.sand:
+                AkSoundEngine.SetSwitch("floor_type", "sand", gameObject);
+                Debug.Log("sand");
                 break;
+
             case TerrainDetection.GroundLayer.wetSand:
+                AkSoundEngine.SetSwitch("floor_type", "water", gameObject);
+                Debug.Log("wet sand");
                 break;
-            case TerrainDetection.GroundLayer.longGrass:
-                break;
+
             case TerrainDetection.GroundLayer.agricol:
+                AkSoundEngine.SetSwitch("floor_type", "mud", gameObject);
+                Debug.Log("agricol");
                 break;
         }
-        StartCoroutine(FootstepSound());
+        AkSoundEngine.PostEvent("MC_walk_play", gameObject);
+        //StartCoroutine(FootstepSound());
     }
 
-
-    IEnumerator FootstepSound()
-    {
-        AkSoundEngine.PostEvent("MC_walk_PH_play", gameObject);
-        yield return new WaitForSeconds(0.1f);
-        AkSoundEngine.PostEvent("MC_walk_end_PH_play", gameObject);
-    }
+    //Finalement on a pas besoin d'arrêter les footsteps vu qu'on peut bidouiller l'anim 
+    /*
+        IEnumerator FootstepSound()
+        {
+            AkSoundEngine.PostEvent("MC_walk_PH_play", gameObject);
+            yield return new WaitForSeconds(0.1f);
+            AkSoundEngine.PostEvent("MC_walk_end_PH_play", gameObject);
+        }
+    */
 
     private int GetActiveTerrainTextureIdx()
     {
