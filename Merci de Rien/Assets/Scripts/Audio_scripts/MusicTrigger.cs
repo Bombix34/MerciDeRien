@@ -11,29 +11,29 @@ public class MusicTrigger : MonoBehaviour
     [Header("Return to prev music on trigger exit")]
     bool IsReturnOnTriggerExit = false;
 
-    Game_Music_Manager.MusicType prevMusic;
+    //Game_Music_Manager.MusicType prevMusic;
 
-    Game_Music_Manager wwiseGlobal;
+    Game_Music_Manager music_manager;
 
     private void Start()
     {
-        wwiseGlobal = Game_Music_Manager.Instance;
+        music_manager = Game_Music_Manager.Instance;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && wwiseGlobal != null)
+        if (other.tag == "Player" && music_manager != null)
         {
-            wwiseGlobal.SwitchMusic(musicToSwitchTo);
+            music_manager.SwitchMusic(musicToSwitchTo);
         }
 
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player" && wwiseGlobal != null && IsReturnOnTriggerExit)
+        if (other.tag == "Player" && music_manager != null && IsReturnOnTriggerExit)
         {
-            wwiseGlobal.SwitchMusic(musicToSwitchTo);
+            music_manager.SwitchMusic(musicToSwitchTo);
         }
 
     }
