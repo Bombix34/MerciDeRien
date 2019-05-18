@@ -41,14 +41,14 @@ public class PlayerDialogueState : State
     {
         if (curPlayer.GetInputManager().GetInteractInputDown())
         {
-            Camera.main.GetComponent<CameraManager>().SetNewCamera(CameraManager.CameraType.Base);
-            PnjDialogueState pnjCurrentState =(PnjDialogueState)pnj.GetComponent<PnjManager>().GetCurrentState();
-            pnjCurrentState.EndDialogue();
             curPlayer.ChangeState(prevState);
         }
     }
 
     public override void Exit()
     {
+        Camera.main.GetComponent<CameraManager>().SetNewCamera(CameraManager.CameraType.Base);
+        PnjDialogueState pnjCurrentState = (PnjDialogueState)pnj.GetComponent<PnjManager>().GetCurrentState();
+        pnjCurrentState.EndDialogue();
     }
 }

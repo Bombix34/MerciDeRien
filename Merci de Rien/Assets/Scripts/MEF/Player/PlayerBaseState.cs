@@ -26,6 +26,9 @@ public class PlayerBaseState : State
             case "PNJ":
                 curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(),curPlayer.GetCurrentState()));
                 break;
+            case "InteractObject":
+                curPlayer.ChangeState(new PlayerInteractState(curPlayer, curPlayer.GetNearInteractObject(), curPlayer.GetCurrentState()));
+                break;
         }
         interactedObject.GetComponent<InteractObject>().UpdateFeedback(false);
         curPlayer.SetNearInteractObject(null);

@@ -89,6 +89,13 @@ public class PlayerBringObjectState : State
         
     }
 
+    public BringObject GetBringingObject()
+    {
+        if (bringingObject.GetComponent<BringObject>() == null)
+            return null;
+        return bringingObject.GetComponent<BringObject>();
+    }
+
     //STATE GESTION______________________________________________________________________________
 
     public override void Enter()
