@@ -40,7 +40,7 @@ public class CSVParsingEditor : Editor
 
             AddPopup(ref characterConcerned, "Character :", typeof(PnjManager.CharacterType));
 
-            if ((parsing.characterConcerned != PnjManager.CharacterType.none)&&(parsing.assetName!=""))
+            if ((parsing.assetName!=""))
             {
                 if (GUILayout.Button("IMPORT", GUILayout.MaxWidth(130), GUILayout.MaxHeight(20)))
                 {

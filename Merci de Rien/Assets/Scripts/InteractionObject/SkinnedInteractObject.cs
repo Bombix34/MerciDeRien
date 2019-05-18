@@ -8,7 +8,7 @@ public class SkinnedInteractObject : InteractObject
 
     SkinnedMeshRenderer skinnedRenderer;
 
-    protected override void Awake()
+    protected override void Start()
     {
         skinnedRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         baseMaterial = skinnedRenderer.materials;
@@ -25,5 +25,13 @@ public class SkinnedInteractObject : InteractObject
         }
         if (feedbackInteraction != null)
             feedbackInteraction.SetActive(isOn);
+    }
+
+    public override void StartInteraction()
+    {
+    }
+
+    public override void EndInteraction()
+    {
     }
 }

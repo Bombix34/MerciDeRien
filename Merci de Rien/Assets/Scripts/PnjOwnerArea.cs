@@ -10,7 +10,7 @@ public class PnjOwnerArea : MonoBehaviour
 
     [SerializeField]
     List<GameObject> objectsInZone;     //les objets dans la zone
-    List<GameObject> pnjObjectMemory; // quelles informations a le pnj sur les objets dans la zone
+    List<GameObject> pnjObjectMemory;   // quelles informations a le pnj sur les objets dans la zone
 
     private void Start()
     {
@@ -24,7 +24,6 @@ public class PnjOwnerArea : MonoBehaviour
     void PnjCheckStealedObjects()
     {
         int stealedObjets = pnjObjectMemory.Count - objectsInZone.Count;
-        //print(stealedObjets);
         if(stealedObjets>0)
         {
             EventManager.Instance.GetDatas().UpdateCharacterEvent(EventDatabase.EventType.stealedObjectsTotal, characterOwner, stealedObjets);
@@ -34,7 +33,7 @@ public class PnjOwnerArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       if(other.gameObject.tag=="PNJ"&&other.gameObject.GetComponent<PnjManager>().GetCharacterType()==characterOwner)
+       if(other.gameObject.tag=="PNJ" && other.gameObject.GetComponent<PnjManager>().GetCharacterType()==characterOwner)
         {
             PnjCheckStealedObjects();
         }
@@ -50,7 +49,7 @@ public class PnjOwnerArea : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player"&& other.gameObject.GetComponent<PlayerManager>().IsBringingObject()!=null)
+        if (other.gameObject.tag == "Player" && other.gameObject.GetComponent<PlayerManager>().IsBringingObject()!=null)
         {
             //QUAND ON SORT DE LA ZONE EN VOLANT UN OBJET
             BringObject concernedObj = other.gameObject.GetComponent<PlayerManager>().IsBringingObject();
