@@ -73,22 +73,22 @@ public class TerrainDetection : MonoBehaviour
             case TerrainDetection.GroundLayer.shortGrass:
             default:
                 AkSoundEngine.SetSwitch("floor_type", "grass", gameObject);
-                Debug.Log("grass");
+                //Debug.Log("grass");
                 break;
                 
             case TerrainDetection.GroundLayer.sand:
                 AkSoundEngine.SetSwitch("floor_type", "sand", gameObject);
-                Debug.Log("sand");
+               // Debug.Log("sand");
                 break;
 
             case TerrainDetection.GroundLayer.wetSand:
                 AkSoundEngine.SetSwitch("floor_type", "water", gameObject);
-                Debug.Log("wet sand");
+               //Debug.Log("wet sand");
                 break;
 
             case TerrainDetection.GroundLayer.agricol:
                 AkSoundEngine.SetSwitch("floor_type", "mud", gameObject);
-                Debug.Log("agricol");
+                //Debug.Log("agricol");
                 break;
         }
         AkSoundEngine.PostEvent("MC_walk_play", gameObject);

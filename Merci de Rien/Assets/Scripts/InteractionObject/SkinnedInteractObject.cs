@@ -12,7 +12,12 @@ public class SkinnedInteractObject : InteractObject
     {
         skinnedRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         baseMaterial = skinnedRenderer.materials;
+        if (feedbackInteraction != null)
+            textContainer = feedbackInteraction.GetComponentInChildren<TextMesh>();
+        if (GetComponent<PnjManager>() != null)
+            CanTakeObject = true;
     }
+
 
     public override void UpdateFeedback(bool isOn)
     {
@@ -23,8 +28,7 @@ public class SkinnedInteractObject : InteractObject
             else
                 skinnedRenderer.materials = baseMaterial;
         }
-        if (feedbackInteraction != null)
-            feedbackInteraction.SetActive(isOn);
+        UpdateFeedbackInteraction(isOn);
     }
 
     public override void StartInteraction()

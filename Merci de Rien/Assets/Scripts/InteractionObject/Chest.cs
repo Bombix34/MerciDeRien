@@ -39,7 +39,7 @@ public class Chest : InteractObject
 
     public void CheckSteal()
     {
-        if((area!=null)&&(!HasBeenOpened)&&(!CanStealObject))
+        if((area!=null)&&(!HasBeenOpened)&&(!CanTakeObject))
         {
             area.IncrementOtherObjectStealed();
         }

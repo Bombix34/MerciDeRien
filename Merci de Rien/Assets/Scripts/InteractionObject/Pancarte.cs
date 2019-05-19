@@ -8,6 +8,7 @@ public class Pancarte : InteractObject
     protected override void Start()
     {
         base.Start();
+        CanTakeObject = true;
     }
 
     public override void StartInteraction()

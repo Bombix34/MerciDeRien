@@ -12,6 +12,9 @@ public class EventManager : Singleton<EventManager>
 
     [SerializeField]
     List<Predicat> predicats;
+
+    [SerializeField]
+    GameObject player;
     
     void Start()
     {
@@ -37,5 +40,10 @@ public class EventManager : Singleton<EventManager>
                 returnVal = item;
         }
         return returnVal;
+    }
+
+    public GameObject GetPlayer()
+    {
+        return player;
     }
 }

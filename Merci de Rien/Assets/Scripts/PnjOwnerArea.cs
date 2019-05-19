@@ -44,7 +44,7 @@ public class PnjOwnerArea : MonoBehaviour
         {
             //SI JE REVIENS DANS LA ZONE AVEC UN OBJET DU PERSO
             BringObject concernedObj = other.gameObject.GetComponent<PlayerManager>().IsBringingObject();
-            if (concernedObj.GetComponent<InteractObject>().CanStealObject)
+            if (concernedObj.GetComponent<InteractObject>().CanTakeObject)
                 return;
             if (concernedObj.GetOwner() == characterOwner)
             {
@@ -67,7 +67,7 @@ public class PnjOwnerArea : MonoBehaviour
         {
             //QUAND ON SORT DE LA ZONE EN VOLANT UN OBJET
             BringObject concernedObj = other.gameObject.GetComponent<PlayerManager>().IsBringingObject();
-            if (concernedObj.GetComponent<InteractObject>().CanStealObject)
+            if (concernedObj.GetComponent<InteractObject>().CanTakeObject)
                 return;
             if(concernedObj.GetOwner()==characterOwner)
             {
