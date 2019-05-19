@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ad2ccd1898646429d2165039104660, type: 3}
+  m_Name: TEST_PREDICAT
+  m_EditorClassIdentifier: 
+  database: {fileID: 11400000, guid: 6bae29087a66e427b81fcbcc8d1df3f1, type: 2}
+  conditions:
+  - concernedEvent: 12
+    comparaison: 2
+    valToTest: 1
+    comparisonCumul: 0
+  consequences:
+  - consequence: 8
+    characterConcerned: 0
+    actionChoice: 0
+    mood: 1
+    dialogueConcerned: {fileID: 11400000, guid: 8bf91f21721ff4a369dbecca886dc53e,
+      type: 2}
+    eventDatabase: {fileID: 11400000, guid: 6bae29087a66e427b81fcbcc8d1df3f1, type: 2}
+    eventType: 0
+    objectConcerned: {fileID: 2789706169738658243, guid: 79740ce106c252b4988b1905cf295382,
+      type: 3}
+    intModificator: 0

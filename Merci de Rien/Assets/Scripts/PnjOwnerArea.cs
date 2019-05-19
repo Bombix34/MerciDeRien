@@ -28,7 +28,7 @@ public class PnjOwnerArea : MonoBehaviour
         int stealedObjets = (pnjObjectMemory.Count - objectsInZone.Count)+otherObjectsStealed;
         if(stealedObjets>0)
         {
-            EventManager.Instance.GetDatas().UpdateCharacterEvent(EventDatabase.EventType.stealedObjectsTotal, characterOwner, stealedObjets);
+            EventManager.Instance.UpdateCharacterEvent(EventDatabase.EventType.stealedObjectsTotal, characterOwner, stealedObjets);
             pnjObjectMemory = objectsInZone;
             ResetOtherObjectStealed();
         }

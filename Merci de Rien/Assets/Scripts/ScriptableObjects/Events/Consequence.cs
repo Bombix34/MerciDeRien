@@ -25,7 +25,7 @@ public class Consequence
     public EventDatabase.EventType eventType;
 
     //INTERACTIVE OBJECTS
-    public InteractObject objectConcerned;
+    public GameObject objectConcerned;
 
     //INT
     public int intModificator;
@@ -49,29 +49,39 @@ public class Consequence
                 if (characterConcerned != PnjManager.CharacterType.none)
                 {
                     PnjManager pnjConcerned = EventManager.Instance.GetPNJ(characterConcerned);
-                    if (pnjConcerned == null)
+                    if ((pnjConcerned == null)||(dialogueConcerned==null))
                         return;
+                    pnjConcerned.dialogueManager.AddDialogue(dialogueConcerned);
                 }
                 break;
             case Consequence.ConsequenceType.RemoveDialogue:
                 if (characterConcerned != PnjManager.CharacterType.none)
                 {
                     PnjManager pnjConcerned = EventManager.Instance.GetPNJ(characterConcerned);
-                    if (pnjConcerned == null)
+                    if ((pnjConcerned == null) || (dialogueConcerned == null))
                         return;
+                    pnjConcerned.dialogueManager.RemoveDialogue(dialogueConcerned);
                 }
                 break;
-            case Consequence.ConsequenceType.IncrementDatabase:
-                break;
-            case Consequence.ConsequenceType.DecrementDatabase:
-                break;
             case Consequence.ConsequenceType.AutorisationTakeObject:
+                if (objectConcerned == null)
+                    return;
+                objectConcerned.GetComponent<InteractObject>().CanTakeObject = true;
                 break;
             case Consequence.ConsequenceType.RemoveAutorisationTakeObject:
+                if (objectConcerned == null)
+                    return;
+                objectConcerned.GetComponent<InteractObject>().CanTakeObject = false;
                 break;
             case Consequence.ConsequenceType.AutorisationInteractionObject:
+                if (objectConcerned == null)
+                    return;
+                objectConcerned.GetComponent<InteractObject>().CanInteract = true;
                 break;
             case Consequence.ConsequenceType.RemoveAutorisationInteractionObject:
+                if (objectConcerned == null)
+                    return;
+                objectConcerned.GetComponent<InteractObject>().CanInteract = false;
                 break;
             case Consequence.ConsequenceType.GainKey:
                 break;
@@ -88,8 +98,6 @@ public class Consequence
         PnjChangeMood,
         AddDialogue,
         RemoveDialogue,
-        IncrementDatabase,
-        DecrementDatabase,
         AutorisationTakeObject,
         RemoveAutorisationTakeObject,
         GainKey,

@@ -19,16 +19,32 @@ public class EventManager : Singleton<EventManager>
     void Start()
     {
         database.ResetDatabase();
+        foreach(var item in predicats)
+        {
+            item.database = database;
+        }
     }
 
-    public EventDatabase GetDatas()
+    public void UpdateCharacterEvent(EventDatabase.EventType eventTypeGeneral, PnjManager.CharacterType character, int val)
     {
-        return database;
+        database.UpdateCharacterEvent(eventTypeGeneral, character, val);
+        ApplyPredicats();
     }
 
-    public EventDatabase ReadDatas()
+    public void UpdateEvent(EventDatabase.EventType eventType, int val)
     {
-        return database;
+        database.UpdateEvent(eventType, val);
+        ApplyPredicats();
+    }
+
+
+    public void ApplyPredicats()
+    {
+        foreach(var predicat in predicats)
+        {
+            if (predicat.IsPredicatTrue())
+                predicat.ApplyEvent();
+        }
     }
 
     public PnjManager GetPNJ(PnjManager.CharacterType concerned)

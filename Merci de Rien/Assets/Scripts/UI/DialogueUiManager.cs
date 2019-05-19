@@ -10,6 +10,8 @@ public class DialogueUiManager : Singleton<DialogueUiManager>
     [SerializeField]
     Text textZone;
 
+    SettingsManager settings;
+
     private Queue<string> sentences;
 
     protected override void Awake()
@@ -17,6 +19,7 @@ public class DialogueUiManager : Singleton<DialogueUiManager>
         base.Awake();
         sentences = new Queue<string>();
         dialoguePanel.SetActive(false);
+        settings = GameManager.Instance.settings;
     }
 
     public void StartDialogue(Dialogue curDialogue)
@@ -24,7 +27,7 @@ public class DialogueUiManager : Singleton<DialogueUiManager>
         sentences.Clear();
         textZone.text = "";
         dialoguePanel.SetActive(true);
-        SettingsManager.Language curLanguage = GameManager.Instance.settings.currentLanguage;
+        SettingsManager.Language curLanguage = settings.currentLanguage;
         if ((int)curLanguage==0)//francais
         {
             PrepareDialogue(curDialogue.frenchSentences);
@@ -62,7 +65,7 @@ public class DialogueUiManager : Singleton<DialogueUiManager>
         foreach(char letter in curSentence.ToCharArray())
         {
             textZone.text += letter;
-            yield return null;
+            yield return new WaitForSeconds(settings.textSpeed);
         }
     }
 

@@ -8,6 +8,8 @@ public class GameManager : Singleton<GameManager>
 
     public EventManager EventManager{ set; get; }
 
+    public Dialogue PLACEHOLDER_PNJ_DIALOGUE;
+
     private void Start()
     {
         EventManager = GetComponent<EventManager>();

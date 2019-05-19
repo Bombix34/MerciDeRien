@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(PnjDialogueManager))]
 public class PnjManager : ObjectManager
 {
     NavMeshAgent navAgent;
@@ -14,10 +15,14 @@ public class PnjManager : ObjectManager
     [SerializeField]
     public Mood CurrentMood { get; set; } = Mood.neutral;
 
+    public PnjDialogueManager dialogueManager{get;set;}
+
     private void Awake()
     {
+        dialogueManager = GetComponent<PnjDialogueManager>();
         navAgent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        
         if (anim == null)
             anim = GetComponentInChildren<Animator>();
     }
@@ -99,12 +104,12 @@ public class PnjManager : ObjectManager
 
     public void HurtingEvent()
     {
-        EventManager.Instance.GetDatas().UpdateCharacterEvent(EventDatabase.EventType.violenceTotal, GetCharacterType(), 1);
+        EventManager.Instance.UpdateCharacterEvent(EventDatabase.EventType.violenceTotal, GetCharacterType(), 1);
     }
 
     public void TalkingEvent()
     {
-        EventManager.Instance.GetDatas().UpdateCharacterEvent(EventDatabase.EventType.conversationTotal, GetCharacterType(), 1);
+        EventManager.Instance.UpdateCharacterEvent(EventDatabase.EventType.conversationTotal, GetCharacterType(), 1);
     }
 
     //AGENT_________________________________________________________

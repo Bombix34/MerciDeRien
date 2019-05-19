@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 7267093173569174389}
   - component: {fileID: 7267093173569174386}
   - component: {fileID: 4638833266850310627}
+  - component: {fileID: 9136444311195255207}
   m_Layer: 0
   m_Name: ARTISAN
   m_TagString: PNJ
@@ -147,6 +148,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 3
+--- !u!114 &9136444311195255207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7267093173569174385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d27afa3c977d416aa031fdaff96655b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterDialogues: []
 --- !u!1001 &6015599347774450964
 PrefabInstance:
   m_ObjectHideFlags: 0

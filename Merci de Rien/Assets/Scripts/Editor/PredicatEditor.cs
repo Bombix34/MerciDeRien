@@ -126,19 +126,11 @@ public class PredicatEditor : Editor
                     AddPopup(ref characterTypeRef, "Character concerné :", typeof(PnjManager.CharacterType));
                     dialogueChoiceRef.objectReferenceValue = EditorGUILayout.ObjectField("Dialogue à enlever :", dialogueChoiceRef.objectReferenceValue, typeof(Dialogue), true);
                     break;
-                case (int)Consequence.ConsequenceType.IncrementDatabase:
-                    databaseRef.objectReferenceValue = EditorGUILayout.ObjectField("Event database :", databaseRef.objectReferenceValue, typeof(EventDatabase), true);
-                    AddPopup(ref eventTypeRef, "Event concerné :", typeof(EventDatabase.EventType));
-                    break;
-                case (int)Consequence.ConsequenceType.DecrementDatabase:
-                    databaseRef.objectReferenceValue = EditorGUILayout.ObjectField("Event database :", databaseRef.objectReferenceValue, typeof(EventDatabase), true);
-                    AddPopup(ref eventTypeRef, "Event concerné :", typeof(EventDatabase.EventType));
-                    break;
                 case (int)Consequence.ConsequenceType.AutorisationTakeObject:
                 case (int)Consequence.ConsequenceType.RemoveAutorisationTakeObject:
                 case (int)Consequence.ConsequenceType.AutorisationInteractionObject:
                 case (int)Consequence.ConsequenceType.RemoveAutorisationInteractionObject:
-                    interactObjectRef.objectReferenceValue = EditorGUILayout.ObjectField("Objet concerné :", interactObjectRef.objectReferenceValue, typeof(InteractObject),true);
+                    interactObjectRef.objectReferenceValue = EditorGUILayout.ObjectField("Objet concerné :", interactObjectRef.objectReferenceValue, typeof(GameObject),true) as GameObject;
                     break;
                 case (int)Consequence.ConsequenceType.GainKey:
                 case (int)Consequence.ConsequenceType.RemoveKey:
@@ -156,6 +148,8 @@ public class PredicatEditor : Editor
         }
 
         GetTarget.ApplyModifiedProperties();
+        
+      // consequenceList.
     }
 
     void AddPopup(ref SerializedProperty ourSerializedProperty, string nameOfLabel, System.Type typeOfEnum)

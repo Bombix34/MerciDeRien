@@ -131,7 +131,7 @@ public class BringObject : InteractObject
         //SFX
         AkSoundEngine.PostEvent("ENV_pot_break_play", gameObject);
         //event
-        EventManager.Instance.GetDatas().UpdateCharacterEvent(EventDatabase.EventType.brokeObjectsTotal, characterOwner, 1);
+        EventManager.Instance.UpdateCharacterEvent(EventDatabase.EventType.brokeObjectsTotal, characterOwner, 1);
 
         this.StartCoroutineAsync(Explode());
     }
