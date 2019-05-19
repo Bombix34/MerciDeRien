@@ -57,9 +57,9 @@ public class BringObject : InteractObject
                 }
             }
             if ((!CanTakeObject) || (GetComponent<BringObject>() != null && GetComponent<BringObject>().GetCharacterOwner() != PnjManager.CharacterType.none))
-                textContainer.text = "Steal";
+                textContainer.text = GetInteractText(true);
             else
-                textContainer.text = interactText;
+                textContainer.text = GetInteractText(false);
         }
     }
 

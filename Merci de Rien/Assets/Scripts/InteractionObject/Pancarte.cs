@@ -5,6 +5,9 @@ using UnityEngine;
 public class Pancarte : InteractObject
 {
 
+    [SerializeField]
+    Dialogue textToDisplay;
+
     protected override void Start()
     {
         base.Start();
@@ -14,9 +17,12 @@ public class Pancarte : InteractObject
     public override void StartInteraction()
     {
         base.StartInteraction();
+        if (textToDisplay != null)
+            DialogueUiManager.Instance.StartDialogue(textToDisplay);
     }
 
     public override void EndInteraction()
     {
+        DialogueUiManager.Instance.EndDialogue();
     }
 }

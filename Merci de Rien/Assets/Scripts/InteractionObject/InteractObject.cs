@@ -17,7 +17,7 @@ public class InteractObject : MonoBehaviour
 
     protected TextMesh textContainer;
     float textPosX;
-    public string interactText;
+    public Dialogue interactText;
 
     protected virtual void Start()
     {
@@ -90,10 +90,31 @@ public class InteractObject : MonoBehaviour
                 }
             }
             if (!CanTakeObject)
-                textContainer.text = "Steal";
+                textContainer.text = GetInteractText(true);
             else
-                textContainer.text = interactText;
+                textContainer.text = GetInteractText(false);
         }
+    }
+
+    public string GetInteractText(bool isStealing)
+    {
+        string returnVal = "";
+        SettingsManager settings = GameManager.Instance.settings;
+        if (settings.currentLanguage==SettingsManager.Language.francais)
+        {
+            if (!isStealing)
+                returnVal = interactText.frenchSentences[0];
+            else
+                returnVal = "Voler";
+        }
+        else if (settings.currentLanguage == SettingsManager.Language.english)
+        {
+            if (!isStealing)
+                returnVal = interactText.englishSentences[0];
+            else
+                returnVal = "Steal";
+        }
+        return returnVal;
     }
     
 
