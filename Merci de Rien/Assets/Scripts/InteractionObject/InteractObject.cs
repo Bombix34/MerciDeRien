@@ -23,6 +23,7 @@ public class InteractObject : MonoBehaviour
 
     protected virtual void Start()
     {
+        InitEventManager();
         if(mesh.Count==0)
         {
             mesh = new List<MeshRenderer>
@@ -36,6 +37,18 @@ public class InteractObject : MonoBehaviour
         {
             textContainer = feedbackInteraction.GetComponentInChildren<TextMesh>();
             textPosX = textContainer.GetComponent<RectTransform>().localPosition.x;
+        }
+    }
+
+    protected virtual void InitEventManager()
+    {
+        if(objectType==ObjectType.PNJ)
+        {
+            EventManager.Instance.AddPNJ(this.gameObject);
+        }
+        else
+        {
+            EventManager.Instance.AddInteractiveObject(this);
         }
     }
 
