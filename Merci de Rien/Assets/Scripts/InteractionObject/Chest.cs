@@ -24,22 +24,27 @@ public class Chest : InteractObject
 
     public override void StartInteraction()
     {
+        if((HasBeenOpened)||(CanInteract==false))
+        {
+            return;
+        }
         base.StartInteraction();
         animator.SetBool("IsOpen", true);
         particle.SetActive(true);
         CheckSteal();
-        HasBeenOpened = true;
     }
 
     public override void EndInteraction()
     {
-        animator.SetBool("IsOpen", false);
+     //  animator.SetBool("IsOpen", false);
         particle.SetActive(false);
+        HasBeenOpened = true;
+        CanInteract = false;
     }
 
     public void CheckSteal()
     {
-        if((area!=null)&&(!HasBeenOpened)&&(!CanStealObject))
+        if((area!=null)&&(!HasBeenOpened)&&(!CanTakeObject))
         {
             area.IncrementOtherObjectStealed();
         }

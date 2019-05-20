@@ -193,7 +193,7 @@ public class PlayerManager : ObjectManager
 
     public bool CanInteract(GameObject concerned)
     {
-        return concerned.GetComponent<InteractObject>() != null;
+        return concerned.GetComponent<InteractObject>() != null && concerned.GetComponent<InteractObject>().CanInteract;
         //AJOUTER LES TAGS LIEE A LINTERACTION ICI
         //PNJ, OUTILS, PORTES...
         // return ((tag == "BringObject")||(tag=="PNJ"));
