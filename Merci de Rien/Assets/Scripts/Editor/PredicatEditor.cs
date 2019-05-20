@@ -130,7 +130,8 @@ public class PredicatEditor : Editor
                 case (int)Consequence.ConsequenceType.RemoveAutorisationTakeObject:
                 case (int)Consequence.ConsequenceType.AutorisationInteractionObject:
                 case (int)Consequence.ConsequenceType.RemoveAutorisationInteractionObject:
-                    interactObjectRef.objectReferenceValue = EditorGUILayout.ObjectField("Objet concerné :", interactObjectRef.objectReferenceValue, typeof(GameObject),true) as GameObject;
+                    AddPopup(ref characterTypeRef, "Character concerné :", typeof(PnjManager.CharacterType));
+                    AddPopup(ref interactObjectRef, "Objet concerné :", typeof(InteractObject.ObjectType));
                     break;
                 case (int)Consequence.ConsequenceType.GainKey:
                 case (int)Consequence.ConsequenceType.RemoveKey:

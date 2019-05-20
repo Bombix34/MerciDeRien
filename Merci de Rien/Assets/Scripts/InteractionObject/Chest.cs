@@ -9,8 +9,6 @@ public class Chest : InteractObject
     GameObject particle;
 
     [SerializeField]
-    PnjManager.CharacterType characterOwner;
-    [SerializeField]
     PnjOwnerArea area;
 
     bool HasBeenOpened = false;
@@ -20,6 +18,7 @@ public class Chest : InteractObject
         base.Start();
         animator = GetComponent<Animator>();
         particle.SetActive(false);
+        objectType = ObjectType.Coffre;
     }
 
     public override void StartInteraction()

@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8926aa4b2b4a403f8f6ecfedb1a8eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: 2
+  character: 3
 --- !u!114 &8824748886427570587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2f235a32fac4b598f8382433b47860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectType: 5
+  characterOwner: 3
   feedbackInteraction: {fileID: 7719302553649464760}
   mesh: []
   interactMaterial:
@@ -314,10 +316,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8824748886427853854}
     m_Modifications:
-    - target: {fileID: 100086, guid: 60d9aee7f1411cb4b8ffd9f961365d72, type: 3}
-      propertyPath: m_Name
-      value: Old Man Idle
-      objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 60d9aee7f1411cb4b8ffd9f961365d72, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -365,6 +363,10 @@ PrefabInstance:
     - target: {fileID: 400086, guid: 60d9aee7f1411cb4b8ffd9f961365d72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100086, guid: 60d9aee7f1411cb4b8ffd9f961365d72, type: 3}
+      propertyPath: m_Name
+      value: Old Man Idle
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 60d9aee7f1411cb4b8ffd9f961365d72, type: 3}
       propertyPath: m_LocalRotation.x
