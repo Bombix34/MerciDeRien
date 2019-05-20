@@ -9,9 +9,6 @@ public class BringObject : InteractObject
     [SerializeField]
     ObjectReglages reglages;
 
-    [SerializeField]
-    PnjManager.CharacterType characterOwner = PnjManager.CharacterType.none;
-
     Rigidbody body;
     float mass;
 
@@ -26,8 +23,6 @@ public class BringObject : InteractObject
         base.Start();
         body = GetComponent<Rigidbody>();
         mass = body.mass;
-        if (characterOwner == PnjManager.CharacterType.none)
-            CanTakeObject = true;
     }
 
     protected override void UpdateFeedbackInteraction(bool isOn)
@@ -56,10 +51,7 @@ public class BringObject : InteractObject
                         textPosition.localPosition = new Vector3(-1 * textPosition.localPosition.x, textPosition.localPosition.y, textPosition.localPosition.z);
                 }
             }
-            if ((!CanTakeObject) || (GetComponent<BringObject>() != null && GetComponent<BringObject>().GetCharacterOwner() != PnjManager.CharacterType.none))
-                textContainer.text = GetInteractText(true);
-            else
-                textContainer.text = GetInteractText(false);
+            textContainer.text = GetInteractText(!CanTakeObject);
         }
     }
 
@@ -89,7 +81,6 @@ public class BringObject : InteractObject
     {
         return characterOwner;
     }
-
 
     void OnCollisionEnter(Collision collision)
     {

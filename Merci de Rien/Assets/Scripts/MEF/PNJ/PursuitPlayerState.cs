@@ -45,6 +45,7 @@ public class PursuitPlayerState : State
     public override void Enter()
     {
         agent.speed *= 2f;
+        curPnj.GetInteractionManager().CanInteract = false;
     }
 
     public override void Execute()
@@ -59,5 +60,6 @@ public class PursuitPlayerState : State
     public override void Exit()
     {
         agent.speed = baseSpeed;
+        curPnj.GetInteractionManager().CanInteract = true;
     }
 }

@@ -54,10 +54,11 @@ public class PlayerBringObjectState : State
         this.bringingObject.transform.parent = null;
         Rigidbody body=this.bringingObject.GetComponent<Rigidbody>();
         body.useGravity = true;
-        body.mass = 50f;
+        body.mass = 80f;
+        
         Vector3 launchDirection = curPlayer.GetHeadingDirection();
         launchDirection.Normalize();
-        body.AddForce(launchDirection*200f,ForceMode.Impulse);
+        body.AddForce(launchDirection*400f,ForceMode.Impulse);
         this.bringingObject.GetComponent<BringObject>().LaunchObject();
         endState = true;
         curPlayer.ResetVelocity();

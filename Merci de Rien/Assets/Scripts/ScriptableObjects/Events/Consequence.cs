@@ -25,7 +25,7 @@ public class Consequence
     public EventDatabase.EventType eventType;
 
     //INTERACTIVE OBJECTS
-    public GameObject objectConcerned;
+    public InteractObject.ObjectType objectConcerned;
 
     //INT
     public int intModificator;
@@ -35,6 +35,7 @@ public class Consequence
         switch (consequence)
         {
             case Consequence.ConsequenceType.PnjChangeBehavior:
+                ApplyPnjSwitchBehavior();
                 break;
             case Consequence.ConsequenceType.PnjChangeMood:
                 if(characterConcerned!=PnjManager.CharacterType.none)
@@ -64,24 +65,33 @@ public class Consequence
                 }
                 break;
             case Consequence.ConsequenceType.AutorisationTakeObject:
-                if (objectConcerned == null)
-                    return;
-                objectConcerned.GetComponent<InteractObject>().CanTakeObject = true;
+                //  objectConcerned.GetComponent<InteractObject>().CanTakeObject = true;
+                List<InteractObject> concerned = EventManager.Instance.GetObjectOfType(objectConcerned, characterConcerned);
+                foreach(var item in concerned)
+                {
+                    item.CanTakeObject = true;
+                }
                 break;
             case Consequence.ConsequenceType.RemoveAutorisationTakeObject:
-                if (objectConcerned == null)
-                    return;
-                objectConcerned.GetComponent<InteractObject>().CanTakeObject = false;
+                concerned = EventManager.Instance.GetObjectOfType(objectConcerned, characterConcerned);
+                foreach (var item in concerned)
+                {
+                    item.CanTakeObject = false;
+                }
                 break;
             case Consequence.ConsequenceType.AutorisationInteractionObject:
-                if (objectConcerned == null)
-                    return;
-                objectConcerned.GetComponent<InteractObject>().CanInteract = true;
+                concerned = EventManager.Instance.GetObjectOfType(objectConcerned, characterConcerned);
+                foreach (var item in concerned)
+                {
+                    item.CanInteract = true;
+                }
                 break;
             case Consequence.ConsequenceType.RemoveAutorisationInteractionObject:
-                if (objectConcerned == null)
-                    return;
-                objectConcerned.GetComponent<InteractObject>().CanInteract = false;
+                concerned = EventManager.Instance.GetObjectOfType(objectConcerned, characterConcerned);
+                foreach (var item in concerned)
+                {
+                    item.CanInteract = false;
+                }
                 break;
             case Consequence.ConsequenceType.GainKey:
                 break;
@@ -89,8 +99,21 @@ public class Consequence
                 break;
         }
     }
-    
 
+    void ApplyPnjSwitchBehavior()
+    {
+        if (characterConcerned == PnjManager.CharacterType.none)
+            return;
+        PnjManager pnj = EventManager.Instance.GetPNJ(characterConcerned);
+        switch(actionChoice)
+        {
+            case CharacterAction.Boude:
+                break;
+            case CharacterAction.PursuitPlayer:
+                pnj.ChangeState(new PursuitPlayerState(pnj, pnj.GetCurrentState()));
+                break;
+        }
+    }
 
     public enum ConsequenceType
     {

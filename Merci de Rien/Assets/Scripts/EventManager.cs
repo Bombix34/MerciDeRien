@@ -15,6 +15,9 @@ public class EventManager : Singleton<EventManager>
 
     [SerializeField]
     GameObject player;
+
+    [SerializeField]
+    List<InteractObject> interactivesObjects;
     
     void Start()
     {
@@ -37,14 +40,34 @@ public class EventManager : Singleton<EventManager>
         ApplyPredicats();
     }
 
-
     public void ApplyPredicats()
     {
+        List<Predicat> toRemove = new List<Predicat>();
         foreach(var predicat in predicats)
         {
             if (predicat.IsPredicatTrue())
+            {
                 predicat.ApplyEvent();
+                toRemove.Add(predicat);
+            }
         }
+        foreach(var item in toRemove)
+        {
+            predicats.Remove(item);
+        }
+    }
+
+    public List<InteractObject> GetObjectOfType(InteractObject.ObjectType objectType, PnjManager.CharacterType pnj)
+    {
+        List<InteractObject> result = new List<InteractObject>();
+        foreach(var item in interactivesObjects)
+        {
+            if((item.objectType==objectType)&&(item.characterOwner==pnj))
+            {
+                result.Add(item);
+            }
+        }
+        return result;
     }
 
     public PnjManager GetPNJ(PnjManager.CharacterType concerned)

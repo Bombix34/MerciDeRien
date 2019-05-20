@@ -217,6 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36b0b2cd383045f0bef0522fa31994b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectType: 1
+  characterOwner: 0
   feedbackInteraction: {fileID: 8382440843879957664}
   mesh:
   - {fileID: 1868813273072875344}
@@ -225,7 +227,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 34b87c27062d5426da60d67dc99403a5, type: 2}
   interactText: {fileID: 11400000, guid: 29f1318abc1ff475abe7eac84c471d6c, type: 2}
   particle: {fileID: 75259420141109079}
-  characterOwner: 0
   area: {fileID: 0}
 --- !u!95 &8398187140451384037
 Animator:
