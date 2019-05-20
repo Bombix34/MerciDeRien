@@ -18,7 +18,6 @@ public class EventDatabase : ScriptableObject
     //LA LISTE D'EVENT DOIT ETRE DANS LORDRE DE LENUM
     public List<EventContainer> events;
 
-
     public void ResetDatabase()
     {
         events = new List<EventContainer>();

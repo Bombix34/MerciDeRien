@@ -34,4 +34,12 @@ public class Predicat : ScriptableObject
         }
         return result;
     }
+
+    public void ApplyEvent()
+    {
+        foreach(var consequence in consequences)
+        {
+            consequence.ApplyConsequence();
+        }
+    }
 }
