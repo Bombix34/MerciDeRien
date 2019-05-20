@@ -59,6 +59,7 @@ public class EventManager : Singleton<EventManager>
 
     public List<InteractObject> GetObjectOfType(InteractObject.ObjectType objectType, PnjManager.CharacterType pnj)
     {
+        CleanListObject();
         List<InteractObject> result = new List<InteractObject>();
         foreach(var item in interactivesObjects)
         {
@@ -68,6 +69,20 @@ public class EventManager : Singleton<EventManager>
             }
         }
         return result;
+    }
+
+    public void CleanListObject()
+    {
+        List<InteractObject> toRm = new List<InteractObject>();
+        foreach(var item in interactivesObjects)
+        {
+            if (item == null)
+                toRm.Add(item);
+        }
+        foreach(var item in toRm)
+        {
+            interactivesObjects.Remove(item);
+        }
     }
 
     public PnjManager GetPNJ(PnjManager.CharacterType concerned)
@@ -84,5 +99,15 @@ public class EventManager : Singleton<EventManager>
     public GameObject GetPlayer()
     {
         return player;
+    }
+
+    public void AddPNJ(GameObject pnj)
+    {
+        pnjs.Add(pnj.GetComponent<PnjManager>());
+    }
+
+    public void AddInteractiveObject(InteractObject obj)
+    {
+        interactivesObjects.Add(obj);
     }
 }
