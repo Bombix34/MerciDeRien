@@ -12,6 +12,8 @@ public class Pancarte : InteractObject
     {
         base.Start();
         CanTakeObject = true;
+        objectType = ObjectType.Pancarte;
+        characterOwner = PnjManager.CharacterType.none;
     }
 
     public override void StartInteraction()

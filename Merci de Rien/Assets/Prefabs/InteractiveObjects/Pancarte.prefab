@@ -93,12 +93,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf78b64ddcf84c5c83143e8b16cd386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectType: 4
+  characterOwner: 7
   feedbackInteraction: {fileID: 5958415658611325644}
   mesh:
   - {fileID: 8842105883573262792}
   interactMaterial:
   - {fileID: 2100000, guid: aafb5eb7dbb3f4a57b17c65cbb90f716, type: 2}
   interactText: {fileID: 11400000, guid: 9cf359d3a243b42e7899211a0aeb54ac, type: 2}
+  textToDisplay: {fileID: 0}
 --- !u!65 &388503856
 BoxCollider:
   m_ObjectHideFlags: 0

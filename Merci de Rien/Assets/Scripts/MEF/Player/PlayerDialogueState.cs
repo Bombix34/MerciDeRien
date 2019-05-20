@@ -37,7 +37,8 @@ public class PlayerDialogueState : State
         Camera.main.GetComponent<CameraManager>().SetDialogueCamera(pnj.gameObject);
         curPlayer.transform.LookAt(pnj.transform.position);
         curPlayer.GetAnimator().SetFloat("MoveSpeed", 0f);
-        pnj.ChangeState(new PnjDialogueState(pnj, curPlayer, pnj.GetCurrentState()));
+        if(pnj.GetCurrentState().stateName!="PNJ_DIALOGUE_STATE")
+            pnj.ChangeState(new PnjDialogueState(pnj, curPlayer, pnj.GetCurrentState()));
         dialogueUiManager.StartDialogue(pnj.dialogueManager.GetDialogue());
     }
 
@@ -56,7 +57,7 @@ public class PlayerDialogueState : State
     public override void Exit()
     {
         Camera.main.GetComponent<CameraManager>().SetNewCamera(CameraManager.CameraType.Base);
-        PnjDialogueState pnjCurrentState = (PnjDialogueState)pnj.GetComponent<PnjManager>().GetCurrentState();
+        PnjDialogueState pnjCurrentState = (PnjDialogueState)pnj.GetCurrentState();
         pnjCurrentState.EndDialogue();
     }
 }

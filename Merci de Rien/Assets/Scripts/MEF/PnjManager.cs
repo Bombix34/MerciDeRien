@@ -17,12 +17,14 @@ public class PnjManager : ObjectManager
 
     public PnjDialogueManager dialogueManager{get;set;}
 
+    InteractObject interactionManager;
+
     private void Awake()
     {
         dialogueManager = GetComponent<PnjDialogueManager>();
         navAgent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
-        
+        interactionManager = GetComponent<InteractObject>();
         if (anim == null)
             anim = GetComponentInChildren<Animator>();
     }
@@ -30,12 +32,21 @@ public class PnjManager : ObjectManager
     private void Start()
     {
         ChangeState(new WanderAroundState(this,this.transform.position));
+        InitInteractScript();
     }
 
     private void Update()
     {
         currentState.Execute();
         UpdateAnim();
+    }
+
+    private void InitInteractScript()
+    {
+        interactionManager.CanTakeObject = true;
+        interactionManager.CanInteract = true;
+        interactionManager.characterOwner = character;
+        interactionManager.objectType = InteractObject.ObjectType.PNJ;
     }
 
     public override void ChangeState(State newState)
@@ -75,7 +86,7 @@ public class PnjManager : ObjectManager
         bool result = false;
         Vector3 testPosition = GetFrontPosition();
 
-        Collider[] hitColliders = Physics.OverlapSphere(testPosition, 0.3f);
+        Collider[] hitColliders = Physics.OverlapSphere(testPosition, 0.55f);
         int i = 0;
         while (i < hitColliders.Length)
         {
@@ -117,6 +128,11 @@ public class PnjManager : ObjectManager
     public NavMeshAgent GetAgent()
     {
         return navAgent;
+    }
+
+    public InteractObject GetInteractionManager()
+    {
+        return interactionManager;
     }
 
     //CHARACTER____________________________________________________

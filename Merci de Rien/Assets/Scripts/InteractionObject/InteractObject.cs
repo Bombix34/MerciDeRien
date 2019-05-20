@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class InteractObject : MonoBehaviour
 {
+    public ObjectType objectType;
+    public PnjManager.CharacterType characterOwner = PnjManager.CharacterType.none;
 
     public GameObject feedbackInteraction;
 
@@ -35,8 +37,6 @@ public class InteractObject : MonoBehaviour
             textContainer = feedbackInteraction.GetComponentInChildren<TextMesh>();
             textPosX = textContainer.GetComponent<RectTransform>().localPosition.x;
         }
-        if (GetComponent<PnjManager>() != null)
-            CanTakeObject = true;
     }
 
     public virtual void UpdateFeedback(bool isOn)
@@ -89,10 +89,7 @@ public class InteractObject : MonoBehaviour
                         textPosition.localPosition = new Vector3(-1* textPosition.localPosition.x, textPosition.localPosition.y, textPosition.localPosition.z);
                 }
             }
-            if (!CanTakeObject)
-                textContainer.text = GetInteractText(true);
-            else
-                textContainer.text = GetInteractText(false);
+            textContainer.text = GetInteractText(!CanTakeObject);
         }
     }
 
@@ -125,5 +122,15 @@ public class InteractObject : MonoBehaviour
     }
     public virtual void EndInteraction()
     {
+    }
+
+    public enum ObjectType
+    {
+        Pot,
+        Coffre,
+        CanneAPeche,
+        Maillet,
+        Pancarte,
+        PNJ
     }
 }

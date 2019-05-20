@@ -53,6 +53,6 @@ public class PnjDialogueState : State
 
     public override void Exit()
     {
-        curPnj.transform.rotation = baseRotation;
+       // curPnj.transform.rotation = baseRotation;
     }
 }

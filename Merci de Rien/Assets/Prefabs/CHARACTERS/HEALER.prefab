@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8926aa4b2b4a403f8f6ecfedb1a8eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: 3
+  character: 4
 --- !u!114 &8713827381833486820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2f235a32fac4b598f8382433b47860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectType: 5
+  characterOwner: 4
   feedbackInteraction: {fileID: 4960970503430438671}
   mesh: []
   interactMaterial:
@@ -314,10 +316,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8713827381833737313}
     m_Modifications:
-    - target: {fileID: 100000, guid: 60bdd3e67583b3b4eae6161bbf47b0c2, type: 3}
-      propertyPath: m_Name
-      value: Healer_Model
-      objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 60bdd3e67583b3b4eae6161bbf47b0c2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -365,6 +363,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 60bdd3e67583b3b4eae6161bbf47b0c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60bdd3e67583b3b4eae6161bbf47b0c2, type: 3}
+      propertyPath: m_Name
+      value: Healer_Model
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 60bdd3e67583b3b4eae6161bbf47b0c2, type: 3}
       propertyPath: m_LocalRotation.x
