@@ -29,6 +29,9 @@ public class PlayerBaseState : State
             case "InteractObject":
                 curPlayer.ChangeState(new PlayerInteractState(curPlayer, curPlayer.GetNearInteractObject(), curPlayer.GetCurrentState()));
                 break;
+            case "InteractToolObject":
+                curPlayer.ChangeState(new PlayerUseToolState(curPlayer, curPlayer.GetNearInteractObject()));
+                break;
         }
         interactedObject.GetComponent<InteractObject>().UpdateFeedback(false);
         curPlayer.SetNearInteractObject(null);

@@ -112,14 +112,14 @@ public class InteractObject : MonoBehaviour
         SettingsManager settings = GameManager.Instance.settings;
         if (settings.currentLanguage==SettingsManager.Language.francais)
         {
-            if (!isStealing)
+            if ((!isStealing)||(characterOwner==PnjManager.CharacterType.none))
                 returnVal = interactText.frenchSentences[0];
             else
                 returnVal = "Voler";
         }
         else if (settings.currentLanguage == SettingsManager.Language.english)
         {
-            if (!isStealing)
+            if ((!isStealing) || (characterOwner == PnjManager.CharacterType.none))
                 returnVal = interactText.englishSentences[0];
             else
                 returnVal = "Steal";
