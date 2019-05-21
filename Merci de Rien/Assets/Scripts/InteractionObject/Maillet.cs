@@ -18,13 +18,15 @@ public class Maillet : BringObject
     {
         base.StartInteraction();
         body.useGravity = false;
-        capsule.isTrigger = true;
+        capsule.isTrigger = false;
+        //body.isKinematic = true;
     }
 
     public override void EndInteraction()
     {
         body.useGravity = true;
         capsule.isTrigger = false;
+        //body.isKinematic = true;
         body.constraints = RigidbodyConstraints.FreezeRotationY;
     }
 }
