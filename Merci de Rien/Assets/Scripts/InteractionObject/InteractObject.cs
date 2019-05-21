@@ -23,6 +23,7 @@ public class InteractObject : MonoBehaviour
 
     protected virtual void Start()
     {
+        InitEventManager();
         if(mesh.Count==0)
         {
             mesh = new List<MeshRenderer>
@@ -36,6 +37,18 @@ public class InteractObject : MonoBehaviour
         {
             textContainer = feedbackInteraction.GetComponentInChildren<TextMesh>();
             textPosX = textContainer.GetComponent<RectTransform>().localPosition.x;
+        }
+    }
+
+    protected virtual void InitEventManager()
+    {
+        if(objectType==ObjectType.PNJ)
+        {
+            EventManager.Instance.AddPNJ(this.gameObject);
+        }
+        else
+        {
+            EventManager.Instance.AddInteractiveObject(this);
         }
     }
 
@@ -99,14 +112,14 @@ public class InteractObject : MonoBehaviour
         SettingsManager settings = GameManager.Instance.settings;
         if (settings.currentLanguage==SettingsManager.Language.francais)
         {
-            if (!isStealing)
+            if ((!isStealing)||(characterOwner==PnjManager.CharacterType.none))
                 returnVal = interactText.frenchSentences[0];
             else
                 returnVal = "Voler";
         }
         else if (settings.currentLanguage == SettingsManager.Language.english)
         {
-            if (!isStealing)
+            if ((!isStealing) || (characterOwner == PnjManager.CharacterType.none))
                 returnVal = interactText.englishSentences[0];
             else
                 returnVal = "Steal";

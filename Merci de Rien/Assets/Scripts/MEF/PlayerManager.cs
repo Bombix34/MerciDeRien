@@ -8,6 +8,8 @@ public class PlayerManager : ObjectManager
 {
     public PlayerReglages reglages;
 
+    public Transform handTool;
+
     PlayerInputManager inputs;
 
     CharacterController character;
@@ -21,6 +23,7 @@ public class PlayerManager : ObjectManager
     Animator animator;
 
     GameObject interactObject;
+
 
     void Awake()
     {

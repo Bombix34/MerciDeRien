@@ -10,6 +10,7 @@ public class SkinnedInteractObject : InteractObject
 
     protected override void Start()
     {
+        InitEventManager();
         skinnedRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         baseMaterial = skinnedRenderer.materials;
         if (feedbackInteraction != null)

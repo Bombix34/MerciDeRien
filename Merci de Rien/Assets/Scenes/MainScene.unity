@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.17777239, g: 0.22257282, b: 0.30473337, a: 1}
+  m_IndirectSpecularColor: {r: 0.1777719, g: 0.22257224, b: 0.30473217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1186,6 +1186,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pancarte
       objectReference: {fileID: 0}
+    - target: {fileID: 388503857, guid: 8259ce5a62e374db9a54e9781529329f, type: 3}
+      propertyPath: textToDisplay
+      value: 
+      objectReference: {fileID: 11400000, guid: cdc1e7e371ab141ecb51394f21f11495,
+        type: 2}
     - target: {fileID: 8842105883575163688, guid: 8259ce5a62e374db9a54e9781529329f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1241,11 +1246,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 388503857, guid: 8259ce5a62e374db9a54e9781529329f, type: 3}
-      propertyPath: textToDisplay
-      value: 
-      objectReference: {fileID: 11400000, guid: cdc1e7e371ab141ecb51394f21f11495,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8259ce5a62e374db9a54e9781529329f, type: 3}
 --- !u!1001 &1600157253
@@ -1323,12 +1323,12 @@ PrefabInstance:
     - target: {fileID: 8669686379506376651, guid: b3b4ae0de53a14d6280ba2df5a938742,
         type: 3}
       propertyPath: pnjs.Array.size
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8669686379506376651, guid: b3b4ae0de53a14d6280ba2df5a938742,
         type: 3}
       propertyPath: interactivesObjects.Array.size
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8669686379506376651, guid: b3b4ae0de53a14d6280ba2df5a938742,
         type: 3}
@@ -2988,6 +2988,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pot01
       objectReference: {fileID: 0}
+    - target: {fileID: 1555372012158035552, guid: 2603e67455b01124b8b53bd228f48fb2,
+        type: 3}
+      propertyPath: characterOwner
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2843707734481452351, guid: 2603e67455b01124b8b53bd228f48fb2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3048,11 +3053,6 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1555372012158035552, guid: 2603e67455b01124b8b53bd228f48fb2,
-        type: 3}
-      propertyPath: characterOwner
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2322473082455034974, guid: 2603e67455b01124b8b53bd228f48fb2,
         type: 3}
       propertyPath: m_Camera
@@ -3072,6 +3072,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coffre
       objectReference: {fileID: 0}
+    - target: {fileID: 2019905483, guid: 8988fa06ed8fb3d49ae2c1a97fef65f4, type: 3}
+      propertyPath: area
+      value: 
+      objectReference: {fileID: 404649371}
     - target: {fileID: 1868813273075168692, guid: 8988fa06ed8fb3d49ae2c1a97fef65f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3127,10 +3131,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2019905483, guid: 8988fa06ed8fb3d49ae2c1a97fef65f4, type: 3}
-      propertyPath: area
-      value: 
-      objectReference: {fileID: 404649371}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8988fa06ed8fb3d49ae2c1a97fef65f4, type: 3}
 --- !u!1001 &8418623364755954174

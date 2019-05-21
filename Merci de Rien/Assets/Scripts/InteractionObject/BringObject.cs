@@ -9,7 +9,7 @@ public class BringObject : InteractObject
     [SerializeField]
     ObjectReglages reglages;
 
-    Rigidbody body;
+    protected Rigidbody body;
     float mass;
 
     bool isLaunch = false;
