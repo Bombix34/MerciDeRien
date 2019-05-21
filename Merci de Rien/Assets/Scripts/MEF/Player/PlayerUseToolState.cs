@@ -40,6 +40,7 @@ public class PlayerUseToolState : State
         this.bringingObject.transform.parent = null;
         bringingObject.EndInteraction();
         endState = true;
+        Debug.Log(bringingObject.GetComponent<BringObject>().IsLaunch);
         curPlayer.ResetVelocity();
     }
 
