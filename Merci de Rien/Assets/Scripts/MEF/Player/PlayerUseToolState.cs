@@ -14,7 +14,6 @@ public class PlayerUseToolState : State
     //pour empêcher le prendre/déposer dans la même frame
     float tempoTime = 0.3f;
 
-
     bool endState = false;
     float chronoEnd = 0.3f;
 
@@ -78,7 +77,6 @@ public class PlayerUseToolState : State
             }
             interactInputLenght = 0;
         }
-
     }
 
     public BringObject GetBringingObject()
@@ -114,8 +112,6 @@ public class PlayerUseToolState : State
             }
             InteractInput();
         }
-
-
         else
         {
             chronoEnd -= Time.deltaTime;
