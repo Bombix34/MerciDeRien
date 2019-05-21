@@ -18,7 +18,7 @@ public class MaterialManagement : MonoBehaviour
 
     private void Update()
     {
-        IsInView();
+      //  IsInView();
     }
 
     public void ResetObjectMaterials()
