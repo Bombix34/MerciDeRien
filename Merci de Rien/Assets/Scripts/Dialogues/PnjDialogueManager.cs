@@ -28,6 +28,7 @@ public class PnjDialogueManager : MonoBehaviour
         }
         if (choice.IsUniqueSentence)
             RemoveDialogue(choice);
+        choice.UpdateEvent();
         return choice;
     }
 
