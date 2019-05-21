@@ -144,6 +144,7 @@ public class InteractObject : MonoBehaviour
         CanneAPeche,
         Maillet,
         Pancarte,
+        MusicStone,
         PNJ
     }
 }

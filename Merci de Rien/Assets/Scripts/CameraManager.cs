@@ -18,12 +18,12 @@ public class CameraManager : MonoBehaviour
     {
         currentCamera = CameraType.Base;
         SetNewCamera(CameraType.Base);
-        transform.rotation = Quaternion.Euler(reglages.cameraRotation, 0f, 0f);
+        transform.rotation = Quaternion.Euler(reglages.cameraRotation, 90f, 0f);
     }
 
     private void Update()
     {
-        transform.rotation = Quaternion.Euler(reglages.cameraRotation, 0f, 0f);
+       // transform.rotation = Quaternion.Euler(reglages.cameraRotation, 0f, 0f);
     }
 
     public void SetNewCamera(CameraType newCameraType)

@@ -12,7 +12,7 @@ public class BringObject : InteractObject
     protected Rigidbody body;
     float mass;
 
-    bool isLaunch = false;
+    public bool IsLaunch { get; set; } = false;
 
     Vector3 baseScale;
 
@@ -68,7 +68,7 @@ public class BringObject : InteractObject
 
     public void LaunchObject()
     {
-        isLaunch = true;
+        IsLaunch = true;
         body.freezeRotation = false;
     }
 
@@ -82,17 +82,17 @@ public class BringObject : InteractObject
         return characterOwner;
     }
 
-    void OnCollisionEnter(Collision collision)
+    protected virtual void OnCollisionEnter(Collision collision)
     {
         //quand l'objet est touché par un autre objet lancé
-        if (collision.gameObject.tag == "BringObject")
+        if ((collision.gameObject.tag == "BringObject")||(collision.gameObject.tag=="InteractToolObject"))
         {
             BringObject otherObject = collision.gameObject.GetComponent<BringObject>();
-            if(otherObject.GetObjectReglages().IsBreakingThings&&otherObject.isLaunch)
+            if(otherObject.GetObjectReglages().IsBreakingThings&&otherObject.IsLaunch)
                 StartBreaking();
         }
         //quand on lance l'objet
-        if (!isLaunch)
+        if (!IsLaunch)
             return;
         StartBreaking();
         if (collision.gameObject.tag=="PNJ")
