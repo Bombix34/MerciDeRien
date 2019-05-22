@@ -14,7 +14,7 @@ public class Game_Music_Manager : Singleton<Game_Music_Manager>
     {
         SwitchMusic(MusicType.Village);
 
-        dayLightCycle = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<DayLightCycle>();
+        dayLightCycle =Camera.main.GetComponent<DayLightCycle>();
 
     }
 

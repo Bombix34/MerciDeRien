@@ -4,35 +4,35 @@ using UnityEngine;
 
 public class MusicStoneDistTracker : MonoBehaviour
 {
-    // public GameObject player;
-    // public Game_Music_Manager musicManager;
 
-    GameObject player;
+    GameObject player=null;
     Game_Music_Manager musicManager;
 
-    [SerializeField]
     MusicStone musicStone;
 
-    bool playerIsNear;
+    bool playerIsNear=false;
     public float distPlayer;
 
 
     private void Start()
     {
-        playerIsNear = false;
-        player = GameObject.FindGameObjectWithTag("Player");
-        musicManager = GameObject.FindGameObjectWithTag("MusicManager").GetComponent<Game_Music_Manager>();
+        musicStone = transform.parent.GetComponent<MusicStone>();
+        musicManager = Game_Music_Manager.Instance;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == player && !playerIsNear)
+        if (other.gameObject.tag == "Player" && !playerIsNear)
+        {
+            if (player == null)
+                player = other.gameObject;
             playerIsNear = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == player && playerIsNear)
+        if (other.gameObject.tag == "Player" && playerIsNear)
             playerIsNear = false;
     }
 

@@ -10,6 +10,7 @@ public class Condition
     public EventDatabase.EventType concernedEvent;
     public ComparisonType comparaison;
     public int valToTest = 0;
+    public Dialogue concernedDialogue=null;
 
     public MultipleComparison comparisonCumul;
 
@@ -17,17 +18,33 @@ public class Condition
     {
         bool result = false;
         EventContainer eventConcerned = database.GetEvent(concernedEvent);
-        switch(comparaison)
+        if (concernedEvent == EventDatabase.EventType.DialogueHasBeenSaid)
         {
-            case ComparisonType.equal:
-                result = valToTest == eventConcerned.value;
-                break;
-            case ComparisonType.superior:
-                result = eventConcerned.value>valToTest;
-                break;
-            case ComparisonType.inferior:
-                result = eventConcerned.value < valToTest;
-                break;
+            if(valToTest==0)
+            {
+                //On cherche si le dialogue n'a pas été dit
+                result = GameManager.Instance.IsDialogue(concernedDialogue) == false;
+            }
+            else
+            {
+                //On cherche si le dialogue a été dit
+                result = GameManager.Instance.IsDialogue(concernedDialogue);
+            }
+        }
+        else
+        {
+            switch (comparaison)
+            {
+                case ComparisonType.equal:
+                    result = valToTest == eventConcerned.value;
+                    break;
+                case ComparisonType.superior:
+                    result = eventConcerned.value > valToTest;
+                    break;
+                case ComparisonType.inferior:
+                    result = eventConcerned.value < valToTest;
+                    break;
+            }
         }
         return result;
     }

@@ -10,7 +10,8 @@ public class Dialogue : ScriptableObject
     public int dialoguePriority = 0;
     public bool IsUniqueSentence = false;
 
-    public EventDialogue eventToTest = EventDialogue.None;
+    [SerializeField]
+    List<Predicat> eventsTriggered;
 
     [TextArea(3,10)]
     public List<string> frenchSentences;
@@ -24,53 +25,8 @@ public class Dialogue : ScriptableObject
         englishSentences = new List<string>();
     }
 
-    public void UpdateEvent()
+    public List<Predicat> GetPredicats()
     {
-        if (eventToTest == EventDialogue.None)
-            return;
-        switch(eventToTest)
-        {
-            case EventDialogue.DialogueA_Paysan:
-                EventManager.Instance.UpdateEvent(EventDatabase.EventType.DialogueA_Paysan,1);
-                break;
-            case EventDialogue.DialogueB_Artisan:
-                EventManager.Instance.UpdateEvent(EventDatabase.EventType.DialogueB_Artisan, 1);
-                break;
-            case EventDialogue.DialogueC_Artisan:
-                EventManager.Instance.UpdateEvent(EventDatabase.EventType.DialogueC_Artisan, 1);
-                break;
-            case EventDialogue.DialogueD_Paysan:
-                EventManager.Instance.UpdateEvent(EventDatabase.EventType.DialogueD_Paysan, 1);
-                break;
-            case EventDialogue.DialogueE_Chaman:
-                EventManager.Instance.UpdateEvent(EventDatabase.EventType.DialogueE_Chaman, 1);
-                break;
-            case EventDialogue.DialogueF_Troubadour:
-                EventManager.Instance.UpdateEvent(EventDatabase.EventType.DialogueF_Troubadour, 1);
-                break;
-            case EventDialogue.DialogueG_Chaman:
-                EventManager.Instance.UpdateEvent(EventDatabase.EventType.DialogueG_Chaman, 1);
-                break;
-            case EventDialogue.DialogueH_Pecheur:
-                EventManager.Instance.UpdateEvent(EventDatabase.EventType.DialogueH_Pecheur, 1);
-                break;
-            case EventDialogue.DialogueI_Etranger:
-                EventManager.Instance.UpdateEvent(EventDatabase.EventType.DialogueI_Etranger, 1);
-                break;
-        }
-    }
-
-    public enum EventDialogue
-    {
-        None,
-        DialogueA_Paysan,
-        DialogueB_Artisan,
-        DialogueC_Artisan,
-        DialogueD_Paysan,
-        DialogueE_Chaman,
-        DialogueF_Troubadour,
-        DialogueG_Chaman,
-        DialogueH_Pecheur,
-        DialogueI_Etranger
+        return eventsTriggered;
     }
 }
