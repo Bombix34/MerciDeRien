@@ -86,20 +86,20 @@ public class InteractObject : MonoBehaviour
             if (EventManager.Instance.GetPlayer() != null)
             {
                 RectTransform textPosition = textContainer.GetComponent<RectTransform>();
-                float playerPositionX = EventManager.Instance.GetPlayer().transform.position.x;
-                float result = this.transform.position.x - playerPositionX;
+                float playerPositionZ = EventManager.Instance.GetPlayer().transform.position.z;
+                float result = (this.transform.position.z - playerPositionZ) * 10f;
 
                 if (result<0)
                 {
                     //joueur a droite
-                    if (textPosition.localPosition.x > 0)
-                        textPosition.localPosition = new Vector3(-1* textPosition.localPosition.x, textPosition.localPosition.y, textPosition.localPosition.z);
+                    if(textPosition.localPosition.x<0)
+                        textPosition.localPosition = new Vector3(textPosX, textPosition.localPosition.y, textPosition.localPosition.z);
                 }
                 else
                 {
                     //joueur a gauche
-                    if (textPosition.localPosition.x < 0)
-                        textPosition.localPosition = new Vector3(-1* textPosition.localPosition.x, textPosition.localPosition.y, textPosition.localPosition.z);
+                    if (textPosition.localPosition.x > 0)
+                        textPosition.localPosition = new Vector3(-textPosX, textPosition.localPosition.y, textPosition.localPosition.z);
                 }
             }
             textContainer.text = GetInteractText(!CanTakeObject);
@@ -145,6 +145,9 @@ public class InteractObject : MonoBehaviour
         Maillet,
         Pancarte,
         MusicStone,
-        PNJ
+        PNJ,
+        Fourche,
+        Pelle,
+        Baton
     }
 }

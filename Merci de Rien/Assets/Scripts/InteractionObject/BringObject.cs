@@ -25,36 +25,6 @@ public class BringObject : InteractObject
         mass = body.mass;
     }
 
-    protected override void UpdateFeedbackInteraction(bool isOn)
-    {
-        if (feedbackInteraction == null)
-            return;
-        feedbackInteraction.SetActive(isOn);
-        if (isOn)
-        {
-            if (EventManager.Instance.GetPlayer() != null)
-            {
-                RectTransform textPosition = textContainer.GetComponent<RectTransform>();
-                float playerPositionX = EventManager.Instance.GetPlayer().transform.position.x;
-                float result = this.transform.position.x - playerPositionX;
-
-                if (result < 0)
-                {
-                    //joueur a droite
-                    if (textPosition.localPosition.x > 0)
-                        textPosition.localPosition = new Vector3(-1 * textPosition.localPosition.x, textPosition.localPosition.y, textPosition.localPosition.z);
-                }
-                else
-                {
-                    //joueur a gauche
-                    if (textPosition.localPosition.x < 0)
-                        textPosition.localPosition = new Vector3(-1 * textPosition.localPosition.x, textPosition.localPosition.y, textPosition.localPosition.z);
-                }
-            }
-            textContainer.text = GetInteractText(!CanTakeObject);
-        }
-    }
-
     public void ResetMass()
     {
         StartCoroutine(PoseObject());
