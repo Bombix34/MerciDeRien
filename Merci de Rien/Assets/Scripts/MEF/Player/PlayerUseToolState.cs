@@ -32,6 +32,7 @@ public class PlayerUseToolState : State
         this.curObject = curObject;
         curPlayer = (PlayerManager)this.curObject;
         this.toolObject = toolObject.GetComponent<ToolObject>();
+        this.toolObject.curStatePlayer = this;
     }
 
     public void TryPoseObject()
@@ -94,6 +95,21 @@ public class PlayerUseToolState : State
             }
             interactInputLenght = 0;
         }
+    }
+
+    public void EndUseObjectOnCollision()
+    {
+        Animator anim = curPlayer.GetAnimator();
+        anim.SetTrigger("ToolTrigger");
+    }
+
+    public IEnumerator EndUseObjectOnCollisiTEStn()
+    {
+        EndUseTool();
+        Animator anim = curPlayer.GetAnimator();
+        anim.SetTrigger("ToolTrigger");
+        yield return new WaitForSeconds(0.5f);
+        CanMove = true;
 
     }
 
