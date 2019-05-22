@@ -7,7 +7,7 @@ using System.Threading;
 public class BringObject : InteractObject
 {
     [SerializeField]
-    ObjectReglages reglages;
+    protected ObjectReglages reglages;
 
     protected Rigidbody body;
     float mass;
@@ -83,6 +83,11 @@ public class BringObject : InteractObject
             return;
         //event____________
         pnj.HurtingEvent();
+    }
+
+    public ObjectReglages GetReglages()
+    {
+        return reglages;
     }
 
     public void StartBreaking()

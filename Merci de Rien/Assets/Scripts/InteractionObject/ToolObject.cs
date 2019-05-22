@@ -6,6 +6,8 @@ public class ToolObject : BringObject
 {
     CapsuleCollider capsule;
 
+    public bool IsUsingObject { get; set; } = false;
+
     protected override void Start()
     {
         base.Start();
@@ -17,7 +19,7 @@ public class ToolObject : BringObject
     {
         base.StartInteraction();
         body.useGravity = false;
-        capsule.isTrigger = false;
+        capsule.isTrigger = true;
         body.isKinematic = true;
     }
 
@@ -50,6 +52,25 @@ public class ToolObject : BringObject
         else if (collision.gameObject.name == "Terrain")
         {
             StartCoroutine(StopOnGround());
+        }
+    }
+
+    protected void OnTriggerEnter(Collider collision)
+    {
+        if (!IsUsingObject)
+            return;
+        //quand l'objet est touché par un autre objet lancé
+        if (collision.gameObject.tag == "BringObject")
+        {
+            BringObject otherObject = collision.gameObject.GetComponent<BringObject>();
+            if (reglages.IsBreakingThings&&otherObject.GetReglages().IsBreaking)
+                otherObject.StartBreaking();
+        }
+        StartBreaking();
+        if (collision.gameObject.tag == "PNJ")
+        {
+            PnjManager pnj = collision.gameObject.GetComponent<PnjManager>();
+            StartHurting(pnj);
         }
     }
 
