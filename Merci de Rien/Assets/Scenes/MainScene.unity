@@ -2362,6 +2362,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4633289994498979073, guid: b653e5f57bb364f42adab5b9ffb9fb1a,
+        type: 3}
+      propertyPath: musicManager
+      value: 
+      objectReference: {fileID: 628368972}
+    - target: {fileID: 4633289994498979073, guid: b653e5f57bb364f42adab5b9ffb9fb1a,
+        type: 3}
+      propertyPath: stoneID
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b653e5f57bb364f42adab5b9ffb9fb1a, type: 3}
 --- !u!114 &6335169694335672325 stripped
@@ -3061,6 +3071,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pot01
       objectReference: {fileID: 0}
+    - target: {fileID: 1555372012158035552, guid: 2603e67455b01124b8b53bd228f48fb2,
+        type: 3}
+      propertyPath: characterOwner
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2843707734481452351, guid: 2603e67455b01124b8b53bd228f48fb2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3119,11 +3134,6 @@ PrefabInstance:
     - target: {fileID: 1555372012158035550, guid: 2603e67455b01124b8b53bd228f48fb2,
         type: 3}
       propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1555372012158035552, guid: 2603e67455b01124b8b53bd228f48fb2,
-        type: 3}
-      propertyPath: characterOwner
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2322473082455034974, guid: 2603e67455b01124b8b53bd228f48fb2,
