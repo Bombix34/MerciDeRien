@@ -27,6 +27,17 @@ public class Game_Music_Manager : Singleton<Game_Music_Manager>
         }
     }
 
+    public void MusicStoneHurt(int stoneId)
+    {
+        AkSoundEngine.PostEvent("Ocarina_0" + stoneId + "_Damaged", dayLightCycle.gameObject);
+    }
+
+    public void MusicStoneDestroyed(int stoneId)
+    {
+        AkSoundEngine.PostEvent("Ocarina_0" + stoneId + "_Destroyed", dayLightCycle.gameObject);
+    }
+
+
     public void SwitchMusic(MusicType newType)
     {
         //APPELER CETTE FONCTION POUR CHANGER DE MUSIQUE

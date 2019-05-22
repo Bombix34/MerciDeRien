@@ -13,9 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID ENV_AMB_BEACH_PLAY = 173647080U;
         static const AkUniqueID ENV_AMB_EXT_PLAY = 1275933152U;
-        static const AkUniqueID ENV_AMB_INT_PLAY = 2306680942U;
         static const AkUniqueID ENV_DOOR_CLOSE_PLAY = 96362093U;
         static const AkUniqueID ENV_DOOR_OPEN_PLAY = 1881369153U;
         static const AkUniqueID ENV_FIRE_PLAY = 2989807018U;
@@ -34,12 +32,12 @@ namespace AK
         static const AkUniqueID MC_TALK_STOP = 1956601529U;
         static const AkUniqueID MC_THROW_PLAY = 1796000097U;
         static const AkUniqueID MC_WALK_PLAY = 1011903932U;
-        static const AkUniqueID MUSIC_CHANGE_MORBID = 1416541639U;
         static const AkUniqueID NPC_TALK_PLAY = 787023996U;
         static const AkUniqueID NPC_TALK_STOP = 3835799014U;
         static const AkUniqueID NPC_WALK_PLAY = 2227517075U;
         static const AkUniqueID NPC_WALK_STOP = 1357639289U;
-        static const AkUniqueID OCARINA_01_DAMAGED_MAIN = 3679492542U;
+        static const AkUniqueID OCARINA_01_DAMAGED = 357745826U;
+        static const AkUniqueID OCARINA_01_DESTROYED = 885771810U;
         static const AkUniqueID OCARINA_02_DAMAGED_RYTHMIC = 3084605388U;
         static const AkUniqueID OCARINA_03_DAMAGED_PERCUS = 1090803883U;
         static const AkUniqueID OCARINA_04_DAMAGED_WIND1 = 877487337U;
@@ -47,7 +45,6 @@ namespace AK
         static const AkUniqueID OCARINA_06_DAMAGED_BRASS1 = 2776317848U;
         static const AkUniqueID OCARINA_07_DAMAGED_BRASS2 = 4117983340U;
         static const AkUniqueID OCARINA_08_DAMAGED = 2170904855U;
-        static const AkUniqueID TEST = 3157003241U;
         static const AkUniqueID UI_CAMERA_DEZOOM_PLAY = 4008763347U;
         static const AkUniqueID UI_CAMERA_ZOOM_PLAY = 2038710544U;
         static const AkUniqueID UI_CANCEL_PLAY = 658987741U;
@@ -256,7 +253,7 @@ namespace AK
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID MUSIC_TRACK_01_MAIN = 470304688U;
         static const AkUniqueID MUSIC_TRACK_02_RYTHMIC = 2052289070U;
-        static const AkUniqueID MUSIC_TRACK_03_PERCUS = 3582743001U;
+        static const AkUniqueID MUSIC_TRACK_03_PERC = 891825369U;
         static const AkUniqueID MUSIC_TRACK_04_WIND_1 = 1905708082U;
         static const AkUniqueID MUSIC_TRACK_05_WIND_2 = 4185999270U;
         static const AkUniqueID MUSIC_TRACK_06_BRASS_1 = 3059150873U;

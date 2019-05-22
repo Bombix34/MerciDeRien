@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 6cf04c7a12d8a246858fbbddacc42630
     GuidInternal: 
-    m_lastTime: -8586459277924678908
+    m_lastTime: -8586430727613612689
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
@@ -37,7 +37,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 4c22335bacdda047a47c33864f4f5c6d
     GuidInternal: 
-    m_lastTime: -8586466217218702847
+    m_lastTime: -8586430717416370536
     List:
     - name: Main
       guid: ae9737604a5de0449df00235e12d5976
@@ -53,28 +53,102 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 7cd09b477f168642a36a6844479c282a
     GuidInternal: 
-    m_lastTime: -8586452474977545158
-    List: []
-  - PhysicalPath: Events\MDR_WU.wwu
-    ParentPhysicalPath: 
-    guid: f6e287a964ee8f40bdd10f41bdfebff6
-    GuidInternal: 
-    m_lastTime: -8586449656172026832
+    m_lastTime: -8586430738757421496
     List:
     - name: ENV_amb_beach_play
       guid: 3bac836c95255c42bb1f3d578b0c37de
       id: 173647080
       PathAndIcons:
-      - ElementName: MDR_WU
+      - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: ENVIRONMENT
-        ObjectType: 4
       - ElementName: ENV_amb_beach_play
         ObjectType: 3
-      Path: MDR_WU\ENVIRONMENT\ENV_amb_beach_play
+      Path: Default Work Unit\ENV_amb_beach_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: ENV_amb_int_play
+      guid: 7a1fb683f724c34daf18c77ca496505b
+      id: 2306680942
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ENV_amb_int_play
+        ObjectType: 3
+      Path: Default Work Unit\ENV_amb_int_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MC_walk_end_PH_play
+      guid: 72a4a219ae381e4fb0114e2501499af5
+      id: 1030438041
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MC_walk_end_PH_play
+        ObjectType: 3
+      Path: Default Work Unit\MC_walk_end_PH_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MC_walk_end_play
+      guid: 3da9aeeea2c763438a3f913069836e49
+      id: 112690910
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MC_walk_end_play
+        ObjectType: 3
+      Path: Default Work Unit\MC_walk_end_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MC_walk_PH_play
+      guid: ca28b70397743943a212e14a2948c1d9
+      id: 287668871
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MC_walk_PH_play
+        ObjectType: 3
+      Path: Default Work Unit\MC_walk_PH_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Music_Change_Morbid
+      guid: 6f2544f4dcd98641ac632c947554a7c2
+      id: 1416541639
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: _Testing
+        ObjectType: 4
+      - ElementName: Music_Change_Morbid
+        ObjectType: 3
+      Path: Default Work Unit\_Testing\Music_Change_Morbid
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: TEST
+      guid: c237081ca18ddf4a872a0929e431c6ce
+      id: 3157003241
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: _Testing
+        ObjectType: 4
+      - ElementName: TEST
+        ObjectType: 3
+      Path: Default Work Unit\_Testing\TEST
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+  - PhysicalPath: Events\MDR_WU.wwu
+    ParentPhysicalPath: 
+    guid: f6e287a964ee8f40bdd10f41bdfebff6
+    GuidInternal: 
+    m_lastTime: -8586430710274020213
+    List:
     - name: ENV_amb_ext_play
       guid: 5d53e1f96e3e7449a229e9e5952e892f
       id: 1275933152
@@ -86,20 +160,6 @@ MonoBehaviour:
       - ElementName: ENV_amb_ext_play
         ObjectType: 3
       Path: MDR_WU\ENVIRONMENT\ENV_amb_ext_play
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: ENV_amb_int_play
-      guid: 7a1fb683f724c34daf18c77ca496505b
-      id: 2306680942
-      PathAndIcons:
-      - ElementName: MDR_WU
-        ObjectType: 12
-      - ElementName: ENVIRONMENT
-        ObjectType: 4
-      - ElementName: ENV_amb_int_play
-        ObjectType: 3
-      Path: MDR_WU\ENVIRONMENT\ENV_amb_int_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -333,53 +393,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
-      - ElementName: ENVIRONMENT
+      - ElementName: MAIN CHARACTER
         ObjectType: 4
       - ElementName: MC_throw_play
         ObjectType: 3
-      Path: MDR_WU\ENVIRONMENT\MC_throw_play
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: MC_walk_end_PH_play
-      guid: 72a4a219ae381e4fb0114e2501499af5
-      id: 1030438041
-      PathAndIcons:
-      - ElementName: MDR_WU
-        ObjectType: 12
-      - ElementName: MAIN CHARACTER
-        ObjectType: 4
-      - ElementName: MC_walk_end_PH_play
-        ObjectType: 3
-      Path: MDR_WU\MAIN CHARACTER\MC_walk_end_PH_play
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: MC_walk_end_play
-      guid: 3da9aeeea2c763438a3f913069836e49
-      id: 112690910
-      PathAndIcons:
-      - ElementName: MDR_WU
-        ObjectType: 12
-      - ElementName: MAIN CHARACTER
-        ObjectType: 4
-      - ElementName: MC_walk_end_play
-        ObjectType: 3
-      Path: MDR_WU\MAIN CHARACTER\MC_walk_end_play
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: MC_walk_PH_play
-      guid: ca28b70397743943a212e14a2948c1d9
-      id: 287668871
-      PathAndIcons:
-      - ElementName: MDR_WU
-        ObjectType: 12
-      - ElementName: MAIN CHARACTER
-        ObjectType: 4
-      - ElementName: MC_walk_PH_play
-        ObjectType: 3
-      Path: MDR_WU\MAIN CHARACTER\MC_walk_PH_play
+      Path: MDR_WU\MAIN CHARACTER\MC_throw_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -394,20 +412,6 @@ MonoBehaviour:
       - ElementName: MC_walk_play
         ObjectType: 3
       Path: MDR_WU\MAIN CHARACTER\MC_walk_play
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: Music_Change_Morbid
-      guid: 6f2544f4dcd98641ac632c947554a7c2
-      id: 1416541639
-      PathAndIcons:
-      - ElementName: MDR_WU
-        ObjectType: 12
-      - ElementName: _Testing
-        ObjectType: 4
-      - ElementName: Music_Change_Morbid
-        ObjectType: 3
-      Path: MDR_WU\_Testing\Music_Change_Morbid
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -475,17 +479,129 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: TEST
-      guid: c237081ca18ddf4a872a0929e431c6ce
-      id: 3157003241
+    - name: Ocarina_01_Damaged
+      guid: e9fa58dea6255d45913f5f17f06098a5
+      id: 357745826
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
-      - ElementName: _Testing
+      - ElementName: MUSIC
         ObjectType: 4
-      - ElementName: TEST
+      - ElementName: Ocarina_01_Damaged
         ObjectType: 3
-      Path: MDR_WU\_Testing\TEST
+      Path: MDR_WU\MUSIC\Ocarina_01_Damaged
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Ocarina_01_Destroyed
+      guid: e10ee5a7f9c41c4c87f1dcfe46118476
+      id: 885771810
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
+      - ElementName: Ocarina_01_Destroyed
+        ObjectType: 3
+      Path: MDR_WU\MUSIC\Ocarina_01_Destroyed
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Ocarina_02_Damaged_RYTHMIC
+      guid: 9d03d95c4ac6324ba10318dc7e7a473c
+      id: 3084605388
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
+      - ElementName: Ocarina_02_Damaged_RYTHMIC
+        ObjectType: 3
+      Path: MDR_WU\MUSIC\Ocarina_02_Damaged_RYTHMIC
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Ocarina_03_Damaged_PERCUS
+      guid: 035ec01f2931b34f8cfa2c9d3eb2b9e3
+      id: 1090803883
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
+      - ElementName: Ocarina_03_Damaged_PERCUS
+        ObjectType: 3
+      Path: MDR_WU\MUSIC\Ocarina_03_Damaged_PERCUS
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Ocarina_04_Damaged_WIND1
+      guid: 994eb63278b726408c253bc219ce34dd
+      id: 877487337
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
+      - ElementName: Ocarina_04_Damaged_WIND1
+        ObjectType: 3
+      Path: MDR_WU\MUSIC\Ocarina_04_Damaged_WIND1
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Ocarina_05_Damaged_WIND2
+      guid: e030012883464643ad5387dd3b7912d2
+      id: 3191795435
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
+      - ElementName: Ocarina_05_Damaged_WIND2
+        ObjectType: 3
+      Path: MDR_WU\MUSIC\Ocarina_05_Damaged_WIND2
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Ocarina_06_Damaged_BRASS1
+      guid: 1c44706818ac984cbe71b22860a098e6
+      id: 2776317848
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
+      - ElementName: Ocarina_06_Damaged_BRASS1
+        ObjectType: 3
+      Path: MDR_WU\MUSIC\Ocarina_06_Damaged_BRASS1
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Ocarina_07_Damaged_BRASS2
+      guid: f0d3e96c3f87a44c8df8ed34e0a87451
+      id: 4117983340
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
+      - ElementName: Ocarina_07_Damaged_BRASS2
+        ObjectType: 3
+      Path: MDR_WU\MUSIC\Ocarina_07_Damaged_BRASS2
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Ocarina_08_Damaged
+      guid: 9ed1de7fc2531f4396b1f4b4f42ea7c4
+      id: 2170904855
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
+      - ElementName: Ocarina_08_Damaged
+        ObjectType: 3
+      Path: MDR_WU\MUSIC\Ocarina_08_Damaged
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -598,17 +714,26 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: c5074d7c1882b04f8e7132f183b4dfb2
     GuidInternal: 
-    m_lastTime: -8586449645044574338
+    m_lastTime: -8586431528029538180
     List:
-    - name: DEBUG_zik_speed
-      guid: d52f0217d6725b4aa6252706c8ad93d3
-      id: 501502913
+    - name: ___water_distance
+      guid: f1fac3cb8c359946a51f3413841eef41
+      id: 1638394827
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
-      - ElementName: DEBUG_zik_speed
+      - ElementName: ___water_distance
         ObjectType: 13
-      Path: MDR_WU\DEBUG_zik_speed
+      Path: MDR_WU\___water_distance
+    - name: ___water_far_distance
+      guid: c4c597783512934082af85914075e39e
+      id: 2539144481
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: ___water_far_distance
+        ObjectType: 13
+      Path: MDR_WU\___water_far_distance
     - name: game_time
       guid: a7c64eeb2b7151418e702020ac98ec94
       id: 1870090125
@@ -618,6 +743,15 @@ MonoBehaviour:
       - ElementName: game_time
         ObjectType: 13
       Path: MDR_WU\game_time
+    - name: grass_height
+      guid: 99cb484f3701304bbb8e9efe5e39a1b1
+      id: 2882100565
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: grass_height
+        ObjectType: 13
+      Path: MDR_WU\grass_height
     - name: village_karma
       guid: 0615d60e4aec9a4fa2c875c0adcdcbc1
       id: 3200455562
@@ -671,24 +805,103 @@ MonoBehaviour:
       - ElementName: volume_voices
         ObjectType: 13
       Path: MDR_WU\Volume control\volume_voices
-    - name: water_distance
-      guid: f1fac3cb8c359946a51f3413841eef41
-      id: 1642165204
+    - name: Ww_DEBUG_zik_speed
+      guid: d52f0217d6725b4aa6252706c8ad93d3
+      id: 82641640
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
-      - ElementName: water_distance
+      - ElementName: Ww_DEBUG_zik_speed
         ObjectType: 13
-      Path: MDR_WU\water_distance
-    - name: water_far_distance
-      guid: c4c597783512934082af85914075e39e
-      id: 1920428182
+      Path: MDR_WU\Ww_DEBUG_zik_speed
+    - name: Ww_Trem_Ocarina_01
+      guid: 137aaacde785ad44aa78c5777b5c79a8
+      id: 2090554910
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
-      - ElementName: water_far_distance
+      - ElementName: Music_rtpc
+        ObjectType: 4
+      - ElementName: Ww_Trem_Ocarina_01
         ObjectType: 13
-      Path: MDR_WU\water_far_distance
+      Path: MDR_WU\Music_rtpc\Ww_Trem_Ocarina_01
+    - name: Ww_Trem_Ocarina_02
+      guid: fc98ad1e1f741b44bcd3f7bc564c1d96
+      id: 2090554909
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Music_rtpc
+        ObjectType: 4
+      - ElementName: Ww_Trem_Ocarina_02
+        ObjectType: 13
+      Path: MDR_WU\Music_rtpc\Ww_Trem_Ocarina_02
+    - name: Ww_Trem_Ocarina_03
+      guid: 39684efb83cf274588ad151b8b7208b6
+      id: 2090554908
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Music_rtpc
+        ObjectType: 4
+      - ElementName: Ww_Trem_Ocarina_03
+        ObjectType: 13
+      Path: MDR_WU\Music_rtpc\Ww_Trem_Ocarina_03
+    - name: Ww_Trem_Ocarina_04
+      guid: 495a76229a1ae847a1266ef94c01141a
+      id: 2090554907
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Music_rtpc
+        ObjectType: 4
+      - ElementName: Ww_Trem_Ocarina_04
+        ObjectType: 13
+      Path: MDR_WU\Music_rtpc\Ww_Trem_Ocarina_04
+    - name: Ww_Trem_Ocarina_05
+      guid: 81b64c23a9c85c4eb0b027093ea674cd
+      id: 2090554906
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Music_rtpc
+        ObjectType: 4
+      - ElementName: Ww_Trem_Ocarina_05
+        ObjectType: 13
+      Path: MDR_WU\Music_rtpc\Ww_Trem_Ocarina_05
+    - name: Ww_Trem_Ocarina_06
+      guid: de449616a1afdf40bdbf948ea142241b
+      id: 2090554905
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Music_rtpc
+        ObjectType: 4
+      - ElementName: Ww_Trem_Ocarina_06
+        ObjectType: 13
+      Path: MDR_WU\Music_rtpc\Ww_Trem_Ocarina_06
+    - name: Ww_Trem_Ocarina_07
+      guid: 7ec0a5c9f23b5a4b8511d1690e8f1e83
+      id: 2090554904
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Music_rtpc
+        ObjectType: 4
+      - ElementName: Ww_Trem_Ocarina_07
+        ObjectType: 13
+      Path: MDR_WU\Music_rtpc\Ww_Trem_Ocarina_07
+    - name: Ww_Trem_Ocarina_08
+      guid: 67a037d5e633604f8dc7b4bc6671cc82
+      id: 2090554903
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Music_rtpc
+        ObjectType: 4
+      - ElementName: Ww_Trem_Ocarina_08
+        ObjectType: 13
+      Path: MDR_WU\Music_rtpc\Ww_Trem_Ocarina_08
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -700,8 +913,272 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 452b3f4fbbc2a044b868fe9a48e061a4
     GuidInternal: 
-    m_lastTime: -8586449884867813953
-    List: []
+    m_lastTime: -8586431528029627886
+    List:
+    - name: Ww_Status_Ocarina_01
+      guid: 0a68efd27b2fd64698144e78dc240003
+      id: 2641104188
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Music_states
+        ObjectType: 4
+      - ElementName: Ww_Status_Ocarina_01
+        ObjectType: 9
+      Path: MDR_WU\Music_states\Ww_Status_Ocarina_01
+      values:
+      - name: Destroyed
+        guid: 9f10aa3fbdaed3409e16160981dc4393
+        id: 1359166010
+        PathAndIcons:
+        - ElementName: Destroyed
+          ObjectType: 8
+      - name: Intact
+        guid: 4a7a73daf7aed946b18e2391beb2c07d
+        id: 3094168564
+        PathAndIcons:
+        - ElementName: Intact
+          ObjectType: 8
+      - name: None
+        guid: 929a14d0f3705545a22a138d660cb293
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Ww_Status_Ocarina_02
+      guid: e6926642f66d304c95b3e5490476ce2c
+      id: 2641104191
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Music_states
+        ObjectType: 4
+      - ElementName: Ww_Status_Ocarina_02
+        ObjectType: 9
+      Path: MDR_WU\Music_states\Ww_Status_Ocarina_02
+      values:
+      - name: Destroyed
+        guid: 7c880e9b334def4daed7c347b642ad5c
+        id: 1359166010
+        PathAndIcons:
+        - ElementName: Destroyed
+          ObjectType: 8
+      - name: Intact
+        guid: c2a826a30990cd4886b4a100fb22edbe
+        id: 3094168564
+        PathAndIcons:
+        - ElementName: Intact
+          ObjectType: 8
+      - name: None
+        guid: b3c1d71f3df3e3428caf3a47d7fcd81d
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Ww_Status_Ocarina_03
+      guid: f4f2f38c50e8894aaf31431ac2d421ab
+      id: 2641104190
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Music_states
+        ObjectType: 4
+      - ElementName: Ww_Status_Ocarina_03
+        ObjectType: 9
+      Path: MDR_WU\Music_states\Ww_Status_Ocarina_03
+      values:
+      - name: Destroyed
+        guid: 7b79d43ac1d873449b3fb8534649b33d
+        id: 1359166010
+        PathAndIcons:
+        - ElementName: Destroyed
+          ObjectType: 8
+      - name: Intact
+        guid: 1624579b18671e4bbaf458eef60a52b3
+        id: 3094168564
+        PathAndIcons:
+        - ElementName: Intact
+          ObjectType: 8
+      - name: None
+        guid: c908966dbf6d9349afed1461d91e76ef
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Ww_Status_Ocarina_04
+      guid: b7c37442afbb534ebe76dae7364cb78b
+      id: 2641104185
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Music_states
+        ObjectType: 4
+      - ElementName: Ww_Status_Ocarina_04
+        ObjectType: 9
+      Path: MDR_WU\Music_states\Ww_Status_Ocarina_04
+      values:
+      - name: Destroyed
+        guid: fec8bbf33ebeb245bf29f64bef0e68f9
+        id: 1359166010
+        PathAndIcons:
+        - ElementName: Destroyed
+          ObjectType: 8
+      - name: Intact
+        guid: 43d3ee3201c3f0439feaf5ed780dc6c7
+        id: 3094168564
+        PathAndIcons:
+        - ElementName: Intact
+          ObjectType: 8
+      - name: None
+        guid: 178c39a3ce60a24e8983adb7cbd02de4
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Ww_Status_Ocarina_05
+      guid: a1d338411260f548b76236d72f9d9027
+      id: 2641104184
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Music_states
+        ObjectType: 4
+      - ElementName: Ww_Status_Ocarina_05
+        ObjectType: 9
+      Path: MDR_WU\Music_states\Ww_Status_Ocarina_05
+      values:
+      - name: Destroyed
+        guid: 8e87e66779f39d4781bf94defb3ad15c
+        id: 1359166010
+        PathAndIcons:
+        - ElementName: Destroyed
+          ObjectType: 8
+      - name: Intact
+        guid: 5f83df2bc30cb042bce7c5cf4202b809
+        id: 3094168564
+        PathAndIcons:
+        - ElementName: Intact
+          ObjectType: 8
+      - name: None
+        guid: 4cc6adf5b6fc11468c73dd8af280da4e
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Ww_Status_Ocarina_06
+      guid: a9cdbd07be5e68439551d6118520500a
+      id: 2641104187
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Music_states
+        ObjectType: 4
+      - ElementName: Ww_Status_Ocarina_06
+        ObjectType: 9
+      Path: MDR_WU\Music_states\Ww_Status_Ocarina_06
+      values:
+      - name: Destroyed
+        guid: 628ee7a1dac1a14c9d1da61c112af58c
+        id: 1359166010
+        PathAndIcons:
+        - ElementName: Destroyed
+          ObjectType: 8
+      - name: Intact
+        guid: ab68abedb513a14a8c2d5ed35bf4afb6
+        id: 3094168564
+        PathAndIcons:
+        - ElementName: Intact
+          ObjectType: 8
+      - name: None
+        guid: b557b9f33f09324c85339c1709bc1f76
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Ww_Status_Ocarina_07
+      guid: 7f2a2308ee598f48bd0c28945e865643
+      id: 2641104186
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Music_states
+        ObjectType: 4
+      - ElementName: Ww_Status_Ocarina_07
+        ObjectType: 9
+      Path: MDR_WU\Music_states\Ww_Status_Ocarina_07
+      values:
+      - name: Destroyed
+        guid: 7b7b906c6b6b0f459039c006e561e673
+        id: 1359166010
+        PathAndIcons:
+        - ElementName: Destroyed
+          ObjectType: 8
+      - name: Intact
+        guid: 9e42b67433661842872f1983a8ca28a8
+        id: 3094168564
+        PathAndIcons:
+        - ElementName: Intact
+          ObjectType: 8
+      - name: None
+        guid: 7a727e8cf82c89449a8640a020d1f61b
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Ww_Status_Ocarina_08
+      guid: 44ed29e53d4a684bb69c3100e576d830
+      id: 2641104181
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: Music_states
+        ObjectType: 4
+      - ElementName: Ww_Status_Ocarina_08
+        ObjectType: 9
+      Path: MDR_WU\Music_states\Ww_Status_Ocarina_08
+      values:
+      - name: Destroyed
+        guid: b5d3977e23d9d943bd317fb9e1adcb2e
+        id: 1359166010
+        PathAndIcons:
+        - ElementName: Destroyed
+          ObjectType: 8
+      - name: Intact
+        guid: 9d055359fae6d644918361f634583b96
+        id: 3094168564
+        PathAndIcons:
+        - ElementName: Intact
+          ObjectType: 8
+      - name: None
+        guid: 98580f1a9871494fb84881c4d36f9a15
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -713,45 +1190,8 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: c760acc2f3a3024ab705dcbb1ee2a765
     GuidInternal: 
-    m_lastTime: -8586449786278725848
+    m_lastTime: -8586430742792994728
     List:
-    - name: day_cycle
-      guid: ff3018a1c4eff94ebbc1873076f9d3f3
-      id: 4021126918
-      PathAndIcons:
-      - ElementName: MDR_WU
-        ObjectType: 12
-      - ElementName: day_cycle
-        ObjectType: 11
-      Path: MDR_WU\day_cycle
-      values:
-      - name: evening
-        guid: 541cf2dcdeb4cc4f930f3d4935883fad
-        id: 2905060079
-        PathAndIcons:
-        - ElementName: evening
-          ObjectType: 10
-      - name: morning
-        guid: 05e4e61ec1a0b548af5d7af09fd5ca0a
-        id: 1924633667
-        PathAndIcons:
-        - ElementName: morning
-          ObjectType: 10
-      - name: night
-        guid: f0f03b11f80a3845907281aff33ade68
-        id: 1011622525
-        PathAndIcons:
-        - ElementName: night
-          ObjectType: 10
-      - name: noon
-        guid: 38c62fcf63aada4d9cd4fa950cd5605c
-        id: 765672767
-        PathAndIcons:
-        - ElementName: noon
-          ObjectType: 10
-      ValueGuids: []
-      ValueIcons: []
-      valuesInternal: []
     - name: floor_type
       guid: 319d0155f74e314db29a16359ede7948
       id: 4168292868
@@ -762,17 +1202,17 @@ MonoBehaviour:
         ObjectType: 11
       Path: MDR_WU\floor_type
       values:
+      - name: _gravel
+        guid: 5f7ba24277633247b589967115e16623
+        id: 3363833453
+        PathAndIcons:
+        - ElementName: _gravel
+          ObjectType: 10
       - name: grass
         guid: 4e189db7bb2b914db206bf8743521a6c
         id: 4248645337
         PathAndIcons:
         - ElementName: grass
-          ObjectType: 10
-      - name: gravel
-        guid: 5f7ba24277633247b589967115e16623
-        id: 2185786256
-        PathAndIcons:
-        - ElementName: gravel
           ObjectType: 10
       - name: mud
         guid: 0404c2a253763e429abafa2a86592c88
@@ -832,15 +1272,83 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
-    - name: village_karma_switch
-      guid: 2f4eba24310a5e429075c7e8db2d088c
-      id: 3887908721
+    - name: RTPC_CTRL_day_cycle
+      guid: ff3018a1c4eff94ebbc1873076f9d3f3
+      id: 1655898020
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
-      - ElementName: village_karma_switch
+      - ElementName: RTPC_CTRL_day_cycle
         ObjectType: 11
-      Path: MDR_WU\village_karma_switch
+      Path: MDR_WU\RTPC_CTRL_day_cycle
+      values:
+      - name: evening
+        guid: 541cf2dcdeb4cc4f930f3d4935883fad
+        id: 2905060079
+        PathAndIcons:
+        - ElementName: evening
+          ObjectType: 10
+      - name: morning
+        guid: 05e4e61ec1a0b548af5d7af09fd5ca0a
+        id: 1924633667
+        PathAndIcons:
+        - ElementName: morning
+          ObjectType: 10
+      - name: night
+        guid: f0f03b11f80a3845907281aff33ade68
+        id: 1011622525
+        PathAndIcons:
+        - ElementName: night
+          ObjectType: 10
+      - name: noon
+        guid: 38c62fcf63aada4d9cd4fa950cd5605c
+        id: 765672767
+        PathAndIcons:
+        - ElementName: noon
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: RTPC_CTRL_grass_type
+      guid: 62490f575075bb4d917ccb6707cec9b0
+      id: 1669145510
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: RTPC_CTRL_grass_type
+        ObjectType: 11
+      Path: MDR_WU\RTPC_CTRL_grass_type
+      values:
+      - name: bush
+        guid: d0b181d843876148aebb85f3f94e3b22
+        id: 1427625975
+        PathAndIcons:
+        - ElementName: bush
+          ObjectType: 10
+      - name: long
+        guid: 18a5d131211bb5419cc7edffd975caff
+        id: 674228435
+        PathAndIcons:
+        - ElementName: long
+          ObjectType: 10
+      - name: short
+        guid: a57d311aea968240af0c25bdc3b46ac7
+        id: 2585211341
+        PathAndIcons:
+        - ElementName: short
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: RTPC_CTRL_village_karma_switch
+      guid: 2f4eba24310a5e429075c7e8db2d088c
+      id: 53185091
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: RTPC_CTRL_village_karma_switch
+        ObjectType: 11
+      Path: MDR_WU\RTPC_CTRL_village_karma_switch
       values:
       - name: bad
         guid: 681d0c252ea1984eb311f7906bc3628d
@@ -862,8 +1370,17 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: a686aeca2c1d7c4995658c79ad91aa2d
     GuidInternal: 
-    m_lastTime: -8586459277925678734
-    List: []
+    m_lastTime: -8586434299512041472
+    List:
+    - name: Test_footstep
+      guid: 957bae0b675176448c2a4a27e0e7c318
+      id: 2649590838
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Test_footstep
+        ObjectType: 14
+      Path: Default Work Unit\Test_footstep
   - PhysicalPath: Triggers\MDR_WU.wwu
     ParentPhysicalPath: 
     guid: 6ea1de2929405f46ac846b56c5de8119
@@ -873,8 +1390,8 @@ MonoBehaviour:
   ExpandedItems:
   - /MercDeRien
   - /MercDeRien/Events
+  - /MercDeRien/Events/Default Work Unit
   - /MercDeRien/Events/MDR_WU
-  - /MercDeRien/Events/MDR_WU/_Testing
   - /MercDeRien/Events/MDR_WU/GAME
   - /MercDeRien/SoundBanks
   - /MercDeRien/SoundBanks/MDR_WU

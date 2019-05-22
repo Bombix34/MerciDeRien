@@ -97,7 +97,6 @@ public class TerrainDetection : MonoBehaviour
                 AkSoundEngine.SetSwitch("floor_type", "mud", gameObject);
                 break;
         }
-        Debug.Log(lastFoostep);
 
         if (lastFoostep >= 0.25f)
         {
