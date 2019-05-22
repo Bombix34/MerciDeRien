@@ -27,6 +27,12 @@ public class Game_Music_Manager : Singleton<Game_Music_Manager>
         }
     }
 
+    public void MusicStoneDistance(int stoneID, float distance)
+    {
+        AkSoundEngine.SetRTPCValue("Distance_MS_0"+stoneID, distance, dayLightCycle.gameObject);
+        AkSoundEngine.SetRTPCValue("Distance_MS_Gen", distance, dayLightCycle.gameObject);
+    }
+
     public void MusicStoneHurt(int stoneId)
     {
         AkSoundEngine.PostEvent("Ocarina_0" + stoneId + "_Damaged", dayLightCycle.gameObject);

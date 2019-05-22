@@ -217,6 +217,8 @@ namespace AK
     {
         static const AkUniqueID ___WATER_DISTANCE = 1638394827U;
         static const AkUniqueID ___WATER_FAR_DISTANCE = 2539144481U;
+        static const AkUniqueID DISTANCE_MS_01 = 1432175679U;
+        static const AkUniqueID DISTANCE_MS_GEN = 3692238424U;
         static const AkUniqueID GAME_TIME = 1870090125U;
         static const AkUniqueID GRASS_HEIGHT = 2882100565U;
         static const AkUniqueID VILLAGE_KARMA = 3200455562U;

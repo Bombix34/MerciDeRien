@@ -7,11 +7,13 @@ public class MusicStone : BringObject
     [SerializeField]
     private Game_Music_Manager musicManager;
 
-    [SerializeField]
-    private int stoneID;
+    public int stoneID;
+    private int stoneHP;
 
     CapsuleCollider capsule;
-    int stoneHP;
+    MusicStoneDistTracker tracker;
+
+    
 
     protected override void Start()
     {
@@ -19,9 +21,9 @@ public class MusicStone : BringObject
         CanInteract = false;
         capsule = GetComponent<CapsuleCollider>();
         objectType = InteractObject.ObjectType.MusicStone;
+
         stoneHP = 3;
     }
-
 
     private new void OnCollisionEnter(Collision collision)
     {
