@@ -7,6 +7,7 @@ public class ToolObject : BringObject
     CapsuleCollider capsule;
 
     public bool IsUsingObject { get; set; } = false;
+    public PlayerUseToolState curStatePlayer { get; set; } = null;
 
     protected override void Start()
     {
@@ -72,6 +73,16 @@ public class ToolObject : BringObject
             PnjManager pnj = collision.gameObject.GetComponent<PnjManager>();
             StartHurting(pnj);
         }
+        if((collision.gameObject.name!="Terrain")&&(collision.gameObject.tag!="Player"))
+            EndUseObjectOnCollision();
+    }
+
+    public void EndUseObjectOnCollision()
+    {
+        if (curStatePlayer == null)
+            return;
+        IsUsingObject = false;
+       curStatePlayer.EndUseObjectOnCollision();
     }
 
     IEnumerator StopOnGround()
