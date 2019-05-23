@@ -12,6 +12,8 @@ public class GameManager : Singleton<GameManager>
 
     List<Dialogue> playerHistoricDialogues;
 
+    public int Patoune { get; set; } = 0;
+
     private void Start()
     {
         EventManager = GetComponent<EventManager>();

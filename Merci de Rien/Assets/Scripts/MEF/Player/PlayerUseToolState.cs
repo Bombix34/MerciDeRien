@@ -55,7 +55,7 @@ public class PlayerUseToolState : State
 
         Vector3 launchDirection = curPlayer.GetHeadingDirection();
         launchDirection.Normalize();
-        body.AddForce(launchDirection * 400f, ForceMode.Impulse);
+        body.AddForce(launchDirection * 300f, ForceMode.Impulse);
         this.toolObject.GetComponent<BringObject>().LaunchObject();
         endState = true;
         curPlayer.ResetVelocity();
