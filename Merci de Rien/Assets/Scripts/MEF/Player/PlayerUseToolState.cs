@@ -33,6 +33,8 @@ public class PlayerUseToolState : State
         curPlayer = (PlayerManager)this.curObject;
         this.toolObject = toolObject.GetComponent<ToolObject>();
         this.toolObject.curStatePlayer = this;
+        this.toolObject.IsUsingObject = false;
+        CanMove = true;
     }
 
     public void TryPoseObject()
