@@ -60,6 +60,7 @@ public class ToolObject : BringObject
     {
         if (!IsUsingObject)
             return;
+        Debug.Log(collision.gameObject);
         //quand l'objet est touché par un autre objet lancé
         if (collision.gameObject.tag == "BringObject")
         {
@@ -73,7 +74,7 @@ public class ToolObject : BringObject
             PnjManager pnj = collision.gameObject.GetComponent<PnjManager>();
             StartHurting(pnj);
         }
-        if((collision.gameObject.name!="Terrain")&&(collision.gameObject.tag!="Player"))
+        if((collision.gameObject.name!="Terrain")&&(collision.gameObject.tag!="Player") && (collision.gameObject.tag != "TOOL"))
             EndUseObjectOnCollision();
     }
 
