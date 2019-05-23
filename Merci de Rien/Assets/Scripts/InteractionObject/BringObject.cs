@@ -7,12 +7,12 @@ using System.Threading;
 public class BringObject : InteractObject
 {
     [SerializeField]
-    ObjectReglages reglages;
+    protected ObjectReglages reglages;
 
     protected Rigidbody body;
     float mass;
 
-    bool isLaunch = false;
+    public bool IsLaunch { get; set; } = false;
 
     Vector3 baseScale;
 
@@ -23,36 +23,6 @@ public class BringObject : InteractObject
         base.Start();
         body = GetComponent<Rigidbody>();
         mass = body.mass;
-    }
-
-    protected override void UpdateFeedbackInteraction(bool isOn)
-    {
-        if (feedbackInteraction == null)
-            return;
-        feedbackInteraction.SetActive(isOn);
-        if (isOn)
-        {
-            if (EventManager.Instance.GetPlayer() != null)
-            {
-                RectTransform textPosition = textContainer.GetComponent<RectTransform>();
-                float playerPositionX = EventManager.Instance.GetPlayer().transform.position.x;
-                float result = this.transform.position.x - playerPositionX;
-
-                if (result < 0)
-                {
-                    //joueur a droite
-                    if (textPosition.localPosition.x > 0)
-                        textPosition.localPosition = new Vector3(-1 * textPosition.localPosition.x, textPosition.localPosition.y, textPosition.localPosition.z);
-                }
-                else
-                {
-                    //joueur a gauche
-                    if (textPosition.localPosition.x < 0)
-                        textPosition.localPosition = new Vector3(-1 * textPosition.localPosition.x, textPosition.localPosition.y, textPosition.localPosition.z);
-                }
-            }
-            textContainer.text = GetInteractText(!CanTakeObject);
-        }
     }
 
     public void ResetMass()
@@ -68,7 +38,7 @@ public class BringObject : InteractObject
 
     public void LaunchObject()
     {
-        isLaunch = true;
+        IsLaunch = true;
         body.freezeRotation = false;
     }
 
@@ -82,17 +52,17 @@ public class BringObject : InteractObject
         return characterOwner;
     }
 
-    void OnCollisionEnter(Collision collision)
+    protected virtual void OnCollisionEnter(Collision collision)
     {
         //quand l'objet est touché par un autre objet lancé
-        if (collision.gameObject.tag == "BringObject")
+        if ((collision.gameObject.tag == "BringObject")||(collision.gameObject.tag=="InteractToolObject"))
         {
             BringObject otherObject = collision.gameObject.GetComponent<BringObject>();
-            if(otherObject.GetObjectReglages().IsBreakingThings&&otherObject.isLaunch)
+            if(otherObject.GetObjectReglages().IsBreakingThings&&otherObject.IsLaunch)
                 StartBreaking();
         }
         //quand on lance l'objet
-        if (!isLaunch)
+        if (!IsLaunch)
             return;
         StartBreaking();
         if (collision.gameObject.tag=="PNJ")
@@ -113,6 +83,11 @@ public class BringObject : InteractObject
             return;
         //event____________
         pnj.HurtingEvent();
+    }
+
+    public ObjectReglages GetReglages()
+    {
+        return reglages;
     }
 
     public void StartBreaking()

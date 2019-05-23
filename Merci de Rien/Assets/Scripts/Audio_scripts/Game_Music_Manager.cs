@@ -14,7 +14,7 @@ public class Game_Music_Manager : Singleton<Game_Music_Manager>
     {
         SwitchMusic(MusicType.Village);
 
-        dayLightCycle = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<DayLightCycle>();
+        dayLightCycle =Camera.main.GetComponent<DayLightCycle>();
 
     }
 
@@ -26,6 +26,23 @@ public class Game_Music_Manager : Singleton<Game_Music_Manager>
         AkSoundEngine.SetRTPCValue("game_time", gameCurrentTime, gameObject);
         }
     }
+
+    public void MusicStoneDistance(int stoneID, float distance)
+    {
+        AkSoundEngine.SetRTPCValue("Distance_MS_0"+stoneID, distance, dayLightCycle.gameObject);
+        AkSoundEngine.SetRTPCValue("Distance_MS_Gen", distance, dayLightCycle.gameObject);
+    }
+
+    public void MusicStoneHurt(int stoneId)
+    {
+        AkSoundEngine.PostEvent("Ocarina_0" + stoneId + "_Damaged", dayLightCycle.gameObject);
+    }
+
+    public void MusicStoneDestroyed(int stoneId)
+    {
+        AkSoundEngine.PostEvent("Ocarina_0" + stoneId + "_Destroyed", dayLightCycle.gameObject);
+    }
+
 
     public void SwitchMusic(MusicType newType)
     {

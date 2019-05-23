@@ -13,9 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID ENV_AMB_BEACH_PLAY = 173647080U;
         static const AkUniqueID ENV_AMB_EXT_PLAY = 1275933152U;
-        static const AkUniqueID ENV_AMB_INT_PLAY = 2306680942U;
         static const AkUniqueID ENV_DOOR_CLOSE_PLAY = 96362093U;
         static const AkUniqueID ENV_DOOR_OPEN_PLAY = 1881369153U;
         static const AkUniqueID ENV_FIRE_PLAY = 2989807018U;
@@ -34,12 +32,19 @@ namespace AK
         static const AkUniqueID MC_TALK_STOP = 1956601529U;
         static const AkUniqueID MC_THROW_PLAY = 1796000097U;
         static const AkUniqueID MC_WALK_PLAY = 1011903932U;
-        static const AkUniqueID MUSIC_CHANGE_MORBID = 1416541639U;
         static const AkUniqueID NPC_TALK_PLAY = 787023996U;
         static const AkUniqueID NPC_TALK_STOP = 3835799014U;
         static const AkUniqueID NPC_WALK_PLAY = 2227517075U;
         static const AkUniqueID NPC_WALK_STOP = 1357639289U;
-        static const AkUniqueID TEST = 3157003241U;
+        static const AkUniqueID OCARINA_01_DAMAGED = 357745826U;
+        static const AkUniqueID OCARINA_01_DESTROYED = 885771810U;
+        static const AkUniqueID OCARINA_02_DAMAGED_RYTHMIC = 3084605388U;
+        static const AkUniqueID OCARINA_03_DAMAGED_PERCUS = 1090803883U;
+        static const AkUniqueID OCARINA_04_DAMAGED_WIND1 = 877487337U;
+        static const AkUniqueID OCARINA_05_DAMAGED_WIND2 = 3191795435U;
+        static const AkUniqueID OCARINA_06_DAMAGED_BRASS1 = 2776317848U;
+        static const AkUniqueID OCARINA_07_DAMAGED_BRASS2 = 4117983340U;
+        static const AkUniqueID OCARINA_08_DAMAGED = 2170904855U;
         static const AkUniqueID UI_CAMERA_DEZOOM_PLAY = 4008763347U;
         static const AkUniqueID UI_CAMERA_ZOOM_PLAY = 2038710544U;
         static const AkUniqueID UI_CANCEL_PLAY = 658987741U;
@@ -49,21 +54,100 @@ namespace AK
         static const AkUniqueID UI_SELECT_HOVER_PLAY = 4033886834U;
     } // namespace EVENTS
 
+    namespace STATES
+    {
+        namespace WW_STATUS_OCARINA_01
+        {
+            static const AkUniqueID GROUP = 2641104188U;
+
+            namespace STATE
+            {
+                static const AkUniqueID DESTROYED = 1359166010U;
+                static const AkUniqueID INTACT = 3094168564U;
+            } // namespace STATE
+        } // namespace WW_STATUS_OCARINA_01
+
+        namespace WW_STATUS_OCARINA_02
+        {
+            static const AkUniqueID GROUP = 2641104191U;
+
+            namespace STATE
+            {
+                static const AkUniqueID DESTROYED = 1359166010U;
+                static const AkUniqueID INTACT = 3094168564U;
+            } // namespace STATE
+        } // namespace WW_STATUS_OCARINA_02
+
+        namespace WW_STATUS_OCARINA_03
+        {
+            static const AkUniqueID GROUP = 2641104190U;
+
+            namespace STATE
+            {
+                static const AkUniqueID DESTROYED = 1359166010U;
+                static const AkUniqueID INTACT = 3094168564U;
+            } // namespace STATE
+        } // namespace WW_STATUS_OCARINA_03
+
+        namespace WW_STATUS_OCARINA_04
+        {
+            static const AkUniqueID GROUP = 2641104185U;
+
+            namespace STATE
+            {
+                static const AkUniqueID DESTROYED = 1359166010U;
+                static const AkUniqueID INTACT = 3094168564U;
+            } // namespace STATE
+        } // namespace WW_STATUS_OCARINA_04
+
+        namespace WW_STATUS_OCARINA_05
+        {
+            static const AkUniqueID GROUP = 2641104184U;
+
+            namespace STATE
+            {
+                static const AkUniqueID DESTROYED = 1359166010U;
+                static const AkUniqueID INTACT = 3094168564U;
+            } // namespace STATE
+        } // namespace WW_STATUS_OCARINA_05
+
+        namespace WW_STATUS_OCARINA_06
+        {
+            static const AkUniqueID GROUP = 2641104187U;
+
+            namespace STATE
+            {
+                static const AkUniqueID DESTROYED = 1359166010U;
+                static const AkUniqueID INTACT = 3094168564U;
+            } // namespace STATE
+        } // namespace WW_STATUS_OCARINA_06
+
+        namespace WW_STATUS_OCARINA_07
+        {
+            static const AkUniqueID GROUP = 2641104186U;
+
+            namespace STATE
+            {
+                static const AkUniqueID DESTROYED = 1359166010U;
+                static const AkUniqueID INTACT = 3094168564U;
+            } // namespace STATE
+        } // namespace WW_STATUS_OCARINA_07
+
+        namespace WW_STATUS_OCARINA_08
+        {
+            static const AkUniqueID GROUP = 2641104181U;
+
+            namespace STATE
+            {
+                static const AkUniqueID DESTROYED = 1359166010U;
+                static const AkUniqueID INTACT = 3094168564U;
+            } // namespace STATE
+        } // namespace WW_STATUS_OCARINA_08
+
+    } // namespace STATES
+
     namespace SWITCHES
     {
-        namespace DAY_CYCLE
-        {
-            static const AkUniqueID GROUP = 4021126918U;
-
-            namespace SWITCH
-            {
-                static const AkUniqueID EVENING = 2905060079U;
-                static const AkUniqueID MORNING = 1924633667U;
-                static const AkUniqueID NIGHT = 1011622525U;
-                static const AkUniqueID NOON = 765672767U;
-            } // namespace SWITCH
-        } // namespace DAY_CYCLE
-
         namespace FLOOR_TYPE
         {
             static const AkUniqueID GROUP = 4168292868U;
@@ -91,30 +175,66 @@ namespace AK
             } // namespace SWITCH
         } // namespace MUSIC_SWITCH
 
-        namespace VILLAGE_KARMA_SWITCH
+        namespace RTPC_CTRL_DAY_CYCLE
         {
-            static const AkUniqueID GROUP = 3887908721U;
+            static const AkUniqueID GROUP = 1655898020U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID EVENING = 2905060079U;
+                static const AkUniqueID MORNING = 1924633667U;
+                static const AkUniqueID NIGHT = 1011622525U;
+                static const AkUniqueID NOON = 765672767U;
+            } // namespace SWITCH
+        } // namespace RTPC_CTRL_DAY_CYCLE
+
+        namespace RTPC_CTRL_GRASS_TYPE
+        {
+            static const AkUniqueID GROUP = 1669145510U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID BUSH = 1427625975U;
+                static const AkUniqueID LONG = 674228435U;
+                static const AkUniqueID SHORT = 2585211341U;
+            } // namespace SWITCH
+        } // namespace RTPC_CTRL_GRASS_TYPE
+
+        namespace RTPC_CTRL_VILLAGE_KARMA_SWITCH
+        {
+            static const AkUniqueID GROUP = 53185091U;
 
             namespace SWITCH
             {
                 static const AkUniqueID BAD = 513390134U;
                 static const AkUniqueID GOOD = 668632890U;
             } // namespace SWITCH
-        } // namespace VILLAGE_KARMA_SWITCH
+        } // namespace RTPC_CTRL_VILLAGE_KARMA_SWITCH
 
     } // namespace SWITCHES
 
     namespace GAME_PARAMETERS
     {
-        static const AkUniqueID DEBUG_ZIK_SPEED = 501502913U;
+        static const AkUniqueID ___WATER_DISTANCE = 1638394827U;
+        static const AkUniqueID ___WATER_FAR_DISTANCE = 2539144481U;
+        static const AkUniqueID DISTANCE_MS_01 = 1432175679U;
+        static const AkUniqueID DISTANCE_MS_GEN = 3692238424U;
         static const AkUniqueID GAME_TIME = 1870090125U;
+        static const AkUniqueID GRASS_HEIGHT = 2882100565U;
         static const AkUniqueID VILLAGE_KARMA = 3200455562U;
         static const AkUniqueID VOLUME_MASTER = 3695994288U;
         static const AkUniqueID VOLUME_MUSIC = 3891337659U;
         static const AkUniqueID VOLUME_SFX = 3673881719U;
         static const AkUniqueID VOLUME_VOICES = 3190188375U;
-        static const AkUniqueID WATER_DISTANCE = 1642165204U;
-        static const AkUniqueID WATER_FAR_DISTANCE = 1920428182U;
+        static const AkUniqueID WW_DEBUG_ZIK_SPEED = 82641640U;
+        static const AkUniqueID WW_TREM_OCARINA_01 = 2090554910U;
+        static const AkUniqueID WW_TREM_OCARINA_02 = 2090554909U;
+        static const AkUniqueID WW_TREM_OCARINA_03 = 2090554908U;
+        static const AkUniqueID WW_TREM_OCARINA_04 = 2090554907U;
+        static const AkUniqueID WW_TREM_OCARINA_05 = 2090554906U;
+        static const AkUniqueID WW_TREM_OCARINA_06 = 2090554905U;
+        static const AkUniqueID WW_TREM_OCARINA_07 = 2090554904U;
+        static const AkUniqueID WW_TREM_OCARINA_08 = 2090554903U;
     } // namespace GAME_PARAMETERS
 
     namespace TRIGGERS
@@ -133,6 +253,14 @@ namespace AK
         static const AkUniqueID AMBIANCE = 2981377429U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID MUSIC_TRACK_01_MAIN = 470304688U;
+        static const AkUniqueID MUSIC_TRACK_02_RYTHMIC = 2052289070U;
+        static const AkUniqueID MUSIC_TRACK_03_PERC = 891825369U;
+        static const AkUniqueID MUSIC_TRACK_04_WIND_1 = 1905708082U;
+        static const AkUniqueID MUSIC_TRACK_05_WIND_2 = 4185999270U;
+        static const AkUniqueID MUSIC_TRACK_06_BRASS_1 = 3059150873U;
+        static const AkUniqueID MUSIC_TRACK_07_BRASS_2 = 2645850543U;
+        static const AkUniqueID MUSIC_TRACK_08 = 306302681U;
         static const AkUniqueID SFX = 393239870U;
         static const AkUniqueID VOICES = 3313685232U;
     } // namespace BUSSES

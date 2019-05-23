@@ -6,7 +6,7 @@ public class PlayerUseToolState : State
 {
     PlayerManager curPlayer;
 
-    InteractObject bringingObject;
+    ToolObject toolObject;
 
     //temps de pression du bouton
     float interactInputLenght = 0;
@@ -14,6 +14,7 @@ public class PlayerUseToolState : State
     //pour empêcher le prendre/déposer dans la même frame
     float tempoTime = 0.3f;
 
+    public bool CanMove { get; set; } = true;
 
     bool endState = false;
     float chronoEnd = 0.3f;
@@ -25,40 +26,57 @@ public class PlayerUseToolState : State
         curPlayer = (PlayerManager)this.curObject;
     }
 
-    public PlayerUseToolState(ObjectManager curObject, GameObject bringingObject) : base(curObject)
+    public PlayerUseToolState(ObjectManager curObject, GameObject toolObject) : base(curObject)
     {
         stateName = "PLAYER_USE_TOOL_STATE";
         this.curObject = curObject;
         curPlayer = (PlayerManager)this.curObject;
-        this.bringingObject = bringingObject.GetComponent<InteractObject>();
+        this.toolObject = toolObject.GetComponent<ToolObject>();
+        this.toolObject.curStatePlayer = this;
     }
 
     public void TryPoseObject()
     {
         Vector3 posePosition = Vector3.zero;
-        bringingObject.EndInteraction();
-        this.bringingObject.transform.parent = null;
-        bringingObject.EndInteraction();
+        toolObject.EndInteraction();
+        this.toolObject.transform.parent = null;
+        toolObject.EndInteraction();
         endState = true;
         curPlayer.ResetVelocity();
     }
 
     public void ShootObject()
     {
-        this.bringingObject.transform.parent = null;
-        Rigidbody body = this.bringingObject.GetComponent<Rigidbody>();
-        bringingObject.EndInteraction();
+        this.toolObject.transform.parent = null;
+        Rigidbody body = this.toolObject.GetComponent<Rigidbody>();
+        toolObject.EndInteraction();
 
         Vector3 launchDirection = curPlayer.GetHeadingDirection();
         launchDirection.Normalize();
         body.AddForce(launchDirection * 400f, ForceMode.Impulse);
-        this.bringingObject.GetComponent<BringObject>().LaunchObject();
+        this.toolObject.GetComponent<BringObject>().LaunchObject();
         endState = true;
         curPlayer.ResetVelocity();
     }
 
+    public void UseTool()
+    {
+        toolObject.IsUsingObject = true;
+    }
+
+    public void EndUseTool()
+    {
+        toolObject.IsUsingObject = false;
+    }
+
     public void InteractInput()
     {
+        if (curPlayer.GetInputManager().GetCancelInput())
+        {
+            curPlayer.GetAnimator().SetTrigger("UseTool");
+            CanMove = false;
+            return;
+        }
         if (curPlayer.GetInputManager().GetInteractInput())
         {
             interactInputLenght += Time.deltaTime;
@@ -69,7 +87,7 @@ public class PlayerUseToolState : State
             curPlayer.ResetVelocity();
             if (interactInputLenght > 0.3f)
             {
-                ShootObject();
+                curPlayer.GetAnimator().SetTrigger("LaunchTool");
             }
             else
             {
@@ -77,34 +95,52 @@ public class PlayerUseToolState : State
             }
             interactInputLenght = 0;
         }
+    }
+
+    public void EndUseObjectOnCollision()
+    {
+        Animator anim = curPlayer.GetAnimator();
+        anim.SetTrigger("ToolTrigger");
+    }
+
+    public IEnumerator EndUseObjectOnCollisiTEStn()
+    {
+        EndUseTool();
+        Animator anim = curPlayer.GetAnimator();
+        anim.SetTrigger("ToolTrigger");
+        yield return new WaitForSeconds(0.5f);
+        CanMove = true;
 
     }
 
-    public BringObject GetBringingObject()
+    public ToolObject GettoolObject()
     {
-        if (bringingObject.GetComponent<BringObject>() == null)
-            return null;
-        return bringingObject.GetComponent<BringObject>();
+        return toolObject;
     }
 
     //STATE GESTION______________________________________________________________________________
 
     public override void Enter()
     {
-        this.bringingObject.transform.parent = curPlayer.handTool;
-        this.bringingObject.StartInteraction();
-        this.bringingObject.transform.position = bringingObject.transform.parent.position;
-        this.bringingObject.transform.rotation = bringingObject.transform.parent.rotation;
+        this.toolObject.transform.parent = curPlayer.handTool;
+        this.toolObject.StartInteraction();
+        this.toolObject.transform.position = toolObject.transform.parent.position;
+        this.toolObject.transform.rotation = toolObject.transform.parent.rotation;
         tempoTime = 0.3f;
         chronoEnd = 0.3f;
     }
 
     public override void Execute()
     {
+        if (!CanMove)
+        {
+            interactInputLenght = 0;
+            return;
+        }
         if (!endState)
         {
             curPlayer.Move();
-            // this.bringingObject.transform.position = new Vector3(curPlayer.transform.position.x, curPlayer.transform.position.y + 1.7f, curPlayer.transform.position.z);
+            // this.toolObject.transform.position = new Vector3(curPlayer.transform.position.x, curPlayer.transform.position.y + 1.7f, curPlayer.transform.position.z);
 
             if (tempoTime > 0)
             {
@@ -113,8 +149,6 @@ public class PlayerUseToolState : State
             }
             InteractInput();
         }
-
-
         else
         {
             chronoEnd -= Time.deltaTime;

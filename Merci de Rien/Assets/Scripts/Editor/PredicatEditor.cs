@@ -53,8 +53,26 @@ public class PredicatEditor : Editor
             SerializedProperty comparisonCumulRef = conditionListRef.FindPropertyRelative("comparisonCumul");
 
             AddPopup(ref eventTypeRef, "Event type :", typeof(EventDatabase.EventType));
+
+            if (eventTypeRef.enumValueIndex == (int)EventDatabase.EventType.DialogueHasBeenSaid)
+            {
+                SerializedProperty dialogueConcernedRef = conditionListRef.FindPropertyRelative("concernedDialogue");
+                dialogueConcernedRef.objectReferenceValue = EditorGUILayout.ObjectField("Dialogue à tester :", dialogueConcernedRef.objectReferenceValue, typeof(Dialogue), true);
+            }
+
             AddPopup(ref conditionTypeRef, "Comparaison symbol :", typeof(Condition.ComparisonType));
             valToTestRef.intValue = EditorGUILayout.IntField("Value to test :", valToTestRef.intValue);
+
+
+            if (eventTypeRef.enumValueIndex == (int)EventDatabase.EventType.DialogueHasBeenSaid)
+            {
+                if (conditionTypeRef.enumValueIndex != (int)Condition.ComparisonType.equal)
+                    conditionTypeRef.enumValueIndex = (int)Condition.ComparisonType.equal;
+                if(valToTestRef.intValue==0)
+                    EditorGUILayout.LabelField("Le dialogue n'a jamais été dit",EditorStyles.boldLabel);
+                else
+                    EditorGUILayout.LabelField("Le dialogue a déjà été dit", EditorStyles.boldLabel);
+            }
             AddPopup(ref comparisonCumulRef, "Comparaison type :", typeof(Condition.MultipleComparison));
 
             EditorGUILayout.LabelField("Remove a condition");

@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2f235a32fac4b598f8382433b47860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectType: 5
+  objectType: 6
   characterOwner: 5
   feedbackInteraction: {fileID: 5919989406552265706}
   mesh: []
@@ -318,14 +318,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7934591897059936388}
     m_Modifications:
-    - target: {fileID: 100000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
-      propertyPath: m_Name
-      value: Catwalk Walking
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
-      propertyPath: m_Name
-      value: modele
-      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d5f72a4e74b14b24c8e78ee978e8a08b, type: 2}
+    - target: {fileID: 13700000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9030c3e332ec5b54badf1777f3c225bd, type: 2}
     - target: {fileID: 400000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -381,6 +381,14 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
+      propertyPath: m_Name
+      value: Catwalk Walking
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
+      propertyPath: m_Name
+      value: modele
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -794,14 +802,6 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 86b258a5b044b4add928eb8ec96e52b0, type: 2}
-    - target: {fileID: 13700000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d5f72a4e74b14b24c8e78ee978e8a08b, type: 2}
-    - target: {fileID: 13700000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9030c3e332ec5b54badf1777f3c225bd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
 --- !u!1 &8418623365318464092 stripped

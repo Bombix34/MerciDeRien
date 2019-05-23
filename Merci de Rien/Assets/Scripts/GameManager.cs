@@ -10,8 +10,32 @@ public class GameManager : Singleton<GameManager>
 
     public Dialogue PLACEHOLDER_PNJ_DIALOGUE;
 
+    List<Dialogue> playerHistoricDialogues;
+
     private void Start()
     {
         EventManager = GetComponent<EventManager>();
+        playerHistoricDialogues = new List<Dialogue>();
+    }
+
+    public void AddToHistoric(Dialogue newDialogue)
+    {
+        foreach (var item in playerHistoricDialogues)
+        {
+            if (item == newDialogue)
+                return;
+        }
+        playerHistoricDialogues.Add(newDialogue);
+    }
+
+    public bool IsDialogue(Dialogue concerned)
+    {
+        bool result = false;
+        foreach (var item in playerHistoricDialogues)
+        {
+            if (item == concerned)
+                result = true;
+        }
+        return result;
     }
 }

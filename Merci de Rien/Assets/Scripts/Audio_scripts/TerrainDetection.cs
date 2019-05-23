@@ -9,6 +9,9 @@ public class TerrainDetection : MonoBehaviour
     float[,,] mSplatMapData;
     float mNumTextures;
 
+    //pour le son
+    float lastFoostep;
+
     GroundLayer currentPlayerGroundLayer;
 
     public bool IsPlayingFootstepSound=false;
@@ -23,6 +26,8 @@ public class TerrainDetection : MonoBehaviour
 
         mSplatMapData = mTerrainData.GetAlphamaps(0, 0, alphaMapWidth, alphaMapHeight);
         mNumTextures = mSplatMapData.Length / (alphaMapWidth * alphaMapHeight);
+
+        lastFoostep = 0;
     }
 
     private Vector3 ConvertToSplatMapCoordinate(Vector3 playerPos)
@@ -69,29 +74,35 @@ public class TerrainDetection : MonoBehaviour
     {
         switch (currentPlayerGroundLayer)
         {
-            case TerrainDetection.GroundLayer.longGrass:
             case TerrainDetection.GroundLayer.shortGrass:
             default:
                 AkSoundEngine.SetSwitch("floor_type", "grass", gameObject);
-                //Debug.Log("grass");
+                AkSoundEngine.SetRTPCValue("grass_height", 1, gameObject);
                 break;
-                
+
+            case TerrainDetection.GroundLayer.longGrass:
+                AkSoundEngine.SetSwitch("floor_type", "grass", gameObject);
+                AkSoundEngine.SetRTPCValue("grass_height", 2, gameObject);
+                break;
+
             case TerrainDetection.GroundLayer.sand:
                 AkSoundEngine.SetSwitch("floor_type", "sand", gameObject);
-               // Debug.Log("sand");
                 break;
 
             case TerrainDetection.GroundLayer.wetSand:
                 AkSoundEngine.SetSwitch("floor_type", "water", gameObject);
-               //Debug.Log("wet sand");
                 break;
 
             case TerrainDetection.GroundLayer.agricol:
                 AkSoundEngine.SetSwitch("floor_type", "mud", gameObject);
-                //Debug.Log("agricol");
                 break;
         }
-        AkSoundEngine.PostEvent("MC_walk_play", gameObject);
+
+        if (lastFoostep >= 0.25f)
+        {
+            AkSoundEngine.PostEvent("MC_walk_play", gameObject);
+            lastFoostep = 0f;
+        }
         //StartCoroutine(FootstepSound());
     }
 
@@ -127,5 +138,13 @@ public class TerrainDetection : MonoBehaviour
         sand,
         wetSand,
         agricol
+    }
+
+    private void Update()
+    {
+        //pour le son
+        //c'est pour pas incrémenter inutilement le truc jusqu'à des valeur absolument inutiles
+        if (lastFoostep <= 1f)
+            lastFoostep += Time.deltaTime;
     }
 }

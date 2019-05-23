@@ -10,6 +10,9 @@ public class Dialogue : ScriptableObject
     public int dialoguePriority = 0;
     public bool IsUniqueSentence = false;
 
+    [SerializeField]
+    List<Predicat> eventsTriggered;
+
     [TextArea(3,10)]
     public List<string> frenchSentences;
     [TextArea(3, 10)]
@@ -20,5 +23,10 @@ public class Dialogue : ScriptableObject
         dialogueOwner = owner;
         frenchSentences = new List<string>();
         englishSentences = new List<string>();
+    }
+
+    public List<Predicat> GetPredicats()
+    {
+        return eventsTriggered;
     }
 }

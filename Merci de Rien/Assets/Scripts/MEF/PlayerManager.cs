@@ -94,7 +94,7 @@ public class PlayerManager : ObjectManager
         Vector3 upMove = forward * (10 * inputs.GetMovementInputY()) * Time.deltaTime;
         Vector3 heading = (rightMove + upMove);
 
-        RotatePlayer(inputs.GetMovementInputX(), inputs.GetMovementInputY());
+        RotatePlayer(inputs.GetMovementInputY(), -inputs.GetMovementInputX());
         currentVelocity = Vector3.zero;
         currentVelocity += heading * reglages.moveSpeed;
         character.Move(currentVelocity);

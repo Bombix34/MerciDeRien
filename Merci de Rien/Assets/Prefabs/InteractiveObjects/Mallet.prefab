@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7485084368973822564}
   - component: {fileID: 1149887394}
   - component: {fileID: 1149887393}
-  - component: {fileID: 1149887395}
+  - component: {fileID: 5741531238941776487}
   m_Layer: 0
   m_Name: Mallet
   m_TagString: InteractToolObject
@@ -111,7 +111,7 @@ CapsuleCollider:
   m_Height: 90.47079
   m_Direction: 1
   m_Center: {x: 0.0000042915344, y: -17.508118, z: 0.06725788}
---- !u!114 &1149887395
+--- !u!114 &5741531238941776487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,13 +120,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7485084368975815844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4803f9a3cba054f6ebb9e5db29a66589, type: 3}
+  m_Script: {fileID: 11500000, guid: 13cc7d4433d3847bba9d0bcbe25e9e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: 3
   characterOwner: 7
   feedbackInteraction: {fileID: 5134840005849258746}
-  mesh: []
+  mesh:
+  - {fileID: 7485084368973822564}
   interactMaterial:
   - {fileID: 2100000, guid: caa4423ebb355412c878aee2d488bc8d, type: 2}
   interactText: {fileID: 11400000, guid: c13ad8090cfd6437f96617cfe6d2b572, type: 2}

@@ -148,6 +148,8 @@ public class EventDatabase : ScriptableObject
         BadThingsTroubadour,            //DONE
         BadThingsEtranger,              //DONE
 
+        DialogueHasBeenSaid,
+
         questTotal,
         questArtisan,
         questPaysan,
