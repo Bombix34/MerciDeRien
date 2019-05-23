@@ -60,7 +60,6 @@ public class ToolObject : BringObject
     {
         if (!IsUsingObject)
             return;
-        Debug.Log(collision.gameObject);
         //quand l'objet est touché par un autre objet lancé
         if (collision.gameObject.tag == "BringObject")
         {
