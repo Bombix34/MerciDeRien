@@ -9,9 +9,9 @@ public class CharacterAnimatorTrigger : MonoBehaviour
         PlayerManager manager = transform.parent.GetComponent<PlayerManager>();
         if (manager == null)
             return;
-        PlayerUseToolState curState = (PlayerUseToolState)manager.GetCurrentState();
-        if (curState == null)
+        if (manager.GetCurrentState().stateName != "PLAYER_USE_TOOL_STATE")
             return;
+        PlayerUseToolState curState = (PlayerUseToolState)manager.GetCurrentState();
         curState.ShootObject();
     }
 
@@ -20,9 +20,9 @@ public class CharacterAnimatorTrigger : MonoBehaviour
         PlayerManager manager = transform.parent.GetComponent<PlayerManager>();
         if (manager == null)
             return;
-        PlayerUseToolState curState = (PlayerUseToolState)manager.GetCurrentState();
-        if (curState == null)
+        if (manager.GetCurrentState().stateName != "PLAYER_USE_TOOL_STATE")
             return;
+        PlayerUseToolState curState = (PlayerUseToolState)manager.GetCurrentState();
         curState.UseTool();
     }
 
@@ -31,9 +31,9 @@ public class CharacterAnimatorTrigger : MonoBehaviour
         PlayerManager manager = transform.parent.GetComponent<PlayerManager>();
         if (manager == null)
             return;
-        PlayerUseToolState curState = (PlayerUseToolState)manager.GetCurrentState();
-        if (curState == null)
+        if (manager.GetCurrentState().stateName != "PLAYER_USE_TOOL_STATE")
             return;
+        PlayerUseToolState curState = (PlayerUseToolState)manager.GetCurrentState();
         curState.EndUseTool();
     }
 
@@ -42,9 +42,9 @@ public class CharacterAnimatorTrigger : MonoBehaviour
         PlayerManager manager = transform.parent.GetComponent<PlayerManager>();
         if (manager == null)
             return;
-        PlayerUseToolState curState = (PlayerUseToolState)manager.GetCurrentState();
-        if (curState == null)
+        if (manager.GetCurrentState().stateName != "PLAYER_USE_TOOL_STATE")
             return;
+        PlayerUseToolState curState = (PlayerUseToolState)manager.GetCurrentState();
         curState.CanMove = true;
     }
 }
