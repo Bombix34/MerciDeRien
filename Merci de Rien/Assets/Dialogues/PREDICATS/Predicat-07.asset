@@ -14,17 +14,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   database: {fileID: 0}
   conditions:
-  - concernedEvent: 13
-    comparaison: 0
-    valToTest: 0
+  - concernedEvent: 45
+    comparaison: 2
+    valToTest: 1
+    concernedDialogue: {fileID: 11400000, guid: 8e892c68d3a67a64a8895b5d669051e6,
+      type: 2}
     comparisonCumul: 0
   consequences:
   - consequence: 2
     characterConcerned: 0
     actionChoice: 0
     mood: 0
-    dialogueConcerned: {fileID: 0}
+    dialogueConcerned: {fileID: 11400000, guid: bf6b009cf67a6174396582a8602dc2e9,
+      type: 2}
     eventDatabase: {fileID: 0}
     eventType: 0
-    objectConcerned: {fileID: 0}
+    objectConcerned: 0
+    intModificator: 0
+  - consequence: 2
+    characterConcerned: 1
+    actionChoice: 0
+    mood: 0
+    dialogueConcerned: {fileID: 11400000, guid: a4e1df90157ef1d45b5bc77fe26443bd,
+      type: 2}
+    eventDatabase: {fileID: 0}
+    eventType: 0
+    objectConcerned: 0
+    intModificator: 0
+  - consequence: 2
+    characterConcerned: 1
+    actionChoice: 0
+    mood: 0
+    dialogueConcerned: {fileID: 11400000, guid: 6dea0178fd60f2b48a6f04b935251d51,
+      type: 2}
+    eventDatabase: {fileID: 0}
+    eventType: 0
+    objectConcerned: 0
+    intModificator: 0
+  - consequence: 2
+    characterConcerned: 1
+    actionChoice: 0
+    mood: 0
+    dialogueConcerned: {fileID: 11400000, guid: 7887a9817ff852046af37a814a73f1c5,
+      type: 2}
+    eventDatabase: {fileID: 0}
+    eventType: 0
+    objectConcerned: 0
     intModificator: 0
