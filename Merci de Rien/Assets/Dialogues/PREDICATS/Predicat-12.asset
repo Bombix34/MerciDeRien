@@ -13,23 +13,39 @@ MonoBehaviour:
   m_Name: Predicat-12
   m_EditorClassIdentifier: 
   database: {fileID: 0}
-  conditions: []
+  conditions:
+  - concernedEvent: 45
+    comparaison: 2
+    valToTest: 0
+    concernedDialogue: {fileID: 11400000, guid: aed34d531a249804db587298b7480aa3,
+      type: 2}
+    comparisonCumul: 0
   consequences:
-  - consequence: 8
-    characterConcerned: 0
+  - consequence: 0
+    characterConcerned: 5
     actionChoice: 0
     mood: 0
     dialogueConcerned: {fileID: 0}
     eventDatabase: {fileID: 0}
     eventType: 0
-    objectConcerned: {fileID: 0}
+    objectConcerned: 0
     intModificator: 1
-  - consequence: 8
+  - consequence: 2
+    characterConcerned: 5
+    actionChoice: 0
+    mood: 0
+    dialogueConcerned: {fileID: 11400000, guid: 70d92b705c733d54daa7fcec0bdf1534,
+      type: 2}
+    eventDatabase: {fileID: 0}
+    eventType: 0
+    objectConcerned: 0
+    intModificator: 1
+  - consequence: 6
     characterConcerned: 0
     actionChoice: 0
     mood: 0
     dialogueConcerned: {fileID: 0}
     eventDatabase: {fileID: 0}
     eventType: 0
-    objectConcerned: {fileID: 0}
+    objectConcerned: 0
     intModificator: 1

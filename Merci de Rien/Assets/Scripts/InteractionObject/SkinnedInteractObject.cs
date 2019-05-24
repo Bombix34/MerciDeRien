@@ -14,7 +14,10 @@ public class SkinnedInteractObject : InteractObject
         skinnedRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         baseMaterial = skinnedRenderer.materials;
         if (feedbackInteraction != null)
+        {
             textContainer = feedbackInteraction.GetComponentInChildren<TextMesh>();
+            textPosX = textContainer.GetComponent<RectTransform>().localPosition.x;
+        }
         if (GetComponent<PnjManager>() != null)
             CanTakeObject = true;
     }

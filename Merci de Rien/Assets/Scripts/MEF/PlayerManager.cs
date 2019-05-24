@@ -24,7 +24,6 @@ public class PlayerManager : ObjectManager
 
     GameObject interactObject;
 
-
     void Awake()
     {
         inputs = GetComponent<PlayerInputManager>();
@@ -37,14 +36,13 @@ public class PlayerManager : ObjectManager
 
     private void Start()
     {
+        EventManager.Instance.SetPlayer(this.gameObject);
         ChangeState(new PlayerBaseState(this));
     }
 
     private void Update()
     {
         currentState.Execute();
-        FootstepRaycast();
-        
     }
 
     public override void ChangeState(State newState)
@@ -93,10 +91,11 @@ public class PlayerManager : ObjectManager
         Vector3 rightMove = right * (10 * inputs.GetMovementInputX()) * Time.deltaTime;
         Vector3 upMove = forward * (10 * inputs.GetMovementInputY()) * Time.deltaTime;
         Vector3 heading = (rightMove + upMove);
+        heading.Normalize();
 
         RotatePlayer(inputs.GetMovementInputY(), -inputs.GetMovementInputX());
         currentVelocity = Vector3.zero;
-        currentVelocity += heading * reglages.moveSpeed;
+        currentVelocity += heading * (reglages.moveSpeed/5f);
         character.Move(currentVelocity);
         UpdateAnim();
     }
@@ -164,16 +163,6 @@ public class PlayerManager : ObjectManager
             soundManager.ResetInteractObject();
         }
         return raycastObject;
-    }
-
-    public void FootstepRaycast()
-    {
-        RaycastHit hit;
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down));
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, 0))
-        {
-            print(hit.collider.gameObject);
-        }
     }
 
     public GameObject IsObstacle(Vector3 testPosition)
@@ -250,6 +239,7 @@ public class PlayerManager : ObjectManager
         }
         return returnVal;
     }
+   
 
     //SINGLETON________________________________________________________________________________________________
 

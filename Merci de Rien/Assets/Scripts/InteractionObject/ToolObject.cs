@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ToolObject : BringObject
 {
@@ -9,16 +10,20 @@ public class ToolObject : BringObject
     public bool IsUsingObject { get; set; } = false;
     public PlayerUseToolState curStatePlayer { get; set; } = null;
 
+    NavMeshObstacle navObstacle;
+
     protected override void Start()
     {
         base.Start();
         body = GetComponent<Rigidbody>();
         capsule = GetComponent<CapsuleCollider>();
+        navObstacle = GetComponent<NavMeshObstacle>();
     }
 
     public override void StartInteraction()
     {
         base.StartInteraction();
+        navObstacle.enabled = false;
         body.useGravity = false;
         capsule.isTrigger = true;
         body.isKinematic = true;
@@ -27,6 +32,7 @@ public class ToolObject : BringObject
     public override void EndInteraction()
     {
         body.useGravity = true;
+        navObstacle.enabled = true;
         capsule.isTrigger = false;
         body.isKinematic = false;
         body.constraints = RigidbodyConstraints.FreezeRotationY;
@@ -60,7 +66,6 @@ public class ToolObject : BringObject
     {
         if (!IsUsingObject)
             return;
-        Debug.Log(collision.gameObject);
         //quand l'objet est touché par un autre objet lancé
         if (collision.gameObject.tag == "BringObject")
         {

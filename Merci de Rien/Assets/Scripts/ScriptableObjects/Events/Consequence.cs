@@ -94,8 +94,10 @@ public class Consequence
                 }
                 break;
             case Consequence.ConsequenceType.GainKey:
+                GameManager.Instance.AddKey(intModificator);
                 break;
             case Consequence.ConsequenceType.RemoveKey:
+                GameManager.Instance.RemoveKey(intModificator);
                 break;
         }
     }

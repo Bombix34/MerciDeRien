@@ -33,6 +33,8 @@ public class PlayerUseToolState : State
         curPlayer = (PlayerManager)this.curObject;
         this.toolObject = toolObject.GetComponent<ToolObject>();
         this.toolObject.curStatePlayer = this;
+        this.toolObject.IsUsingObject = false;
+        CanMove = true;
     }
 
     public void TryPoseObject()
@@ -53,7 +55,7 @@ public class PlayerUseToolState : State
 
         Vector3 launchDirection = curPlayer.GetHeadingDirection();
         launchDirection.Normalize();
-        body.AddForce(launchDirection * 400f, ForceMode.Impulse);
+        body.AddForce(launchDirection * 300f, ForceMode.Impulse);
         this.toolObject.GetComponent<BringObject>().LaunchObject();
         endState = true;
         curPlayer.ResetVelocity();

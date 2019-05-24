@@ -36,6 +36,8 @@ public class PursuitPlayerState : State
 
     public void LaunchDialogueWithPlayer()
     {
+        if (curPlayer.GetCurrentState().stateName == "PLAYER_DIALOGUE_STATE")
+            return;
         curPlayer.ChangeState(new PlayerDialogueState(curPlayer,curPnj.gameObject,curPlayer.GetCurrentState()));
         curPnj.ChangeState(new PnjDialogueState(curPnj,curPlayer,this.prevState));
     }
@@ -53,6 +55,15 @@ public class PursuitPlayerState : State
         agent.SetDestination(curPlayer.transform.position);
         if(curPnj.RaycastPlayer())
         {
+            if (curPlayer.GetCurrentState().stateName == "PLAYER_DIALOGUE_STATE")
+            {
+                agent.SetDestination(curPnj.transform.position);
+                return;
+            }
+            else
+            {
+                agent.SetDestination(curPlayer.transform.position);
+            }
             LaunchDialogueWithPlayer();
         }
     }

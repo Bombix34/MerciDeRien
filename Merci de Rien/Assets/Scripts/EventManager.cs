@@ -101,6 +101,11 @@ public class EventManager : Singleton<EventManager>
         return player;
     }
 
+    public void SetPlayer(GameObject player)
+    {
+        this.player = player;
+    }
+
     public void AddPNJ(GameObject pnj)
     {
         pnjs.Add(pnj.GetComponent<PnjManager>());

@@ -8,12 +8,19 @@ public class GameManager : Singleton<GameManager>
 
     public EventManager EventManager{ set; get; }
 
+    [SerializeField]
+    List<GameObject> patounePrefab;
+
     public Dialogue PLACEHOLDER_PNJ_DIALOGUE;
 
     List<Dialogue> playerHistoricDialogues;
 
+    public int Patoune { get; set; } = 0;
+    List<int> keyIDs;
+
     private void Start()
     {
+        keyIDs = new List<int>();
         EventManager = GetComponent<EventManager>();
         playerHistoricDialogues = new List<Dialogue>();
     }
@@ -37,5 +44,32 @@ public class GameManager : Singleton<GameManager>
                 result = true;
         }
         return result;
+    }
+
+    public bool HasKey(int id)
+    {
+        bool result = false;
+        foreach (var item in keyIDs)
+        {
+            if (id == item)
+                result = true;
+        }
+        return result;
+    }
+
+    public void AddKey(int id)
+    {
+        keyIDs.Add(id);
+    }
+
+    public void RemoveKey(int id)
+    {
+        if(HasKey(id))
+            keyIDs.Remove(id);
+    }
+
+    public GameObject GetPatounePrefab()
+    {
+        return patounePrefab[(int)Random.Range(0f, patounePrefab.Count)];
     }
 }
