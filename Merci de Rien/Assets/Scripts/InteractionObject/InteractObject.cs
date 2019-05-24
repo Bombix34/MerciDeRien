@@ -18,7 +18,7 @@ public class InteractObject : MonoBehaviour
     public bool CanInteract { get; set; } = true;
 
     protected TextMesh textContainer;
-    float textPosX;
+    protected float textPosX;
     public Dialogue interactText;
 
     protected virtual void Start()
@@ -106,7 +106,7 @@ public class InteractObject : MonoBehaviour
         }
     }
 
-    public string GetInteractText(bool isStealing)
+    public virtual string GetInteractText(bool isStealing)
     {
         string returnVal = "";
         SettingsManager settings = GameManager.Instance.settings;
@@ -148,6 +148,8 @@ public class InteractObject : MonoBehaviour
         PNJ,
         Fourche,
         Pelle,
-        Baton
+        Baton,
+        Portail,
+        Plante
     }
 }
