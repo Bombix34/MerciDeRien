@@ -22,7 +22,6 @@ public class Portail : InteractObject
         CanTakeObject = true;
     }
     
-
     public override void StartInteraction()
     {
         base.StartInteraction();
@@ -38,7 +37,7 @@ public class Portail : InteractObject
             if (KeyNeeded == -1)
                 hasKey = true;
             else
-                hasKey = player.HasKey(KeyNeeded);
+                hasKey = GameManager.Instance.HasKey(KeyNeeded);
             if(hasKey)
             {
                 animator.SetBool("IsOpen", true);
@@ -55,7 +54,6 @@ public class Portail : InteractObject
 
     public override void EndInteraction()
     {
-        //  animator.SetBool("IsOpen", false);
     }
 
     public override string GetInteractText(bool isStealing)
@@ -82,7 +80,7 @@ public class Portail : InteractObject
     IEnumerator IsMovingCoroutine()
     {
         CanInteract = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.75f);
         CanInteract = true;
     }
 

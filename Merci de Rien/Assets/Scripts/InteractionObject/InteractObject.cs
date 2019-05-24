@@ -88,7 +88,6 @@ public class InteractObject : MonoBehaviour
                 RectTransform textPosition = textContainer.GetComponent<RectTransform>();
                 float playerPositionZ = EventManager.Instance.GetPlayer().transform.position.z;
                 float result = (this.transform.position.z - playerPositionZ) * 10f;
-
                 if (result<0)
                 {
                     //joueur a droite
@@ -102,6 +101,7 @@ public class InteractObject : MonoBehaviour
                         textPosition.localPosition = new Vector3(-textPosX, textPosition.localPosition.y, textPosition.localPosition.z);
                 }
             }
+            
             textContainer.text = GetInteractText(!CanTakeObject);
         }
     }

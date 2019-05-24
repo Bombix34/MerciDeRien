@@ -24,11 +24,8 @@ public class PlayerManager : ObjectManager
 
     GameObject interactObject;
 
-    List<int> keyIDs;
-
     void Awake()
     {
-        keyIDs = new List<int>();
         inputs = GetComponent<PlayerInputManager>();
         mainCamera = Camera.main.transform;
         character = GetComponent<CharacterController>();
@@ -242,17 +239,7 @@ public class PlayerManager : ObjectManager
         }
         return returnVal;
     }
-
-    public bool HasKey(int id)
-    {
-        bool result = false;
-        foreach(var item in keyIDs)
-        {
-            if (id == item)
-                result = true;
-        }
-        return result;
-    }
+   
 
     //SINGLETON________________________________________________________________________________________________
 
