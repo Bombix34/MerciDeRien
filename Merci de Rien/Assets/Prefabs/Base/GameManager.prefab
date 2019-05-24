@@ -46,8 +46,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   database: {fileID: 11400000, guid: 6bae29087a66e427b81fcbcc8d1df3f1, type: 2}
   pnjs: []
-  predicats: []
+  predicats:
+  - {fileID: 11400000, guid: 90d946235ea548a448e841c3e2d09128, type: 2}
+  - {fileID: 11400000, guid: 922bab8434dfcaf46b8b1fc2cdd9c880, type: 2}
+  - {fileID: 11400000, guid: cec556057104add40abdcdb3e025b4ba, type: 2}
   player: {fileID: 0}
+  interactivesObjects: []
 --- !u!114 &944714312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,5 +65,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 65cb103db6c1846a6add5ef7876771d2, type: 2}
+  patounePrefab:
+  - {fileID: 4988551673628102393, guid: c0dfd27877744384fbdf4ee5b73aa382, type: 3}
+  - {fileID: 5193830855317090048, guid: 9913814fdf8ae4d429d71c7340e0d0d6, type: 3}
+  - {fileID: 2488898334598074367, guid: d46aa8ac1f7fa5643bb236d986920d08, type: 3}
   PLACEHOLDER_PNJ_DIALOGUE: {fileID: 11400000, guid: bcbadaa7247bb4caf90ab418b83e85a5,
     type: 2}
