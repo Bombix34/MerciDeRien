@@ -9,10 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a8b26649635d4a6bb03fdb3ba631c83, type: 3}
-  m_Name: PlayerReglages
+  m_Script: {fileID: 11500000, guid: 0d56498fb15504ae391aab14413064c4, type: 3}
+  m_Name: Portail_Close
   m_EditorClassIdentifier: 
-  moveSpeed: 0.7
-  gravity: 9.8
-  rotationSpeed: 25
-  raycastRadius: 0.56
+  dialogueOwner: 7
+  dialoguePriority: 0
+  IsUniqueSentence: 0
+  eventsTriggered: []
+  frenchSentences:
+  - Fermer
+  englishSentences:
+  - Close

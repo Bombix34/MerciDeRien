@@ -24,9 +24,11 @@ public class PlayerManager : ObjectManager
 
     GameObject interactObject;
 
+    List<int> keyIDs;
 
     void Awake()
     {
+        keyIDs = new List<int>();
         inputs = GetComponent<PlayerInputManager>();
         mainCamera = Camera.main.transform;
         character = GetComponent<CharacterController>();
@@ -37,6 +39,7 @@ public class PlayerManager : ObjectManager
 
     private void Start()
     {
+        EventManager.Instance.SetPlayer(this.gameObject);
         ChangeState(new PlayerBaseState(this));
     }
 
@@ -238,6 +241,17 @@ public class PlayerManager : ObjectManager
             returnVal = curState.GetBringingObject();
         }
         return returnVal;
+    }
+
+    public bool HasKey(int id)
+    {
+        bool result = false;
+        foreach(var item in keyIDs)
+        {
+            if (id == item)
+                result = true;
+        }
+        return result;
     }
 
     //SINGLETON________________________________________________________________________________________________
