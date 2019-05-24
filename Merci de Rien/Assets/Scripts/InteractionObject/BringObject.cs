@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using CielaSpike;
 using System.Threading;
 
 public class BringObject : InteractObject
@@ -16,6 +15,7 @@ public class BringObject : InteractObject
 
     Vector3 baseScale;
 
+    public GameObject breakingParts;
     public GameObject explosionParticles;
 
     protected override void Start()
@@ -55,17 +55,17 @@ public class BringObject : InteractObject
     protected virtual void OnCollisionEnter(Collision collision)
     {
         //quand l'objet est touché par un autre objet lancé
-        if ((collision.gameObject.tag == "BringObject")||(collision.gameObject.tag=="InteractToolObject"))
+        if ((collision.gameObject.tag == "BringObject") || (collision.gameObject.tag == "InteractToolObject"))
         {
             BringObject otherObject = collision.gameObject.GetComponent<BringObject>();
-            if(otherObject.GetObjectReglages().IsBreakingThings&&otherObject.IsLaunch)
+            if (otherObject.GetObjectReglages().IsBreakingThings && otherObject.IsLaunch)
                 StartBreaking();
         }
         //quand on lance l'objet
         if (!IsLaunch)
             return;
         StartBreaking();
-        if (collision.gameObject.tag=="PNJ")
+        if (collision.gameObject.tag == "PNJ")
         {
             PnjManager pnj = collision.gameObject.GetComponent<PnjManager>();
             StartHurting(pnj);
@@ -99,9 +99,45 @@ public class BringObject : InteractObject
         //event
         EventManager.Instance.UpdateCharacterEvent(EventDatabase.EventType.brokeObjectsTotal, characterOwner, 1);
 
-        this.StartCoroutineAsync(Explode());
+        StartCoroutine(Breaking());
+        // this.StartCoroutineAsync(Explode());
     }
 
+    public void DisableMesh()
+    {
+        foreach(var item in mesh)
+        {
+            item.enabled = false;
+        }
+    }
+
+    IEnumerator Breaking()
+    {
+        DisableMesh();
+        // remove collider from original
+        GetComponent<Collider>().enabled = false;
+        if (explosionParticles != null)
+        {
+            GameObject particle = Instantiate(explosionParticles, transform.position, Quaternion.identity) as GameObject;
+            particle.transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
+        }
+        if (breakingParts != null)
+        {
+            GameObject breakedObject = Instantiate(breakingParts, transform.position, Quaternion.identity) as GameObject;
+            Destroy(breakedObject, 4f);
+        }
+        if(reglages.IsGivingPatouneOnBreak)
+        {
+            int patouneNb = (int)Random.Range(0f, 3f);
+            for(int i = 0; i <patouneNb;i++)
+            {
+                Instantiate(GameManager.Instance.GetPatounePrefab(), transform.position, Quaternion.identity);
+            }
+        }
+        yield return null;
+    }
+}
+    /*
     //SOURCE : https://github.com/unitycoder/SimpleMeshExploder
 
     IEnumerator Explode()
@@ -309,5 +345,5 @@ public class BringObject : InteractObject
             tangents[a].w = (Vector3.Dot(Vector3.Cross(n, t), tan2[a]) < 0.0f) ? -1.0f : 1.0f;
         }
         mesh.tangents = tangents;
-    }
-}
+    }*/
+

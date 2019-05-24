@@ -79,7 +79,7 @@ public class ToolObject : BringObject
             PnjManager pnj = collision.gameObject.GetComponent<PnjManager>();
             StartHurting(pnj);
         }
-        if((collision.gameObject.name!="Terrain")&&(collision.gameObject.tag!="Player") && (collision.gameObject.tag != "TOOL"))
+        if((collision.gameObject.name!="Terrain")&&(collision.gameObject.tag!="Player") && (collision.gameObject.tag != "TOOL") && (collision.gameObject.tag != "Patoune"))
             EndUseObjectOnCollision();
     }
 

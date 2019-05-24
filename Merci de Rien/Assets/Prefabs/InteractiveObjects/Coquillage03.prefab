@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1632818042}
   m_Layer: 0
   m_Name: PatouneTrigger
-  m_TagString: Untagged
+  m_TagString: Patoune
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 1066032920}
   m_Layer: 0
   m_Name: Coquillage03
-  m_TagString: Untagged
+  m_TagString: Patoune
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,6 +253,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2488898334597583839}
     m_Modifications:
+    - target: {fileID: 2702851755666143219, guid: f71eeacb9e83ea94aa9ec4ce7cc76da6,
+        type: 3}
+      propertyPath: m_Name
+      value: Particle System
+      objectReference: {fileID: 0}
     - target: {fileID: 5401985471667786988, guid: f71eeacb9e83ea94aa9ec4ce7cc76da6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -307,11 +312,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2702851755666143219, guid: f71eeacb9e83ea94aa9ec4ce7cc76da6,
-        type: 3}
-      propertyPath: m_Name
-      value: Particle System
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f71eeacb9e83ea94aa9ec4ce7cc76da6, type: 3}
