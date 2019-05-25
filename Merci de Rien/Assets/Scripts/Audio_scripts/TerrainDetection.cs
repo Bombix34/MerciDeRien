@@ -11,6 +11,7 @@ public class TerrainDetection : MonoBehaviour
 
     //pour le son
     float lastFoostep;
+    public bool isPlayer;
 
     GroundLayer currentPlayerGroundLayer;
 
@@ -100,7 +101,15 @@ public class TerrainDetection : MonoBehaviour
 
         if (lastFoostep >= 0.25f)
         {
-            AkSoundEngine.PostEvent("MC_walk_play", gameObject);
+            switch (isPlayer)
+            {
+                case true:
+                    AkSoundEngine.PostEvent("MC_walk_play", gameObject);
+                    break;
+                case false:
+                    AkSoundEngine.PostEvent("NPC_walk_play", gameObject);
+                    break;
+            }
             lastFoostep = 0f;
         }
         //StartCoroutine(FootstepSound());

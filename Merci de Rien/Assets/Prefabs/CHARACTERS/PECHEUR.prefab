@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d801111adfcaf274b9a0b3c1e2c69060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPlayingFootstepSound: 0
+  isPlayer: 0
+  IsPlayingFootstepSound: 1
 --- !u!1 &8754570571758954115
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +172,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8754570571758670599}
     m_Modifications:
+    - target: {fileID: 100000, guid: 174d37399c25d2b41b12f7d3861f4ada, type: 3}
+      propertyPath: m_Name
+      value: FisherIdle
+      objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 174d37399c25d2b41b12f7d3861f4ada, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -222,10 +227,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 174d37399c25d2b41b12f7d3861f4ada, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 174d37399c25d2b41b12f7d3861f4ada, type: 3}
-      propertyPath: m_Name
-      value: FisherIdle
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 174d37399c25d2b41b12f7d3861f4ada, type: 3}
       propertyPath: m_Controller
