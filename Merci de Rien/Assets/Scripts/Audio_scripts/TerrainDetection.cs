@@ -5,13 +5,14 @@ using UnityEngine;
 public class TerrainDetection : MonoBehaviour
 {
     TerrainData mTerrainData;
-    int alphaMapWidth, alphaMapHeight;
+    int alphaMapWidth, alphaMapHeight, terrainID;
     float[,,] mSplatMapData;
     float mNumTextures;
 
     //pour le son
     float lastFoostep;
     public bool isPlayer;
+    bool charIsOnSpecialSurface;
 
     GroundLayer currentPlayerGroundLayer;
 
@@ -29,6 +30,7 @@ public class TerrainDetection : MonoBehaviour
         mNumTextures = mSplatMapData.Length / (alphaMapWidth * alphaMapHeight);
 
         lastFoostep = 0;
+        terrainID = 0;
     }
 
     private Vector3 ConvertToSplatMapCoordinate(Vector3 playerPos)
@@ -45,29 +47,35 @@ public class TerrainDetection : MonoBehaviour
     {
         if (!IsPlayingFootstepSound)
             return;
-        int terrainID = GetActiveTerrainTextureIdx();
 
-        switch(terrainID)
+        if (!charIsOnSpecialSurface)
         {
-            case 0:
-                currentPlayerGroundLayer = GroundLayer.shortGrass;
-                break;
-            case 1:
-                currentPlayerGroundLayer = GroundLayer.sand;
-                break;
-            case 2:
-                currentPlayerGroundLayer = GroundLayer.wetSand;
-                break;
-            case 3:
-                currentPlayerGroundLayer = GroundLayer.longGrass;
-                break;
-            case 6:
-                currentPlayerGroundLayer = GroundLayer.agricol;
-                break;
-            default:
-                currentPlayerGroundLayer = GroundLayer.shortGrass;
-                break;
+            int terrainID = GetActiveTerrainTextureIdx();
+
+            switch(terrainID)
+            {
+                case 0:
+                    currentPlayerGroundLayer = GroundLayer.shortGrass;
+                    break;
+                case 1:
+                    currentPlayerGroundLayer = GroundLayer.sand;
+                    break;
+                case 2:
+                    currentPlayerGroundLayer = GroundLayer.wetSand;
+                    break;
+                case 3:
+                    currentPlayerGroundLayer = GroundLayer.longGrass;
+                    break;
+                case 6:
+                    currentPlayerGroundLayer = GroundLayer.agricol;
+                    break;
+                default:
+                    currentPlayerGroundLayer = GroundLayer.shortGrass;
+                    break;
+            }
         }
+
+        //Debug.Log("charIsOnSpecialSurface :" + charIsOnSpecialSurface + "----" + gameObject);
         PlayFootstepSound();
     }
 
@@ -97,6 +105,14 @@ public class TerrainDetection : MonoBehaviour
             case TerrainDetection.GroundLayer.agricol:
                 AkSoundEngine.SetSwitch("floor_type", "mud", gameObject);
                 break;
+
+            case TerrainDetection.GroundLayer.stone:
+                AkSoundEngine.SetSwitch("floor_type", "rock", gameObject);
+                break;
+
+            case TerrainDetection.GroundLayer.wood:
+                AkSoundEngine.SetSwitch("floor_type", "wood", gameObject);
+                break;
         }
 
         if (lastFoostep >= 0.25f)
@@ -115,16 +131,6 @@ public class TerrainDetection : MonoBehaviour
         //StartCoroutine(FootstepSound());
     }
 
-    //Finalement on a pas besoin d'arrêter les footsteps vu qu'on peut bidouiller l'anim 
-    /*
-        IEnumerator FootstepSound()
-        {
-            AkSoundEngine.PostEvent("MC_walk_PH_play", gameObject);
-            yield return new WaitForSeconds(0.1f);
-            AkSoundEngine.PostEvent("MC_walk_end_PH_play", gameObject);
-        }
-    */
-
     private int GetActiveTerrainTextureIdx()
     {
         Vector3 playerPos = transform.parent.position;
@@ -139,14 +145,15 @@ public class TerrainDetection : MonoBehaviour
         return ret;
     }
 
-
     public enum GroundLayer
     {
         shortGrass,
         longGrass,
         sand,
         wetSand,
-        agricol
+        agricol,
+        wood,
+        stone
     }
 
     private void Update()
@@ -155,5 +162,39 @@ public class TerrainDetection : MonoBehaviour
         //c'est pour pas incrémenter inutilement le truc jusqu'à des valeur absolument inutiles
         if (lastFoostep <= 1f)
             lastFoostep += Time.deltaTime;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //Ca march po bien
+        //Debug.Log("trigger enter :" + other.tag);
+        switch (other.tag)
+        {
+            case "Bridge":
+                //Debug.Log("Switch, case : BRIDGE");
+                charIsOnSpecialSurface = true;
+                currentPlayerGroundLayer = GroundLayer.wood;
+                //Debug.Log("et là character is on special surface ??" + charIsOnSpecialSurface);
+                break;
+            case "Stone":
+                charIsOnSpecialSurface = true;
+                currentPlayerGroundLayer = GroundLayer.stone;
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        switch (other.tag)
+        {
+            case "Bridge":
+            case "Stone":
+                //Debug.Log("character has left bridge");
+                charIsOnSpecialSurface = false;
+                currentPlayerGroundLayer = GroundLayer.shortGrass;
+                break;
+        }
     }
 }
