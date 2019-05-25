@@ -151,6 +151,7 @@ public class InteractObject : MonoBehaviour
         Baton,
         Portail,
         Plante,
-        Caisse
+        Caisse,
+        Potion
     }
 }

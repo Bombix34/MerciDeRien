@@ -150,6 +150,11 @@ public class EventDatabase : ScriptableObject
 
         DialogueHasBeenSaid,
 
+        ObjectBoisToArtisan,
+        ObjectFourcheToPaysan,
+        ObjectPlanteToShaman,
+        ObjectPotionToPecheur,
+
         questTotal,
         questArtisan,
         questPaysan,
@@ -164,76 +169,3 @@ public class EventDatabase : ScriptableObject
     }
 
 }
-
-
-/*
- //TOD0___________________________________
-    [Header("VIOLENCE AGAINST CHARACTERS")]//_________________________________________
-    public int violenceTotal = 0;
-    [Space]
-    public int violenceAgainstArtisan = 0;
-    public int violenceAgainstPaysan = 0;
-    public int violenceAgainstResponsable = 0;
-    public int violenceAgainstHealer = 0;
-    public int violenceAgainstTroubadour = 0;
-    public int violenceAgainstEtranger = 0;
-
-    [Space]
-
-    [Header("ZONE, DISTANCE AND TIME")]//_________________________________________
-    public int distanceDone = 0;
-    public int zoneDiscovered = 0;
-    public int timePassed = 0;
-
-    [Space]
-
-    [Header("TALKING EVENTS")]//_________________________________________
-    public int conversationTotal = 0;
-    [Space]
-    public int conversationWithArtisan = 0;
-    public int conversationWithPaysan = 0;
-    public int conversationWithResponsable = 0;
-    public int conversationWithHealer = 0;
-    public int conversationWithTroubadour = 0;
-    public int conversationWithEtranger = 0;
-    [Space]
-    public int charactersMet = 0;
-
-    [Space]
-
-    [Header("BREAK OBJECTS")]//_________________________________________
-    public int brokeObjectsTotal = 0;
-    [Space]
-    public int brokeObjectsArtisan = 0;
-    public int brokeObjectsPaysan = 0;
-    public int brokeObjectsResponsable = 0;
-    public int brokeObjectsHealer = 0;
-    public int brokeObjectsTroubadour = 0;
-    public int brokeObjectsEtranger = 0;
-    [Space]
-    public int floreBrokeObjects = 0;
-
-    [Space]
-
-    [Header("STEAL OBJECTS")]//_________________________________________
-    public int stealedObjectsTotal = 0;
-    [Space]
-    public int stealedObjectsArtisan = 0;
-    public int stealedObjectsPaysan = 0;
-    public int stealedObjectsResponsable = 0;
-    public int stealedObjectsHealer = 0;
-    public int stealedObjectsTroubadour = 0;
-    public int stealedObjectsEtranger = 0;
-
-    [Header("QUEST")]//_________________________________________
-    public int questTotal = 0;
-    [Space]
-    public int questArtisan = 0;
-    public int questPaysan = 0;
-    public int questResponsable = 0;
-    public int questHealer = 0;
-    public int questTroubadour = 0;
-    public int questEtranger = 0;
-    [Space]
-    public int currentQuest = 0;
-*/
