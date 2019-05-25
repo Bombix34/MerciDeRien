@@ -34,7 +34,6 @@ public class PlayerUseToolState : State
         this.toolObject = toolObject.GetComponent<ToolObject>();
         this.toolObject.curStatePlayer = this;
         this.toolObject.IsUsingObject = false;
-        CanMove = true;
     }
 
     public void TryPoseObject()
@@ -125,6 +124,7 @@ public class PlayerUseToolState : State
     public override void Enter()
     {
         this.toolObject.transform.parent = curPlayer.handTool;
+        CanMove = true;
         this.toolObject.StartInteraction();
         this.toolObject.transform.position = toolObject.transform.parent.position;
         this.toolObject.transform.rotation = toolObject.transform.parent.rotation;
@@ -137,11 +137,12 @@ public class PlayerUseToolState : State
         if (!CanMove)
         {
             interactInputLenght = 0;
+            curPlayer.Move(false);
             return;
         }
         if (!endState)
         {
-            curPlayer.Move();
+            curPlayer.Move(true);
             // this.toolObject.transform.position = new Vector3(curPlayer.transform.position.x, curPlayer.transform.position.y + 1.7f, curPlayer.transform.position.z);
 
             if (tempoTime > 0)
@@ -154,6 +155,7 @@ public class PlayerUseToolState : State
         else
         {
             chronoEnd -= Time.deltaTime;
+            curPlayer.Move(false);
             curPlayer.ResetVelocity();
             if (chronoEnd <= 0)
                 curPlayer.ChangeState(new PlayerBaseState(curPlayer));
