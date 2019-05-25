@@ -15,6 +15,8 @@ public class CharacterAnimatorTrigger : MonoBehaviour
         curState.ShootObject();
     }
 
+
+
     public void UseObjectStartAnimatorTrigger()
     {
         PlayerManager manager = transform.parent.GetComponent<PlayerManager>();
@@ -46,5 +48,16 @@ public class CharacterAnimatorTrigger : MonoBehaviour
             return;
         PlayerUseToolState curState = (PlayerUseToolState)manager.GetCurrentState();
         curState.CanMove = true;
+    }
+
+    public void LaunchBringObjectAnimatorTrigger()
+    {
+        PlayerManager manager = transform.parent.GetComponent<PlayerManager>();
+        if (manager == null)
+            return;
+        if (manager.GetCurrentState().stateName != "PLAYER_BRING_OBJECT_STATE")
+            return;
+        PlayerBringObjectState curState = (PlayerBringObjectState)manager.GetCurrentState();
+        curState.ShootObject();
     }
 }

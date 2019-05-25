@@ -35,15 +35,16 @@ public class PlayerBringObjectState : State
 
     public void TryPoseObject()
     {
-        Vector3 posePosition = Vector3.zero;
        // GameObject blockingObject = curPlayer.IsObstacle(curPlayer.GetFrontPosition());
-        posePosition = curPlayer.GetFrontPosition();
+        Vector3 posePosition = curPlayer.GetFrontPosition();
+        posePosition = new Vector3(posePosition.x, posePosition.y + 0.6f, posePosition.z);
         this.bringingObject.transform.parent = null;
         this.bringingObject.GetComponent<Rigidbody>().useGravity = true;
         this.bringingObject.transform.position = posePosition;
         this.bringingObject.GetComponent<BringObject>().ResetMass();
         endState = true;
         curPlayer.ResetVelocity();
+        curPlayer.GetAnimator().SetBool("Carrying", false);
 
         //SFX
         AkSoundEngine.PostEvent("ENV_pot_put_down_play", this.bringingObject);
@@ -62,6 +63,7 @@ public class PlayerBringObjectState : State
         this.bringingObject.GetComponent<BringObject>().LaunchObject();
         endState = true;
         curPlayer.ResetVelocity();
+        curPlayer.GetAnimator().SetBool("Carrying", false);
 
         //SFX
         AkSoundEngine.PostEvent("MC_throw_play", this.bringingObject);
@@ -79,7 +81,7 @@ public class PlayerBringObjectState : State
             curPlayer.ResetVelocity();
             if (interactInputLenght>0.3f)
             {
-                ShootObject();
+                curPlayer.GetAnimator().SetTrigger("Throw");
             }
             else
             {
@@ -101,12 +103,13 @@ public class PlayerBringObjectState : State
 
     public override void Enter()
     {
-        this.bringingObject.transform.parent = curPlayer.gameObject.transform;
+        this.bringingObject.transform.parent = curPlayer.GetBringPosition();
+        curPlayer.GetAnimator().SetBool("Carrying", true);
         this.bringingObject.GetComponent<Rigidbody>().useGravity = false;
         this.bringingObject.GetComponent<Rigidbody>().mass = 1;
-        this.bringingObject.transform.position = new Vector3(curPlayer.transform.position.x, curPlayer.transform.position.y+ 1.45f, curPlayer.transform.position.z);
+       //this.bringingObject.transform.position = curPlayer.GetBringPosition().position;
         // this.bringingObject.transform.rotation.setlo
-        this.bringingObject.transform.LookAt(Vector3.up, Vector3.up);
+        this.bringingObject.transform.LookAt(bringingObject.transform.position, Vector3.up);
         tempoTime = 0.3f;
         chronoEnd = 0.3f;
         //SFX
@@ -118,8 +121,7 @@ public class PlayerBringObjectState : State
         if (!endState)
         {
             curPlayer.Move(true);
-            this.bringingObject.transform.position = new Vector3(curPlayer.transform.position.x, curPlayer.transform.position.y + 1.45f, curPlayer.transform.position.z);
-
+            this.bringingObject.transform.position = curPlayer.GetBringPosition().position;
             if (tempoTime > 0)
             {
                 tempoTime -= Time.deltaTime;
