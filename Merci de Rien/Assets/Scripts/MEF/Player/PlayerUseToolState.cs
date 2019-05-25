@@ -137,11 +137,12 @@ public class PlayerUseToolState : State
         if (!CanMove)
         {
             interactInputLenght = 0;
+            curPlayer.Move(false);
             return;
         }
         if (!endState)
         {
-            curPlayer.Move();
+            curPlayer.Move(true);
             // this.toolObject.transform.position = new Vector3(curPlayer.transform.position.x, curPlayer.transform.position.y + 1.7f, curPlayer.transform.position.z);
 
             if (tempoTime > 0)
@@ -154,6 +155,7 @@ public class PlayerUseToolState : State
         else
         {
             chronoEnd -= Time.deltaTime;
+            curPlayer.Move(false);
             curPlayer.ResetVelocity();
             if (chronoEnd <= 0)
                 curPlayer.ChangeState(new PlayerBaseState(curPlayer));

@@ -117,7 +117,7 @@ public class PlayerBringObjectState : State
     {
         if (!endState)
         {
-            curPlayer.Move();
+            curPlayer.Move(true);
             this.bringingObject.transform.position = new Vector3(curPlayer.transform.position.x, curPlayer.transform.position.y + 1.45f, curPlayer.transform.position.z);
 
             if (tempoTime > 0)
@@ -132,6 +132,7 @@ public class PlayerBringObjectState : State
         else
         {
             chronoEnd -= Time.deltaTime;
+            curPlayer.Move(false);
             curPlayer.ResetVelocity();
             if (chronoEnd <= 0)
                 curPlayer.ChangeState(new PlayerBaseState(curPlayer));
