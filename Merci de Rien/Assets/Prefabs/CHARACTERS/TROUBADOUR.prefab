@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7934591897059936388}
   - component: {fileID: 2540028115982727675}
-  - component: {fileID: 7934591897060195585}
   - component: {fileID: 7934591897060195586}
   - component: {fileID: 7934591897060195588}
   - component: {fileID: 7934591897060195587}
@@ -52,20 +51,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: 5
---- !u!114 &7934591897060195585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7934591897060195584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18f30d4ae3c054ea7862d39810f16bdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  render: {fileID: 8418623365313257308}
-  silhouettedMaterial: {fileID: 2100000, guid: ae7285fcf88304b42b153b360d00fbca, type: 2}
 --- !u!114 &7934591897060195586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,12 +799,6 @@ GameObject:
 --- !u!4 &8418623365318430332 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4be75e2dcd3d85846a4d6e477925a475,
-    type: 3}
-  m_PrefabInstance: {fileID: 8418623365318563068}
-  m_PrefabAsset: {fileID: 0}
---- !u!137 &8418623365313257308 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 13700000, guid: 4be75e2dcd3d85846a4d6e477925a475,
     type: 3}
   m_PrefabInstance: {fileID: 8418623365318563068}
   m_PrefabAsset: {fileID: 0}
