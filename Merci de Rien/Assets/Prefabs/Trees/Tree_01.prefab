@@ -87,9 +87,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4955321443807969515}
   - component: {fileID: 4636293565879230775}
+  - component: {fileID: 8605724466004320731}
   m_Layer: 0
   m_Name: Tree_01
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,6 +140,40 @@ CapsuleCollider:
   m_Height: 0.1
   m_Direction: 1
   m_Center: {x: 0, y: 0.04, z: 0}
+--- !u!114 &8605724466004320731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4955321443807878283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7f8ed6564bf465491f15572509cd05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tronc: {fileID: 4955321443809870539}
+  feuilles:
+  - {fileID: 4955321443809870399}
+  - {fileID: 4955321443809870387}
+  - {fileID: 4955321443809870385}
+  - {fileID: 4955321443809870391}
+  - {fileID: 4955321443809870389}
+  - {fileID: 4955321443809870379}
+  - {fileID: 4955321443809870377}
+  - {fileID: 4955321443809870383}
+  - {fileID: 4955321443809870381}
+  - {fileID: 4955321443809870371}
+  - {fileID: 4955321443809870369}
+  - {fileID: 4955321443809870375}
+  - {fileID: 4955321443809870373}
+  - {fileID: 4955321443809870395}
+  - {fileID: 4955321443809870393}
+  - {fileID: 4955321443809870397}
+  troncTransparencyMaterial: {fileID: 2100000, guid: c51df86a884c24305905bc61083f49a9,
+    type: 2}
+  feuillesTransparencyMaterial: {fileID: 2100000, guid: c16ddfb5dfe1e4f40b09e8fcb81e687e,
+    type: 2}
 --- !u!1 &4955321443807878369
 GameObject:
   m_ObjectHideFlags: 0
