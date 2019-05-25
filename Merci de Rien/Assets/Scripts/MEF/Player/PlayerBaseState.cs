@@ -45,7 +45,7 @@ public class PlayerBaseState : State
 
     public override void Execute()
     {
-        curPlayer.Move();
+        curPlayer.Move(true);
         curPlayer.RaycastObject();
         if (curPlayer.GetInputManager().GetInteractInputDown())
         {

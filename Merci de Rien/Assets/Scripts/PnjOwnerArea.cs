@@ -44,6 +44,7 @@ public class PnjOwnerArea : MonoBehaviour
         {
             //SI JE REVIENS DANS LA ZONE AVEC UN OBJET DU PERSO
             BringObject concernedObj = other.gameObject.GetComponent<PlayerManager>().IsBringingObject();
+            CheckEventObject(concernedObj);
             if (concernedObj.GetComponent<InteractObject>().CanTakeObject)
                 return;
             if (concernedObj.GetOwner() == characterOwner)
@@ -79,11 +80,37 @@ public class PnjOwnerArea : MonoBehaviour
 
     public void IncrementOtherObjectStealed()
     {
+        //pour le coffre
         otherObjectsStealed++;
     }
 
     public void ResetOtherObjectStealed()
     {
         otherObjectsStealed = 0;
+    }
+
+    public void CheckEventObject(InteractObject obj)
+    {
+        switch(obj.objectType)
+        {
+            case InteractObject.ObjectType.Baton:
+                if (characterOwner == PnjManager.CharacterType.Artisan)
+                    EventManager.Instance.UpdateEvent(EventDatabase.EventType.ObjectBoisToArtisan, 1);
+                break;
+            case InteractObject.ObjectType.Plante:
+                if (characterOwner == PnjManager.CharacterType.Healer)
+                    EventManager.Instance.UpdateEvent(EventDatabase.EventType.ObjectPlanteToShaman, 1);
+                break;
+            case InteractObject.ObjectType.Fourche:
+                if (characterOwner == PnjManager.CharacterType.Paysan)
+                    EventManager.Instance.UpdateEvent(EventDatabase.EventType.ObjectFourcheToPaysan, 1);
+                break;
+            case InteractObject.ObjectType.Potion:
+                if (characterOwner == PnjManager.CharacterType.Pecheur)
+                    EventManager.Instance.UpdateEvent(EventDatabase.EventType.ObjectPotionToPecheur, 1);
+                break;
+            default:
+                break;
+        }
     }
 }

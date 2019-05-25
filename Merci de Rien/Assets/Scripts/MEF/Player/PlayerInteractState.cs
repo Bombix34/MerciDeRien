@@ -31,6 +31,7 @@ public class PlayerInteractState : State
     public override void Enter()
     {
         Camera.main.GetComponent<CameraManager>().SetDialogueCamera(interactObject.gameObject);
+        curPlayer.Move(false);
         curPlayer.transform.LookAt(interactObject.transform.position);
         curPlayer.GetAnimator().SetFloat("MoveSpeed", 0f);
         interactObject.StartInteraction();

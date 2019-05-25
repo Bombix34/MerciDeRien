@@ -24,6 +24,8 @@ public class PlayerManager : ObjectManager
 
     GameObject interactObject;
 
+
+
     void Awake()
     {
         inputs = GetComponent<PlayerInputManager>();
@@ -43,6 +45,12 @@ public class PlayerManager : ObjectManager
     private void Update()
     {
         currentState.Execute();
+    }
+
+    private void FixedUpdate()
+    {
+        if (CanMove)
+            DoMove();
     }
 
     public override void ChangeState(State newState)
@@ -72,7 +80,14 @@ public class PlayerManager : ObjectManager
 
     //MOVEMENT FUNCTIONS______________________________________________________________________________
 
-    public void Move()
+    bool CanMove = true;
+
+    public void Move(bool IsOn)
+    {
+        CanMove = IsOn;
+    }
+
+    public void DoMove()
     {
         Vector3 directionController = inputs.GetMovementInput();
         GravitySpeed();
@@ -91,7 +106,10 @@ public class PlayerManager : ObjectManager
         Vector3 rightMove = right * (10 * inputs.GetMovementInputX()) * Time.deltaTime;
         Vector3 upMove = forward * (10 * inputs.GetMovementInputY()) * Time.deltaTime;
         Vector3 heading = (rightMove + upMove);
+
+        float amplitude = heading.magnitude;
         heading.Normalize();
+        heading *= amplitude;
 
         RotatePlayer(inputs.GetMovementInputY(), -inputs.GetMovementInputX());
         currentVelocity = Vector3.zero;

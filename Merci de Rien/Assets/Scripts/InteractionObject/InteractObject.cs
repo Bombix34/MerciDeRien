@@ -150,6 +150,8 @@ public class InteractObject : MonoBehaviour
         Pelle,
         Baton,
         Portail,
-        Plante
+        Plante,
+        Caisse,
+        Potion
     }
 }
