@@ -33,9 +33,7 @@ namespace AK
         static const AkUniqueID MC_THROW_PLAY = 1796000097U;
         static const AkUniqueID MC_WALK_PLAY = 1011903932U;
         static const AkUniqueID NPC_TALK_PLAY = 787023996U;
-        static const AkUniqueID NPC_TALK_STOP = 3835799014U;
         static const AkUniqueID NPC_WALK_PLAY = 2227517075U;
-        static const AkUniqueID NPC_WALK_STOP = 1357639289U;
         static const AkUniqueID OCARINA_01_DAMAGED = 357745826U;
         static const AkUniqueID OCARINA_01_DESTROYED = 885771810U;
         static const AkUniqueID OCARINA_02_DAMAGED_RYTHMIC = 3084605388U;
