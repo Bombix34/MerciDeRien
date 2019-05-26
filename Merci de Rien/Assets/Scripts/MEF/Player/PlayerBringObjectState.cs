@@ -104,6 +104,7 @@ public class PlayerBringObjectState : State
     public override void Enter()
     {
         this.bringingObject.transform.parent = curPlayer.GetBringPosition();
+        this.bringingObject.GetComponent<BringObject>().IsLaunch = false;
         curPlayer.GetAnimator().SetBool("Carrying", true);
         this.bringingObject.GetComponent<Rigidbody>().useGravity = false;
         this.bringingObject.GetComponent<Rigidbody>().mass = 1;

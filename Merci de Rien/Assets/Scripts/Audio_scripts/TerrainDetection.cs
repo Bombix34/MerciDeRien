@@ -10,8 +10,8 @@ public class TerrainDetection : MonoBehaviour
     float mNumTextures;
 
     //pour le son
-    float lastFoostep;
-    public bool isPlayer;
+    float lastFoostep=0;
+    bool isPlayer;
     public bool CharIsOnSpecialSurface { get; set; }=false;
 
     public GroundLayer currentPlayerGroundLayer { get; set; }
@@ -53,7 +53,7 @@ public class TerrainDetection : MonoBehaviour
 
         if (!CharIsOnSpecialSurface)
         {
-            int terrainID = GetActiveTerrainTextureIdx();
+            terrainID = GetActiveTerrainTextureIdx();
             switch(terrainID)
             {
                 case 0:
@@ -76,8 +76,6 @@ public class TerrainDetection : MonoBehaviour
                     break;
             }
         }
-
-        //Debug.Log("charIsOnSpecialSurface :" + charIsOnSpecialSurface + "----" + gameObject);
         PlayFootstepSound();
     }
 
