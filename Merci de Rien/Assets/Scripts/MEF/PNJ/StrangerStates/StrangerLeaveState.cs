@@ -25,6 +25,8 @@ public class StrangerLeaveState : State
       //  manager.ActiveParticle(false);
         manager.GetRenderer().material = curMat;
         curMat.SetFloat("_DissolveAmount", 0f);
+        curMat.SetFloat("_DissolveWidth", 0.05f);
+        manager.ActiveHairParticle(false);
     }
 
     public override void Execute()
@@ -39,7 +41,7 @@ public class StrangerLeaveState : State
         }
         else
         {
-            curTransparency += (Time.deltaTime*0.6f);
+            curTransparency += (Time.deltaTime*0.2f);
             curMat.SetFloat("_DissolveAmount", curTransparency);
         }
     }

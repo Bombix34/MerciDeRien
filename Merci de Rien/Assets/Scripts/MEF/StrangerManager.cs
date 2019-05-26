@@ -17,7 +17,9 @@ public class StrangerManager : PnjManager
     Material dissolveMaterial;
 
     [SerializeField]
-    GameObject particlesApparition;
+    GameObject hairParticles;
+    [SerializeField]
+    GameObject apparitionParticles;
 
     //DEBUG
     PlayerInputManager playerInput;
@@ -33,6 +35,7 @@ public class StrangerManager : PnjManager
         ChangeState(new StrangerWaitState(this));
         playerInput = EventManager.Instance.GetPlayer().GetComponent<PlayerInputManager>();
         ActiveParticle(false);
+        ActiveHairParticle(false);
     }
 
     protected override void InitInteractScript()
@@ -78,12 +81,14 @@ public class StrangerManager : PnjManager
 
     public void ActiveParticle(bool isOn)
     {
-        particlesApparition.SetActive(isOn);
+        apparitionParticles.SetActive(isOn);
     }
 
-    Ienumator StartApparitionEffect()
+    public void ActiveHairParticle(bool isOn)
     {
-        ActiveParticle(true);
-        Vector3 posY = this.transform.position.y;
+        if (!isOn)
+            hairParticles.GetComponent<ParticleSystem>().Stop();
+        else
+            hairParticles.GetComponent<ParticleSystem>().Play();
     }
 }
