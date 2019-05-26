@@ -16,6 +16,9 @@ public class StrangerManager : PnjManager
     [SerializeField]
     Material dissolveMaterial;
 
+    [SerializeField]
+    GameObject particlesApparition;
+
     //DEBUG
     PlayerInputManager playerInput;
 
@@ -29,6 +32,7 @@ public class StrangerManager : PnjManager
         InitInteractScript();
         ChangeState(new StrangerWaitState(this));
         playerInput = EventManager.Instance.GetPlayer().GetComponent<PlayerInputManager>();
+        ActiveParticle(false);
     }
 
     protected override void InitInteractScript()
@@ -50,9 +54,6 @@ public class StrangerManager : PnjManager
 
     public override void ChangeState(State newState)
     {
-        Debug.Log(newState.stateName);
-        if (newState.stateName == "WANDER_AROUND_STATE")
-            newState = new StrangerWaitState(this);
         base.ChangeState(newState);
     }
 
@@ -73,5 +74,16 @@ public class StrangerManager : PnjManager
     public Renderer GetRenderer()
     {
         return render;
+    }
+
+    public void ActiveParticle(bool isOn)
+    {
+        particlesApparition.SetActive(isOn);
+    }
+
+    Ienumator StartApparitionEffect()
+    {
+        ActiveParticle(true);
+        Vector3 posY = this.transform.position.y;
     }
 }

@@ -8,7 +8,7 @@ public class StrangerApparitionState : State
     PlayerManager player;
     State playerPrevState;
     Material curMat;
-    float curTransparency = 1f;
+    float curTransparency = 0.55f;
 
     public StrangerApparitionState(ObjectManager curObject) : base(curObject)
     {
@@ -21,18 +21,19 @@ public class StrangerApparitionState : State
 
     public override void Enter()
     {
-        Camera.main.GetComponent<CameraManager>().SetDialogueCamera(manager.gameObject);
+
         player = EventManager.Instance.GetPlayer().GetComponent<PlayerManager>();
+        manager.transform.position = player.GetStrangerPosition();
+        Camera.main.GetComponent<CameraManager>().SetDialogueCamera(manager.gameObject);
         player.transform.LookAt(manager.transform.position);
         manager.transform.LookAt(player.transform.position);
         playerPrevState = player.GetCurrentState();
         player.ChangeState(new PlayerWaitState(player,player.GetCurrentState()));
-        Vector3 playerPos = player.GetFrontPosition()*1.1f;
-        manager.transform.position = playerPos;
-        manager.GetAgent().enabled = false;
-        curMat=manager.GetRenderer().material = manager.GetMaterial(false);
-        curMat.SetFloat("_DissolveAmount", 1f);
+        manager.GetAgent().SetDestination(manager.transform.position);
+        curMat =manager.GetRenderer().material = manager.GetMaterial(false);
+        manager.ActiveParticle(true);
         manager.Enable(true);
+        curMat.SetFloat("_DissolveAmount",curTransparency);
     }
 
     public override void Execute()
@@ -47,7 +48,7 @@ public class StrangerApparitionState : State
         }
         else
         {
-            curTransparency -= (Time.deltaTime*0.9f);
+            curTransparency -= (Time.deltaTime*0.4f);
             curMat.SetFloat("_DissolveAmount", curTransparency);
         }
     }

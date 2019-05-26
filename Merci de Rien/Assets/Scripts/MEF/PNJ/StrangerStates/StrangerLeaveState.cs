@@ -22,22 +22,24 @@ public class StrangerLeaveState : State
     public override void Enter()
     {
         curMat = manager.GetMaterial(false);
+      //  manager.ActiveParticle(false);
         manager.GetRenderer().material = curMat;
         curMat.SetFloat("_DissolveAmount", 0f);
     }
 
     public override void Execute()
     {
-        if (curTransparency >= 0.8f)
+        if (curTransparency >= 0.55f)
         {
-            curTransparency = 1;
+            curTransparency = 0.6f;
             manager.GetRenderer().material= manager.GetMaterial(true);
+            manager.ActiveParticle(false);
             manager.Enable(false);
             manager.ChangeState(new StrangerWaitState(manager));
         }
         else
         {
-            curTransparency += (Time.deltaTime*0.8f);
+            curTransparency += (Time.deltaTime*0.6f);
             curMat.SetFloat("_DissolveAmount", curTransparency);
         }
     }

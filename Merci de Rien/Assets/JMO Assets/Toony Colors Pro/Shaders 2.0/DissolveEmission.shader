@@ -10,19 +10,22 @@
 		_DissolveEmission ("DissolveEmission", Range(0,1)) = 1
 		_DissolveWidth ("DissolveWidth", Range(0,0.1)) = 0.05
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5
-		_Metallic ("Metallic", Range(0,1)) = 0.0
 	}
 	SubShader {
-		Tags { "RenderType"="Opaque" }
+		Tags { "RenderType"="Transparent" }
 		LOD 200
 		
 		CGPROGRAM
-		#pragma surface surf Standard fullforwardshadows
+        
+        #include "UnityCG.cginc"
+		#pragma surface surf Standard 
 		#pragma target 3.0
 
 		sampler2D _MainTex;
 		sampler2D _NormalMap;
 		sampler2D _DissolveMap;
+        
+        samplerCUBE _ToonShade;
 
 		struct Input {
 			float2 uv_MainTex;
@@ -38,6 +41,7 @@
 		half _DissolveWidth;
 		fixed4 _Color;
 		fixed4 _DissolveColor;
+        
 
 		void surf (Input IN, inout SurfaceOutputStandard o) {
 
@@ -47,16 +51,18 @@
 			if(mask.r < _DissolveAmount)
 				discard;
 
-			o.Albedo = c.rgb;
-
-			if(mask.r < _DissolveAmount + _DissolveWidth) {
+			o.Albedo = c.rgb*_Color.rgb*1.8;
+            o.Alpha = _Color.a;
+            
+            if(mask.r < _DissolveAmount + _DissolveWidth) 
+            {
 				o.Albedo = _DissolveColor;
 				o.Emission = _DissolveColor * _DissolveEmission;
+                o.Alpha=c.a;
 			}
 			
-			o.Metallic = _Metallic;
+			o.Metallic = 0;
 			o.Smoothness = _Glossiness;
-			o.Alpha = c.a;
 			o.Normal = UnpackScaleNormal(tex2D(_NormalMap, IN.uv_NormalMap), _NormalStrenght);
 		}
 		ENDCG

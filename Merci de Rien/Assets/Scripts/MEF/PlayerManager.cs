@@ -27,6 +27,9 @@ public class PlayerManager : ObjectManager
     [SerializeField]
     GameObject bringPosition;
 
+    [SerializeField]
+    Transform strangerPosition;
+
     void Awake()
     {
         inputs = GetComponent<PlayerInputManager>();
@@ -262,6 +265,10 @@ public class PlayerManager : ObjectManager
         return returnVal;
     }
    
+    public Vector3 GetStrangerPosition()
+    {
+        return strangerPosition.position;
+    }
 
     //SINGLETON________________________________________________________________________________________________
 
