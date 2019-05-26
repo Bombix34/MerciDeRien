@@ -86,9 +86,16 @@ public class StrangerManager : PnjManager
 
     public void ActiveHairParticle(bool isOn)
     {
+        if (isOn && hairParticles.activeInHierarchy == false)
+            hairParticles.SetActive(true);
         if (!isOn)
             hairParticles.GetComponent<ParticleSystem>().Stop();
         else
             hairParticles.GetComponent<ParticleSystem>().Play();
+    }
+
+    public void DisableHairParticle()
+    {
+        hairParticles.SetActive(false);
     }
 }

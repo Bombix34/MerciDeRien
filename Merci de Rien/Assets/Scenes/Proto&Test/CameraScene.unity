@@ -3200,7 +3200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1428417185, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0000002384187
+      value: -0.0000004768374
       objectReference: {fileID: 0}
     - target: {fileID: 1428417185, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3880,39 +3880,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3301062183234653201, guid: a5c25a00d8ddacd409f94e8897a08b7d,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4025505155641407172, guid: a5c25a00d8ddacd409f94e8897a08b7d,
-        type: 3}
-      propertyPath: characterDialogues.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 8bf91f21721ff4a369dbecca886dc53e,
-        type: 2}
-    m_RemovedComponents:
-    - {fileID: 3301062183234653206, guid: a5c25a00d8ddacd409f94e8897a08b7d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5c25a00d8ddacd409f94e8897a08b7d, type: 3}
---- !u!1 &7659567505838123058 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7659567505838123058, guid: a5c25a00d8ddacd409f94e8897a08b7d,
-    type: 3}
-  m_PrefabInstance: {fileID: 7659567504001958306}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7659567505838123059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7659567505838123058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d801111adfcaf274b9a0b3c1e2c69060, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsPlayingFootstepSound: 0
 --- !u!1001 &8190043007324170391
 PrefabInstance:
   m_ObjectHideFlags: 0

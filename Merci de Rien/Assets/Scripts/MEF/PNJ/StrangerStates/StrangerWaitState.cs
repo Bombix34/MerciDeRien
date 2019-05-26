@@ -17,6 +17,7 @@ public class StrangerWaitState : State
     public override void Enter()
     {
         manager.Enable(false);
+        manager.DisableHairParticle();
     }
 
     public override void Execute()
