@@ -12,9 +12,9 @@ public class TerrainDetection : MonoBehaviour
     //pour le son
     float lastFoostep;
     public bool isPlayer;
-    bool charIsOnSpecialSurface;
+    public bool CharIsOnSpecialSurface { get; set; }=false;
 
-    GroundLayer currentPlayerGroundLayer;
+    public GroundLayer currentPlayerGroundLayer { get; set; }
 
     public bool IsPlayingFootstepSound=false;
 
@@ -22,6 +22,9 @@ public class TerrainDetection : MonoBehaviour
     {
         if (!IsPlayingFootstepSound)
             return;
+            
+        isPlayer = GetComponentInParent<PlayerManager>() != null;
+
         mTerrainData = Terrain.activeTerrain.terrainData;
         alphaMapWidth = mTerrainData.alphamapWidth;
         alphaMapHeight = mTerrainData.alphamapHeight;
@@ -48,10 +51,9 @@ public class TerrainDetection : MonoBehaviour
         if (!IsPlayingFootstepSound)
             return;
 
-        if (!charIsOnSpecialSurface)
+        if (!CharIsOnSpecialSurface)
         {
             int terrainID = GetActiveTerrainTextureIdx();
-
             switch(terrainID)
             {
                 case 0:
@@ -117,15 +119,10 @@ public class TerrainDetection : MonoBehaviour
 
         if (lastFoostep >= 0.25f)
         {
-            switch (isPlayer)
-            {
-                case true:
-                    AkSoundEngine.PostEvent("MC_walk_play", gameObject);
-                    break;
-                case false:
-                    AkSoundEngine.PostEvent("NPC_walk_play", gameObject);
-                    break;
-            }
+            if(isPlayer)
+                AkSoundEngine.PostEvent("MC_walk_play", gameObject);
+            else
+                AkSoundEngine.PostEvent("NPC_walk_play", gameObject);
             lastFoostep = 0f;
         }
         //StartCoroutine(FootstepSound());
@@ -162,39 +159,5 @@ public class TerrainDetection : MonoBehaviour
         //c'est pour pas incrémenter inutilement le truc jusqu'à des valeur absolument inutiles
         if (lastFoostep <= 1f)
             lastFoostep += Time.deltaTime;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        //Ca march po bien
-        //Debug.Log("trigger enter :" + other.tag);
-        switch (other.tag)
-        {
-            case "Bridge":
-                //Debug.Log("Switch, case : BRIDGE");
-                charIsOnSpecialSurface = true;
-                currentPlayerGroundLayer = GroundLayer.wood;
-                //Debug.Log("et là character is on special surface ??" + charIsOnSpecialSurface);
-                break;
-            case "Stone":
-                charIsOnSpecialSurface = true;
-                currentPlayerGroundLayer = GroundLayer.stone;
-                break;
-            default:
-                break;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        switch (other.tag)
-        {
-            case "Bridge":
-            case "Stone":
-                //Debug.Log("character has left bridge");
-                charIsOnSpecialSurface = false;
-                currentPlayerGroundLayer = GroundLayer.shortGrass;
-                break;
-        }
     }
 }
