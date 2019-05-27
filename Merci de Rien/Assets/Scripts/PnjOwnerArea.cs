@@ -40,16 +40,31 @@ public class PnjOwnerArea : MonoBehaviour
         {
             PnjCheckStealedObjects();
         }
-       else if (other.gameObject.tag == "Player" && other.gameObject.GetComponent<PlayerManager>().IsBringingObject() != null)
+       else if (other.gameObject.tag == "Player")
         {
-            //SI JE REVIENS DANS LA ZONE AVEC UN OBJET DU PERSO
-            BringObject concernedObj = other.gameObject.GetComponent<PlayerManager>().IsBringingObject();
-            CheckEventObject(concernedObj);
-            if (concernedObj.GetComponent<InteractObject>().CanTakeObject)
-                return;
-            if (concernedObj.GetOwner() == characterOwner)
+            PlayerManager player = other.gameObject.GetComponent<PlayerManager>();
+            if (player.IsBringingObject())
             {
-                objectsInZone.Add(concernedObj.gameObject);
+                //SI JE REVIENS DANS LA ZONE AVEC UN OBJET DU PERSO
+                BringObject concernedObj = player.IsBringingObject();
+                CheckEventObject(concernedObj);
+                if (concernedObj.GetComponent<InteractObject>().CanTakeObject)
+                    return;
+                if (concernedObj.GetOwner() == characterOwner)
+                {
+                    objectsInZone.Add(concernedObj.gameObject);
+                }
+            }
+            else if(player.IsBringingTool())
+            {
+                ToolObject tool = player.IsBringingTool();
+                CheckEventObject(tool);
+                if (tool.GetComponent<InteractObject>().CanTakeObject)
+                    return;
+                if (tool.GetOwner() == characterOwner)
+                {
+                    objectsInZone.Add(tool.gameObject);
+                }
             }
         }
     }
@@ -64,16 +79,30 @@ public class PnjOwnerArea : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player" && other.gameObject.GetComponent<PlayerManager>().IsBringingObject()!=null)
+        if (other.gameObject.tag == "Player")
         {
             //QUAND ON SORT DE LA ZONE EN VOLANT UN OBJET
-            BringObject concernedObj = other.gameObject.GetComponent<PlayerManager>().IsBringingObject();
-            if (concernedObj.GetComponent<InteractObject>().CanTakeObject)
-                return;
-            if(concernedObj.GetOwner()==characterOwner)
+            PlayerManager player = other.gameObject.GetComponent<PlayerManager>();
+            if (player.IsBringingObject())
             {
-                
-                objectsInZone.Remove(concernedObj.gameObject);
+                //SI JE REVIENS DANS LA ZONE AVEC UN OBJET DU PERSO
+                BringObject concernedObj = player.IsBringingObject();
+                if (concernedObj.GetComponent<InteractObject>().CanTakeObject)
+                    return;
+                if (concernedObj.GetOwner() == characterOwner)
+                {
+                    objectsInZone.Remove(concernedObj.gameObject);
+                }
+            }
+            else if (player.IsBringingTool())
+            {
+                ToolObject tool = player.IsBringingTool();
+                if (tool.GetComponent<InteractObject>().CanTakeObject)
+                    return;
+                if (tool.GetOwner() == characterOwner)
+                {
+                    objectsInZone.Remove(tool.gameObject);
+                }
             }
         }
     }
