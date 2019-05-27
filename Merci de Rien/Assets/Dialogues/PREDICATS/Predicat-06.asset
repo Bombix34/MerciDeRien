@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   database: {fileID: 0}
   conditions:
-  - concernedEvent: 16
+  - concernedEvent: 45
     comparaison: 2
     valToTest: 1
-    concernedDialogue: {fileID: 0}
+    concernedDialogue: {fileID: 11400000, guid: 2966c3acb090bf24e8f1213f6a530f65,
+      type: 2}
     comparisonCumul: 0
   consequences:
   - consequence: 3
@@ -81,10 +82,40 @@ MonoBehaviour:
     objectConcerned: 0
     intModificator: 0
   - consequence: 2
-    characterConcerned: 0
+    characterConcerned: 1
     actionChoice: 0
     mood: 0
-    dialogueConcerned: {fileID: 11400000, guid: bf6b009cf67a6174396582a8602dc2e9,
+    dialogueConcerned: {fileID: 11400000, guid: 8e892c68d3a67a64a8895b5d669051e6,
+      type: 2}
+    eventDatabase: {fileID: 0}
+    eventType: 0
+    objectConcerned: 0
+    intModificator: 0
+  - consequence: 3
+    characterConcerned: 1
+    actionChoice: 0
+    mood: 0
+    dialogueConcerned: {fileID: 11400000, guid: a4706b1f4c175b64390aa488a2654085,
+      type: 2}
+    eventDatabase: {fileID: 0}
+    eventType: 0
+    objectConcerned: 0
+    intModificator: 0
+  - consequence: 2
+    characterConcerned: 4
+    actionChoice: 0
+    mood: 0
+    dialogueConcerned: {fileID: 11400000, guid: ab3770c08211fbe40a6f2aefd2940d77,
+      type: 2}
+    eventDatabase: {fileID: 0}
+    eventType: 0
+    objectConcerned: 0
+    intModificator: 0
+  - consequence: 2
+    characterConcerned: 4
+    actionChoice: 0
+    mood: 0
+    dialogueConcerned: {fileID: 11400000, guid: 88c347e15ce4df64da22f7496a8e3db8,
       type: 2}
     eventDatabase: {fileID: 0}
     eventType: 0
