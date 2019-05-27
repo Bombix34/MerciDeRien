@@ -152,6 +152,7 @@ public class InteractObject : MonoBehaviour
         Portail,
         Plante,
         Caisse,
-        Potion
+        Potion,
+        Orb
     }
 }

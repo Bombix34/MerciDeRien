@@ -4,37 +4,16 @@ using UnityEngine;
 
 public class MaterialManagement : MonoBehaviour
 {
-    public SkinnedMeshRenderer render;
-    Material[] objectBaseMaterials;
-
-    public Material silhouettedMaterial;
-
     bool wasVisible = true;
     GameObject hitObject;
 
     void Start()
     {
-        objectBaseMaterials = render.materials;
     }
 
     private void Update()
     {
        IsInView();
-    }
-
-    public void ResetObjectMaterials()
-    {
-        render.materials = objectBaseMaterials;
-    }
-
-    public void SetSilhouettedMaterial()
-    {
-        Material[] final = new Material[render.materials.Length];
-        for (int i = 0; i < render.materials.Length; i++)
-        {
-            final[i] = silhouettedMaterial;
-        }
-        render.materials = final;
     }
 
     private void IsInView()

@@ -29,10 +29,10 @@ namespace AK
         static const AkUniqueID MC_PICK_BIG_ITEM_PLAY = 2287292191U;
         static const AkUniqueID MC_PICK_ITEM_PLAY = 2246829044U;
         static const AkUniqueID MC_TALK_PLAY = 2826582739U;
-        static const AkUniqueID MC_TALK_STOP = 1956601529U;
         static const AkUniqueID MC_THROW_PLAY = 1796000097U;
         static const AkUniqueID MC_WALK_PLAY = 1011903932U;
         static const AkUniqueID NPC_TALK_PLAY = 787023996U;
+        static const AkUniqueID NPC_TALK_STOP = 3835799014U;
         static const AkUniqueID NPC_WALK_PLAY = 2227517075U;
         static const AkUniqueID OCARINA_01_DAMAGED = 357745826U;
         static const AkUniqueID OCARINA_01_DESTROYED = 885771810U;
