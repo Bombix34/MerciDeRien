@@ -10,4 +10,6 @@ public class ObjectReglages : ScriptableObject
     public bool IsBreaking = false;
     public bool IsHurting = false;
     public bool IsFilling = false;
+
+    public bool IsGivingPatouneOnBreak = false;
 }

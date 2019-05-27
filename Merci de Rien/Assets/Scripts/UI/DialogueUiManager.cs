@@ -74,6 +74,7 @@ public class DialogueUiManager : Singleton<DialogueUiManager>
         foreach (string sentence in totSentences)
         {
             this.sentences.Enqueue(sentence);
+            //AkSoundEngine.PostEvent("NPC_talk_play", gameObject);
         }
     }
 

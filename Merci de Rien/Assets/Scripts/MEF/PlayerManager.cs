@@ -24,6 +24,12 @@ public class PlayerManager : ObjectManager
 
     GameObject interactObject;
 
+    [SerializeField]
+    GameObject bringPosition;
+
+    [SerializeField]
+    Transform strangerPosition;
+
     void Awake()
     {
         inputs = GetComponent<PlayerInputManager>();
@@ -45,6 +51,12 @@ public class PlayerManager : ObjectManager
         currentState.Execute();
     }
 
+    private void FixedUpdate()
+    {
+        if (CanMove)
+            DoMove();
+    }
+
     public override void ChangeState(State newState)
     {
         base.ChangeState(newState);
@@ -58,7 +70,7 @@ public class PlayerManager : ObjectManager
             Gizmos.color = Color.red;
         else
             Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(GetFrontPosition(),reglages.raycastRadius);
+      //  Gizmos.DrawSphere(GetFrontPosition(),reglages.raycastRadius);
 
     }
 
@@ -72,7 +84,14 @@ public class PlayerManager : ObjectManager
 
     //MOVEMENT FUNCTIONS______________________________________________________________________________
 
-    public void Move()
+    bool CanMove = true;
+
+    public void Move(bool IsOn)
+    {
+        CanMove = IsOn;
+    }
+
+    public void DoMove()
     {
         Vector3 directionController = inputs.GetMovementInput();
         GravitySpeed();
@@ -90,12 +109,13 @@ public class PlayerManager : ObjectManager
 
         Vector3 rightMove = right * (10 * inputs.GetMovementInputX()) * Time.deltaTime;
         Vector3 upMove = forward * (10 * inputs.GetMovementInputY()) * Time.deltaTime;
-        Vector3 heading = (rightMove + upMove);
-        heading.Normalize();
+        Vector3 heading = (rightMove + upMove).normalized;
+
+        float amplitude = new Vector2(inputs.GetMovementInputX(), inputs.GetMovementInputY()).magnitude;
 
         RotatePlayer(inputs.GetMovementInputY(), -inputs.GetMovementInputX());
         currentVelocity = Vector3.zero;
-        currentVelocity += heading * (reglages.moveSpeed/5f);
+        currentVelocity += heading * amplitude * (reglages.moveSpeed / 5f);
         character.Move(currentVelocity);
         UpdateAnim();
     }
@@ -229,6 +249,11 @@ public class PlayerManager : ObjectManager
         interactObject = newVal;
     }
 
+    public Transform GetBringPosition()
+    {
+        return bringPosition.transform;
+    }
+
     public BringObject IsBringingObject()
     {
         BringObject returnVal = null;
@@ -240,6 +265,10 @@ public class PlayerManager : ObjectManager
         return returnVal;
     }
    
+    public Vector3 GetStrangerPosition()
+    {
+        return strangerPosition.position;
+    }
 
     //SINGLETON________________________________________________________________________________________________
 

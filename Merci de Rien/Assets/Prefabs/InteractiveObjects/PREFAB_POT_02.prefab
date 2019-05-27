@@ -124,13 +124,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a751bf5128d49af802f211439662e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectType: 0
+  characterOwner: 3
   feedbackInteraction: {fileID: 6580366454553171721}
   mesh: []
   interactMaterial:
   - {fileID: 2100000, guid: 42caec3d3a11d4eb08e95b04b94d97a7, type: 2}
   interactText: {fileID: 11400000, guid: c13ad8090cfd6437f96617cfe6d2b572, type: 2}
   reglages: {fileID: 11400000, guid: 1973d64a2f1d54ce28959855bd689fa1, type: 2}
-  characterOwner: 0
+  breakingParts: {fileID: 7309101723561119395, guid: 2b0761db39aae45e7a2b7baa5334dcff,
+    type: 3}
   explosionParticles: {fileID: 6145940328336959526, guid: 23ebb89b51a774f76ae5c008e49d7164,
     type: 3}
 --- !u!208 &1238157922

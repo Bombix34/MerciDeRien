@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d801111adfcaf274b9a0b3c1e2c69060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPlayingFootstepSound: 0
+  IsPlayingFootstepSound: 1
 --- !u!1 &8713827381833486821
 GameObject:
   m_ObjectHideFlags: 0
@@ -23,7 +23,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8713827381833737313}
   - component: {fileID: 3877335953128379678}
-  - component: {fileID: 8713827381833486820}
   - component: {fileID: 8713827381833486823}
   - component: {fileID: 8713827381833486817}
   - component: {fileID: 8713827381833486822}
@@ -65,20 +64,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: 4
---- !u!114 &8713827381833486820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8713827381833486821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18f30d4ae3c054ea7862d39810f16bdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  render: {fileID: 6652994416822040120}
-  silhouettedMaterial: {fileID: 2100000, guid: ae7285fcf88304b42b153b360d00fbca, type: 2}
 --- !u!114 &8713827381833486823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,6 +302,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8713827381833737313}
     m_Modifications:
+    - target: {fileID: 100000, guid: 60bdd3e67583b3b4eae6161bbf47b0c2, type: 3}
+      propertyPath: m_Name
+      value: Healer_Model
+      objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 60bdd3e67583b3b4eae6161bbf47b0c2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -364,10 +353,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 60bdd3e67583b3b4eae6161bbf47b0c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 60bdd3e67583b3b4eae6161bbf47b0c2, type: 3}
-      propertyPath: m_Name
-      value: Healer_Model
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 60bdd3e67583b3b4eae6161bbf47b0c2, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1352,12 +1337,6 @@ GameObject:
 --- !u!4 &6652994416824985368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 60bdd3e67583b3b4eae6161bbf47b0c2,
-    type: 3}
-  m_PrefabInstance: {fileID: 6652994416825122200}
-  m_PrefabAsset: {fileID: 0}
---- !u!137 &6652994416822040120 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 13700000, guid: 60bdd3e67583b3b4eae6161bbf47b0c2,
     type: 3}
   m_PrefabInstance: {fileID: 6652994416825122200}
   m_PrefabAsset: {fileID: 0}

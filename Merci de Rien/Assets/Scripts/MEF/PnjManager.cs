@@ -6,7 +6,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(PnjDialogueManager))]
 public class PnjManager : ObjectManager
 {
-    NavMeshAgent navAgent;
+    protected NavMeshAgent navAgent;
     Animator anim;
 
     [SerializeField]
@@ -17,9 +17,9 @@ public class PnjManager : ObjectManager
 
     public PnjDialogueManager dialogueManager{get;set;}
 
-    InteractObject interactionManager;
+    protected InteractObject interactionManager;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         dialogueManager = GetComponent<PnjDialogueManager>();
         navAgent = GetComponent<NavMeshAgent>();
@@ -29,19 +29,19 @@ public class PnjManager : ObjectManager
             anim = GetComponentInChildren<Animator>();
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         ChangeState(new WanderAroundState(this,this.transform.position));
         InitInteractScript();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         currentState.Execute();
         UpdateAnim();
     }
 
-    private void InitInteractScript()
+    protected virtual void InitInteractScript()
     {
         interactionManager.CanTakeObject = true;
         interactionManager.CanInteract = true;
@@ -54,7 +54,7 @@ public class PnjManager : ObjectManager
         base.ChangeState(newState);
     }
 
-    private void OnDrawGizmos()
+    protected virtual void OnDrawGizmos()
     {
         //TOOL DEBUG
         if (!Application.isPlaying)
