@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5138831281151153531}
   - component: {fileID: 551888719}
   - component: {fileID: 551888720}
+  - component: {fileID: 3528699111545905598}
   m_Layer: 0
   m_Name: Portal
   m_TagString: InteractObject
@@ -114,6 +115,26 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 1a076ae991aed6e43bec73fd239f9fe6, type: 2}
   interactText: {fileID: 11400000, guid: 61efc698197d0284d9543f5b22e1f82d, type: 2}
   closedPortailText: {fileID: 11400000, guid: f3b868d2a4ab9d6498925fe605205ec3, type: 2}
+  keyNeeded: -1
+--- !u!95 &3528699111545905598
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138831281148955579}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5b3ee71007911284f9414dd4a8974631, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &9104687084857406325
 PrefabInstance:
   m_ObjectHideFlags: 0
