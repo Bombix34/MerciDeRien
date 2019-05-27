@@ -14,28 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   database: {fileID: 11400000, guid: 6bae29087a66e427b81fcbcc8d1df3f1, type: 2}
   conditions:
-  - concernedEvent: 24
+  - concernedEvent: 16
     comparaison: 2
     valToTest: 1
     concernedDialogue: {fileID: 11400000, guid: fc811280f5f9dcb47a8f46cb85918d1a,
       type: 2}
     comparisonCumul: 0
   consequences:
-  - consequence: 10
-    characterConcerned: 4
+  - consequence: 6
+    characterConcerned: 0
     actionChoice: 0
     mood: 0
     dialogueConcerned: {fileID: 0}
     eventDatabase: {fileID: 0}
     eventType: 0
     objectConcerned: 0
-    intModificator: 0
-  - consequence: 0
-    characterConcerned: 3
-    actionChoice: 0
-    mood: 0
-    dialogueConcerned: {fileID: 0}
-    eventDatabase: {fileID: 0}
-    eventType: 0
-    objectConcerned: 0
-    intModificator: 0
+    intModificator: 3
