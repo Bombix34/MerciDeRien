@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &43882223
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 43882224}
-  m_Layer: 0
-  m_Name: StrangerPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &43882224
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43882223}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.36}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7997699880536934602}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1201070211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,7 +1418,6 @@ GameObject:
   - component: {fileID: 9124196207726798544}
   - component: {fileID: 9124196207726798545}
   - component: {fileID: 9124196207726798551}
-  - component: {fileID: 9124196207165403591}
   - component: {fileID: 1954669297}
   m_Layer: 0
   m_Name: PLAYER_AXO
@@ -1469,7 +1438,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9124196207319074604}
-  - {fileID: 43882224}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -1488,7 +1456,7 @@ MonoBehaviour:
   reglages: {fileID: 11400000, guid: 8ae203640ad134dcbb4087d6c2da0ea6, type: 2}
   handTool: {fileID: 1201070212}
   bringPosition: {fileID: 8628460518643506922}
-  strangerPosition: {fileID: 43882224}
+  strangerPosition: {fileID: 0}
 --- !u!114 &9124196207726798547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1544,19 +1512,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc4a0217a351f474abfe686f9b0e3872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9124196207165403591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9124196207726798548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04498f1a83835b048b77b55840ee907c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerKeys: 
 --- !u!208 &1954669297
 NavMeshObstacle:
   m_ObjectHideFlags: 0
