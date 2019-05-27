@@ -114,7 +114,7 @@ public class PlayerUseToolState : State
 
     }
 
-    public ToolObject GettoolObject()
+    public ToolObject GetToolObject()
     {
         return toolObject;
     }
