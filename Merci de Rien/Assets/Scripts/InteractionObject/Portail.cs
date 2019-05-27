@@ -9,8 +9,8 @@ public class Portail : InteractObject
     [SerializeField]
     Dialogue closedPortailText;
 
-
-    public int KeyNeeded { get; set; } = -1;
+    [SerializeField]
+    int keyNeeded = -1;
 
     public bool IsOpen { get; set; } = false;
     
@@ -34,10 +34,10 @@ public class Portail : InteractObject
         else
         {
             bool hasKey = false;
-            if (KeyNeeded == -1)
+            if (keyNeeded == -1)
                 hasKey = true;
             else
-                hasKey = GameManager.Instance.HasKey(KeyNeeded);
+                hasKey = GameManager.Instance.HasKey(keyNeeded);
             if(hasKey)
             {
                 animator.SetBool("IsOpen", true);
@@ -82,6 +82,16 @@ public class Portail : InteractObject
         CanInteract = false;
         yield return new WaitForSeconds(0.75f);
         CanInteract = true;
+    }
+
+    public void SetKeyNeeded(int val)
+    {
+        keyNeeded = val;
+    }
+
+    public int GetKeyNeeded()
+    {
+        return keyNeeded;
     }
 
 }
