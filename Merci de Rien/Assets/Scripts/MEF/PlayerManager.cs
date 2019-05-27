@@ -264,6 +264,11 @@ public class PlayerManager : ObjectManager
         }
         return returnVal;
     }
+
+    public bool IsOccuped()
+    {
+        return (currentState.stateName == "PLAYER_DIALOGUE_STATE" || currentState.stateName == "PLAYER_WAIT_STATE");
+    }
    
     public Vector3 GetStrangerPosition()
     {

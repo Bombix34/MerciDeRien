@@ -55,7 +55,7 @@ public class PursuitPlayerState : State
         agent.SetDestination(curPlayer.transform.position);
         if(curPnj.RaycastPlayer())
         {
-            if (curPlayer.GetCurrentState().stateName == "PLAYER_DIALOGUE_STATE")
+            if (curPlayer.IsOccuped() )
             {
                 agent.SetDestination(curPnj.transform.position);
                 return;

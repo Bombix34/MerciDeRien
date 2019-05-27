@@ -23,7 +23,8 @@ public class StrangerApparitionState : State
     public override void Enter()
     {
         player = EventManager.Instance.GetPlayer().GetComponent<PlayerManager>();
-        manager.transform.position = player.GetStrangerPosition();
+        Vector3 playerPos = player.gameObject.transform.position;
+        manager.transform.position = new Vector3(playerPos.x + 1f, playerPos.y, playerPos.z - 1f);
         Camera.main.GetComponent<CameraManager>().SetDialogueCamera(manager.gameObject);
         player.transform.LookAt(manager.transform.position);
         manager.transform.LookAt(player.transform.position);

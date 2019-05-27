@@ -99,6 +99,9 @@ public class Consequence
             case Consequence.ConsequenceType.RemoveKey:
                 GameManager.Instance.RemoveKey(intModificator);
                 break;
+            case Consequence.ConsequenceType.StrangerApparition:
+                EventManager.Instance.StrangerApparitionEvent();
+                break;
         }
     }
 
@@ -128,7 +131,9 @@ public class Consequence
         GainKey,
         RemoveKey,
         AutorisationInteractionObject,
-        RemoveAutorisationInteractionObject
+        RemoveAutorisationInteractionObject,
+        StrangerApparition,
+        StrangerApparitionAtPoint
     }
 
     public enum CharacterAction
