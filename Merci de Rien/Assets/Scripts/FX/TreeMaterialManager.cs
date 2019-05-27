@@ -14,6 +14,8 @@ public class TreeMaterialManager : MonoBehaviour
     [SerializeField]
     Material feuillesTransparencyMaterial;
 
+    [SerializeField]
+    GameObject shadowShow;
 
     Material baseTroncMaterial;
     Material baseFeuilleMaterial;
@@ -26,7 +28,9 @@ public class TreeMaterialManager : MonoBehaviour
 
     public void UpdateMaterial(bool isTransparency)
     {
-        if(isTransparency)
+        if(shadowShow!=null)
+            shadowShow.SetActive(isTransparency);
+        if (isTransparency)
         {
             tronc.material = troncTransparencyMaterial;
             if (feuilles.Count > 0)

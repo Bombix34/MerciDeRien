@@ -33,7 +33,6 @@ public class StrangerManager : PnjManager
     {
         InitInteractScript();
         ChangeState(new StrangerWaitState(this));
-        playerInput = EventManager.Instance.GetPlayer().GetComponent<PlayerInputManager>();
         ActiveParticle(false);
         ActiveHairParticle(false);
     }
@@ -47,12 +46,6 @@ public class StrangerManager : PnjManager
     protected override void Update()
     {
         base.Update();
-
-        //DEBUG
-        if(playerInput.GetCancelInput())
-        {
-            ChangeState(new StrangerApparitionState(this));
-        }
     }
 
     public override void ChangeState(State newState)

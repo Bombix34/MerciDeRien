@@ -57,6 +57,14 @@ public class EventManager : Singleton<EventManager>
         }
     }
 
+    public void StrangerApparitionEvent()
+    {
+        StrangerManager stranger = (StrangerManager)GetPNJ(PnjManager.CharacterType.Etranger);
+        if (stranger == null)
+            return;
+        stranger.ChangeState(new StrangerApparitionState(stranger));
+    }
+
     public List<InteractObject> GetObjectOfType(InteractObject.ObjectType objectType, PnjManager.CharacterType pnj)
     {
         CleanListObject();

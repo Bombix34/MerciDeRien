@@ -18,14 +18,22 @@ public class PnjDialogueManager : MonoBehaviour
 
     public Dialogue GetDialogue()
     {
-        Dialogue choice = characterDialogues[0];
+        List<Dialogue> priorityChoose = new List<Dialogue>();
+        priorityChoose.Add(characterDialogues[0]);
+        Dialogue choice;
         for(int i =0;i < characterDialogues.Count;i++)
         {
-            if(characterDialogues[i].dialoguePriority>choice.dialoguePriority)
+            if(characterDialogues[i].dialoguePriority == priorityChoose[0].dialoguePriority)
             {
-                choice = characterDialogues[i];
+                priorityChoose.Add(characterDialogues[i]);
+            }
+            else if(characterDialogues[i].dialoguePriority > priorityChoose[0].dialoguePriority)
+            {
+                priorityChoose = new List<Dialogue>();
+                priorityChoose.Add(characterDialogues[i]);
             }
         }
+        choice = priorityChoose[(int)Random.Range(0f, priorityChoose.Count)];
         if (choice.IsUniqueSentence)
             RemoveDialogue(choice);
         TriggerDialogueEvent(choice);
