@@ -66,6 +66,14 @@ public class EventManager : Singleton<EventManager>
         stranger.ChangeState(new StrangerApparitionState(stranger));
     }
 
+    public void StrangerWaitAtPositionEvent(Vector3 destination)
+    {
+        StrangerManager stranger = (StrangerManager)GetPNJ(PnjManager.CharacterType.Etranger);
+        if (stranger == null)
+            return;
+        stranger.ChangeState(new StrangerWaitAtPosition(stranger, destination));
+    }
+
     public List<InteractObject> GetObjectOfType(InteractObject.ObjectType objectType, PnjManager.CharacterType pnj)
     {
         CleanListObject();

@@ -123,6 +123,9 @@ public class PredicatEditor : Editor
             //GENERAL (INT,FLOAT...)
             SerializedProperty intValRef = consequenceListRef.FindPropertyRelative("intModificator");
 
+            //PLACE TO GO
+            SerializedProperty placeValRef = consequenceListRef.FindPropertyRelative("placeConcerned");
+
             AddPopup(ref consequenceTypeRef, "Consequence type :", typeof(Consequence.ConsequenceType));
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("Réglages conséquence _________");
@@ -131,6 +134,10 @@ public class PredicatEditor : Editor
                 case (int)Consequence.ConsequenceType.PnjChangeBehavior:
                     AddPopup(ref characterTypeRef, "Character concerné :", typeof(PnjManager.CharacterType));
                     AddPopup(ref actionChoiceRef, "Action du pnj :", typeof(Consequence.CharacterAction));
+                    if(actionChoiceRef.enumValueIndex==(int)Consequence.CharacterAction.GoToPlace)
+                    {
+                        AddPopup(ref placeValRef, "Endroit ou aller : ", typeof(InterestPoint.InterestPointType));
+                    }
                     break;
                 case (int)Consequence.ConsequenceType.PnjChangeMood:
                     AddPopup(ref characterTypeRef, "Character concerné :", typeof(PnjManager.CharacterType));
@@ -154,6 +161,9 @@ public class PredicatEditor : Editor
                 case (int)Consequence.ConsequenceType.GainKey:
                 case (int)Consequence.ConsequenceType.RemoveKey:
                     intValRef.intValue = EditorGUILayout.IntField("Key ID :", intValRef.intValue);
+                    break;
+                case (int)Consequence.ConsequenceType.StrangerApparitionAtPoint:
+                    AddPopup(ref placeValRef, "Endroit ou attendre : ", typeof(InterestPoint.InterestPointType));
                     break;
             }
             EditorGUILayout.Space();
