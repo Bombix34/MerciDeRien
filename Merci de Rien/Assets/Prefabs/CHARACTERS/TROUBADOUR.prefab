@@ -149,7 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d801111adfcaf274b9a0b3c1e2c69060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer: 0
   IsPlayingFootstepSound: 1
 --- !u!1001 &2943028222719222911
 PrefabInstance:
@@ -158,16 +157,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7934591897059936388}
     m_Modifications:
-    - target: {fileID: 8863007567136126869, guid: 4c4c1b979d9da46a7b9ae1c473e88d57,
-        type: 3}
-      propertyPath: m_Name
-      value: InteractFeedback
-      objectReference: {fileID: 0}
-    - target: {fileID: 8863007567136126869, guid: 4c4c1b979d9da46a7b9ae1c473e88d57,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8863007567136126865, guid: 4c4c1b979d9da46a7b9ae1c473e88d57,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -283,6 +272,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 8863007567136126869, guid: 4c4c1b979d9da46a7b9ae1c473e88d57,
+        type: 3}
+      propertyPath: m_Name
+      value: InteractFeedback
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863007567136126869, guid: 4c4c1b979d9da46a7b9ae1c473e88d57,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c4c1b979d9da46a7b9ae1c473e88d57, type: 3}
 --- !u!1 &5919989406552265706 stripped
@@ -304,22 +303,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7934591897059936388}
     m_Modifications:
-    - target: {fileID: 100000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
-      propertyPath: m_Name
-      value: Catwalk Walking
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
-      propertyPath: m_Name
-      value: modele
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d5f72a4e74b14b24c8e78ee978e8a08b, type: 2}
-    - target: {fileID: 13700000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9030c3e332ec5b54badf1777f3c225bd, type: 2}
     - target: {fileID: 400000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -376,6 +359,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
+      propertyPath: m_Name
+      value: Catwalk Walking
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
+      propertyPath: m_Name
+      value: modele
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8050d8c404b758a41ba66c6ebb974ed8, type: 2}
+    - target: {fileID: 13700000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4c10d6e692cebc5408de53c5cbc6eeb0, type: 2}
     - target: {fileID: 400008, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -6.9728713

@@ -23,6 +23,8 @@ public class BringObject : InteractObject
         base.Start();
         body = GetComponent<Rigidbody>();
         mass = body.mass;
+        if (objectType == ObjectType.Orb)
+            IsLaunch = true;
     }
 
     public void ResetMass()
@@ -94,8 +96,18 @@ public class BringObject : InteractObject
     {
         if (!reglages.IsBreaking)
             return;
-        //SFX
-        AkSoundEngine.PostEvent("ENV_pot_break_play", gameObject);
+
+        if (objectType == ObjectType.Pot)
+        {
+            //SFX
+            AkSoundEngine.PostEvent("ENV_pot_break_play", gameObject);
+        }
+        else if(objectType== ObjectType.Caisse)
+        {
+            //PLAY SOUND CAISSE ICI
+            AkSoundEngine.PostEvent("ENV_crate_break_play", gameObject);
+        }
+
         //event
         EventManager.Instance.UpdateCharacterEvent(EventDatabase.EventType.brokeObjectsTotal, characterOwner, 1);
 
