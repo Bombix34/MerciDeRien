@@ -38,10 +38,10 @@ public class PlayerDialogueState : State
         curPlayer.Move(false);
         curPlayer.transform.LookAt(pnj.transform.position);
         curPlayer.GetAnimator().SetFloat("MoveSpeed", 0f);
-        if(pnj.GetCurrentState().stateName!="PNJ_DIALOGUE_STATE")
-            pnj.ChangeState(new PnjDialogueState(pnj, curPlayer, pnj.GetCurrentState()));
         Dialogue curDialogue = pnj.dialogueManager.GetDialogue();
         GameManager.Instance.AddToHistoric(curDialogue);
+        if (pnj.GetCurrentState().stateName != "PNJ_DIALOGUE_STATE")
+            pnj.ChangeState(new PnjDialogueState(pnj, curPlayer, pnj.GetCurrentState()));
         dialogueUiManager.StartDialogue(curDialogue);
     }
 
