@@ -26,9 +26,7 @@ public class PlayerManager : ObjectManager
 
     [SerializeField]
     GameObject bringPosition;
-
-    [SerializeField]
-    Transform strangerPosition;
+   
 
     void Awake()
     {
@@ -264,10 +262,21 @@ public class PlayerManager : ObjectManager
         }
         return returnVal;
     }
-   
-    public Vector3 GetStrangerPosition()
+
+    public ToolObject IsBringingTool()
     {
-        return strangerPosition.position;
+        ToolObject returnVal = null;
+        if (currentState.stateName == "PLAYER_USE_TOOL_STATE")
+        {
+            PlayerUseToolState curState = (PlayerUseToolState)currentState;
+            returnVal = curState.GetToolObject();
+        }
+        return returnVal;
+    }
+
+    public bool IsOccuped()
+    {
+        return (currentState.stateName == "PLAYER_DIALOGUE_STATE" || currentState.stateName == "PLAYER_WAIT_STATE");
     }
 
     //SINGLETON________________________________________________________________________________________________

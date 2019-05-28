@@ -47,6 +47,7 @@ public class EventManager : Singleton<EventManager>
         {
             if (predicat.IsPredicatTrue())
             {
+                Debug.Log(predicat.name);
                 predicat.ApplyEvent();
                 toRemove.Add(predicat);
             }
@@ -55,6 +56,14 @@ public class EventManager : Singleton<EventManager>
         {
             predicats.Remove(item);
         }
+    }
+
+    public void StrangerApparitionEvent()
+    {
+        StrangerManager stranger = (StrangerManager)GetPNJ(PnjManager.CharacterType.Etranger);
+        if (stranger == null)
+            return;
+        stranger.ChangeState(new StrangerApparitionState(stranger));
     }
 
     public List<InteractObject> GetObjectOfType(InteractObject.ObjectType objectType, PnjManager.CharacterType pnj)
