@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MusicStone : BringObject
 {
-    [SerializeField]
     private Game_Music_Manager musicManager;
 
     public int stoneID;
@@ -21,6 +20,7 @@ public class MusicStone : BringObject
         CanInteract = false;
         capsule = GetComponent<CapsuleCollider>();
         objectType = InteractObject.ObjectType.MusicStone;
+        musicManager = Game_Music_Manager.Instance;
 
         stoneHP = 3;
     }
