@@ -68,6 +68,9 @@ public class TerrainDetection : MonoBehaviour
                 case 3:
                     currentPlayerGroundLayer = GroundLayer.longGrass;
                     break;
+                case 4:
+                    currentPlayerGroundLayer = GroundLayer.stone;
+                    break;
                 case 6:
                     currentPlayerGroundLayer = GroundLayer.agricol;
                     break;

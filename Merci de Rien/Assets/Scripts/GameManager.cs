@@ -18,11 +18,14 @@ public class GameManager : Singleton<GameManager>
     public int Patoune { get; set; } = 0;
     List<int> keyIDs;
 
+    InterestPointManager placeManager;
+
     private void Start()
     {
         keyIDs = new List<int>();
         EventManager = GetComponent<EventManager>();
         playerHistoricDialogues = new List<Dialogue>();
+        placeManager = GetComponent<InterestPointManager>();
     }
 
     public void AddToHistoric(Dialogue newDialogue)
@@ -71,5 +74,10 @@ public class GameManager : Singleton<GameManager>
     public GameObject GetPatounePrefab()
     {
         return patounePrefab[(int)Random.Range(0f, patounePrefab.Count)];
+    }
+
+    public InterestPointManager GetInterestPointManager()
+    {
+        return placeManager;
     }
 }
