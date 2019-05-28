@@ -65,6 +65,8 @@ public class DialogueUiManager : Singleton<DialogueUiManager>
         foreach(char letter in curSentence.ToCharArray())
         {
             textZone.text += letter;
+            AkSoundEngine.PostEvent("NPC_talk_play", gameObject);
+
             yield return new WaitForSeconds(settings.textSpeed);
         }
     }
@@ -74,7 +76,7 @@ public class DialogueUiManager : Singleton<DialogueUiManager>
         foreach (string sentence in totSentences)
         {
             this.sentences.Enqueue(sentence);
-            //AkSoundEngine.PostEvent("NPC_talk_play", gameObject);
+            AkSoundEngine.PostEvent("NPC_Discussion_start", gameObject);
         }
     }
 

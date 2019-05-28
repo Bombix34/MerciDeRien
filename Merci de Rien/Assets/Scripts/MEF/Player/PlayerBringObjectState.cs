@@ -65,6 +65,7 @@ public class PlayerBringObjectState : State
         curPlayer.ResetVelocity();
         curPlayer.GetAnimator().SetBool("Carrying", false);
 
+
         //SFX
         AkSoundEngine.PostEvent("MC_throw_play", this.bringingObject);
     }

@@ -13,26 +13,25 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID ENV_AMB_EXT_PLAY = 1275933152U;
+        static const AkUniqueID ENV_CRATE_BREAK_PLAY = 2518024811U;
         static const AkUniqueID ENV_DOOR_CLOSE_PLAY = 96362093U;
         static const AkUniqueID ENV_DOOR_OPEN_PLAY = 1881369153U;
-        static const AkUniqueID ENV_FIRE_PLAY = 2989807018U;
-        static const AkUniqueID ENV_FIRE_STOP = 99041748U;
+        static const AkUniqueID ENV_LAKE_WATER_PLAY = 1221486157U;
         static const AkUniqueID ENV_POT_BREAK_PLAY = 2141874203U;
         static const AkUniqueID ENV_POT_PUT_DOWN_PLAY = 2760972584U;
+        static const AkUniqueID ENV_TREE_LEAF_PLAY = 1616179565U;
         static const AkUniqueID GAME_FAKE_FIGHT = 1100552122U;
         static const AkUniqueID GAME_LAUNCH = 2732978883U;
         static const AkUniqueID GAME_OVER = 1432716332U;
         static const AkUniqueID GAME_START = 733168346U;
         static const AkUniqueID MC_ATTACK_PLAY = 538908709U;
-        static const AkUniqueID MC_IDLE_ANIM_PLAY = 87855283U;
         static const AkUniqueID MC_PICK_BIG_ITEM_PLAY = 2287292191U;
         static const AkUniqueID MC_PICK_ITEM_PLAY = 2246829044U;
         static const AkUniqueID MC_TALK_PLAY = 2826582739U;
         static const AkUniqueID MC_THROW_PLAY = 1796000097U;
         static const AkUniqueID MC_WALK_PLAY = 1011903932U;
+        static const AkUniqueID NPC_DISCUSSION_START = 2021786508U;
         static const AkUniqueID NPC_TALK_PLAY = 787023996U;
-        static const AkUniqueID NPC_TALK_STOP = 3835799014U;
         static const AkUniqueID NPC_WALK_PLAY = 2227517075U;
         static const AkUniqueID OCARINA_01_DAMAGED = 357745826U;
         static const AkUniqueID OCARINA_01_DESTROYED = 885771810U;
@@ -213,8 +212,7 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
-        static const AkUniqueID ___WATER_DISTANCE = 1638394827U;
-        static const AkUniqueID ___WATER_FAR_DISTANCE = 2539144481U;
+        static const AkUniqueID DISTANCE_LAKE = 1954147146U;
         static const AkUniqueID DISTANCE_MS_01 = 1432175679U;
         static const AkUniqueID DISTANCE_MS_GEN = 3692238424U;
         static const AkUniqueID GAME_TIME = 1870090125U;
@@ -224,6 +222,7 @@ namespace AK
         static const AkUniqueID VOLUME_MUSIC = 3891337659U;
         static const AkUniqueID VOLUME_SFX = 3673881719U;
         static const AkUniqueID VOLUME_VOICES = 3190188375U;
+        static const AkUniqueID WATER_DISTANCE = 1642165204U;
         static const AkUniqueID WW_DEBUG_ZIK_SPEED = 82641640U;
         static const AkUniqueID WW_TREM_OCARINA_01 = 2090554910U;
         static const AkUniqueID WW_TREM_OCARINA_02 = 2090554909U;

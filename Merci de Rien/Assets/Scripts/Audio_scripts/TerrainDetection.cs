@@ -16,7 +16,7 @@ public class TerrainDetection : MonoBehaviour
 
     public GroundLayer currentPlayerGroundLayer { get; set; }
 
-    public bool IsPlayingFootstepSound=false;
+    public bool IsPlayingFootstepSound=true;
 
     void Start()
     {
@@ -123,7 +123,6 @@ public class TerrainDetection : MonoBehaviour
                 AkSoundEngine.PostEvent("NPC_walk_play", gameObject);
             lastFoostep = 0f;
         }
-        //StartCoroutine(FootstepSound());
     }
 
     private int GetActiveTerrainTextureIdx()
