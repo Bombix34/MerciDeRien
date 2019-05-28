@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerSoundManager : MonoBehaviour
 {
+    Game_Music_Manager musicManager;
     PlayerManager manager;
     GameObject interactedObject;
 
@@ -14,7 +15,7 @@ public class PlayerSoundManager : MonoBehaviour
 
     void Start()
     {
-        
+        musicManager = Game_Music_Manager.Instance;
     }
 
     public void PlayInteractFeedbackSound(GameObject actualObject)
@@ -33,5 +34,10 @@ public class PlayerSoundManager : MonoBehaviour
     public void ResetInteractObject()
     {
         interactedObject = null;
+    }
+
+    private void Update()
+    {
+        AkSoundEngine.SetRTPCValue("water_distance", transform.position.y);
     }
 }

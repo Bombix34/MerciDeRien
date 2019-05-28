@@ -58,6 +58,9 @@ public class PlayerUseToolState : State
         this.toolObject.GetComponent<BringObject>().LaunchObject();
         endState = true;
         curPlayer.ResetVelocity();
+
+        //SFX
+        AkSoundEngine.PostEvent("MC_throw_play", this.toolObject.gameObject);
     }
 
     public void UseTool()
