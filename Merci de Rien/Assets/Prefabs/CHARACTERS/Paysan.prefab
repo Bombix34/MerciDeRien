@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d801111adfcaf274b9a0b3c1e2c69060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPlayingFootstepSound: 1
+  IsPlayingFootstepSound: 0
 --- !u!1 &8754570571758954115
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 6757633062024442897}
   - component: {fileID: 21050325265533528}
   m_Layer: 0
-  m_Name: PAYSAN
+  m_Name: Paysan
   m_TagString: PNJ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,10 +156,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8754570571758670599}
     m_Modifications:
-    - target: {fileID: 100000, guid: 174d37399c25d2b41b12f7d3861f4ada, type: 3}
-      propertyPath: m_Name
-      value: FisherIdle
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 174d37399c25d2b41b12f7d3861f4ada, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -204,10 +200,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 174d37399c25d2b41b12f7d3861f4ada, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 86b258a5b044b4add928eb8ec96e52b0, type: 2}
+    - target: {fileID: 100000, guid: 174d37399c25d2b41b12f7d3861f4ada, type: 3}
+      propertyPath: m_Name
+      value: FisherIdle
+      objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 174d37399c25d2b41b12f7d3861f4ada, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -216,6 +212,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 4ba5c777d6e9d8c42b760c0eafc0680f, type: 2}
+    - target: {fileID: 9500000, guid: 174d37399c25d2b41b12f7d3861f4ada, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 86b258a5b044b4add928eb8ec96e52b0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 174d37399c25d2b41b12f7d3861f4ada, type: 3}
 --- !u!1 &583104797228800758 stripped
@@ -237,16 +237,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8754570571758670599}
     m_Modifications:
-    - target: {fileID: 8863007567136126869, guid: 4c4c1b979d9da46a7b9ae1c473e88d57,
-        type: 3}
-      propertyPath: m_Name
-      value: InteractFeedback
-      objectReference: {fileID: 0}
-    - target: {fileID: 8863007567136126869, guid: 4c4c1b979d9da46a7b9ae1c473e88d57,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8863007567136126865, guid: 4c4c1b979d9da46a7b9ae1c473e88d57,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -361,6 +351,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863007567136126869, guid: 4c4c1b979d9da46a7b9ae1c473e88d57,
+        type: 3}
+      propertyPath: m_Name
+      value: InteractFeedback
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863007567136126869, guid: 4c4c1b979d9da46a7b9ae1c473e88d57,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c4c1b979d9da46a7b9ae1c473e88d57, type: 3}
