@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79290d13ca8044e4fa48e47601fa6d13, type: 3}
-  m_Name: 630DE425-6920-43D8-88F7-F1F28AD28592
+  m_Script: {fileID: 11500000, guid: 77fed778858ae4e6aa1c6732026ef578, type: 3}
+  m_Name: Potion
   m_EditorClassIdentifier: 
-  objectName: ENV_lake_water_play
-  id: 1221486157
-  guid: 630DE425-6920-43D8-88F7-F1F28AD28592
+  IsPortable: 1
+  IsBreakingThings: 1
+  IsBreaking: 0
+  IsHurting: 1
+  IsFilling: 1
+  IsGivingPatouneOnBreak: 0
