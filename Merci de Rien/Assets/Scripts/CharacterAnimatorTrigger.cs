@@ -60,4 +60,14 @@ public class CharacterAnimatorTrigger : MonoBehaviour
         PlayerBringObjectState curState = (PlayerBringObjectState)manager.GetCurrentState();
         curState.ShootObject();
     }
+
+    public void ThrowObjectSFX()
+    {
+        //AkSoundEngine.PostEvent("MC_throw_play", gameObject);
+    }
+
+    public void UseObjectSFX()
+    {
+        AkSoundEngine.PostEvent("MC_attack_play", gameObject);
+    }
 }
