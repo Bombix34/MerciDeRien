@@ -32,6 +32,7 @@ public class CameraManager : MonoBehaviour
         baseCamera.Priority = 10;
         zoomCamera.Priority = 10;
         dialogueCamera.Priority = 10;
+        dezoomCamera.Priority = 10;
         switch(newCameraType)
         {
             case CameraType.Base:
