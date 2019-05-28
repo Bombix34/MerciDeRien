@@ -30,6 +30,9 @@ public class Consequence
     //INT
     public int intModificator;
 
+    //PLACE POSITION
+    public InterestPoint.InterestPointType placeConcerned;
+
     public void ApplyConsequence()
     {
         switch (consequence)
@@ -102,6 +105,10 @@ public class Consequence
             case Consequence.ConsequenceType.StrangerApparition:
                 EventManager.Instance.StrangerApparitionEvent();
                 break;
+            case Consequence.ConsequenceType.StrangerApparitionAtPoint:
+                Vector3 pnjDesiredPosition = GameManager.Instance.GetInterestPointManager().GetInterestPointPosition(placeConcerned);
+                EventManager.Instance.StrangerWaitAtPositionEvent(pnjDesiredPosition);
+                break;
         }
     }
 
@@ -116,6 +123,10 @@ public class Consequence
                 break;
             case CharacterAction.PursuitPlayer:
                 pnj.ChangeState(new PursuitPlayerState(pnj, pnj.GetCurrentState()));
+                break;
+            case CharacterAction.GoToPlace:
+                Vector3 pnjDesiredPosition = GameManager.Instance.GetInterestPointManager().GetInterestPointPosition(placeConcerned);
+                pnj.ChangeState(new WanderAroundState(pnj, pnjDesiredPosition));
                 break;
         }
     }
@@ -139,6 +150,7 @@ public class Consequence
     public enum CharacterAction
     {
         PursuitPlayer,
-        Boude
+        Boude,
+        GoToPlace
     }
 }
