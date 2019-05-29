@@ -10,68 +10,57 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63ad2ccd1898646429d2165039104660, type: 3}
-  m_Name: Predicat-10
+  m_Name: Predicat-08
   m_EditorClassIdentifier: 
   database: {fileID: 11400000, guid: 6bae29087a66e427b81fcbcc8d1df3f1, type: 2}
   conditions:
-  - concernedEvent: 47
-    comparaison: 2
-    valToTest: 1
-    concernedDialogue: {fileID: 0}
-    comparisonCumul: 0
   - concernedEvent: 45
     comparaison: 2
     valToTest: 1
-    concernedDialogue: {fileID: 11400000, guid: 8e892c68d3a67a64a8895b5d669051e6,
+    concernedDialogue: {fileID: 11400000, guid: bf6b009cf67a6174396582a8602dc2e9,
       type: 2}
     comparisonCumul: 0
   consequences:
   - consequence: 4
-    characterConcerned: 1
+    characterConcerned: 0
     actionChoice: 0
     mood: 0
     dialogueConcerned: {fileID: 0}
     eventDatabase: {fileID: 0}
     eventType: 0
-    objectConcerned: 11
+    objectConcerned: 3
     intModificator: 0
+    placeConcerned: 0
   - consequence: 2
-    characterConcerned: 1
+    characterConcerned: 0
     actionChoice: 0
     mood: 0
-    dialogueConcerned: {fileID: 11400000, guid: dea8ff90ca7e148409a8256470bfe676,
+    dialogueConcerned: {fileID: 11400000, guid: d692682cc99aa6d4e8cd00d931cd01b8,
       type: 2}
     eventDatabase: {fileID: 0}
     eventType: 0
     objectConcerned: 0
     intModificator: 0
-  - consequence: 3
-    characterConcerned: 1
+    placeConcerned: 0
+  - consequence: 2
+    characterConcerned: 0
     actionChoice: 0
     mood: 0
-    dialogueConcerned: {fileID: 11400000, guid: a4e1df90157ef1d45b5bc77fe26443bd,
+    dialogueConcerned: {fileID: 11400000, guid: 09f0fe1abb884364aad8fa71186cb4de,
       type: 2}
     eventDatabase: {fileID: 0}
     eventType: 0
     objectConcerned: 0
     intModificator: 0
-  - consequence: 3
-    characterConcerned: 1
+    placeConcerned: 0
+  - consequence: 2
+    characterConcerned: 0
     actionChoice: 0
     mood: 0
-    dialogueConcerned: {fileID: 11400000, guid: 6dea0178fd60f2b48a6f04b935251d51,
+    dialogueConcerned: {fileID: 11400000, guid: d8e8bfa899a369543929f0e499e3326b,
       type: 2}
     eventDatabase: {fileID: 0}
     eventType: 0
     objectConcerned: 0
     intModificator: 0
-  - consequence: 3
-    characterConcerned: 1
-    actionChoice: 0
-    mood: 0
-    dialogueConcerned: {fileID: 11400000, guid: 7887a9817ff852046af37a814a73f1c5,
-      type: 2}
-    eventDatabase: {fileID: 0}
-    eventType: 0
-    objectConcerned: 0
-    intModificator: 0
+    placeConcerned: 0
