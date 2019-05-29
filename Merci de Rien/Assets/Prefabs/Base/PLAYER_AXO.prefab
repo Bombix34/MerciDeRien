@@ -1456,7 +1456,6 @@ MonoBehaviour:
   reglages: {fileID: 11400000, guid: 8ae203640ad134dcbb4087d6c2da0ea6, type: 2}
   handTool: {fileID: 1201070212}
   bringPosition: {fileID: 8628460518643506922}
-  strangerPosition: {fileID: 0}
 --- !u!114 &9124196207726798547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1483,7 +1482,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1.45
   m_Radius: 0.2
-  m_SlopeLimit: 0
+  m_SlopeLimit: 45
   m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
