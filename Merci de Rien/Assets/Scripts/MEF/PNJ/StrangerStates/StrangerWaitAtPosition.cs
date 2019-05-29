@@ -34,7 +34,7 @@ public class StrangerWaitAtPosition : State
         manager.transform.position = targetPos;
         manager.GetAgent().SetDestination(manager.transform.position);
         curMat = manager.GetRenderer().material = manager.GetMaterial(false);
-
+        manager.transform.LookAt(Vector3.left);
         manager.Enable(true);
         curMat.SetFloat("_DissolveAmount", curTransparency);
     }

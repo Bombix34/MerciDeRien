@@ -12,6 +12,8 @@ public class Portail : InteractObject
     [SerializeField]
     int keyNeeded = -1;
 
+    BoxCollider collider;
+
     public bool IsOpen { get; set; } = false;
     
     protected override void Start()
@@ -19,6 +21,7 @@ public class Portail : InteractObject
         base.Start();
         animator = GetComponent<Animator>();
         objectType = ObjectType.Portail;
+        collider = GetComponent<BoxCollider>();
         CanTakeObject = true;
     }
     
@@ -41,6 +44,7 @@ public class Portail : InteractObject
             if(hasKey)
             {
                 animator.SetBool("IsOpen", true);
+                collider.isTrigger = true;
                 IsOpen = true;
             }
             else
@@ -82,6 +86,8 @@ public class Portail : InteractObject
         CanInteract = false;
         yield return new WaitForSeconds(0.75f);
         CanInteract = true;
+        if(!IsOpen)
+            collider.isTrigger = false;
     }
 
     public void SetKeyNeeded(int val)
