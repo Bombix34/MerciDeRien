@@ -50,7 +50,10 @@ public class DialogueUiManager : Singleton<DialogueUiManager>
     public bool DisplayNextSentence()
     {
         if (sentences.Count == 0)
+        {
+            StopAllCoroutines();
             return false;
+        }
         else
         {
             StopAllCoroutines();
@@ -66,7 +69,6 @@ public class DialogueUiManager : Singleton<DialogueUiManager>
         {
             textZone.text += letter;
             AkSoundEngine.PostEvent("NPC_talk_play", gameObject);
-
             yield return new WaitForSeconds(settings.textSpeed);
         }
     }

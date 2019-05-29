@@ -54,6 +54,10 @@ public class PlayerDialogueState : State
                 dialogueUiManager.EndDialogue();
                 curPlayer.ChangeState(prevState);
             }
+            else
+            {
+
+            }
         }
     }
 
