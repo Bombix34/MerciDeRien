@@ -8,9 +8,6 @@ public class PlayerBringObjectState : State
 
     GameObject bringingObject;
 
-    //temps de pression du bouton
-    float interactInputLenght=0;
-
     //pour empêcher le prendre/déposer dans la même frame
     float tempoTime = 0.3f;
 
@@ -72,23 +69,15 @@ public class PlayerBringObjectState : State
 
     public void InteractInput()
     {
-        if(curPlayer.GetInputManager().GetInteractInput())
-        {
-            interactInputLenght += Time.deltaTime;
-        }
-
-        if (curPlayer.GetInputManager().GetInteractInputUp())
+        if (curPlayer.GetInputManager().GetInteractInput())
         {
             curPlayer.ResetVelocity();
-            if (interactInputLenght>0.3f)
-            {
-                curPlayer.GetAnimator().SetTrigger("Throw");
-            }
-            else
-            {
-                TryPoseObject();
-            }
-            interactInputLenght = 0;
+            TryPoseObject();
+        }
+        if(curPlayer.GetInputManager().GetCancelInput())
+        {
+            curPlayer.ResetVelocity();
+            curPlayer.GetAnimator().SetTrigger("Throw");
         }
         
     }
@@ -131,8 +120,6 @@ public class PlayerBringObjectState : State
             }
             InteractInput();
         }
-
-
         else
         {
             chronoEnd -= Time.deltaTime;
