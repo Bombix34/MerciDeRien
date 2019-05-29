@@ -8,9 +8,6 @@ public class PlayerUseToolState : State
 
     ToolObject toolObject;
 
-    //temps de pression du bouton
-    float interactInputLenght = 0;
-
     //pour empêcher le prendre/déposer dans la même frame
     float tempoTime = 0.3f;
 
@@ -75,29 +72,22 @@ public class PlayerUseToolState : State
 
     public void InteractInput()
     {
-        if (curPlayer.GetInputManager().GetCancelInput())
+        if (curPlayer.GetInputManager().GetUseInput())
         {
             curPlayer.GetAnimator().SetTrigger("UseTool");
             CanMove = false;
             return;
         }
-        if (curPlayer.GetInputManager().GetInteractInput())
-        {
-            interactInputLenght += Time.deltaTime;
-        }
-
-        if (curPlayer.GetInputManager().GetInteractInputUp())
+        if (curPlayer.GetInputManager().GetInteractInputDown())
         {
             curPlayer.ResetVelocity();
-            if (interactInputLenght > 0.3f)
-            {
-                curPlayer.GetAnimator().SetTrigger("LaunchTool");
-            }
-            else
-            {
-                TryPoseObject();
-            }
-            interactInputLenght = 0;
+            TryPoseObject();
+            return;
+        }
+        if (curPlayer.GetInputManager().GetCancelInput())
+        {
+            curPlayer.ResetVelocity();
+            curPlayer.GetAnimator().SetTrigger("LaunchTool");
         }
     }
 
@@ -139,7 +129,6 @@ public class PlayerUseToolState : State
     {
         if (!CanMove)
         {
-            interactInputLenght = 0;
             curPlayer.Move(false);
             return;
         }
