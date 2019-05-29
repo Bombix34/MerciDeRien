@@ -30,6 +30,11 @@ public class PlayerDialogueState : State
         dialogueUiManager = DialogueUiManager.Instance;
     }
 
+    public void EndDialogue()
+    {
+        curPlayer.ChangeState(prevState);
+    }
+
     //STATE GESTION______________________________________________________________________________
 
     public override void Enter()
@@ -47,7 +52,7 @@ public class PlayerDialogueState : State
 
     public override void Execute()
     {
-        if (curPlayer.GetInputManager().GetInteractInputDown())
+       /* if (curPlayer.GetInputManager().GetInteractInputDown())
         {
             if (!dialogueUiManager.DisplayNextSentence())
             {
@@ -58,7 +63,7 @@ public class PlayerDialogueState : State
             {
 
             }
-        }
+        }*/
     }
 
     public override void Exit()
