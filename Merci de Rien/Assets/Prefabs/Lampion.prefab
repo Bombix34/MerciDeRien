@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7138118554073265084}
   - component: {fileID: 7138118554072462236}
   - component: {fileID: 7138118554071363932}
+  - component: {fileID: 3934528257779146981}
   m_Layer: 0
   m_Name: Lampion
   m_TagString: Untagged
@@ -78,6 +79,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3934528257779146981
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138118554073624476}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 44.583557, y: 67.17731, z: 44.583683}
+  m_Center: {x: -0.018614769, y: 33.50077, z: 0}
 --- !u!1001 &5062168129008479158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85,11 +99,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7138118554073265084}
     m_Modifications:
-    - target: {fileID: 3927501426305933034, guid: 69c7e93f36344254c8d784bd8bc3dab7,
-        type: 3}
-      propertyPath: m_Name
-      value: FireParticle
-      objectReference: {fileID: 0}
     - target: {fileID: 5030970005796196353, guid: 69c7e93f36344254c8d784bd8bc3dab7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -159,6 +168,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3927501426305933034, guid: 69c7e93f36344254c8d784bd8bc3dab7,
+        type: 3}
+      propertyPath: m_Name
+      value: FireParticle
       objectReference: {fileID: 0}
     - target: {fileID: 7178583118924708608, guid: 69c7e93f36344254c8d784bd8bc3dab7,
         type: 3}
