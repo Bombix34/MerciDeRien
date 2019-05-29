@@ -58,4 +58,9 @@ public class PlayerInputManager : MonoBehaviour
         return player.GetButtonDown("cancel");
     }
 
+    public bool GetUseInput()
+    {
+        return player.GetButtonDown("use");
+    }
+
 }
