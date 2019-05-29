@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ad2ccd1898646429d2165039104660, type: 3}
   m_Name: Predicat-25
   m_EditorClassIdentifier: 
-  database: {fileID: 0}
-  conditions: []
+  database: {fileID: 11400000, guid: 6bae29087a66e427b81fcbcc8d1df3f1, type: 2}
+  conditions:
+  - concernedEvent: 49
+    comparaison: 0
+    valToTest: 0
+    concernedDialogue: {fileID: 0}
+    comparisonCumul: 0
   consequences:
   - consequence: 2
     characterConcerned: 2
@@ -25,6 +30,7 @@ MonoBehaviour:
     eventType: 0
     objectConcerned: 0
     intModificator: 0
+    placeConcerned: 0
   - consequence: 3
     characterConcerned: 2
     actionChoice: 0
@@ -35,6 +41,7 @@ MonoBehaviour:
     eventType: 0
     objectConcerned: 0
     intModificator: 0
+    placeConcerned: 0
   - consequence: 2
     characterConcerned: 2
     actionChoice: 0
@@ -45,6 +52,7 @@ MonoBehaviour:
     eventType: 0
     objectConcerned: 0
     intModificator: 0
+    placeConcerned: 0
   - consequence: 3
     characterConcerned: 0
     actionChoice: 0
@@ -55,3 +63,14 @@ MonoBehaviour:
     eventType: 0
     objectConcerned: 0
     intModificator: 0
+    placeConcerned: 0
+  - consequence: 4
+    characterConcerned: 2
+    actionChoice: 0
+    mood: 0
+    dialogueConcerned: {fileID: 0}
+    eventDatabase: {fileID: 0}
+    eventType: 0
+    objectConcerned: 14
+    intModificator: 0
+    placeConcerned: 0
