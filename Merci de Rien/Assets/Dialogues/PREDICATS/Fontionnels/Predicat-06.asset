@@ -10,27 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63ad2ccd1898646429d2165039104660, type: 3}
-  m_Name: Predicat-05
+  m_Name: Predicat-06
   m_EditorClassIdentifier: 
   database: {fileID: 11400000, guid: 6bae29087a66e427b81fcbcc8d1df3f1, type: 2}
   conditions:
   - concernedEvent: 45
     comparaison: 2
     valToTest: 1
-    concernedDialogue: {fileID: 11400000, guid: 5c2c5f6da564e5b4cb464c0e8ceb199d,
+    concernedDialogue: {fileID: 11400000, guid: 2966c3acb090bf24e8f1213f6a530f65,
       type: 2}
     comparisonCumul: 0
   consequences:
-  - consequence: 6
-    characterConcerned: 0
-    actionChoice: 0
-    mood: 0
-    dialogueConcerned: {fileID: 0}
-    eventDatabase: {fileID: 0}
-    eventType: 0
-    objectConcerned: 0
-    intModificator: 0
-  - consequence: 2
+  - consequence: 3
     characterConcerned: 0
     actionChoice: 0
     mood: 0
@@ -40,7 +31,8 @@ MonoBehaviour:
     eventType: 0
     objectConcerned: 0
     intModificator: 0
-  - consequence: 2
+    placeConcerned: 0
+  - consequence: 3
     characterConcerned: 0
     actionChoice: 0
     mood: 0
@@ -50,7 +42,8 @@ MonoBehaviour:
     eventType: 0
     objectConcerned: 0
     intModificator: 0
-  - consequence: 2
+    placeConcerned: 0
+  - consequence: 3
     characterConcerned: 0
     actionChoice: 0
     mood: 0
@@ -60,7 +53,8 @@ MonoBehaviour:
     eventType: 0
     objectConcerned: 0
     intModificator: 0
-  - consequence: 2
+    placeConcerned: 0
+  - consequence: 3
     characterConcerned: 0
     actionChoice: 0
     mood: 0
@@ -70,17 +64,8 @@ MonoBehaviour:
     eventType: 0
     objectConcerned: 0
     intModificator: 0
-  - consequence: 2
-    characterConcerned: 1
-    actionChoice: 0
-    mood: 0
-    dialogueConcerned: {fileID: 11400000, guid: a4706b1f4c175b64390aa488a2654085,
-      type: 2}
-    eventDatabase: {fileID: 0}
-    eventType: 0
-    objectConcerned: 0
-    intModificator: 0
-  - consequence: 2
+    placeConcerned: 0
+  - consequence: 3
     characterConcerned: 3
     actionChoice: 0
     mood: 0
@@ -90,7 +75,8 @@ MonoBehaviour:
     eventType: 0
     objectConcerned: 0
     intModificator: 0
-  - consequence: 2
+    placeConcerned: 0
+  - consequence: 3
     characterConcerned: 5
     actionChoice: 0
     mood: 0
@@ -100,13 +86,48 @@ MonoBehaviour:
     eventType: 0
     objectConcerned: 0
     intModificator: 0
+    placeConcerned: 0
   - consequence: 2
-    characterConcerned: 4
+    characterConcerned: 1
     actionChoice: 0
     mood: 0
-    dialogueConcerned: {fileID: 11400000, guid: 2966c3acb090bf24e8f1213f6a530f65,
+    dialogueConcerned: {fileID: 11400000, guid: 8e892c68d3a67a64a8895b5d669051e6,
       type: 2}
     eventDatabase: {fileID: 0}
     eventType: 0
     objectConcerned: 0
     intModificator: 0
+    placeConcerned: 0
+  - consequence: 3
+    characterConcerned: 1
+    actionChoice: 0
+    mood: 0
+    dialogueConcerned: {fileID: 11400000, guid: a4706b1f4c175b64390aa488a2654085,
+      type: 2}
+    eventDatabase: {fileID: 0}
+    eventType: 0
+    objectConcerned: 0
+    intModificator: 0
+    placeConcerned: 0
+  - consequence: 2
+    characterConcerned: 4
+    actionChoice: 0
+    mood: 0
+    dialogueConcerned: {fileID: 11400000, guid: ab3770c08211fbe40a6f2aefd2940d77,
+      type: 2}
+    eventDatabase: {fileID: 0}
+    eventType: 0
+    objectConcerned: 0
+    intModificator: 0
+    placeConcerned: 0
+  - consequence: 2
+    characterConcerned: 4
+    actionChoice: 0
+    mood: 0
+    dialogueConcerned: {fileID: 11400000, guid: 88c347e15ce4df64da22f7496a8e3db8,
+      type: 2}
+    eventDatabase: {fileID: 0}
+    eventType: 0
+    objectConcerned: 0
+    intModificator: 0
+    placeConcerned: 0
