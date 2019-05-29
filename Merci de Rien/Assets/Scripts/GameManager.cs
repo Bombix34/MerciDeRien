@@ -15,10 +15,12 @@ public class GameManager : Singleton<GameManager>
 
     List<Dialogue> playerHistoricDialogues;
 
-    public int Patoune { get; set; } = 0;
+    int patounes  = 0;
     List<int> keyIDs;
 
     InterestPointManager placeManager;
+
+    GameObject uiMainGame;
 
     private void Start()
     {
@@ -26,6 +28,7 @@ public class GameManager : Singleton<GameManager>
         EventManager = GetComponent<EventManager>();
         playerHistoricDialogues = new List<Dialogue>();
         placeManager = GetComponent<InterestPointManager>();
+        uiMainGame = DialogueUiManager.Instance.gameObject;
     }
 
     public void AddToHistoric(Dialogue newDialogue)
@@ -63,12 +66,25 @@ public class GameManager : Singleton<GameManager>
     public void AddKey(int id)
     {
         keyIDs.Add(id);
+        uiMainGame.GetComponent<InventoryManager>().AddInventoryKey(id);
     }
 
     public void RemoveKey(int id)
     {
         if(HasKey(id))
             keyIDs.Remove(id);
+    }
+
+    public void AddPatoune(int nb)
+    {
+        patounes += nb;
+        uiMainGame.GetComponent<InventoryManager>().UpdateShellsNb(patounes);
+    }
+
+    public void RemovePatoune(int nb)
+    {
+        patounes -= nb;
+        uiMainGame.GetComponent<InventoryManager>().UpdateShellsNb(patounes);
     }
 
     public GameObject GetPatounePrefab()
