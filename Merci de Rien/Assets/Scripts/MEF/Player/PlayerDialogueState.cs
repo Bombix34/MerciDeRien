@@ -26,6 +26,17 @@ public class PlayerDialogueState : PlayerTransitionState
         dialogueUiManager = DialogueUiManager.Instance;
     }
 
+    public void UpdateBringingObjectPosition()
+    {
+        GameObject bringingObj = null;
+        if (manager.IsBringingTool() != null)
+            bringingObj = manager.IsBringingTool().gameObject;
+        else if (manager.IsBringingObject() != null)
+            bringingObj = manager.IsBringingObject().gameObject;
+        if (bringingObj != null)
+            bringingObj.GetComponent<Rigidbody>().isKinematic = true;
+    }
+
     //STATE GESTION______________________________________________________________________________
 
     public override void Enter()
@@ -44,6 +55,7 @@ public class PlayerDialogueState : PlayerTransitionState
 
     public override void Execute()
     {
+        UpdateBringingObjectPosition();
        /* if (manager.GetInputManager().GetInteractInputDown())
         {
             if (!dialogueUiManager.DisplayNextSentence())

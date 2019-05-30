@@ -279,6 +279,11 @@ public class PlayerManager : ObjectManager
         return bringPosition.transform;
     }
 
+    public bool IsBringingWaitingObject(PnjManager pnj, InteractObject obj)
+    {
+        return (pnj.SpecialObjectEvent(obj));
+    }
+
     public BringObject IsBringingObject()
     {
         BringObject returnVal = null;
@@ -305,6 +310,8 @@ public class PlayerManager : ObjectManager
     {
         return (currentState.stateName == "PLAYER_DIALOGUE_STATE" || currentState.stateName == "PLAYER_WAIT_STATE");
     }
+
+
 
     //SINGLETON________________________________________________________________________________________________
 
