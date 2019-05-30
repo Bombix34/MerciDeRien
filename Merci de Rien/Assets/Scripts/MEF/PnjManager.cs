@@ -19,6 +19,8 @@ public class PnjManager : ObjectManager
 
     protected InteractObject interactionManager;
 
+    public bool IsWaitingObject { get; set; } = false;
+
     protected virtual void Awake()
     {
         dialogueManager = GetComponent<PnjDialogueManager>();
@@ -121,6 +123,50 @@ public class PnjManager : ObjectManager
     public void TalkingEvent()
     {
         EventManager.Instance.UpdateCharacterEvent(EventDatabase.EventType.conversationTotal, GetCharacterType(), 1);
+    }
+
+    public bool SpecialObjectEvent(InteractObject obj)
+    {
+        if (!IsWaitingObject)
+        {
+            Debug.Log("false");
+            return false;
+        }
+        bool returnVal = false;
+        switch (obj.objectType)
+        {
+            case InteractObject.ObjectType.Baton:
+                if (character == PnjManager.CharacterType.Artisan)
+                {
+                    returnVal = true;
+                    EventManager.Instance.UpdateEvent(EventDatabase.EventType.ObjectBoisToArtisan, 1);
+                }
+                break;
+            case InteractObject.ObjectType.Plante:
+                if (character == PnjManager.CharacterType.Healer)
+                {
+                    returnVal = true;
+                    EventManager.Instance.UpdateEvent(EventDatabase.EventType.ObjectPlanteToShaman, 1);
+                }
+                break;
+            case InteractObject.ObjectType.Fourche:
+                if (character == PnjManager.CharacterType.Paysan)
+                {
+                    returnVal = true;
+                    EventManager.Instance.UpdateEvent(EventDatabase.EventType.ObjectFourcheToPaysan, 1);
+                }
+                break;
+            case InteractObject.ObjectType.Potion:
+                if (character == PnjManager.CharacterType.Pecheur)
+                {
+                    returnVal = true;
+                    EventManager.Instance.UpdateEvent(EventDatabase.EventType.ObjectPotionToPecheur, 1);
+                }
+                break;
+            default:
+                break;
+        }
+        return returnVal;
     }
 
     //AGENT_________________________________________________________

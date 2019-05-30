@@ -122,6 +122,7 @@ public class PredicatEditor : Editor
 
             //GENERAL (INT,FLOAT...)
             SerializedProperty intValRef = consequenceListRef.FindPropertyRelative("intModificator");
+            SerializedProperty boolValRef = consequenceListRef.FindPropertyRelative("boolModificator");
 
             //PLACE TO GO
             SerializedProperty placeValRef = consequenceListRef.FindPropertyRelative("placeConcerned");
@@ -137,6 +138,10 @@ public class PredicatEditor : Editor
                     if(actionChoiceRef.enumValueIndex==(int)Consequence.CharacterAction.GoToPlace)
                     {
                         AddPopup(ref placeValRef, "Endroit ou aller : ", typeof(InterestPoint.InterestPointType));
+                    }
+                    else if(actionChoiceRef.enumValueIndex==(int)Consequence.CharacterAction.WaitingForObject)
+                    {
+                        boolValRef.boolValue= EditorGUILayout.Toggle("Is Waiting :", boolValRef.boolValue);
                     }
                     break;
                 case (int)Consequence.ConsequenceType.PnjChangeMood:

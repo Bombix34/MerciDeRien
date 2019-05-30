@@ -47,7 +47,7 @@ public class PnjOwnerArea : MonoBehaviour
             {
                 //SI JE REVIENS DANS LA ZONE AVEC UN OBJET DU PERSO
                 BringObject concernedObj = player.IsBringingObject();
-                CheckEventObject(concernedObj);
+              //  CheckEventObject(concernedObj);
                 if (concernedObj.GetComponent<InteractObject>().CanTakeObject)
                     return;
                 if (concernedObj.GetOwner() == characterOwner)
@@ -58,7 +58,7 @@ public class PnjOwnerArea : MonoBehaviour
             else if(player.IsBringingTool())
             {
                 ToolObject tool = player.IsBringingTool();
-                CheckEventObject(tool);
+               // CheckEventObject(tool);
                 if (tool.GetComponent<InteractObject>().CanTakeObject)
                     return;
                 if (tool.GetOwner() == characterOwner)

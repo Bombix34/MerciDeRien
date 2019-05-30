@@ -39,7 +39,6 @@ public class PlayerUseToolState : State
         toolObject.EndInteraction();
         this.toolObject.transform.parent = null;
         toolObject.EndInteraction();
-        endState = true;
         curPlayer.ResetVelocity();
     }
 
@@ -84,11 +83,20 @@ public class PlayerUseToolState : State
             tempoTime = 0.3f;
             if (curPlayer.GetNearInteractObject() != null)
             {
-                curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), curPlayer.GetCurrentState()));
+                if (curPlayer.IsBringingWaitingObject(curPlayer.GetNearInteractObject().GetComponent<PnjManager>(), toolObject))
+                {
+                    TryPoseObject();
+                    curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), new PlayerBaseState(curPlayer)));
+                }
+                else
+                {
+                    curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), curPlayer.GetCurrentState()));
+                }
             }
             else
             {
                 TryPoseObject();
+                endState = true;
             }
             return;
         }

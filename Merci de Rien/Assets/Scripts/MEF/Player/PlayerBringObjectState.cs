@@ -39,7 +39,6 @@ public class PlayerBringObjectState : State
         this.bringingObject.GetComponent<Rigidbody>().useGravity = true;
         this.bringingObject.transform.position = posePosition;
         this.bringingObject.GetComponent<BringObject>().ResetMass();
-        endState = true;
         curPlayer.ResetVelocity();
         curPlayer.GetAnimator().SetBool("Carrying", false);
 
@@ -71,15 +70,26 @@ public class PlayerBringObjectState : State
     {
         if (curPlayer.GetInputManager().GetInteractInput())
         {
+            Debug.Log("input");
             curPlayer.ResetVelocity();
             tempoTime = 0.3f;
             if (curPlayer.GetNearInteractObject()!=null)
             {
-                curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), curPlayer.GetCurrentState()));
+                if (curPlayer.IsBringingWaitingObject(curPlayer.GetNearInteractObject().GetComponent<PnjManager>(),bringingObject.GetComponent<InteractObject>()))
+                {
+                    Debug.Log("trigger");
+                    TryPoseObject();
+                    curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), new PlayerBaseState(curPlayer)));
+                }
+                else
+                {
+                    curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), curPlayer.GetCurrentState()));
+                }
             }
             else
             {
                 TryPoseObject();
+                endState = true;
             }
         }
         if(curPlayer.GetInputManager().GetCancelInput())
