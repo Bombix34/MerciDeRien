@@ -25,6 +25,6 @@ public class Pancarte : InteractObject
 
     public override void EndInteraction()
     {
-        DialogueUiManager.Instance.EndDialogue();
+      //  DialogueUiManager.Instance.EndDialogue();
     }
 }

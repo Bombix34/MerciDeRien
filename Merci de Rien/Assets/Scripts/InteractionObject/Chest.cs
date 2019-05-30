@@ -57,9 +57,15 @@ public class Chest : InteractObject
         }
     }
 
+    public void ExitPlayerState()
+    {
+        PlayerManager player = EventManager.Instance.GetPlayer().GetComponent<PlayerManager>();
+        PlayerTransitionState statePlayer = (PlayerTransitionState)player.GetCurrentState();
+        statePlayer.ReturnBackToPrevState();
+    }
+
     IEnumerator InstantiatePatoune()
     {
-        
         Vector3 directionForce;
         GameObject curPatoune;
         yield return new WaitForSeconds(0.4f);
@@ -74,6 +80,7 @@ public class Chest : InteractObject
             yield return new WaitForSeconds(0.2f);
             patouneInteract.SetActive(true);
         }
+        ExitPlayerState();
     }
 
     public Transform GetPatouneProjectilePos()

@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerWaitState : PlayerTransitionState
+public class PlayerTransitionState : State
 {
 
-    public PlayerWaitState(ObjectManager curObject) : base(curObject)
+    protected State prevState;
+    protected PlayerManager manager;
+
+    public PlayerTransitionState(ObjectManager curObject) : base(curObject)
     {
         stateName = "PLAYER_WAIT_STATE";
         this.curObject = curObject;
     }
 
-    public PlayerWaitState(ObjectManager curObject, State prevState) : base(curObject)
+    public PlayerTransitionState(ObjectManager curObject, State prevState) : base(curObject)
     {
         stateName = "PLAYER_WAIT_STATE";
         this.curObject = curObject;
@@ -19,13 +22,17 @@ public class PlayerWaitState : PlayerTransitionState
         manager = (PlayerManager)curObject;
     }
 
+    public virtual void ReturnBackToPrevState()
+    {
+        if(prevState!=null)
+            manager.ChangeState(prevState);
+    }
+
 
     //STATE GESTION______________________________________________________________________________
 
     public override void Enter()
     {
-        manager.Move(false); 
-        manager.GetAnimator().SetFloat("MoveSpeed", 0f);
     }
 
     public override void Execute()

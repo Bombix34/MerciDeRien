@@ -150,7 +150,7 @@ public class PlayerManager : ObjectManager
 
     //RAYCAST OBJECTS___________________________________________________________________________________
 
-    public GameObject RaycastObject()
+    public GameObject RaycastObject(bool pnjOnly)
     {
         bool isResult = false;
         GameObject raycastObject = null;
@@ -160,16 +160,31 @@ public class PlayerManager : ObjectManager
         int i = 0;
         while (i < hitColliders.Length)
         {
-            if (CanInteract(hitColliders[i].gameObject))
+            if(!pnjOnly)
             {
-                isResult = true;
-                if (interactObject != null)
-                    interactObject.GetComponent<InteractObject>().UpdateFeedback(false);
-                interactObject = hitColliders[i].gameObject;
-                interactObject.GetComponent<InteractObject>().UpdateFeedback(true);
-                i = hitColliders.Length;
-                soundManager.PlayInteractFeedbackSound(interactObject);
-             
+                if (CanInteract(hitColliders[i].gameObject))
+                {
+                    isResult = true;
+                    if (interactObject != null)
+                        interactObject.GetComponent<InteractObject>().UpdateFeedback(false);
+                    interactObject = hitColliders[i].gameObject;
+                    interactObject.GetComponent<InteractObject>().UpdateFeedback(true);
+                    i = hitColliders.Length;
+                    soundManager.PlayInteractFeedbackSound(interactObject);
+                }
+            }
+            else
+            {
+                if (IsPNJ(hitColliders[i].gameObject))
+                {
+                    isResult = true;
+                    if (interactObject != null)
+                        interactObject.GetComponent<InteractObject>().UpdateFeedback(false);
+                    interactObject = hitColliders[i].gameObject;
+                    interactObject.GetComponent<InteractObject>().UpdateFeedback(true);
+                    i = hitColliders.Length;
+                    soundManager.PlayInteractFeedbackSound(interactObject);
+                }
             }
             i++;
         }
@@ -199,6 +214,11 @@ public class PlayerManager : ObjectManager
             return finalList[0];
         else
             return null;
+    }
+
+    public bool IsPNJ(GameObject concerned)
+    {
+        return concerned.GetComponent<PnjManager>()!=null && concerned.GetComponent<InteractObject>().CanInteract;
     }
 
     public bool CanInteract(GameObject concerned)
@@ -235,6 +255,13 @@ public class PlayerManager : ObjectManager
     public GameObject GetNearInteractObject()
     {
         return interactObject;
+    }
+
+    public void ResetNearInteractObject()
+    {
+        if (interactObject != null)
+            interactObject.GetComponent<InteractObject>().UpdateFeedback(false);
+        interactObject = null;
     }
 
     public Animator GetAnimator()

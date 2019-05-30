@@ -72,7 +72,15 @@ public class PlayerBringObjectState : State
         if (curPlayer.GetInputManager().GetInteractInput())
         {
             curPlayer.ResetVelocity();
-            TryPoseObject();
+            tempoTime = 0.3f;
+            if (curPlayer.GetNearInteractObject()!=null)
+            {
+                curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), curPlayer.GetCurrentState()));
+            }
+            else
+            {
+                TryPoseObject();
+            }
         }
         if(curPlayer.GetInputManager().GetCancelInput())
         {
@@ -112,7 +120,9 @@ public class PlayerBringObjectState : State
         if (!endState)
         {
             curPlayer.Move(true);
+            curPlayer.RaycastObject(true);
             this.bringingObject.transform.position = curPlayer.GetBringPosition().position;
+           // this.bringingObject.transform.LookAt(Vector3.up);
             if (tempoTime > 0)
             {
                 tempoTime -= Time.deltaTime;

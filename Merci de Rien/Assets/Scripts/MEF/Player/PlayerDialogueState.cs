@@ -2,37 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDialogueState : State
+public class PlayerDialogueState : PlayerTransitionState
 {
-    PlayerManager curPlayer;
 
     PnjManager pnj;
     Quaternion pnjBaseRotation;
-
-    State prevState;
-
     DialogueUiManager dialogueUiManager;
 
     public PlayerDialogueState(ObjectManager curObject) : base(curObject)
     {
         stateName = "PLAYER_DIALOGUE_STATE";
         this.curObject = curObject;
-        curPlayer = (PlayerManager)this.curObject;
+        manager = (PlayerManager)this.curObject;
     }
 
     public PlayerDialogueState(ObjectManager curObject, GameObject pnj, State prevState) : base(curObject)
     {
         stateName = "PLAYER_DIALOGUE_STATE";
         this.curObject = curObject;
-        curPlayer = (PlayerManager)this.curObject;
+        manager= (PlayerManager)this.curObject;
         this.pnj = pnj.GetComponent<PnjManager>();
         this.prevState = prevState;
         dialogueUiManager = DialogueUiManager.Instance;
-    }
-
-    public void EndDialogue()
-    {
-        curPlayer.ChangeState(prevState);
     }
 
     //STATE GESTION______________________________________________________________________________
@@ -40,24 +31,25 @@ public class PlayerDialogueState : State
     public override void Enter()
     {
         Camera.main.GetComponent<CameraManager>().SetDialogueCamera(pnj.gameObject);
-        curPlayer.Move(false);
-        curPlayer.transform.LookAt(pnj.transform.position);
-        curPlayer.GetAnimator().SetFloat("MoveSpeed", 0f);
+        manager.Move(false);
+        manager.ResetNearInteractObject();
+        manager.transform.LookAt(pnj.transform.position);
+        manager.GetAnimator().SetFloat("MoveSpeed", 0f);
         Dialogue curDialogue = pnj.dialogueManager.GetDialogue();
         GameManager.Instance.AddToHistoric(curDialogue);
         if (pnj.GetCurrentState().stateName != "PNJ_DIALOGUE_STATE")
-            pnj.ChangeState(new PnjDialogueState(pnj, curPlayer, pnj.GetCurrentState()));
+            pnj.ChangeState(new PnjDialogueState(pnj, manager, pnj.GetCurrentState()));
         dialogueUiManager.StartDialogue(curDialogue);
     }
 
     public override void Execute()
     {
-       /* if (curPlayer.GetInputManager().GetInteractInputDown())
+       /* if (manager.GetInputManager().GetInteractInputDown())
         {
             if (!dialogueUiManager.DisplayNextSentence())
             {
                 dialogueUiManager.EndDialogue();
-                curPlayer.ChangeState(prevState);
+                manager.ChangeState(prevState);
             }
             else
             {
