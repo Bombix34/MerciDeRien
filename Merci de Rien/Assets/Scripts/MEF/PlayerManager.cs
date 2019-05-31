@@ -46,6 +46,7 @@ public class PlayerManager : ObjectManager
 
     private void Update()
     {
+        Debug.Log(currentState.stateName);
         currentState.Execute();
     }
 
@@ -150,7 +151,7 @@ public class PlayerManager : ObjectManager
 
     //RAYCAST OBJECTS___________________________________________________________________________________
 
-    public GameObject RaycastObject(bool pnjOnly)
+    public GameObject RaycastObject(bool interactOnly)
     {
         bool isResult = false;
         GameObject raycastObject = null;
@@ -160,7 +161,7 @@ public class PlayerManager : ObjectManager
         int i = 0;
         while (i < hitColliders.Length)
         {
-            if(!pnjOnly)
+            if(!interactOnly)
             {
                 if (CanInteract(hitColliders[i].gameObject))
                 {
@@ -175,7 +176,7 @@ public class PlayerManager : ObjectManager
             }
             else
             {
-                if (IsPNJ(hitColliders[i].gameObject))
+                if (IsInteractionWhileCarying(hitColliders[i].gameObject))
                 {
                     isResult = true;
                     if (interactObject != null)
@@ -219,6 +220,19 @@ public class PlayerManager : ObjectManager
     public bool IsPNJ(GameObject concerned)
     {
         return concerned.GetComponent<PnjManager>()!=null && concerned.GetComponent<InteractObject>().CanInteract;
+    }
+
+    public bool IsInteractionWhileCarying(GameObject concerned)
+    {
+        //POUR INTERAGIR AVEC LES PORTAILS/COFFRES ALORS QUON PORTE UN ITEM
+        bool result = false;
+        result = concerned.GetComponent<PnjManager>() != null && concerned.GetComponent<InteractObject>().CanInteract;
+        if(!result)
+        {
+            result = concerned.GetComponent<InteractObject>() != null && concerned.GetComponent<InteractObject>().CanInteract
+                && (concerned.GetComponent<InteractObject>().objectType==InteractObject.ObjectType.Portail || concerned.GetComponent<InteractObject>().objectType == InteractObject.ObjectType.Coffre);
+        }
+        return result;
     }
 
     public bool CanInteract(GameObject concerned)

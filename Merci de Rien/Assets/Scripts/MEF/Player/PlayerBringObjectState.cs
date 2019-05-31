@@ -70,20 +70,26 @@ public class PlayerBringObjectState : State
     {
         if (curPlayer.GetInputManager().GetInteractInput())
         {
-            Debug.Log("input");
             curPlayer.ResetVelocity();
             tempoTime = 0.3f;
             if (curPlayer.GetNearInteractObject()!=null)
             {
-                if (curPlayer.IsBringingWaitingObject(curPlayer.GetNearInteractObject().GetComponent<PnjManager>(),bringingObject.GetComponent<InteractObject>()))
+                GameObject interactObject = curPlayer.GetNearInteractObject();
+                if (interactObject.GetComponent<PnjManager>() != null)
                 {
-                    Debug.Log("trigger");
-                    TryPoseObject();
-                    curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), new PlayerBaseState(curPlayer)));
+                    if (curPlayer.IsBringingWaitingObject(curPlayer.GetNearInteractObject().GetComponent<PnjManager>(), bringingObject.GetComponent<InteractObject>()))
+                    {
+                        TryPoseObject();
+                        curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), new PlayerBaseState(curPlayer)));
+                    }
+                    else
+                    {
+                        curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), curPlayer.GetCurrentState()));
+                    }
                 }
                 else
                 {
-                    curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), curPlayer.GetCurrentState()));
+                    curPlayer.ChangeState(new PlayerInteractState(curPlayer, curPlayer.GetNearInteractObject(), this));
                 }
             }
             else

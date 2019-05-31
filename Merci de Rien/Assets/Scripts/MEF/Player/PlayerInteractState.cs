@@ -28,6 +28,7 @@ public class PlayerInteractState : PlayerTransitionState
     {
         Camera.main.GetComponent<CameraManager>().SetDialogueCamera(interactObject.gameObject);
         manager.Move(false);
+        InitBringObject();
         manager.transform.LookAt(interactObject.transform.position);
         manager.GetAnimator().SetFloat("MoveSpeed", 0f);
         interactObject.StartInteraction();
@@ -35,10 +36,7 @@ public class PlayerInteractState : PlayerTransitionState
 
     public override void Execute()
     {
-       /* if (manager.GetInputManager().GetInteractInputDown())
-        {
-            manager.ChangeState(prevState);
-        }*/
+        UpdateBringingObjectPosition();
     }
 
     public override void Exit()

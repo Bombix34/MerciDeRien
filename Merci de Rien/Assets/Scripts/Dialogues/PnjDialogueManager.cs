@@ -18,6 +18,7 @@ public class PnjDialogueManager : MonoBehaviour
 
     public Dialogue GetDialogue()
     {
+        PnjManager.Mood curMood = GetComponent<PnjManager>().CurrentMood;
         List<Dialogue> priorityChoose = new List<Dialogue>();
         priorityChoose.Add(characterDialogues[0]);
         Dialogue choice;
@@ -25,12 +26,16 @@ public class PnjDialogueManager : MonoBehaviour
         {
             if(characterDialogues[i].dialoguePriority == priorityChoose[0].dialoguePriority)
             {
-                priorityChoose.Add(characterDialogues[i]);
+                if (IsMoodValid(characterDialogues[i],curMood))
+                    priorityChoose.Add(characterDialogues[i]);
             }
             else if(characterDialogues[i].dialoguePriority > priorityChoose[0].dialoguePriority)
             {
-                priorityChoose = new List<Dialogue>();
-                priorityChoose.Add(characterDialogues[i]);
+                if (IsMoodValid(characterDialogues[i], curMood))
+                {
+                    priorityChoose = new List<Dialogue>();
+                    priorityChoose.Add(characterDialogues[i]);
+                }
             }
         }
         choice = priorityChoose[(int)Random.Range(0f, priorityChoose.Count)];
@@ -38,6 +43,18 @@ public class PnjDialogueManager : MonoBehaviour
             RemoveDialogue(choice);
         TriggerDialogueEvent(choice);
         return choice;
+    }
+
+    public bool IsMoodValid(Dialogue curTest, PnjManager.Mood curMood)
+    {
+        bool result = false;
+        if (curTest.moodRequired == Dialogue.MoodRequired.none)
+            result = true;
+        else if (curTest.moodRequired == Dialogue.MoodRequired.agressive && curMood == PnjManager.Mood.aggressive)
+            result = true;
+        else if (curTest.moodRequired == Dialogue.MoodRequired.neutral && curMood == PnjManager.Mood.neutral)
+            result = true;
+        return result;
     }
 
     public void TriggerDialogueEvent(Dialogue concerned)
