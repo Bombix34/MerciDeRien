@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerWaitState : State
+public class PlayerWaitState : PlayerTransitionState
 {
 
-    State prevState;
-    PlayerManager manager;
     public PlayerWaitState(ObjectManager curObject) : base(curObject)
     {
         stateName = "PLAYER_WAIT_STATE";

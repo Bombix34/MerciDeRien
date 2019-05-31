@@ -30,6 +30,9 @@ public class Consequence
     //INT
     public int intModificator;
 
+    //bool
+    public bool boolModificator;
+
     //PLACE POSITION
     public InterestPoint.InterestPointType placeConcerned;
 
@@ -128,6 +131,9 @@ public class Consequence
                 Vector3 pnjDesiredPosition = GameManager.Instance.GetInterestPointManager().GetInterestPointPosition(placeConcerned);
                 pnj.ChangeState(new WanderAroundState(pnj, pnjDesiredPosition));
                 break;
+            case CharacterAction.WaitingForObject:
+                pnj.IsWaitingObject = boolModificator;
+                break;
         }
     }
 
@@ -151,6 +157,7 @@ public class Consequence
     {
         PursuitPlayer,
         Boude,
-        GoToPlace
+        GoToPlace,
+        WaitingForObject
     }
 }

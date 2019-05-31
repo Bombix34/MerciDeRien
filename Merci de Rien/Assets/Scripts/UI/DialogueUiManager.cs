@@ -89,8 +89,9 @@ public class DialogueUiManager : Singleton<DialogueUiManager>
         sentences.Clear();
         textZone.text = "";
         dialoguePanel.SetActive(false);
-        PlayerDialogueState statePlayer = (PlayerDialogueState)player.GetCurrentState();
-        statePlayer.EndDialogue();
+
+        PlayerTransitionState statePlayer = (PlayerTransitionState)player.GetCurrentState();
+        statePlayer.ReturnBackToPrevState();
     }
 
     public bool DisplayNextSentence()

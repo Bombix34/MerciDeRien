@@ -2573,7 +2573,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6463478068051106042}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.035
@@ -2797,11 +2797,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000,
         type: 0}
-    - target: {fileID: 894946827701671415, guid: 9e4049667fb0a8240abfbc70d610f847,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.238
-      objectReference: {fileID: 0}
     - target: {fileID: 5460848643818139556, guid: 9e4049667fb0a8240abfbc70d610f847,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2856,6 +2851,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 894946827701671415, guid: 9e4049667fb0a8240abfbc70d610f847,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.238
       objectReference: {fileID: 0}
     - target: {fileID: 8786734206459382209, guid: 9e4049667fb0a8240abfbc70d610f847,
         type: 3}
