@@ -27,6 +27,12 @@ public class BringObject : InteractObject
             IsLaunch = true;
     }
 
+    protected void Update()
+    {
+        if (objectType == ObjectType.Orb)
+            IsLaunch = true;
+    }
+
     public void ResetMass()
     {
         StartCoroutine(PoseObject());

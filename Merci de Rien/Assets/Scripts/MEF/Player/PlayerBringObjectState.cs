@@ -128,7 +128,7 @@ public class PlayerBringObjectState : State
         curPlayer.GetAnimator().SetBool("Carrying", true);
         this.bringingObject.GetComponent<Rigidbody>().useGravity = false;
         this.bringingObject.GetComponent<Rigidbody>().mass = 1;
-       //this.bringingObject.transform.position = curPlayer.GetBringPosition().position;
+        this.bringingObject.transform.localPosition = Vector3.zero;
         // this.bringingObject.transform.rotation.setlo
         this.bringingObject.transform.LookAt(bringingObject.transform.position, Vector3.up);
         tempoTime = 0.3f;
