@@ -83,14 +83,22 @@ public class PlayerUseToolState : State
             tempoTime = 0.3f;
             if (curPlayer.GetNearInteractObject() != null)
             {
-                if (curPlayer.IsBringingWaitingObject(curPlayer.GetNearInteractObject().GetComponent<PnjManager>(), toolObject))
+                GameObject interactObject = curPlayer.GetNearInteractObject();
+                if(interactObject.GetComponent<PnjManager>()!=null)
                 {
-                    TryPoseObject();
-                    curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), new PlayerBaseState(curPlayer)));
+                    if (curPlayer.IsBringingWaitingObject(curPlayer.GetNearInteractObject().GetComponent<PnjManager>(), toolObject))
+                    {
+                        TryPoseObject();
+                        curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), new PlayerBaseState(curPlayer)));
+                    }
+                    else
+                    {
+                        curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), curPlayer.GetCurrentState()));
+                    }
                 }
                 else
                 {
-                    curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), curPlayer.GetCurrentState()));
+                    curPlayer.ChangeState(new PlayerInteractState(curPlayer, curPlayer.GetNearInteractObject(), this));
                 }
             }
             else

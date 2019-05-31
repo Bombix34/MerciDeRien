@@ -16,6 +16,7 @@ public class InterestPoint : MonoBehaviour
     {
         champ,
         healerHouse,
-        artisanHouse
+        artisanHouse,
+        stonehedge
     }
 }

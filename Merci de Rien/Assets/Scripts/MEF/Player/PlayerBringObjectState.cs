@@ -15,6 +15,8 @@ public class PlayerBringObjectState : State
     bool endState = false;
     float chronoEnd = 0.3f;
 
+    bool canInput = true;
+
     public PlayerBringObjectState(ObjectManager curObject) : base(curObject)
     {
         stateName = "PLAYER_BRING_OBJECT_STATE";
@@ -68,22 +70,31 @@ public class PlayerBringObjectState : State
 
     public void InteractInput()
     {
+        if (!canInput)
+            return;
         if (curPlayer.GetInputManager().GetInteractInput())
         {
-            Debug.Log("input");
+            canInput = false;
             curPlayer.ResetVelocity();
             tempoTime = 0.3f;
             if (curPlayer.GetNearInteractObject()!=null)
             {
-                if (curPlayer.IsBringingWaitingObject(curPlayer.GetNearInteractObject().GetComponent<PnjManager>(),bringingObject.GetComponent<InteractObject>()))
+                GameObject interactObject = curPlayer.GetNearInteractObject();
+                if (interactObject.GetComponent<PnjManager>() != null)
                 {
-                    Debug.Log("trigger");
-                    TryPoseObject();
-                    curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), new PlayerBaseState(curPlayer)));
+                    if (curPlayer.IsBringingWaitingObject(curPlayer.GetNearInteractObject().GetComponent<PnjManager>(), bringingObject.GetComponent<InteractObject>()))
+                    {
+                        TryPoseObject();
+                        curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), new PlayerBaseState(curPlayer)));
+                    }
+                    else
+                    {
+                        curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), curPlayer.GetCurrentState()));
+                    }
                 }
                 else
                 {
-                    curPlayer.ChangeState(new PlayerDialogueState(curPlayer, curPlayer.GetNearInteractObject(), curPlayer.GetCurrentState()));
+                    curPlayer.ChangeState(new PlayerInteractState(curPlayer, curPlayer.GetNearInteractObject(), this));
                 }
             }
             else
@@ -94,6 +105,7 @@ public class PlayerBringObjectState : State
         }
         if(curPlayer.GetInputManager().GetCancelInput())
         {
+            canInput = false;
             curPlayer.ResetVelocity();
             curPlayer.GetAnimator().SetTrigger("Throw");
         }
@@ -121,6 +133,7 @@ public class PlayerBringObjectState : State
         this.bringingObject.transform.LookAt(bringingObject.transform.position, Vector3.up);
         tempoTime = 0.3f;
         chronoEnd = 0.3f;
+        canInput = true;
         //SFX
         AkSoundEngine.PostEvent("MC_pick_big_item_play", this.bringingObject);
     }

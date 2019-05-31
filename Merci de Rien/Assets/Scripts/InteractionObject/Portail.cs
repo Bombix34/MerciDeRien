@@ -53,7 +53,17 @@ public class Portail : InteractObject
             }
         }
         StartCoroutine(IsMovingCoroutine());
-        player.ChangeState(new PlayerBaseState(player));
+        ResetPlayer();
+    }
+
+    public void ResetPlayer()
+    {
+        PlayerManager player = EventManager.Instance.GetPlayer().GetComponent<PlayerManager>();
+        PlayerTransitionState statePlayer = (PlayerTransitionState)player.GetCurrentState();
+        if(statePlayer!=null)
+        {
+            statePlayer.ReturnBackToPrevState();
+        }
     }
 
     public override void EndInteraction()

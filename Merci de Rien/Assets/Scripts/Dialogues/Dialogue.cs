@@ -10,6 +10,8 @@ public class Dialogue : ScriptableObject
     public int dialoguePriority = 0;
     public bool IsUniqueSentence = false;
 
+    public MoodRequired moodRequired = MoodRequired.none;
+
     [SerializeField]
     List<Predicat> eventsTriggered;
 
@@ -28,5 +30,12 @@ public class Dialogue : ScriptableObject
     public List<Predicat> GetPredicats()
     {
         return eventsTriggered;
+    }
+
+    public enum MoodRequired
+    {
+        none,
+        neutral,
+        agressive
     }
 }

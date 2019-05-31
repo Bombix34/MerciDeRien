@@ -33,6 +33,10 @@ public class TreeMaterialManager : MonoBehaviour
         if (isTransparency)
         {
             tronc.material = troncTransparencyMaterial;
+            if (tronc.materials.Length > 1)
+            {
+                tronc.materials[1] = troncTransparencyMaterial;
+            }
             if (feuilles.Count > 0)
             {
                 foreach (var item in feuilles)
