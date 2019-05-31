@@ -149,6 +149,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterDialogues:
   - {fileID: 11400000, guid: 5c2c5f6da564e5b4cb464c0e8ceb199d, type: 2}
+  - {fileID: 11400000, guid: b684fd557f7c05b4983b51261481bec8, type: 2}
+  - {fileID: 11400000, guid: 20370f6c984f8a145be3b162f84ede7e, type: 2}
+  - {fileID: 11400000, guid: 0a1ce3a8900a44d4d9948f582f17fb04, type: 2}
+  - {fileID: 11400000, guid: e0173423cad4e794db2099a45b2cb035, type: 2}
+  - {fileID: 11400000, guid: e7bb72ce8eee1e143a1ec08215efc751, type: 2}
+  - {fileID: 11400000, guid: ddf7b3994ffcf0f4baa1a09110a5d4f8, type: 2}
+  - {fileID: 11400000, guid: d7962a4e24e72f344ae42ee12fb0ac19, type: 2}
 --- !u!1001 &1287962056816177709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -302,10 +309,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8824748886427853854}
     m_Modifications:
-    - target: {fileID: 100086, guid: 60d9aee7f1411cb4b8ffd9f961365d72, type: 3}
-      propertyPath: m_Name
-      value: Old Man Idle
-      objectReference: {fileID: 0}
     - target: {fileID: 400086, guid: 60d9aee7f1411cb4b8ffd9f961365d72, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -349,6 +352,10 @@ PrefabInstance:
     - target: {fileID: 400086, guid: 60d9aee7f1411cb4b8ffd9f961365d72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100086, guid: 60d9aee7f1411cb4b8ffd9f961365d72, type: 3}
+      propertyPath: m_Name
+      value: Old Man Idle
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 60d9aee7f1411cb4b8ffd9f961365d72, type: 3}
       propertyPath: m_LocalRotation.x
