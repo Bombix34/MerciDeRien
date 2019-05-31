@@ -16,6 +16,7 @@ public class FishingRod : InteractObject
         animator = GetComponent<Animator>();
         objectType = ObjectType.FishingRod;
         CanTakeObject = true;
+        CanInteract = false;
     }
 
     public override void StartInteraction()
