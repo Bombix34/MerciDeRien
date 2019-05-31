@@ -1758,9 +1758,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.015
-  m_Height: 0.1
+  m_Height: 0.2
   m_Direction: 1
-  m_Center: {x: 0, y: 0.04, z: 0}
+  m_Center: {x: 0.01, y: 0.1, z: -0.01}
 --- !u!114 &8049862916098169578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1804,10 +1804,10 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4984620321947820408}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0.08, z: 0}
 --- !u!1 &5545239787194580398
 GameObject:
@@ -2887,11 +2887,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4984620321947729176}
     m_Modifications:
-    - target: {fileID: 811991197068779048, guid: a500accea9eca47a99010b2ee18c5c00,
-        type: 3}
-      propertyPath: m_Name
-      value: NavMeshModifier
-      objectReference: {fileID: 0}
     - target: {fileID: 3743645141796743724, guid: a500accea9eca47a99010b2ee18c5c00,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2946,6 +2941,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811991197068779048, guid: a500accea9eca47a99010b2ee18c5c00,
+        type: 3}
+      propertyPath: m_Name
+      value: NavMeshModifier
       objectReference: {fileID: 0}
     - target: {fileID: 2665366998957155461, guid: a500accea9eca47a99010b2ee18c5c00,
         type: 3}

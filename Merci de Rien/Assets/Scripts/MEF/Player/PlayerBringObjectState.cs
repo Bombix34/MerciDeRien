@@ -15,6 +15,8 @@ public class PlayerBringObjectState : State
     bool endState = false;
     float chronoEnd = 0.3f;
 
+    bool canInput = true;
+
     public PlayerBringObjectState(ObjectManager curObject) : base(curObject)
     {
         stateName = "PLAYER_BRING_OBJECT_STATE";
@@ -68,8 +70,11 @@ public class PlayerBringObjectState : State
 
     public void InteractInput()
     {
+        if (!canInput)
+            return;
         if (curPlayer.GetInputManager().GetInteractInput())
         {
+            canInput = false;
             curPlayer.ResetVelocity();
             tempoTime = 0.3f;
             if (curPlayer.GetNearInteractObject()!=null)
@@ -100,6 +105,7 @@ public class PlayerBringObjectState : State
         }
         if(curPlayer.GetInputManager().GetCancelInput())
         {
+            canInput = false;
             curPlayer.ResetVelocity();
             curPlayer.GetAnimator().SetTrigger("Throw");
         }
@@ -127,6 +133,7 @@ public class PlayerBringObjectState : State
         this.bringingObject.transform.LookAt(bringingObject.transform.position, Vector3.up);
         tempoTime = 0.3f;
         chronoEnd = 0.3f;
+        canInput = true;
         //SFX
         AkSoundEngine.PostEvent("MC_pick_big_item_play", this.bringingObject);
     }

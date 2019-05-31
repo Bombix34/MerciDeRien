@@ -35,7 +35,6 @@ public class TreeMaterialManager : MonoBehaviour
             tronc.material = troncTransparencyMaterial;
             if (tronc.materials.Length > 1)
             {
-                Debug.Log(tronc.materials[1]);
                 tronc.materials[1] = troncTransparencyMaterial;
             }
             if (feuilles.Count > 0)
