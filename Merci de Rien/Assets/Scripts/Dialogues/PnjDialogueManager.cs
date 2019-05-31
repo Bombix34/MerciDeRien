@@ -20,9 +20,9 @@ public class PnjDialogueManager : MonoBehaviour
     {
         PnjManager.Mood curMood = GetComponent<PnjManager>().CurrentMood;
         List<Dialogue> priorityChoose = new List<Dialogue>();
-        priorityChoose.Add(characterDialogues[0]);
+        priorityChoose.Add(InitDialogueChoice(curMood));
         Dialogue choice;
-        for(int i =0;i < characterDialogues.Count;i++)
+        for(int i =0; i < characterDialogues.Count;i++)
         {
             if(characterDialogues[i].dialoguePriority == priorityChoose[0].dialoguePriority)
             {
@@ -43,6 +43,21 @@ public class PnjDialogueManager : MonoBehaviour
             RemoveDialogue(choice);
         TriggerDialogueEvent(choice);
         return choice;
+    }
+
+    public Dialogue InitDialogueChoice(PnjManager.Mood curMood)
+    {
+        Dialogue toReturn = null;
+        for (int i = 0; i < characterDialogues.Count; i++)
+        {
+            if (IsMoodValid(characterDialogues[i], curMood))
+            {
+                toReturn = characterDialogues[i];
+                i = characterDialogues.Count;
+            }
+
+        }
+        return toReturn;
     }
 
     public bool IsMoodValid(Dialogue curTest, PnjManager.Mood curMood)

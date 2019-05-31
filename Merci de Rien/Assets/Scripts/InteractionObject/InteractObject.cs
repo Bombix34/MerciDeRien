@@ -153,6 +153,7 @@ public class InteractObject : MonoBehaviour
         Plante,
         Caisse,
         Potion,
-        Orb
+        Orb,
+        FishingRod
     }
 }
