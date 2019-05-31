@@ -4844,7 +4844,7 @@ NavMeshAgent:
   m_Height: 0.94
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 3
+  m_ObstacleAvoidanceType: 1
 --- !u!114 &4025505155641407172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9558,10 +9558,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Model
       objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 9bd3c138b8ebc7044a27779dc73f2906, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 170ce55b11ded3e49b0ba853731ea468, type: 2}
     - target: {fileID: 400000, guid: 9bd3c138b8ebc7044a27779dc73f2906, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9614,6 +9610,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 86b258a5b044b4add928eb8ec96e52b0, type: 2}
+    - target: {fileID: 13700000, guid: 9bd3c138b8ebc7044a27779dc73f2906, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 170ce55b11ded3e49b0ba853731ea468, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bd3c138b8ebc7044a27779dc73f2906, type: 3}
 --- !u!1 &7659567505838123058 stripped

@@ -165,6 +165,7 @@ Transform:
   - {fileID: 756544963}
   - {fileID: 411855996}
   - {fileID: 786452617}
+  - {fileID: 8866753599484166449}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -183,7 +184,33 @@ MonoBehaviour:
   database: {fileID: 11400000, guid: 6bae29087a66e427b81fcbcc8d1df3f1, type: 2}
   pnjs: []
   predicats:
-  - {fileID: 11400000, guid: 479f8a7916b344702886570e4db6d84b, type: 2}
+  - {fileID: 11400000, guid: 90d946235ea548a448e841c3e2d09128, type: 2}
+  - {fileID: 11400000, guid: 922bab8434dfcaf46b8b1fc2cdd9c880, type: 2}
+  - {fileID: 11400000, guid: cec556057104add40abdcdb3e025b4ba, type: 2}
+  - {fileID: 11400000, guid: b7b497ee2f15c214d8fc62b758a75e2e, type: 2}
+  - {fileID: 11400000, guid: 4488050abbd5cc448ab025f464a91d9b, type: 2}
+  - {fileID: 11400000, guid: 9ca2fdb8f346b5641b431c5cc3299427, type: 2}
+  - {fileID: 11400000, guid: f7391ba5da2a8344289e5264c2e1b827, type: 2}
+  - {fileID: 11400000, guid: ed09732399fd9ae4cbf3e5683d256db4, type: 2}
+  - {fileID: 11400000, guid: e522128858a301b468cdbe24a6ce378a, type: 2}
+  - {fileID: 11400000, guid: 8213dabf0314043419c24e52176c2d89, type: 2}
+  - {fileID: 11400000, guid: 2de43292c1a537a4ebaedb6b7dee07cb, type: 2}
+  - {fileID: 11400000, guid: 9e0a78020d59029409e28a648ab34bac, type: 2}
+  - {fileID: 11400000, guid: ef015e38eaf6d654484c02819e17c9ee, type: 2}
+  - {fileID: 11400000, guid: 1ff0eff61d78571468036a879afe10c6, type: 2}
+  - {fileID: 11400000, guid: 14da8d660cbd01e4d866067a60afe292, type: 2}
+  - {fileID: 11400000, guid: 6bad9d500604e7949a626538dba58dc7, type: 2}
+  - {fileID: 11400000, guid: 0d8eab060a5dd8d4aa29ad56e18f81ae, type: 2}
+  - {fileID: 11400000, guid: 93ca9123e71b3714393855e5bd0f8cce, type: 2}
+  - {fileID: 11400000, guid: 760ab47741bc5a543ae565b8f56b32c0, type: 2}
+  - {fileID: 11400000, guid: 64dd63f17027f2648bd9fd664f659b8e, type: 2}
+  - {fileID: 11400000, guid: 56663a2dda2574e498188e5eac6ae682, type: 2}
+  - {fileID: 11400000, guid: 4b5e95a46324bbb42b20f476d6f634b2, type: 2}
+  - {fileID: 11400000, guid: 00122984114cedf4fa2f02fd79c087f5, type: 2}
+  - {fileID: 11400000, guid: b906364d0d2d1a6499f06a1e02148eaf, type: 2}
+  - {fileID: 11400000, guid: 9b5b59e3c60bbe6428c2d44eab20171d, type: 2}
+  - {fileID: 11400000, guid: 3c3dd47d0b0ef724388cb936bea3f8ac, type: 2}
+  - {fileID: 11400000, guid: 893ba50fa0ea40243823d50a26bcc05a, type: 2}
   player: {fileID: 0}
   interactivesObjects: []
 --- !u!114 &944714312
@@ -221,3 +248,48 @@ MonoBehaviour:
   - {fileID: 756544964}
   - {fileID: 411855997}
   - {fileID: 786452618}
+  - {fileID: 6700637426441439131}
+--- !u!1 &7746445721037940462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8866753599484166449}
+  - component: {fileID: 6700637426441439131}
+  m_Layer: 0
+  m_Name: PapiHouse
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8866753599484166449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7746445721037940462}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -80.1, y: 29.994507, z: 253.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7085746235285422919}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &6700637426441439131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7746445721037940462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc54b07168a2104faa18acd9fee96b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2

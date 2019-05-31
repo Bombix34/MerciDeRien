@@ -17,6 +17,9 @@ public class InterestPoint : MonoBehaviour
         champ,
         healerHouse,
         artisanHouse,
-        stonehedge
+        stonehedge,
+        papiHouse,
+        pecheurHouse,
+        stele
     }
 }
