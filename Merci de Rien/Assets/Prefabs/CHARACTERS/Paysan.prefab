@@ -148,7 +148,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterDialogues:
-  - {fileID: 11400000, guid: 03deb0273efc2e9449d735bf647499f7, type: 2}
+  - {fileID: 11400000, guid: 56d2ce9c5bf93694f9f58b57f59c3a6c, type: 2}
+  - {fileID: 11400000, guid: 9a1fffac3aaff24439e31599220b34e1, type: 2}
+  - {fileID: 11400000, guid: 414756c3b10714a49968d14e4eea550f, type: 2}
+  - {fileID: 11400000, guid: 30d04da1bdb15ee4ba326bd08bf62b06, type: 2}
+  - {fileID: 11400000, guid: 9ce22b21b74fc29488af356cddf01ab9, type: 2}
+  - {fileID: 11400000, guid: 6b353384705744849831865a063615d6, type: 2}
+  - {fileID: 11400000, guid: 59e05ba6bc8f1f74eab7db1545b9264f, type: 2}
+  - {fileID: 11400000, guid: 06ada9785c99159469d4a80d8d9e8f88, type: 2}
 --- !u!1001 &583104797228899414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -156,10 +163,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8754570571758670599}
     m_Modifications:
-    - target: {fileID: 100000, guid: 174d37399c25d2b41b12f7d3861f4ada, type: 3}
-      propertyPath: m_Name
-      value: FisherIdle
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 174d37399c25d2b41b12f7d3861f4ada, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -203,6 +206,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 174d37399c25d2b41b12f7d3861f4ada, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 174d37399c25d2b41b12f7d3861f4ada, type: 3}
+      propertyPath: m_Name
+      value: FisherIdle
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 174d37399c25d2b41b12f7d3861f4ada, type: 3}
       propertyPath: m_Controller

@@ -136,7 +136,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterDialogues:
+  - {fileID: 11400000, guid: f12f0e9c50a79e7419d90947cdfd2bea, type: 2}
+  - {fileID: 11400000, guid: 631dfe855c9c6d446bcc502b43cf5323, type: 2}
   - {fileID: 11400000, guid: 64650fd9f7d36f64589bfee93b9ae639, type: 2}
+  - {fileID: 11400000, guid: 9fabaf1d10daec645a224add5e0349b3, type: 2}
 --- !u!114 &8418623365318464093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,18 +306,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7934591897059936388}
     m_Modifications:
-    - target: {fileID: 100000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
-      propertyPath: m_Name
-      value: Catwalk Walking
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
-      propertyPath: m_Name
-      value: modele
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -370,6 +361,18 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
+      propertyPath: m_Name
+      value: Catwalk Walking
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
+      propertyPath: m_Name
+      value: modele
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
