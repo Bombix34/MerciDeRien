@@ -15,8 +15,8 @@ MonoBehaviour:
   database: {fileID: 11400000, guid: 6bae29087a66e427b81fcbcc8d1df3f1, type: 2}
   conditions:
   - concernedEvent: 49
-    comparaison: 0
-    valToTest: 0
+    comparaison: 2
+    valToTest: 1
     concernedDialogue: {fileID: 0}
     comparisonCumul: 0
   consequences:
@@ -30,6 +30,7 @@ MonoBehaviour:
     eventType: 0
     objectConcerned: 0
     intModificator: 0
+    boolModificator: 0
     placeConcerned: 0
   - consequence: 3
     characterConcerned: 2
@@ -41,8 +42,9 @@ MonoBehaviour:
     eventType: 0
     objectConcerned: 0
     intModificator: 0
+    boolModificator: 0
     placeConcerned: 0
-  - consequence: 2
+  - consequence: 3
     characterConcerned: 2
     actionChoice: 0
     mood: 0
@@ -52,9 +54,10 @@ MonoBehaviour:
     eventType: 0
     objectConcerned: 0
     intModificator: 0
+    boolModificator: 0
     placeConcerned: 0
   - consequence: 3
-    characterConcerned: 0
+    characterConcerned: 2
     actionChoice: 0
     mood: 0
     dialogueConcerned: {fileID: 11400000, guid: 927b1ef5acf117e4e89ecb482418eafa,
@@ -63,6 +66,7 @@ MonoBehaviour:
     eventType: 0
     objectConcerned: 0
     intModificator: 0
+    boolModificator: 0
     placeConcerned: 0
   - consequence: 4
     characterConcerned: 2
@@ -73,4 +77,16 @@ MonoBehaviour:
     eventType: 0
     objectConcerned: 14
     intModificator: 0
+    boolModificator: 0
+    placeConcerned: 0
+  - consequence: 0
+    characterConcerned: 2
+    actionChoice: 3
+    mood: 0
+    dialogueConcerned: {fileID: 0}
+    eventDatabase: {fileID: 0}
+    eventType: 0
+    objectConcerned: 0
+    intModificator: 0
+    boolModificator: 0
     placeConcerned: 0
