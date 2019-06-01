@@ -31,12 +31,14 @@ public class EventDatabase : ScriptableObject
     public void UpdateEvent(EventType eventType, int val)
     {
         events[(int)eventType].value += val;
+        if (events[(int)eventType].value < 0)
+            events[(int)eventType].value = 0;
     }
 
     public void UpdateCharacterEvent(EventType eventTypeGeneral, PnjManager.CharacterType character, int val)
     {
         if (eventTypeGeneral != EventType.violenceTotal && eventTypeGeneral != EventType.conversationTotal && eventTypeGeneral != EventType.brokeObjectsTotal
-            && eventTypeGeneral != EventType.stealedObjectsTotal && eventTypeGeneral != EventType.questTotal)
+            && eventTypeGeneral != EventType.stealedObjectsTotal )
             return;
 
         if (character != PnjManager.CharacterType.Responsable)
@@ -155,15 +157,8 @@ public class EventDatabase : ScriptableObject
         ObjectPlanteToShaman,
         ObjectPotionToPecheur,
 
-        questTotal,
-        questArtisan,
-        questPaysan,
-        questPecheur,
-        questResponsable,
-        questHealer,
-        questTroubadour,
-        questEtranger,
-        currentQuest,
+        VolFourcheArtisan,
+        VolPlantePaysan,
 
         NUMBER_OF_EVENT
     }
