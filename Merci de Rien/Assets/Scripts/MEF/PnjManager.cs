@@ -129,7 +129,6 @@ public class PnjManager : ObjectManager
     {
         if (!IsWaitingObject)
         {
-            Debug.Log("false");
             return false;
         }
         bool returnVal = false;
@@ -166,6 +165,10 @@ public class PnjManager : ObjectManager
             default:
                 break;
         }
+        if(returnVal)
+        {
+            //PLAY SONG "VICTORY"
+        }
         return returnVal;
     }
 
@@ -180,6 +183,87 @@ public class PnjManager : ObjectManager
     {
         return interactionManager;
     }
+
+    //SOUND_______________________________________________________
+    
+    public void PlayOnomatope()
+    {
+        switch(character)
+        {
+            case CharacterType.Artisan:
+                if(CurrentMood==Mood.neutral)
+                {
+                    //artisan neutre 
+                }
+                else
+                {
+                    //artisan agressif
+                }
+                break;
+            case CharacterType.Paysan:
+                if (CurrentMood == Mood.neutral)
+                {
+                    //paysan neutre
+                }
+                else
+                {
+                    //paysan agressif
+                }
+                break;
+            case CharacterType.Pecheur:
+                if (CurrentMood == Mood.neutral)
+                {
+                    //pecheur neutre
+                }
+                else
+                {
+                    //pecheur agressif
+                }
+                break;
+            case CharacterType.Responsable:
+                if (CurrentMood == Mood.neutral)
+                {
+                    //responsable neutre
+                }
+                else
+                {
+                    //responsable agressif
+                }
+                break;
+            case CharacterType.Healer:
+                if (CurrentMood == Mood.neutral)
+                {
+                    //healer neutre
+                }
+                else
+                {
+                    //healer agressif
+                }
+                break;
+            case CharacterType.Troubadour:
+                if (CurrentMood == Mood.neutral)
+                {
+                    //troubadour neutre
+                }
+                else
+                {
+                    //troubadour agressif
+                }
+                break;
+            case CharacterType.Etranger:
+                if (CurrentMood == Mood.neutral)
+                {
+                    //etranger neutre 
+                }
+                else
+                {
+                    //etranger agressif
+                    //ATTENTION: l'étranger ne passe jamais en agressif
+                }
+                break;
+        }
+    }
+
 
     //CHARACTER____________________________________________________
 

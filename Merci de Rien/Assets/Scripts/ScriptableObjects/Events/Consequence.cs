@@ -100,6 +100,7 @@ public class Consequence
                 }
                 break;
             case Consequence.ConsequenceType.GainKey:
+                //PLAY SONG "VICTORY"
                 GameManager.Instance.AddKey(intModificator);
                 break;
             case Consequence.ConsequenceType.RemoveKey:

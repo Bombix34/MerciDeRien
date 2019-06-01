@@ -110,4 +110,21 @@ public class Portail : InteractObject
         return keyNeeded;
     }
 
+    void PlayBlockingSFX()
+    {
+        AkSoundEngine.PostEvent("ENV_door_locked_play", gameObject);
+    }
+
+    void PlayOpeningSFX()
+    {
+        AkSoundEngine.PostEvent("ENV_door_open_play", gameObject);
+        Debug.Log("Rappeler à Abdoul de remplacer le SFX placeholder d'ouverture du portail s'il a oublié");
+    }
+
+    void PlayClosingSFX()
+    {
+        //Pour l'instant y'a rien, c'est normal :9
+        Debug.Log("Rappeler à Abdoul de faire un SFX pour la fermeture du portail s'il a oublié lel");
+    }
+
 }

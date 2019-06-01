@@ -36,6 +36,7 @@ public class PlayerDialogueState : PlayerTransitionState
         manager.transform.LookAt(pnj.transform.position);
         manager.GetAnimator().SetFloat("MoveSpeed", 0f);
         Dialogue curDialogue = pnj.dialogueManager.GetDialogue();
+        pnj.PlayOnomatope();
         GameManager.Instance.AddToHistoric(curDialogue);
         if (pnj.GetCurrentState().stateName != "PNJ_DIALOGUE_STATE")
             pnj.ChangeState(new PnjDialogueState(pnj, manager, pnj.GetCurrentState()));
