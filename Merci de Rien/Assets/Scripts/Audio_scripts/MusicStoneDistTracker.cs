@@ -27,6 +27,7 @@ public class MusicStoneDistTracker : MonoBehaviour
             if (player == null)
                 player = other.gameObject;
             playerIsNear = true;
+            Debug.Log("spotted");
         }
     }
 
@@ -34,6 +35,7 @@ public class MusicStoneDistTracker : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && playerIsNear)
             playerIsNear = false;
+        Debug.Log("left");
     }
 
     private void Update()
