@@ -154,6 +154,7 @@ public class InteractObject : MonoBehaviour
         Caisse,
         Potion,
         Orb,
-        FishingRod
+        FishingRod,
+        LittleAxo
     }
 }
