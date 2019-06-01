@@ -124,6 +124,7 @@ public class Portail : InteractObject
     void PlayClosingSFX()
     {
         //Pour l'instant y'a rien, c'est normal :9
+        AkSoundEngine.PostEvent("ENV_door_close_play", gameObject);
         Debug.Log("Rappeler à Abdoul de faire un SFX pour la fermeture du portail s'il a oublié lel");
     }
 
