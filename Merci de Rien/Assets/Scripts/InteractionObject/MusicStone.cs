@@ -25,24 +25,28 @@ public class MusicStone : BringObject
         stoneHP = 3;
     }
 
-    private new void OnCollisionEnter(Collision collision)
+    protected override void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "BringObject" || collision.gameObject.tag == "InteractToolObject")
         {
-            stoneHP -= 1;
+            BreakMusicStone();
+        }
+    }
 
-            switch (stoneHP)
-            {
-                case 3:
-                case 2:
-                case 1:
-                    musicManager.MusicStoneHurt(stoneID);
-                    break;
-                case 0:
-                    musicManager.MusicStoneDestroyed(stoneID);
-                    Destroy(gameObject);
-                    break;
-            }
+    public void BreakMusicStone()
+    {
+        stoneHP -= 1;
+        switch (stoneHP)
+        {
+            case 3:
+            case 2:
+            case 1:
+                musicManager.MusicStoneHurt(stoneID);
+                break;
+            case 0:
+                musicManager.MusicStoneDestroyed(stoneID);
+                Destroy(gameObject);
+                break;
         }
     }
 

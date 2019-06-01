@@ -50,6 +50,7 @@ public class PnjOwnerArea : MonoBehaviour
               //  CheckEventObject(concernedObj);
                 if (concernedObj.GetComponent<InteractObject>().CanTakeObject)
                     return;
+                CheckStealObject(concernedObj, false);
                 if (concernedObj.GetOwner() == characterOwner)
                 {
                     objectsInZone.Add(concernedObj.gameObject);
@@ -61,6 +62,7 @@ public class PnjOwnerArea : MonoBehaviour
                // CheckEventObject(tool);
                 if (tool.GetComponent<InteractObject>().CanTakeObject)
                     return;
+                CheckStealObject(tool, false);
                 if (tool.GetOwner() == characterOwner)
                 {
                     objectsInZone.Add(tool.gameObject);
@@ -85,10 +87,10 @@ public class PnjOwnerArea : MonoBehaviour
             PlayerManager player = other.gameObject.GetComponent<PlayerManager>();
             if (player.IsBringingObject())
             {
-                //SI JE REVIENS DANS LA ZONE AVEC UN OBJET DU PERSO
                 BringObject concernedObj = player.IsBringingObject();
                 if (concernedObj.GetComponent<InteractObject>().CanTakeObject)
                     return;
+                CheckStealObject(concernedObj, true);
                 if (concernedObj.GetOwner() == characterOwner)
                 {
                     objectsInZone.Remove(concernedObj.gameObject);
@@ -99,6 +101,7 @@ public class PnjOwnerArea : MonoBehaviour
                 ToolObject tool = player.IsBringingTool();
                 if (tool.GetComponent<InteractObject>().CanTakeObject)
                     return;
+                CheckStealObject(tool, true);
                 if (tool.GetOwner() == characterOwner)
                 {
                     objectsInZone.Remove(tool.gameObject);
@@ -140,6 +143,33 @@ public class PnjOwnerArea : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    public void CheckStealObject(InteractObject obj, bool isLeavingZone)
+    {
+        InteractObject.ObjectType objectType = obj.objectType;
+        if (objectType == InteractObject.ObjectType.Plante && characterOwner == PnjManager.CharacterType.Paysan)
+        {
+            if (isLeavingZone)
+            {
+                EventManager.Instance.UpdateEvent(EventDatabase.EventType.VolPlantePaysan, 1);
+            }
+            else
+            {
+                EventManager.Instance.UpdateEvent(EventDatabase.EventType.VolPlantePaysan, -1);
+            }
+        }
+        else if (objectType == InteractObject.ObjectType.Fourche && characterOwner == PnjManager.CharacterType.Artisan)
+        {
+            if (isLeavingZone)
+            {
+                EventManager.Instance.UpdateEvent(EventDatabase.EventType.VolFourcheArtisan, 1);
+            }
+            else
+            {
+                EventManager.Instance.UpdateEvent(EventDatabase.EventType.VolFourcheArtisan, -1);
+            }
         }
     }
 }
