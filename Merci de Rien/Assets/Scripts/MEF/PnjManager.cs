@@ -129,7 +129,6 @@ public class PnjManager : ObjectManager
     {
         if (!IsWaitingObject)
         {
-            Debug.Log("false");
             return false;
         }
         bool returnVal = false;
@@ -165,6 +164,10 @@ public class PnjManager : ObjectManager
                 break;
             default:
                 break;
+        }
+        if(returnVal)
+        {
+            //PLAY SONG "VICTORY"
         }
         return returnVal;
     }

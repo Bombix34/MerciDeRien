@@ -73,6 +73,17 @@ public class ToolObject : BringObject
             if (reglages.IsBreakingThings&&otherObject.GetReglages().IsBreaking)
                 otherObject.StartBreaking();
         }
+        else if(collision.gameObject.tag=="InteractToolObject"&&collision.gameObject.GetComponent<InteractObject>().objectType==ObjectType.MusicStone)
+        {
+            collision.gameObject.GetComponent<MusicStone>().BreakMusicStone();
+        }
+        else if(collision.gameObject.tag=="Tree")
+        {
+            if(collision.GetComponentInChildren<TreeStickSpawner>()!=null)
+            {
+                collision.GetComponentInChildren<TreeStickSpawner>().SpawnStick();
+            }
+        }
         StartBreaking();
         if (collision.gameObject.tag == "PNJ")
         {
