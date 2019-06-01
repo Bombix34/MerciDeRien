@@ -306,13 +306,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7934591897059936388}
     m_Modifications:
+    - target: {fileID: 100000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
+      propertyPath: m_Name
+      value: Catwalk Walking
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
+      propertyPath: m_Name
+      value: modele
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.58
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
       propertyPath: m_LocalPosition.z
@@ -362,18 +374,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.01
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
-      propertyPath: m_Name
-      value: Catwalk Walking
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
-      propertyPath: m_Name
-      value: modele
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -6.9728713
@@ -389,7 +389,8 @@ PrefabInstance:
     - target: {fileID: 9500000, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 86b258a5b044b4add928eb8ec96e52b0, type: 2}
+      objectReference: {fileID: 22100000, guid: 20c85f2851d6d0d47a740479d5fbde4b,
+        type: 2}
     - target: {fileID: 400080, guid: 4be75e2dcd3d85846a4d6e477925a475, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 6.198549

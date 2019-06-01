@@ -117,6 +117,7 @@ public class PnjManager : ObjectManager
 
     public void HurtingEvent()
     {
+        anim.SetTrigger("Hit");
         EventManager.Instance.UpdateCharacterEvent(EventDatabase.EventType.violenceTotal, GetCharacterType(), 1);
     }
 
