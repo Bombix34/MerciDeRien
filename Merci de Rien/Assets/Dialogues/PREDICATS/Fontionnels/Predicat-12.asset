@@ -20,6 +20,12 @@ MonoBehaviour:
     concernedDialogue: {fileID: 11400000, guid: 944a94e97bcf92141a54093a197b1919,
       type: 2}
     comparisonCumul: 0
+  - concernedEvent: 45
+    comparaison: 2
+    valToTest: 1
+    concernedDialogue: {fileID: 11400000, guid: 66a41d34e2c3ed941a27dc0e67d5955d,
+      type: 2}
+    comparisonCumul: 0
   consequences:
   - consequence: 2
     characterConcerned: 5
@@ -38,6 +44,30 @@ MonoBehaviour:
     actionChoice: 0
     mood: 0
     dialogueConcerned: {fileID: 11400000, guid: 79d6240b642cf774baa0354694fb588f,
+      type: 2}
+    eventDatabase: {fileID: 0}
+    eventType: 0
+    objectConcerned: 0
+    intModificator: 0
+    boolModificator: 0
+    placeConcerned: 0
+  - consequence: 2
+    characterConcerned: 5
+    actionChoice: 0
+    mood: 0
+    dialogueConcerned: {fileID: 11400000, guid: 117de7b9a9ec78d4c9707e983a54fc7c,
+      type: 2}
+    eventDatabase: {fileID: 0}
+    eventType: 0
+    objectConcerned: 0
+    intModificator: 0
+    boolModificator: 0
+    placeConcerned: 0
+  - consequence: 2
+    characterConcerned: 2
+    actionChoice: 0
+    mood: 0
+    dialogueConcerned: {fileID: 11400000, guid: f1c216f979d85294d826d7acdf0fdc0a,
       type: 2}
     eventDatabase: {fileID: 0}
     eventType: 0
