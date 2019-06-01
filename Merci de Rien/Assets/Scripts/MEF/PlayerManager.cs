@@ -46,7 +46,7 @@ public class PlayerManager : ObjectManager
 
     private void Update()
     {
-        Debug.Log(currentState.stateName);
+        //Debug.Log(currentState.stateName);
         currentState.Execute();
     }
 
