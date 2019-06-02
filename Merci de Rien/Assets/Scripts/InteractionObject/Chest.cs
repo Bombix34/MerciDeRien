@@ -39,6 +39,8 @@ public class Chest : InteractObject
             particle.SetActive(true);
         StartCoroutine(InstantiatePatoune());
         CheckSteal();
+
+        AkSoundEngine.PostEvent("ENV_chest_open_play", gameObject);
     }
 
     public override void EndInteraction()

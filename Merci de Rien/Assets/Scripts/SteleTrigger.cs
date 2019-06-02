@@ -34,6 +34,8 @@ public class SteleTrigger : MonoBehaviour
         orb.GetComponent<Rigidbody>().isKinematic = true;
        // orb.GetComponent<S>
         GetComponentInParent<Animator>().SetBool("Glow", true);
+
+        AkSoundEngine.PostEvent("ENV_orb_activated_play", gameObject);
     }
 
 }
