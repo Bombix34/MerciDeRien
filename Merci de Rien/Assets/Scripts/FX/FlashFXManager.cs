@@ -43,7 +43,7 @@ public class FlashFXManager : Singleton<FlashFXManager>
         flashPanel.SetActive(true);
         while (flashImg.color.a < 1)
         {
-            flashImg.color = new Vector4(color.r, color.g, color.b, flashImg.color.a +Time.deltaTime);
+            flashImg.color = new Vector4(color.r, color.g, color.b, flashImg.color.a +(Time.deltaTime/3));
             yield return null;
         }
     }
