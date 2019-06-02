@@ -11,13 +11,13 @@ public class PlayerTransitionState : State
 
     public PlayerTransitionState(ObjectManager curObject) : base(curObject)
     {
-        stateName = "PLAYER_WAIT_STATE";
+        stateName = "PLAYER_TRANSITION_STATE";
         this.curObject = curObject;
     }
 
     public PlayerTransitionState(ObjectManager curObject, State prevState) : base(curObject)
     {
-        stateName = "PLAYER_WAIT_STATE";
+        stateName = "PLAYER_TRANSITION_STATE";
         this.curObject = curObject;
         this.prevState = prevState;
         manager = (PlayerManager)curObject;
@@ -27,11 +27,12 @@ public class PlayerTransitionState : State
     {
         if (prevState != null)
         {
-            Debug.Log("--------");
-            Debug.Log(prevState.stateName);
-            Debug.Log("bring: " + manager.IsBringingObject());
-            Debug.Log("tool: " + manager.IsBringingTool());
-            Debug.Log("--------");
+            if (manager.IsBringingObject() != null)
+                prevState = new PlayerBringObjectState(manager, manager.IsBringingObject().gameObject);
+            else if (manager.IsBringingTool() != null)
+                prevState = new PlayerUseToolState(manager, manager.IsBringingTool().gameObject);
+            else
+                prevState = new PlayerBaseState(manager);
             manager.ChangeState(prevState);
         }
     }
