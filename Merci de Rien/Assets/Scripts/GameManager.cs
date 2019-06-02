@@ -31,6 +31,21 @@ public class GameManager : Singleton<GameManager>
         uiMainGame = DialogueUiManager.Instance.gameObject;
     }
 
+    public void EndGame(GameObject orb)
+    {
+        StartCoroutine(End(orb));
+    }
+
+    IEnumerator End(GameObject orb)
+    {
+        FlashFXManager.Instance.Flash(Color.white);
+        CameraManager cameraManager = Camera.main.GetComponent<CameraManager>(); 
+        cameraManager.SetNewCamera(CameraManager.CameraType.Dezoom);
+        yield return new WaitForSeconds(3f);
+        cameraManager.SetDialogueCamera(orb);
+        FlashFXManager.Instance.Fondu(Color.black);
+    }
+
     public void AddToHistoric(Dialogue newDialogue)
     {
         foreach (var item in playerHistoricDialogues)

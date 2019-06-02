@@ -90,7 +90,7 @@ public class EventDatabase : ScriptableObject
         total += GetEvent(EventType.BadThingsArtisan).value = GetEvent(EventType.stealedObjectsArtisan).value + GetEvent(EventType.brokeObjectsArtisan).value + GetEvent(EventType.violenceAgainstArtisan).value;
         total += GetEvent(EventType.BadThingsPaysan).value = GetEvent(EventType.stealedObjectsPaysan).value + GetEvent(EventType.brokeObjectsPaysan).value + GetEvent(EventType.violenceAgainstPaysan).value;
         total += GetEvent(EventType.BadThingsPecheur).value = GetEvent(EventType.stealedObjectsPecheur).value + GetEvent(EventType.brokeObjectsPecheur).value + GetEvent(EventType.violenceAgainstPecheur).value;
-        total += GetEvent(EventType.BadThingsResponsable).value = GetEvent(EventType.stealedObjectsResponsable).value + GetEvent(EventType.brokeObjectsResponsable).value + GetEvent(EventType.violenceAgainstResponsable).value;
+        //total += GetEvent(EventType.BadThingsResponsable).value = GetEvent(EventType.stealedObjectsResponsable).value + GetEvent(EventType.brokeObjectsResponsable).value + GetEvent(EventType.violenceAgainstResponsable).value;
         total += GetEvent(EventType.BadThingsHealer).value = GetEvent(EventType.stealedObjectsHealer).value + GetEvent(EventType.brokeObjectsHealer).value + GetEvent(EventType.violenceAgainstHealer).value;
         total += GetEvent(EventType.BadThingsTroubadour).value = GetEvent(EventType.stealedObjectsTroubadour).value + GetEvent(EventType.brokeObjectsTroubadour).value + GetEvent(EventType.violenceAgainstTroubadour).value;
         total += GetEvent(EventType.BadThingsEtranger).value = GetEvent(EventType.stealedObjectsEtranger).value + GetEvent(EventType.brokeObjectsEtranger).value + GetEvent(EventType.violenceAgainstEtranger).value;

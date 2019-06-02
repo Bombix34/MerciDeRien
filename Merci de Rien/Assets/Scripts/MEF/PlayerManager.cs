@@ -26,6 +26,9 @@ public class PlayerManager : ObjectManager
 
     [SerializeField]
     GameObject bringPosition;
+
+    BringObject bringObject = null;
+    ToolObject toolObject = null;
    
 
     void Awake()
@@ -300,24 +303,35 @@ public class PlayerManager : ObjectManager
 
     public BringObject IsBringingObject()
     {
-        BringObject returnVal = null;
+        /*BringObject returnVal = null;
         if(currentState.stateName== "PLAYER_BRING_OBJECT_STATE")
         {
             PlayerBringObjectState curState = (PlayerBringObjectState)currentState;
             returnVal = curState.GetBringingObject();
-        }
-        return returnVal;
+        }*/
+        return bringObject;
     }
 
     public ToolObject IsBringingTool()
     {
-        ToolObject returnVal = null;
+        /*ToolObject returnVal = null;
         if (currentState.stateName == "PLAYER_USE_TOOL_STATE")
         {
             PlayerUseToolState curState = (PlayerUseToolState)currentState;
             returnVal = curState.GetToolObject();
-        }
-        return returnVal;
+        }*/
+        return toolObject;
+    }
+
+    public void SetBringingObject(BringObject obj)
+    {
+        toolObject = null;
+        bringObject = obj;
+    }
+    public void SetToolObject(ToolObject tool)
+    {
+        bringObject = null;
+        toolObject = tool;
     }
 
     public bool IsOccuped()

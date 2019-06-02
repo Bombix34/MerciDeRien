@@ -6,6 +6,8 @@ public class PlayerBaseState : State
 {
     PlayerManager curPlayer;
 
+    float timerInput = 0.2f;
+
     public PlayerBaseState(ObjectManager curObject):base(curObject)
     {
         stateName = "PLAYER_BASE_STATE";
@@ -41,11 +43,17 @@ public class PlayerBaseState : State
 
     public override void Enter()
     {
+        timerInput = 0.25f;
     }
 
     public override void Execute()
     {
         curPlayer.Move(true);
+        if(timerInput>0)
+        {
+            timerInput -= Time.deltaTime;
+            return;
+        }
         curPlayer.RaycastObject(false);
         if (curPlayer.GetInputManager().GetInteractInputDown())
         {

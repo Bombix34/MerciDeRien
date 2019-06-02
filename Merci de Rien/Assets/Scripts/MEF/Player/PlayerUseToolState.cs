@@ -38,7 +38,8 @@ public class PlayerUseToolState : State
         Vector3 posePosition = Vector3.zero;
         toolObject.EndInteraction();
         this.toolObject.transform.parent = null;
-        toolObject.EndInteraction();
+        toolObject.EndInteraction(); 
+        curPlayer.SetToolObject(null);
         curPlayer.ResetVelocity();
     }
 
@@ -54,7 +55,7 @@ public class PlayerUseToolState : State
         this.toolObject.GetComponent<BringObject>().LaunchObject();
         endState = true;
         curPlayer.ResetVelocity();
-
+        curPlayer.SetToolObject(null);
         //SFX
         AkSoundEngine.PostEvent("MC_throw_play", this.toolObject.gameObject);
     }
@@ -145,6 +146,7 @@ public class PlayerUseToolState : State
         this.toolObject.StartInteraction();
         this.toolObject.transform.position = toolObject.transform.parent.position;
         this.toolObject.transform.rotation = toolObject.transform.parent.rotation;
+        curPlayer.SetToolObject(toolObject);
         tempoTime = 0.3f;
         chronoEnd = 0.3f;
     }
