@@ -10,33 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63ad2ccd1898646429d2165039104660, type: 3}
-  m_Name: Predicat-31
+  m_Name: Predicat-79
   m_EditorClassIdentifier: 
-  database: {fileID: 11400000, guid: 6bae29087a66e427b81fcbcc8d1df3f1, type: 2}
+  database: {fileID: 0}
   conditions:
   - concernedEvent: 37
     comparaison: 2
-    valToTest: 20
+    valToTest: 2
     concernedDialogue: {fileID: 0}
     comparisonCumul: 0
   consequences:
-  - consequence: 2
-    characterConcerned: 6
+  - consequence: 10
+    characterConcerned: 4
     actionChoice: 0
     mood: 0
-    dialogueConcerned: {fileID: 11400000, guid: 840127f918dfed84597cd9154bef2f5a,
-      type: 2}
+    dialogueConcerned: {fileID: 0}
     eventDatabase: {fileID: 0}
     eventType: 0
     objectConcerned: 0
     intModificator: 0
     boolModificator: 0
     placeConcerned: 0
-  - consequence: 10
-    characterConcerned: 0
+  - consequence: 2
+    characterConcerned: 6
     actionChoice: 0
     mood: 0
-    dialogueConcerned: {fileID: 0}
+    dialogueConcerned: {fileID: 11400000, guid: d825b2474e21e734ab1ea17022bd456c,
+      type: 2}
     eventDatabase: {fileID: 0}
     eventType: 0
     objectConcerned: 0
