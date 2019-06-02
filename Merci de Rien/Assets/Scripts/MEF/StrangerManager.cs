@@ -32,6 +32,7 @@ public class StrangerManager : PnjManager
         ChangeState(new StrangerWaitState(this));
         ActiveParticle(false);
         ActiveHairParticle(false);
+        navAgent.isStopped = true;
     }
 
     protected override void InitInteractScript()

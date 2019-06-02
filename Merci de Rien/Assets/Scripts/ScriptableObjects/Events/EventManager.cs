@@ -47,7 +47,7 @@ public class EventManager : Singleton<EventManager>
         {
             if (predicat.IsPredicatTrue())
             {
-                Debug.Log(predicat.name);
+                //Debug.Log(predicat.name);
                 predicat.ApplyEvent();
                 toRemove.Add(predicat);
             }

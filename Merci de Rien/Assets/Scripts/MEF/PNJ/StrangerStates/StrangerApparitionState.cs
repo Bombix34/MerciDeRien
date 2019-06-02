@@ -22,11 +22,9 @@ public class StrangerApparitionState : State
     {
         if (player == null)
             return;
-        manager.GetAgent().updatePosition = false;
+        manager.GetAgent().isStopped = true;
         Vector3 playerPos = player.gameObject.transform.position;
-        manager.transform.position = new Vector3(playerPos.x + 1f, playerPos.y, playerPos.z - 1f);
-        manager.GetAgent().nextPosition = manager.transform.position;
-        manager.GetAgent().updatePosition = true;
+        manager.GetAgent().Warp(new Vector3(playerPos.x + 1f, playerPos.y, playerPos.z - 1f));
     }
 
     //STATE GESTION______________________________________________________________________________
@@ -48,7 +46,7 @@ public class StrangerApparitionState : State
 
     public override void Execute()
     {
-        SetToPosition();
+       // SetToPosition();
         if (curTransparency<=-0.4f)
         {
             //FIN APPARITION

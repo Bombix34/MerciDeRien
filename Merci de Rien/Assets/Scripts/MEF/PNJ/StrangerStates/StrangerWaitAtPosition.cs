@@ -27,14 +27,17 @@ public class StrangerWaitAtPosition : State
         targetPos = pos;
     }
 
+    public void SetToPosition()
+    {
+        manager.GetAgent().isStopped = true;
+        manager.GetAgent().Warp(targetPos);
+    }
+
     //STATE GESTION______________________________________________________________________________
 
     public override void Enter()
     {
-        manager.GetAgent().updatePosition = false;
-        manager.transform.position = targetPos;
-        manager.GetAgent().updatePosition = true;
-        manager.GetAgent().SetDestination(manager.transform.position);
+        SetToPosition();
         curMat = manager.GetRenderer().material = manager.GetMaterial(false);
         manager.transform.LookAt(Vector3.left);
         manager.Enable(true);

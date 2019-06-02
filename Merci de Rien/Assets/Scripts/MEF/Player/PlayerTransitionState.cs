@@ -25,8 +25,15 @@ public class PlayerTransitionState : State
 
     public virtual void ReturnBackToPrevState()
     {
-        if(prevState!=null)
+        if (prevState != null)
+        {
+            Debug.Log("--------");
+            Debug.Log(prevState.stateName);
+            Debug.Log("bring: " + manager.IsBringingObject());
+            Debug.Log("tool: " + manager.IsBringingTool());
+            Debug.Log("--------");
             manager.ChangeState(prevState);
+        }
     }
 
     public void UpdateBringingObjectPosition()
