@@ -7,11 +7,13 @@ public class SteleTrigger : MonoBehaviour
     [SerializeField]
     Transform orbPosition;
 
+    PlayerManager player;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag=="Player")
         {
-            PlayerManager player = other.GetComponent<PlayerManager>();
+            player = other.GetComponent<PlayerManager>();
             if(player.IsBringingObject()!=null && player.IsBringingObject().objectType==InteractObject.ObjectType.Orb)
             {
                 GameObject orb = player.IsBringingObject().gameObject;
