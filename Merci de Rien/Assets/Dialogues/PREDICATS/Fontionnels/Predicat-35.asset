@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63ad2ccd1898646429d2165039104660, type: 3}
-  m_Name: Predicat-39
+  m_Name: Predicat-35
   m_EditorClassIdentifier: 
-  database: {fileID: 11400000, guid: 6bae29087a66e427b81fcbcc8d1df3f1, type: 2}
+  database: {fileID: 0}
   conditions:
-  - concernedEvent: 31
+  - concernedEvent: 30
     comparaison: 2
-    valToTest: 4
+    valToTest: 1
     concernedDialogue: {fileID: 0}
     comparisonCumul: 0
   consequences:
   - consequence: 0
-    characterConcerned: 1
+    characterConcerned: 0
     actionChoice: 0
     mood: 0
     dialogueConcerned: {fileID: 0}
@@ -32,10 +32,10 @@ MonoBehaviour:
     boolModificator: 0
     placeConcerned: 0
   - consequence: 2
-    characterConcerned: 1
+    characterConcerned: 0
     actionChoice: 0
     mood: 0
-    dialogueConcerned: {fileID: 11400000, guid: 445ca16ab1a3d9e47af5945074f52d1d,
+    dialogueConcerned: {fileID: 11400000, guid: 67c95df9816605c4cb764d9716884b36,
       type: 2}
     eventDatabase: {fileID: 0}
     eventType: 0
