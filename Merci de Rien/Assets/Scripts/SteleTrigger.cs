@@ -9,6 +9,9 @@ public class SteleTrigger : MonoBehaviour
 
     PlayerManager player;
 
+    [SerializeField]
+    GameObject triggerCameraOnStele;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag=="Player")
@@ -27,6 +30,7 @@ public class SteleTrigger : MonoBehaviour
 
     public void TriggerEffect(GameObject orb)
     {
+        triggerCameraOnStele.SetActive(false);
         BringObject orbBringing = orb.GetComponent<BringObject>();
         orb.transform.parent = orbPosition;
         orb.transform.position = orbPosition.position;
@@ -36,8 +40,9 @@ public class SteleTrigger : MonoBehaviour
         orb.GetComponent<Rigidbody>().isKinematic = true;
        // orb.GetComponent<S>
         GetComponentInParent<Animator>().SetBool("Glow", true);
-
         AkSoundEngine.PostEvent("ENV_orb_activated_play", gameObject);
+
+        GameManager.Instance.EndGame(orb);
     }
 
 }
