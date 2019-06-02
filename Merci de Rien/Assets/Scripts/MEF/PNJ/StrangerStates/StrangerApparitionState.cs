@@ -18,19 +18,28 @@ public class StrangerApparitionState : State
         manager = (StrangerManager)curObject;
     }
 
+    public void SetToPosition()
+    {
+        if (player == null)
+            return;
+        manager.GetAgent().updatePosition = false;
+        Vector3 playerPos = player.gameObject.transform.position;
+        manager.transform.position = new Vector3(playerPos.x + 1f, playerPos.y, playerPos.z - 1f);
+        manager.GetAgent().nextPosition = manager.transform.position;
+        manager.GetAgent().updatePosition = true;
+    }
+
     //STATE GESTION______________________________________________________________________________
 
     public override void Enter()
     {
         player = EventManager.Instance.GetPlayer().GetComponent<PlayerManager>();
-        Vector3 playerPos = player.gameObject.transform.position;
-        manager.transform.position = new Vector3(playerPos.x + 1f, playerPos.y, playerPos.z - 1f);
+        SetToPosition();
         Camera.main.GetComponent<CameraManager>().SetDialogueCamera(manager.gameObject);
         player.transform.LookAt(manager.transform.position);
         manager.transform.LookAt(player.transform.position);
         playerPrevState = player.GetCurrentState();
         player.ChangeState(new PlayerWaitState(player,player.GetCurrentState()));
-        manager.GetAgent().SetDestination(manager.transform.position);
         curMat =manager.GetRenderer().material = manager.GetMaterial(false);
 
         manager.Enable(true);
@@ -39,7 +48,8 @@ public class StrangerApparitionState : State
 
     public override void Execute()
     {
-        if(curTransparency<=-0.4f)
+        SetToPosition();
+        if (curTransparency<=-0.4f)
         {
             //FIN APPARITION
             manager.ChangeState(new PnjDialogueState(manager, player, new StrangerLeaveState(manager)));

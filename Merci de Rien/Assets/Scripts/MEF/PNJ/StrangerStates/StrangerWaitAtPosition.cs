@@ -31,7 +31,9 @@ public class StrangerWaitAtPosition : State
 
     public override void Enter()
     {
+        manager.GetAgent().updatePosition = false;
         manager.transform.position = targetPos;
+        manager.GetAgent().updatePosition = true;
         manager.GetAgent().SetDestination(manager.transform.position);
         curMat = manager.GetRenderer().material = manager.GetMaterial(false);
         manager.transform.LookAt(Vector3.left);

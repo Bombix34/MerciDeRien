@@ -21,9 +21,6 @@ public class StrangerManager : PnjManager
     [SerializeField]
     GameObject apparitionParticles;
 
-    //DEBUG
-    PlayerInputManager playerInput;
-
     protected override void Awake()
     {
         base.Awake();
