@@ -130,6 +130,7 @@ public class PnjManager : ObjectManager
     {
         if (!IsWaitingObject)
         {
+            isQuestOnomatope = false;
             return false;
         }
         bool returnVal = false;
@@ -169,6 +170,13 @@ public class PnjManager : ObjectManager
         if(returnVal)
         {
             AkSoundEngine.PostEvent("UI_quest_success", gameObject);
+            //PASSE LONOMATOPE EN QUEST
+            AkSoundEngine.SetSwitch("NPC_mood", "Quest_end", gameObject);
+            isQuestOnomatope = true;
+        }
+        else
+        {
+            isQuestOnomatope = false;
         }
         return returnVal;
     }
@@ -186,7 +194,9 @@ public class PnjManager : ObjectManager
     }
 
     //SOUND_______________________________________________________
-    
+
+    bool isQuestOnomatope = false;
+
     public void PlayOnomatope()
     {
         switch(character)
@@ -225,6 +235,10 @@ public class PnjManager : ObjectManager
 
     public void CheckNPCMoodForOnomatope()
     {
+        //comme le changement d'onomatopé est fait juste avant de jouer le son
+        // et quest avant, il faut vérifier ici qu'on a pas déjà setup en onomatopé
+        if (isQuestOnomatope)
+            return;
         if (CurrentMood == Mood.neutral)
         {
             AkSoundEngine.SetSwitch("NPC_mood", "Happy", gameObject);
