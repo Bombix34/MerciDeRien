@@ -7,7 +7,6 @@ public class PlayerTransitionState : State
 
     protected State prevState;
     protected PlayerManager manager;
-    protected GameObject bringObject;
 
     public PlayerTransitionState(ObjectManager curObject) : base(curObject)
     {
@@ -39,24 +38,16 @@ public class PlayerTransitionState : State
 
     public void UpdateBringingObjectPosition()
     {
-        if (bringObject != null)
+        if (manager.IsBringingObject() != null)
         {
-            if (bringObject.GetComponent<BringObject>() != null)
-            {
-                this.bringObject.transform.position = manager.GetBringPosition().position;
-            }
+            manager.IsBringingObject().transform.position = manager.GetBringPosition().position;
+        }
+        else if (manager.IsBringingTool() != null)
+        {
+            manager.IsBringingTool().transform.position = manager.IsBringingTool().transform.parent.position;
         }
     }
 
-    public void InitBringObject()
-    {
-        if (manager.IsBringingTool() != null)
-            bringObject = manager.IsBringingTool().gameObject;
-        else if (manager.IsBringingObject() != null)
-            bringObject = manager.IsBringingObject().gameObject;
-        if (bringObject != null)
-            bringObject.GetComponent<Rigidbody>().isKinematic = true;
-    }
 
     //STATE GESTION______________________________________________________________________________
 

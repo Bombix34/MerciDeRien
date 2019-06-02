@@ -28,7 +28,6 @@ public class PlayerInteractState : PlayerTransitionState
     {
         Camera.main.GetComponent<CameraManager>().SetDialogueCamera(interactObject.gameObject);
         manager.Move(false);
-        InitBringObject();
         manager.transform.LookAt(interactObject.transform.position);
         manager.GetAnimator().SetFloat("MoveSpeed", 0f);
         interactObject.StartInteraction();

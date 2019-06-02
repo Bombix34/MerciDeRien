@@ -41,7 +41,6 @@ public class PlayerDialogueState : PlayerTransitionState
         if (pnj.GetCurrentState().stateName != "PNJ_DIALOGUE_STATE")
             pnj.ChangeState(new PnjDialogueState(pnj, manager, pnj.GetCurrentState()));
         dialogueUiManager.StartDialogue(curDialogue);
-        InitBringObject();
     }
 
     public override void Execute()
