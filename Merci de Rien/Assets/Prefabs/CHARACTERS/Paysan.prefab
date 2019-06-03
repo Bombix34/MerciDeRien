@@ -150,7 +150,7 @@ MonoBehaviour:
   characterDialogues:
   - {fileID: 11400000, guid: 56d2ce9c5bf93694f9f58b57f59c3a6c, type: 2}
   - {fileID: 11400000, guid: 9a1fffac3aaff24439e31599220b34e1, type: 2}
-  - {fileID: 11400000, guid: 414756c3b10714a49968d14e4eea550f, type: 2}
+  - {fileID: 11400000, guid: 30d04da1bdb15ee4ba326bd08bf62b06, type: 2}
   - {fileID: 11400000, guid: 30d04da1bdb15ee4ba326bd08bf62b06, type: 2}
   - {fileID: 11400000, guid: 9ce22b21b74fc29488af356cddf01ab9, type: 2}
   - {fileID: 11400000, guid: 6b353384705744849831865a063615d6, type: 2}
@@ -244,16 +244,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8754570571758670599}
     m_Modifications:
-    - target: {fileID: 8863007567136126869, guid: 4c4c1b979d9da46a7b9ae1c473e88d57,
-        type: 3}
-      propertyPath: m_Name
-      value: InteractFeedback
-      objectReference: {fileID: 0}
-    - target: {fileID: 8863007567136126869, guid: 4c4c1b979d9da46a7b9ae1c473e88d57,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8863007567136126865, guid: 4c4c1b979d9da46a7b9ae1c473e88d57,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -368,6 +358,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863007567136126869, guid: 4c4c1b979d9da46a7b9ae1c473e88d57,
+        type: 3}
+      propertyPath: m_Name
+      value: InteractFeedback
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863007567136126869, guid: 4c4c1b979d9da46a7b9ae1c473e88d57,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c4c1b979d9da46a7b9ae1c473e88d57, type: 3}
