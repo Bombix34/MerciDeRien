@@ -32,7 +32,6 @@ public class SteleTrigger : MonoBehaviour
                 statePlayer.TryPoseObject();
                 player.ChangeState(new PlayerWaitState(player, new PlayerBaseState(player)));
                 player.Move(false);
-                player.transform.LookAt(orb.transform);
                 TriggerEffect(orb);
             }
         }

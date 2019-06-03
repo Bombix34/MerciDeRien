@@ -132,6 +132,7 @@ public class PlayerBringObjectState : State
         this.bringingObject.GetComponent<Rigidbody>().mass = 1;
         this.bringingObject.transform.localPosition = Vector3.zero;
         // this.bringingObject.transform.rotation.setlo
+        this.bringingObject.transform.rotation = curPlayer.transform.rotation;
         this.bringingObject.transform.LookAt(bringingObject.transform.position, Vector3.up);
         curPlayer.SetBringingObject(bringingObject.GetComponent<BringObject>());
         tempoTime = 0.3f;
@@ -148,7 +149,8 @@ public class PlayerBringObjectState : State
             curPlayer.Move(true);
             curPlayer.RaycastObject(true);
             this.bringingObject.transform.position = curPlayer.GetBringPosition().position;
-           // this.bringingObject.transform.LookAt(Vector3.up);
+            this.bringingObject.transform.rotation = curPlayer.transform.rotation;
+            // this.bringingObject.transform.LookAt(Vector3.up);
             if (tempoTime > 0)
             {
                 tempoTime -= Time.deltaTime;

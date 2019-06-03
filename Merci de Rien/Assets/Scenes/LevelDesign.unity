@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6005,54 +6005,121 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 535125959}
-    - target: {fileID: 3200208372147596374, guid: f4a20ff3b5edb4765947de1e83b60576,
-        type: 3}
-      propertyPath: m_LocalPosition.x
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.ctime3
+      value: 49151
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.ctime4
+      value: 55705
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key5.g
+      value: 0.101960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key5.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key6.r
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3200208372147596374, guid: f4a20ff3b5edb4765947de1e83b60576,
-        type: 3}
-      propertyPath: m_LocalPosition.y
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key6.g
+      value: 0.10196078
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key6.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key7.g
+      value: 0.101960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key7.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.ctime5
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.ctime6
+      value: 63029
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.ctime7
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.m_NumColorKeys
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key1.g
+      value: 0.70689756
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key1.b
+      value: 0.16509432
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key2.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key2.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.ctime1
+      value: 7864
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.ctime2
+      value: 13107
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.ctime0
+      value: 1966
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key4.g
+      value: 0.7058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key4.b
+      value: 0.16470589
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key5.r
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3200208372147596374, guid: f4a20ff3b5edb4765947de1e83b60576,
-        type: 3}
-      propertyPath: m_LocalPosition.z
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key0.r
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 389668863, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.1892632
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key0.g
+      value: 0.10012603
       objectReference: {fileID: 0}
-    - target: {fileID: 389668863, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.0000014
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key0.b
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 389668863, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.00000047683716
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key1.r
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1428417185, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.18926665
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.key2.a
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1428417185, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.000003
-      objectReference: {fileID: 0}
-    - target: {fileID: 1428417185, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.00000047683716
-      objectReference: {fileID: 0}
-    - target: {fileID: 704993173341567975, guid: f4a20ff3b5edb4765947de1e83b60576,
-        type: 3}
-      propertyPath: m_CameraDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3200208372653449451, guid: f4a20ff3b5edb4765947de1e83b60576,
-        type: 3}
-      propertyPath: m_CameraDistance
-      value: 15
+    - target: {fileID: 1798414193, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
+      propertyPath: m_colorOverLightAmount.atime2
+      value: 65535
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4a20ff3b5edb4765947de1e83b60576, type: 3}
@@ -9079,6 +9146,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZoneVillage
       objectReference: {fileID: 0}
+    - target: {fileID: 5158520984824119551, guid: f5aaf3d5f7087d741a620cc683ef0ad4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158520984824119551, guid: f5aaf3d5f7087d741a620cc683ef0ad4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.76
+      objectReference: {fileID: 0}
     - target: {fileID: 6206272941906820098, guid: f5aaf3d5f7087d741a620cc683ef0ad4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9133,16 +9210,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5158520984824119551, guid: f5aaf3d5f7087d741a620cc683ef0ad4,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 5158520984824119551, guid: f5aaf3d5f7087d741a620cc683ef0ad4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.76
       objectReference: {fileID: 0}
     - target: {fileID: 6728131086220039975, guid: f5aaf3d5f7087d741a620cc683ef0ad4,
         type: 3}
