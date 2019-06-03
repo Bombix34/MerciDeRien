@@ -63,4 +63,9 @@ public class PlayerInputManager : MonoBehaviour
         return player.GetButtonDown("use");
     }
 
+    public bool GetStartInput()
+    {
+        return player.GetButtonDown("Start");
+    }
+
 }

@@ -1,18 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UiMainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    PlayerInputManager inputs;
+    Animator animator;
+
+    List<Button> menuButtons;
+    int indexMenu = 0;
+
+    [SerializeField]
+    GameObject menuPanel;
+
+    MenuState menuState = MenuState.pressStart;
+
     void Start()
     {
-        
+        inputs = GetComponent<PlayerInputManager>();
+        animator = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        if(inputs.GetStartInput())
+        {
+            animator.SetBool("MainMenu", true);
+            menuState = MenuState.menu;
+        }
+    }
+
+    void UpdateButtonSelected()
+    {
+        if (menuState != MenuState.menu)
+            return;
+        menuButtons[indexMenu].Select();
+    }
+
+    public enum MenuState
+    {
+        pressStart,
+        menu,
+        credits
     }
 }
