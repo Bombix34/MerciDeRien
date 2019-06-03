@@ -117,6 +117,7 @@ public class PnjManager : ObjectManager
 
     public void HurtingEvent()
     {
+        anim.SetTrigger("Hit");
         EventManager.Instance.UpdateCharacterEvent(EventDatabase.EventType.violenceTotal, GetCharacterType(), 1);
     }
 
@@ -129,6 +130,7 @@ public class PnjManager : ObjectManager
     {
         if (!IsWaitingObject)
         {
+            isQuestOnomatope = false;
             return false;
         }
         bool returnVal = false;
@@ -167,7 +169,14 @@ public class PnjManager : ObjectManager
         }
         if(returnVal)
         {
-            //PLAY SONG "VICTORY"
+            AkSoundEngine.PostEvent("UI_quest_success", gameObject);
+            //PASSE LONOMATOPE EN QUEST
+            AkSoundEngine.SetSwitch("NPC_mood", "Quest_end", gameObject);
+            isQuestOnomatope = true;
+        }
+        else
+        {
+            isQuestOnomatope = false;
         }
         return returnVal;
     }
@@ -185,85 +194,60 @@ public class PnjManager : ObjectManager
     }
 
     //SOUND_______________________________________________________
-    
+
+    bool isQuestOnomatope = false;
+
     public void PlayOnomatope()
     {
         switch(character)
         {
             case CharacterType.Artisan:
-                if(CurrentMood==Mood.neutral)
-                {
-                    //artisan neutre 
-                }
-                else
-                {
-                    //artisan agressif
-                }
+                AkSoundEngine.SetSwitch("NPC_pick", "Artisan", gameObject);
                 break;
+
             case CharacterType.Paysan:
-                if (CurrentMood == Mood.neutral)
-                {
-                    //paysan neutre
-                }
-                else
-                {
-                    //paysan agressif
-                }
+                AkSoundEngine.SetSwitch("NPC_pick", "Paysan", gameObject);
                 break;
+
             case CharacterType.Pecheur:
-                if (CurrentMood == Mood.neutral)
-                {
-                    //pecheur neutre
-                }
-                else
-                {
-                    //pecheur agressif
-                }
+                AkSoundEngine.SetSwitch("NPC_pick", "Pecheur", gameObject);
                 break;
+
             case CharacterType.Responsable:
-                if (CurrentMood == Mood.neutral)
-                {
-                    //responsable neutre
-                }
-                else
-                {
-                    //responsable agressif
-                }
+                AkSoundEngine.SetSwitch("NPC_pick", "Sage", gameObject);
                 break;
+
             case CharacterType.Healer:
-                if (CurrentMood == Mood.neutral)
-                {
-                    //healer neutre
-                }
-                else
-                {
-                    //healer agressif
-                }
+                AkSoundEngine.SetSwitch("NPC_pick", "Chaman", gameObject);
                 break;
+
             case CharacterType.Troubadour:
-                if (CurrentMood == Mood.neutral)
-                {
-                    //troubadour neutre
-                }
-                else
-                {
-                    //troubadour agressif
-                }
+                AkSoundEngine.SetSwitch("NPC_pick", "Troubadour", gameObject);
                 break;
+
             case CharacterType.Etranger:
-                if (CurrentMood == Mood.neutral)
-                {
-                    //etranger neutre 
-                }
-                else
-                {
-                    //etranger agressif
-                    //ATTENTION: l'étranger ne passe jamais en agressif
-                }
+                AkSoundEngine.SetSwitch("NPC_pick", "Etranger", gameObject);
                 break;
         }
+        CheckNPCMoodForOnomatope();
+        AkSoundEngine.PostEvent("NPC_Discussion_start", gameObject);
     }
 
+    public void CheckNPCMoodForOnomatope()
+    {
+        //comme le changement d'onomatopé est fait juste avant de jouer le son
+        // et quest avant, il faut vérifier ici qu'on a pas déjà setup en onomatopé
+        if (isQuestOnomatope)
+            return;
+        if (CurrentMood == Mood.neutral)
+        {
+            AkSoundEngine.SetSwitch("NPC_mood", "Happy", gameObject);
+        }
+        else
+        {
+            AkSoundEngine.SetSwitch("NPC_mood", "Upset", gameObject);
+        }
+    }
 
     //CHARACTER____________________________________________________
 

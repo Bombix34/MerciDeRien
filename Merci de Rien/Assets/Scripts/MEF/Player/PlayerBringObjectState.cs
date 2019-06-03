@@ -43,6 +43,7 @@ public class PlayerBringObjectState : State
         this.bringingObject.GetComponent<BringObject>().ResetMass();
         curPlayer.ResetVelocity();
         curPlayer.GetAnimator().SetBool("Carrying", false);
+        curPlayer.SetBringingObject(null);
 
         //SFX
         AkSoundEngine.PostEvent("ENV_pot_put_down_play", this.bringingObject);
@@ -62,6 +63,7 @@ public class PlayerBringObjectState : State
         endState = true;
         curPlayer.ResetVelocity();
         curPlayer.GetAnimator().SetBool("Carrying", false);
+        curPlayer.SetBringingObject(null);
 
 
         //SFX
@@ -131,6 +133,7 @@ public class PlayerBringObjectState : State
         this.bringingObject.transform.localPosition = Vector3.zero;
         // this.bringingObject.transform.rotation.setlo
         this.bringingObject.transform.LookAt(bringingObject.transform.position, Vector3.up);
+        curPlayer.SetBringingObject(bringingObject.GetComponent<BringObject>());
         tempoTime = 0.3f;
         chronoEnd = 0.3f;
         canInput = true;

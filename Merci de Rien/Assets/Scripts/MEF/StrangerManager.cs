@@ -21,9 +21,6 @@ public class StrangerManager : PnjManager
     [SerializeField]
     GameObject apparitionParticles;
 
-    //DEBUG
-    PlayerInputManager playerInput;
-
     protected override void Awake()
     {
         base.Awake();
@@ -35,6 +32,7 @@ public class StrangerManager : PnjManager
         ChangeState(new StrangerWaitState(this));
         ActiveParticle(false);
         ActiveHairParticle(false);
+        navAgent.isStopped = true;
     }
 
     protected override void InitInteractScript()

@@ -100,7 +100,8 @@ public class Consequence
                 }
                 break;
             case Consequence.ConsequenceType.GainKey:
-                //PLAY SONG "VICTORY"
+                //SFX
+                AkSoundEngine.PostEvent("UI_quest_success", GameManager.Instance.gameObject);
                 GameManager.Instance.AddKey(intModificator);
                 break;
             case Consequence.ConsequenceType.RemoveKey:

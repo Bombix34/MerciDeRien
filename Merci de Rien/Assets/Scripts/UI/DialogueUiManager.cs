@@ -133,7 +133,7 @@ public class DialogueUiManager : Singleton<DialogueUiManager>
         foreach (string sentence in totSentences)
         {
             this.sentences.Enqueue(sentence);
-            AkSoundEngine.PostEvent("NPC_Discussion_start", gameObject);
+            //AkSoundEngine.PostEvent("NPC_Discussion_start", gameObject);
         }
     }
 
