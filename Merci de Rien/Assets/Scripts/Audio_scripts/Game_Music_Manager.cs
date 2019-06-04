@@ -22,7 +22,7 @@ public class Game_Music_Manager : Singleton<Game_Music_Manager>
     {
         if (dayLightCycle != null)
         {
-        gameCurrentTime = dayLightCycle.GetCurrentTime() * 24f;
+        gameCurrentTime = dayLightCycle.GetCurrentTime() * 48f;
         AkSoundEngine.SetRTPCValue("game_time", gameCurrentTime, gameObject);
         }
     }

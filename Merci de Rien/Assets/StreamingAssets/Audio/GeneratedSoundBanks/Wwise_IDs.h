@@ -23,7 +23,9 @@ namespace AK
         static const AkUniqueID ENV_POT_BREAK_PLAY = 2141874203U;
         static const AkUniqueID ENV_SPAWN_PATOUNE_PLAY = 2441092968U;
         static const AkUniqueID ENV_TREE_LEAF_PLAY = 1616179565U;
+        static const AkUniqueID GAME_END = 3271665593U;
         static const AkUniqueID GAME_FAKE_FIGHT = 1100552122U;
+        static const AkUniqueID GAME_FESTIVAL = 3061180182U;
         static const AkUniqueID GAME_LAUNCH = 2732978883U;
         static const AkUniqueID GAME_OVER = 1432716332U;
         static const AkUniqueID GAME_START = 733168346U;
@@ -176,6 +178,8 @@ namespace AK
             namespace SWITCH
             {
                 static const AkUniqueID BATTLE = 2937832959U;
+                static const AkUniqueID FESTIVAL = 2412970801U;
+                static const AkUniqueID SILENCE = 3041563226U;
                 static const AkUniqueID VILLAGE = 3945572659U;
             } // namespace SWITCH
         } // namespace MUSIC_SWITCH
