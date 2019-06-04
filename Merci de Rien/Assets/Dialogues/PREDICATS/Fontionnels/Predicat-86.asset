@@ -12,25 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ad2ccd1898646429d2165039104660, type: 3}
   m_Name: Predicat-86
   m_EditorClassIdentifier: 
-  database: {fileID: 0}
+  database: {fileID: 11400000, guid: 6bae29087a66e427b81fcbcc8d1df3f1, type: 2}
   conditions:
   - concernedEvent: 45
     comparaison: 2
     valToTest: 1
-    concernedDialogue: {fileID: 11400000, guid: d692682cc99aa6d4e8cd00d931cd01b8,
+    concernedDialogue: {fileID: 11400000, guid: 8e892c68d3a67a64a8895b5d669051e6,
       type: 2}
     comparisonCumul: 0
-  - concernedEvent: 38
+  - concernedEvent: 39
     comparaison: 0
     valToTest: 2
     concernedDialogue: {fileID: 0}
     comparisonCumul: 0
   consequences:
   - consequence: 3
-    characterConcerned: 0
+    characterConcerned: 1
     actionChoice: 0
     mood: 0
-    dialogueConcerned: {fileID: 11400000, guid: cdbb7e3a563e3b94fba00fc7ef1a749f,
+    dialogueConcerned: {fileID: 11400000, guid: 3f14b9fac508e014f89f904421ca394f,
       type: 2}
     eventDatabase: {fileID: 0}
     eventType: 0
