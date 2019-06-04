@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d56498fb15504ae391aab14413064c4, type: 3}
+  m_Name: Tuto
+  m_EditorClassIdentifier: 
+  dialogueOwner: 7
+  dialoguePriority: 0
+  IsUniqueSentence: 0
+  moodRequired: 0
+  eventsTriggered: []
+  frenchSentences:
+  - "Tu joues \xE0 la manette ?\nQuand tu portes un objet, appuye sur le bouton A
+    pour le poser ou le bouton B pour le lancer.\nSi c'est un outil que tu portes,
+    tu peux aussi appuyer sur le bouton X pour l'utiliser."
+  - 'Et si tu joues au clavier ?
+
+    Quand tu portes un objet, appuye sur espace pour le poser ou la touche F pour
+    le lancer.
+
+    Si c''est un outil que tu portes, tu peux aussi appuyer sur la touche E pour l''utiliser.'
+  englishSentences:
+  - 'You''re playing with a controller?
+
+    When you carry an item, you can press the A button to put it down or the B button
+    to throw it away.
+
+    If it''s a tool, you can also use it by pressing the X button.'
+  - 'What if you''re playing with a keyboard ?
+
+    When you carry an item, you can press the spacebar to put it down or the F key
+    to throw it away.
+
+    If it''s a tool, you can also use it by pressing the E key.'
