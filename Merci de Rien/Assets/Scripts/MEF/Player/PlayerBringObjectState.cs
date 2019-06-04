@@ -46,7 +46,7 @@ public class PlayerBringObjectState : State
         curPlayer.SetBringingObject(null);
 
         //SFX
-        AkSoundEngine.PostEvent("ENV_pot_put_down_play", this.bringingObject);
+        //AkSoundEngine.PostEvent("ENV_pot_put_down_play", this.bringingObject);
     }
 
     public void ShootObject()
