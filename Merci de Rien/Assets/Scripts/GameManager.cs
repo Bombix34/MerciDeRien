@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -44,6 +45,8 @@ public class GameManager : Singleton<GameManager>
         yield return new WaitForSeconds(3f);
         cameraManager.SetDialogueCamera(orb);
         FlashFXManager.Instance.Fondu(Color.black);
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Ceremonie");
     }
 
     public void AddToHistoric(Dialogue newDialogue)
