@@ -27,7 +27,8 @@ namespace AK
         static const AkUniqueID GAME_FAKE_FIGHT = 1100552122U;
         static const AkUniqueID GAME_FESTIVAL = 3061180182U;
         static const AkUniqueID GAME_LAUNCH = 2732978883U;
-        static const AkUniqueID GAME_OVER = 1432716332U;
+        static const AkUniqueID GAME_MENU = 636067499U;
+        static const AkUniqueID GAME_SILENCE = 3290273171U;
         static const AkUniqueID GAME_START = 733168346U;
         static const AkUniqueID MC_ATTACK_PLAY = 538908709U;
         static const AkUniqueID MC_PICK_BIG_ITEM_PLAY = 2287292191U;

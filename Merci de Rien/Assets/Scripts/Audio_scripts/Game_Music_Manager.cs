@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,16 +7,23 @@ public class Game_Music_Manager : Singleton<Game_Music_Manager>
 {
     public MusicType CurMusic { get; set; }
 
-    //Il faudra procéder différamment quand le cycle jour/nuit sera réellement implémenté
     private DayLightCycle dayLightCycle;
     private float gameCurrentTime;
 
     private void Start()
     {
-        SwitchMusic(MusicType.Village);
+        //SwitchMusic(MusicType.Village);
 
-        dayLightCycle =Camera.main.GetComponent<DayLightCycle>();
-
+        try
+        {
+            dayLightCycle = Camera.main.GetComponent<DayLightCycle>();
+            Debug.Log("Camera get");
+        }
+        catch (NullReferenceException)
+        {
+            Debug.Log("Didn't get the camera :<");
+            return;
+        }
     }
 
     private void Update()
@@ -58,22 +66,28 @@ public class Game_Music_Manager : Singleton<Game_Music_Manager>
         switch(CurMusic)
         {
             case MusicType.Village:
-                AkSoundEngine.SetRTPCValue("game_time", 13, gameObject);
+                Debug.Log("switching to VILLAGE music");
                 AkSoundEngine.SetRTPCValue("village_karma", 0, gameObject);
                 AkSoundEngine.SetSwitch("music_switch", "village", gameObject);
                 break;
-            case MusicType.Village_Night:
-                AkSoundEngine.SetSwitch("music_switch", "village", gameObject);
-                AkSoundEngine.SetRTPCValue("game_time", 24, gameObject);
+            case MusicType.Ceremony:
+                Debug.Log("switching to CEREMONY music");
+                AkSoundEngine.SetSwitch("music_switch", "festival", gameObject);
                 break;
             case MusicType.Battle:
+                Debug.Log("switching to BATTLE music");
                 AkSoundEngine.SetSwitch("music_switch", "battle", gameObject);
                 break;
-            case MusicType.Morbid:
-                AkSoundEngine.SetRTPCValue("village_karma", 100, gameObject);
-                //AkSoundEngine.PostEvent("Music_Change_Morbid", this.gameObject);
+            case MusicType.Menu:
+                Debug.Log("switching to MENU music");
+                AkSoundEngine.SetSwitch("music_switch", "menu", gameObject);
                 break;
         }
+    }
+
+    public void EndAudioScene()
+    {
+        AkSoundEngine.PostEvent("GAME_silence", gameObject);
     }
 
     public enum MusicType
@@ -81,6 +95,7 @@ public class Game_Music_Manager : Singleton<Game_Music_Manager>
         Village,
         Village_Night,
         Battle,
-        Morbid
+        Menu,
+        Ceremony
     }
 }

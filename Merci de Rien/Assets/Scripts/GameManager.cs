@@ -43,6 +43,7 @@ public class GameManager : Singleton<GameManager>
         CameraManager cameraManager = Camera.main.GetComponent<CameraManager>(); 
         cameraManager.SetNewCamera(CameraManager.CameraType.Dezoom);
         yield return new WaitForSeconds(3f);
+        AkSoundEngine.PostEvent("GAME_end", gameObject);
         cameraManager.SetDialogueCamera(orb);
         FlashFXManager.Instance.Fondu(Color.black);
         yield return new WaitForSeconds(3f);

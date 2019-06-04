@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SteleTrigger : MonoBehaviour
 {
@@ -18,6 +19,14 @@ public class SteleTrigger : MonoBehaviour
     private void Awake()
     {
         ceremonieParticle.SetActive(false);
+    }
+
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().name == "Ceremonie")
+        {
+            AkSoundEngine.PostEvent("GAME_festival", gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
