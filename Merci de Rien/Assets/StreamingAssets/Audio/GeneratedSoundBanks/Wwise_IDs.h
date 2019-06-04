@@ -179,6 +179,7 @@ namespace AK
             {
                 static const AkUniqueID BATTLE = 2937832959U;
                 static const AkUniqueID FESTIVAL = 2412970801U;
+                static const AkUniqueID MENU = 2607556080U;
                 static const AkUniqueID SILENCE = 3041563226U;
                 static const AkUniqueID VILLAGE = 3945572659U;
             } // namespace SWITCH

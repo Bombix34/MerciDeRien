@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4633289994498979076}
   - component: {fileID: 4633289994498979079}
   - component: {fileID: 4633289994498979073}
+  - component: {fileID: 8284005190568361818}
   m_Layer: 0
   m_Name: Music_Stone
   m_TagString: InteractToolObject
@@ -133,8 +134,29 @@ MonoBehaviour:
   reglages: {fileID: 11400000, guid: 7d7d94f75fff4f64eb6671864a5bebbf, type: 2}
   breakingParts: {fileID: 0}
   explosionParticles: {fileID: 0}
-  musicManager: {fileID: 0}
   stoneID: 0
+--- !u!114 &8284005190568361818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673574304519655886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a21ae8e4c25d2b47bfd6c6c72fbce0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &5011053181620396725
 GameObject:
   m_ObjectHideFlags: 0
