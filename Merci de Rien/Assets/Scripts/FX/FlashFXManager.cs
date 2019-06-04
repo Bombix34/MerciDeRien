@@ -37,7 +37,6 @@ public class FlashFXManager : Singleton<FlashFXManager>
 
     IEnumerator StartFondu(Color color)
     {
-        Debug.Log("fondu");
         Image flashImg = flashPanel.GetComponent<Image>();
         flashImg.color = new Vector4(color.r, color.g, color.b, 0f);
         flashPanel.SetActive(true);
