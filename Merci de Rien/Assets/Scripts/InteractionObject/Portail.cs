@@ -118,14 +118,11 @@ public class Portail : InteractObject
     void PlayOpeningSFX()
     {
         AkSoundEngine.PostEvent("ENV_door_open_play", gameObject);
-        Debug.Log("Rappeler à Abdoul de remplacer le SFX placeholder d'ouverture du portail s'il a oublié");
     }
 
     void PlayClosingSFX()
     {
-        //Pour l'instant y'a rien, c'est normal :9
         AkSoundEngine.PostEvent("ENV_door_close_play", gameObject);
-        Debug.Log("Rappeler à Abdoul de faire un SFX pour la fermeture du portail s'il a oublié lel");
     }
 
 }
