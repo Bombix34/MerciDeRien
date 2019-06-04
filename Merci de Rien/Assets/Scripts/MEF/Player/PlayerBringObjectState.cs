@@ -47,6 +47,7 @@ public class PlayerBringObjectState : State
 
         //SFX
         //AkSoundEngine.PostEvent("ENV_pot_put_down_play", this.bringingObject);
+        AkSoundEngine.PostEvent("MC_putdown_ORB",this.bringingObject);
     }
 
     public void ShootObject()
@@ -138,8 +139,12 @@ public class PlayerBringObjectState : State
         tempoTime = 0.3f;
         chronoEnd = 0.3f;
         canInput = true;
+
         //SFX
         AkSoundEngine.PostEvent("MC_pick_big_item_play", this.bringingObject);
+        if(this.bringingObject.gameObject.name == "OrbPlaceholder")
+            AkSoundEngine.PostEvent("MC_pick_ORB", this.bringingObject);
+
     }
 
     public override void Execute()

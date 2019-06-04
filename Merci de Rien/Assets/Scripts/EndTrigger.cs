@@ -8,6 +8,8 @@ public class EndTrigger : MonoBehaviour
     public float waitTime = 5f;
     float timeToChange = 5f;
 
+    bool hasPlayedSong = false;
+
     [SerializeField]
     GameObject endPanel;
 
@@ -23,10 +25,20 @@ public class EndTrigger : MonoBehaviour
         {
             endPanel.SetActive(true);
             timeToChange -= Time.deltaTime;
+            EndMusicFondu();
+
             if(timeToChange<=0)
             {
                 SceneManager.LoadScene("SplashScreen");
             }
         }
+    }
+
+    public void EndMusicFondu()
+    {
+        if (hasPlayedSong)
+            return;
+        hasPlayedSong = true;
+        AkSoundEngine.PostEvent("GAME_end",gameObject);
     }
 }

@@ -34,6 +34,8 @@ public class UiMainMenu : MonoBehaviour
     [SerializeField]
     Image languageImg;
 
+    Game_Music_Manager musicManager;
+
     MenuState menuState = MenuState.pressStart;
     
 
@@ -47,6 +49,9 @@ public class UiMainMenu : MonoBehaviour
         languageImg.sprite = languageLogos[0];
         settings.currentLanguage = SettingsManager.Language.francais;
         SwitchButtonLanguage();
+
+        musicManager = Game_Music_Manager.Instance;
+        AkSoundEngine.PostEvent("GAME_menu", musicManager.gameObject);
     }
     
     void Update()

@@ -16,6 +16,7 @@ public class PlayerSoundManager : MonoBehaviour
     void Start()
     {
         musicManager = Game_Music_Manager.Instance;
+        AkSoundEngine.PostEvent("GAME_start", musicManager.gameObject);
     }
 
     public void PlayInteractFeedbackSound(GameObject actualObject)
