@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96dc666ea7bc1940a69e82a69bab85a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerList: ae8d9d44f7e1664c
+  triggerList: ae8d9d44
   useOtherObject: 0
   data:
     idInternal: 0
@@ -560,7 +560,6 @@ GameObject:
   - component: {fileID: 1503640887}
   - component: {fileID: 1503640884}
   - component: {fileID: 1503640888}
-  - component: {fileID: 1503640889}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -674,40 +673,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wwiseGlobalPREFAB: {fileID: 6954660605080506164, guid: 4971167f179fcef4989c8be8b9287a69,
     type: 3}
---- !u!114 &1503640889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503640883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5436f9557ef95e54985cedd15fa8161a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  actionOnEventType: 0
-  curveInterpolation: 4
-  enableActionOnEvent: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 1f7252898b28c7b419fc398e822838dc,
-      type: 2}
-  useCallbacks: 0
-  Callbacks: []
-  playingId: 0
-  soundEmitterObject: {fileID: 0}
-  transitionDuration: 0
-  eventIdInternal: 0
-  valueGuidInternal: 
-  m_callbackDataInternal: {fileID: 0}
-  MultiPositionType: 1
-  multiPositionTypeLabel: 0
-  LargeModePositions: []
-  multiPositionArray: []
 --- !u!1 &1550146882
 GameObject:
   m_ObjectHideFlags: 0

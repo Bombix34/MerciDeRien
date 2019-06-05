@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 6cf04c7a12d8a246858fbbddacc42630
     GuidInternal: 
-    m_lastTime: -8586425562471070612
+    m_lastTime: -8586419459612055722
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
@@ -37,7 +37,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 4c22335bacdda047a47c33864f4f5c6d
     GuidInternal: 
-    m_lastTime: -8586426572871165289
+    m_lastTime: -8586420063088183546
     List:
     - name: Main
       guid: ae9737604a5de0449df00235e12d5976
@@ -53,7 +53,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 7cd09b477f168642a36a6844479c282a
     GuidInternal: 
-    m_lastTime: -8586425562471429985
+    m_lastTime: -8586419387743189900
     List:
     - name: ENV_amb_beach_play
       guid: 3bac836c95255c42bb1f3d578b0c37de
@@ -112,6 +112,30 @@ MonoBehaviour:
       - ElementName: ENV_fire_stop
         ObjectType: 3
       Path: Default Work Unit\ENV_fire_stop
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: ENV_pot_put_down_play
+      guid: 169c4e9bc381e74fb2b1ab670de143a2
+      id: 2760972584
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ENV_pot_put_down_play
+        ObjectType: 3
+      Path: Default Work Unit\ENV_pot_put_down_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: GAME_over
+      guid: 535cd0254a27744db49228a5aa702897
+      id: 1432716332
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GAME_over
+        ObjectType: 3
+      Path: Default Work Unit\GAME_over
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -215,12 +239,62 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: UI_camera_dezoom_play
+      guid: 4d8eda426eebc942a44eefe920fa23b3
+      id: 4008763347
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI_camera_dezoom_play
+        ObjectType: 3
+      Path: Default Work Unit\UI_camera_dezoom_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UI_camera_zoom_play
+      guid: 094919d0bb4de8458563c67ea773f051
+      id: 2038710544
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI_camera_zoom_play
+        ObjectType: 3
+      Path: Default Work Unit\UI_camera_zoom_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UI_pause_menu_play
+      guid: b93134c92ea1a44b90380a213015e826
+      id: 2578355359
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI_pause_menu_play
+        ObjectType: 3
+      Path: Default Work Unit\UI_pause_menu_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   - PhysicalPath: Events\MDR_WU.wwu
     ParentPhysicalPath: 
     guid: f6e287a964ee8f40bdd10f41bdfebff6
     GuidInternal: 
-    m_lastTime: -8586425562471429985
+    m_lastTime: -8586419324304944168
     List:
+    - name: ENV_chest_open_play
+      guid: fb244f1aafa68b43aaf761eb10a36a1f
+      id: 3200869512
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: ENVIRONMENT
+        ObjectType: 4
+      - ElementName: ENV_chest_open_play
+        ObjectType: 3
+      Path: MDR_WU\ENVIRONMENT\ENV_chest_open_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: ENV_crate_break_play
       guid: 96d1633961ba6c45861dbb0987a967e7
       id: 2518024811
@@ -246,6 +320,20 @@ MonoBehaviour:
       - ElementName: ENV_door_close_play
         ObjectType: 3
       Path: MDR_WU\ENVIRONMENT\ENV_door_close_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: ENV_door_locked_play
+      guid: ebd3822da65f1346bacea8f647e102d7
+      id: 3621253291
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: ENVIRONMENT
+        ObjectType: 4
+      - ElementName: ENV_door_locked_play
+        ObjectType: 3
+      Path: MDR_WU\ENVIRONMENT\ENV_door_locked_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -277,6 +365,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: ENV_orb_activated_play
+      guid: b1009e40232f2f43b7084b1a2bc068b6
+      id: 2641498353
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: ENVIRONMENT
+        ObjectType: 4
+      - ElementName: ENV_orb_activated_play
+        ObjectType: 3
+      Path: MDR_WU\ENVIRONMENT\ENV_orb_activated_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: ENV_pot_break_play
       guid: 355af256f4e0f44bbaaf2dc2ea37df1f
       id: 2141874203
@@ -291,17 +393,17 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: ENV_pot_put_down_play
-      guid: 169c4e9bc381e74fb2b1ab670de143a2
-      id: 2760972584
+    - name: ENV_spawn_patoune_play
+      guid: d404b6934ce57143bc497f875fb4dd98
+      id: 2441092968
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
       - ElementName: ENVIRONMENT
         ObjectType: 4
-      - ElementName: ENV_pot_put_down_play
+      - ElementName: ENV_spawn_patoune_play
         ObjectType: 3
-      Path: MDR_WU\ENVIRONMENT\ENV_pot_put_down_play
+      Path: MDR_WU\ENVIRONMENT\ENV_spawn_patoune_play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -311,11 +413,23 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
-      - ElementName: ENVIRONMENT
-        ObjectType: 4
       - ElementName: ENV_tree_leaf_play
         ObjectType: 3
-      Path: MDR_WU\ENVIRONMENT\ENV_tree_leaf_play
+      Path: MDR_WU\ENV_tree_leaf_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: GAME_end
+      guid: a469ba00680b324ab52921ba140a9128
+      id: 3271665593
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: GAME
+        ObjectType: 4
+      - ElementName: GAME_end
+        ObjectType: 3
+      Path: MDR_WU\GAME\GAME_end
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -333,6 +447,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: GAME_festival
+      guid: 4993af2b7abfb347ad933b00295a0ee9
+      id: 3061180182
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: GAME
+        ObjectType: 4
+      - ElementName: GAME_festival
+        ObjectType: 3
+      Path: MDR_WU\GAME\GAME_festival
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: GAME_launch
       guid: e5da7b60fd1fdd428e7b2ded3040d700
       id: 2732978883
@@ -347,17 +475,31 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: GAME_over
-      guid: 535cd0254a27744db49228a5aa702897
-      id: 1432716332
+    - name: GAME_menu
+      guid: 1b3e92ceac12c24aa6c0b40168b70c9e
+      id: 636067499
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
       - ElementName: GAME
         ObjectType: 4
-      - ElementName: GAME_over
+      - ElementName: GAME_menu
         ObjectType: 3
-      Path: MDR_WU\GAME\GAME_over
+      Path: MDR_WU\GAME\GAME_menu
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: GAME_silence
+      guid: aab9892683e5e94383e2c53de7b23f90
+      id: 3290273171
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: GAME
+        ObjectType: 4
+      - ElementName: GAME_silence
+        ObjectType: 3
+      Path: MDR_WU\GAME\GAME_silence
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -414,6 +556,48 @@ MonoBehaviour:
       - ElementName: MC_pick_item_play
         ObjectType: 3
       Path: MDR_WU\MAIN CHARACTER\MC_pick_item_play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MC_pick_ORB
+      guid: 3947ce7c020dcd4fb5d052a18970641f
+      id: 1776872349
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MAIN CHARACTER
+        ObjectType: 4
+      - ElementName: MC_pick_ORB
+        ObjectType: 3
+      Path: MDR_WU\MAIN CHARACTER\MC_pick_ORB
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MC_pick_patoune
+      guid: 82d5b8f80696f34fb9767a815feb8c20
+      id: 993937570
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MAIN CHARACTER
+        ObjectType: 4
+      - ElementName: MC_pick_patoune
+        ObjectType: 3
+      Path: MDR_WU\MAIN CHARACTER\MC_pick_patoune
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MC_putdown_ORB
+      guid: f55c9c22d209734b8e3fad84bf9203b2
+      id: 1530932789
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MAIN CHARACTER
+        ObjectType: 4
+      - ElementName: MC_putdown_ORB
+        ObjectType: 3
+      Path: MDR_WU\MAIN CHARACTER\MC_putdown_ORB
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -535,129 +719,163 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Ocarina_02_Damaged_RYTHMIC
-      guid: 9d03d95c4ac6324ba10318dc7e7a473c
-      id: 3084605388
+    - name: Ocarina_02_Damaged
+      guid: 628e3ff39932ea4491af82a6998520a5
+      id: 2580564741
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
       - ElementName: MUSIC
         ObjectType: 4
-      - ElementName: Ocarina_02_Damaged_RYTHMIC
+      - ElementName: Ocarina_02_Damaged
         ObjectType: 3
-      Path: MDR_WU\MUSIC\Ocarina_02_Damaged_RYTHMIC
+      Path: MDR_WU\MUSIC\Ocarina_02_Damaged
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Ocarina_03_Damaged_PERCUS
-      guid: 035ec01f2931b34f8cfa2c9d3eb2b9e3
-      id: 1090803883
+    - name: Ocarina_02_Destroyed
+      guid: 8550b43299bdc94daacdbb70de54aa7b
+      id: 2380170457
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
       - ElementName: MUSIC
         ObjectType: 4
-      - ElementName: Ocarina_03_Damaged_PERCUS
+      - ElementName: Ocarina_02_Destroyed
         ObjectType: 3
-      Path: MDR_WU\MUSIC\Ocarina_03_Damaged_PERCUS
+      Path: MDR_WU\MUSIC\Ocarina_02_Destroyed
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Ocarina_04_Damaged_WIND1
-      guid: 994eb63278b726408c253bc219ce34dd
-      id: 877487337
+    - name: Ocarina_03_Damaged
+      guid: ddcd565daf5d2f4eb1222a525a74785a
+      id: 2137237168
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
       - ElementName: MUSIC
         ObjectType: 4
-      - ElementName: Ocarina_04_Damaged_WIND1
+      - ElementName: Ocarina_03_Damaged
         ObjectType: 3
-      Path: MDR_WU\MUSIC\Ocarina_04_Damaged_WIND1
+      Path: MDR_WU\MUSIC\Ocarina_03_Damaged
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Ocarina_05_Damaged_WIND2
-      guid: e030012883464643ad5387dd3b7912d2
-      id: 3191795435
+    - name: Ocarina_03_Destroyed
+      guid: 243b8a71be4f5a4ca424ea69ab4f609f
+      id: 1148858136
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
       - ElementName: MUSIC
         ObjectType: 4
-      - ElementName: Ocarina_05_Damaged_WIND2
+      - ElementName: Ocarina_03_Destroyed
         ObjectType: 3
-      Path: MDR_WU\MUSIC\Ocarina_05_Damaged_WIND2
+      Path: MDR_WU\MUSIC\Ocarina_03_Destroyed
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Ocarina_06_Damaged_BRASS1
-      guid: 1c44706818ac984cbe71b22860a098e6
-      id: 2776317848
+    - name: Ocarina_04_Damaged
+      guid: ecdff6869fbd254ebef2fa3a8cae8196
+      id: 4151404395
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
       - ElementName: MUSIC
         ObjectType: 4
-      - ElementName: Ocarina_06_Damaged_BRASS1
+      - ElementName: Ocarina_04_Damaged
         ObjectType: 3
-      Path: MDR_WU\MUSIC\Ocarina_06_Damaged_BRASS1
+      Path: MDR_WU\MUSIC\Ocarina_04_Damaged
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Ocarina_07_Damaged_BRASS2
-      guid: f0d3e96c3f87a44c8df8ed34e0a87451
-      id: 4117983340
+    - name: Ocarina_04_Destroyed
+      guid: 195a2e16d3100348b4b1622616d925fb
+      id: 3976206479
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
       - ElementName: MUSIC
         ObjectType: 4
-      - ElementName: Ocarina_07_Damaged_BRASS2
+      - ElementName: Ocarina_04_Destroyed
         ObjectType: 3
-      Path: MDR_WU\MUSIC\Ocarina_07_Damaged_BRASS2
+      Path: MDR_WU\MUSIC\Ocarina_04_Destroyed
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Ocarina_08_Damaged
-      guid: 9ed1de7fc2531f4396b1f4b4f42ea7c4
-      id: 2170904855
+    - name: Ocarina_05_Damaged
+      guid: be4d9fcfb6088e46862bd5e1d21d87f8
+      id: 1837728142
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
       - ElementName: MUSIC
         ObjectType: 4
-      - ElementName: Ocarina_08_Damaged
+      - ElementName: Ocarina_05_Damaged
         ObjectType: 3
-      Path: MDR_WU\MUSIC\Ocarina_08_Damaged
+      Path: MDR_WU\MUSIC\Ocarina_05_Damaged
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: UI_camera_dezoom_play
-      guid: 4d8eda426eebc942a44eefe920fa23b3
-      id: 4008763347
+    - name: Ocarina_05_Destroyed
+      guid: 9bc4e389ddfdfe4ea61a34be9e50f937
+      id: 2075303558
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
-      - ElementName: UI
+      - ElementName: MUSIC
         ObjectType: 4
-      - ElementName: UI_camera_dezoom_play
+      - ElementName: Ocarina_05_Destroyed
         ObjectType: 3
-      Path: MDR_WU\UI\UI_camera_dezoom_play
+      Path: MDR_WU\MUSIC\Ocarina_05_Destroyed
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: UI_camera_zoom_play
-      guid: 094919d0bb4de8458563c67ea773f051
-      id: 2038710544
+    - name: Reset_Music_BUSSES
+      guid: 7dc15509c8a82e47af57b076bb05c4ff
+      id: 599188252
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
-      - ElementName: UI
+      - ElementName: MUSIC
         ObjectType: 4
-      - ElementName: UI_camera_zoom_play
+      - ElementName: INIT_Music
+        ObjectType: 4
+      - ElementName: Reset_Music_BUSSES
         ObjectType: 3
-      Path: MDR_WU\UI\UI_camera_zoom_play
+      Path: MDR_WU\MUSIC\INIT_Music\Reset_Music_BUSSES
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Reset_Music_DISTANCE
+      guid: dc0ad234dc5dab4c92ce613e32cbba93
+      id: 3906850436
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
+      - ElementName: INIT_Music
+        ObjectType: 4
+      - ElementName: Reset_Music_DISTANCE
+        ObjectType: 3
+      Path: MDR_WU\MUSIC\INIT_Music\Reset_Music_DISTANCE
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Reset_Music_TREMOLO
+      guid: 01c38c4e52998a4fb76011329f22f184
+      id: 161461875
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
+      - ElementName: INIT_Music
+        ObjectType: 4
+      - ElementName: Reset_Music_TREMOLO
+        ObjectType: 3
+      Path: MDR_WU\MUSIC\INIT_Music\Reset_Music_TREMOLO
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -689,17 +907,17 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: UI_pause_menu_play
-      guid: b93134c92ea1a44b90380a213015e826
-      id: 2578355359
+    - name: UI_quest_success
+      guid: 691c6f505ef4ef489525b82cb517b0f0
+      id: 3836449328
       PathAndIcons:
       - ElementName: MDR_WU
         ObjectType: 12
       - ElementName: UI
         ObjectType: 4
-      - ElementName: UI_pause_menu_play
+      - ElementName: UI_quest_success
         ObjectType: 3
-      Path: MDR_WU\UI\UI_pause_menu_play
+      Path: MDR_WU\UI\UI_quest_success
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -736,13 +954,13 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 1eab88a8ff6df14c86dbcf415a5370ec
     GuidInternal: 
-    m_lastTime: -8586459215014886662
+    m_lastTime: -8586449786278805635
     List: []
   - PhysicalPath: Game Parameters\MDR_WU.wwu
     ParentPhysicalPath: 
     guid: c5074d7c1882b04f8e7132f183b4dfb2
     GuidInternal: 
-    m_lastTime: -8586425562471429985
+    m_lastTime: -8586419680467517075
     List:
     - name: Distance_lake
       guid: c4c597783512934082af85914075e39e
@@ -766,6 +984,58 @@ MonoBehaviour:
       - ElementName: Distance_MS_01
         ObjectType: 13
       Path: MDR_WU\MUSIC\Distance\Distance_MS_01
+    - name: Distance_MS_02
+      guid: fdf613e197a5b5449e1d9fd5aa57c8e2
+      id: 1432175676
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
+      - ElementName: Distance
+        ObjectType: 4
+      - ElementName: Distance_MS_02
+        ObjectType: 13
+      Path: MDR_WU\MUSIC\Distance\Distance_MS_02
+    - name: Distance_MS_03
+      guid: bdaf85cd519544439fedc2045f149601
+      id: 1432175677
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
+      - ElementName: Distance
+        ObjectType: 4
+      - ElementName: Distance_MS_03
+        ObjectType: 13
+      Path: MDR_WU\MUSIC\Distance\Distance_MS_03
+    - name: Distance_MS_04
+      guid: 9db4f528b7c3c347bf13e227b88e0db9
+      id: 1432175674
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
+      - ElementName: Distance
+        ObjectType: 4
+      - ElementName: Distance_MS_04
+        ObjectType: 13
+      Path: MDR_WU\MUSIC\Distance\Distance_MS_04
+    - name: Distance_MS_05
+      guid: b0d4f2d58a843147912fb4dbeddd4eb8
+      id: 1432175675
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
+      - ElementName: Distance
+        ObjectType: 4
+      - ElementName: Distance_MS_05
+        ObjectType: 13
+      Path: MDR_WU\MUSIC\Distance\Distance_MS_05
     - name: Distance_MS_Gen
       guid: 439daf928b11b3469900a9ebc379e16a
       id: 3692238424
@@ -868,6 +1138,19 @@ MonoBehaviour:
       - ElementName: Ww_DEBUG_zik_speed
         ObjectType: 13
       Path: MDR_WU\Ww_DEBUG_zik_speed
+    - name: Ww_Trem_BATTLE
+      guid: 2ae06b73a1a7454d9fe5997fe1a14bd3
+      id: 524442199
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
+      - ElementName: Music_degradation
+        ObjectType: 4
+      - ElementName: Ww_Trem_BATTLE
+        ObjectType: 13
+      Path: MDR_WU\MUSIC\Music_degradation\Ww_Trem_BATTLE
     - name: Ww_Trem_Ocarina_01
       guid: 137aaacde785ad44aa78c5777b5c79a8
       id: 2090554910
@@ -983,7 +1266,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 452b3f4fbbc2a044b868fe9a48e061a4
     GuidInternal: 
-    m_lastTime: -8586432490634009868
+    m_lastTime: -8586431528029627886
     List:
     - name: Ww_Status_Ocarina_01
       guid: 0a68efd27b2fd64698144e78dc240003
@@ -1254,13 +1537,13 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: aa8fe8b2f6d86342a5cfef7c4b449052
     GuidInternal: 
-    m_lastTime: -8586459215014646620
+    m_lastTime: -8586449723712003218
     List: []
   - PhysicalPath: Switches\MDR_WU.wwu
     ParentPhysicalPath: 
     guid: c760acc2f3a3024ab705dcbb1ee2a765
     GuidInternal: 
-    m_lastTime: -8586426572871165289
+    m_lastTime: -8586419454195229061
     List:
     - name: floor_type
       guid: 319d0155f74e314db29a16359ede7948
@@ -1333,11 +1616,115 @@ MonoBehaviour:
         PathAndIcons:
         - ElementName: battle
           ObjectType: 10
+      - name: festival
+        guid: 44dfddcd2644d847b4af09e7666a4f67
+        id: 2412970801
+        PathAndIcons:
+        - ElementName: festival
+          ObjectType: 10
+      - name: menu
+        guid: d644000b7993d446826189098ab1bef5
+        id: 2607556080
+        PathAndIcons:
+        - ElementName: menu
+          ObjectType: 10
+      - name: silence
+        guid: c8f435958d832244829af33cc949e7b4
+        id: 3041563226
+        PathAndIcons:
+        - ElementName: silence
+          ObjectType: 10
       - name: village
         guid: aaa5b71874ed414496255e13b9b0c7a2
         id: 3945572659
         PathAndIcons:
         - ElementName: village
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: NPC_mood
+      guid: 79a5c40d73bfd94b9d870e178b93e45f
+      id: 622529476
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: NPC_mood
+        ObjectType: 11
+      Path: MDR_WU\NPC_mood
+      values:
+      - name: Happy
+        guid: 5ac3545d5f291a4180fcba61b6c5c09d
+        id: 1427264549
+        PathAndIcons:
+        - ElementName: Happy
+          ObjectType: 10
+      - name: Quest_end
+        guid: 4797a58fcce5a843957ed94a771f6fcd
+        id: 2795369287
+        PathAndIcons:
+        - ElementName: Quest_end
+          ObjectType: 10
+      - name: Upset
+        guid: 2f03b0f9b3691e40921c73395134044c
+        id: 2684142446
+        PathAndIcons:
+        - ElementName: Upset
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: NPC_pick
+      guid: bd80ae529e26e44b96caeb0e639acc0d
+      id: 3166433474
+      PathAndIcons:
+      - ElementName: MDR_WU
+        ObjectType: 12
+      - ElementName: NPC_pick
+        ObjectType: 11
+      Path: MDR_WU\NPC_pick
+      values:
+      - name: Artisant
+        guid: 9d250912d3041644a16f06616fc01b18
+        id: 3073983055
+        PathAndIcons:
+        - ElementName: Artisant
+          ObjectType: 10
+      - name: Chaman
+        guid: ebca66a5f58e1e4ca6d88fe222afcedb
+        id: 86561579
+        PathAndIcons:
+        - ElementName: Chaman
+          ObjectType: 10
+      - name: Etranger
+        guid: ce88d343d3670643bb028f91d50d1442
+        id: 2427638313
+        PathAndIcons:
+        - ElementName: Etranger
+          ObjectType: 10
+      - name: Paysan
+        guid: c6ccf4e11f3b1b479ece5be2a58f5155
+        id: 1115035737
+        PathAndIcons:
+        - ElementName: Paysan
+          ObjectType: 10
+      - name: Pecheur
+        guid: 96ad157afec84b4dbc7d1d7021ae7998
+        id: 4248040783
+        PathAndIcons:
+        - ElementName: Pecheur
+          ObjectType: 10
+      - name: Sage
+        guid: c3d863161ddbce4b99bdb86cca3e1b52
+        id: 921281069
+        PathAndIcons:
+        - ElementName: Sage
+          ObjectType: 10
+      - name: Troubadour
+        guid: 7052ed00c936144f975dcb5aaec45d1d
+        id: 915225282
+        PathAndIcons:
+        - ElementName: Troubadour
           ObjectType: 10
       ValueGuids: []
       ValueIcons: []
@@ -1460,7 +1847,6 @@ MonoBehaviour:
   ExpandedItems:
   - /MercDeRien
   - /MercDeRien/Events
-  - /MercDeRien/Events/Default Work Unit
   - /MercDeRien/Events/MDR_WU
   - /MercDeRien/Events/MDR_WU/ENVIRONMENT
   - /MercDeRien/Events/MDR_WU/GAME
