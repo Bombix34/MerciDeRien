@@ -8,6 +8,8 @@ public class LittleAxo : SkinnedInteractObject
     [SerializeField]
     List<Dialogue> textToDisplay;
 
+    Dialogue previousDialogue = null;
+
     protected override void Start()
     {
         base.Start();
@@ -19,12 +21,31 @@ public class LittleAxo : SkinnedInteractObject
     public override void StartInteraction()
     {
         base.StartInteraction();
-        if (textToDisplay != null)
-            DialogueUiManager.Instance.StartDialogue(textToDisplay[(int)Random.Range(0f,textToDisplay.Count)]);
+        SelectDialogue();
     }
 
     public override void EndInteraction()
     {
         //  DialogueUiManager.Instance.EndDialogue();
+    }
+
+
+    public void SelectDialogue()
+    {
+        if (textToDisplay == null)
+            return;
+        Dialogue selected = textToDisplay[(int)Random.Range(0f, textToDisplay.Count)];
+        if(previousDialogue!=null)
+        {
+            if(selected==previousDialogue&&textToDisplay.Count>1)
+            {
+                SelectDialogue();
+                return;
+            }
+        }
+        previousDialogue = selected;
+        DialogueUiManager.Instance.StartDialogue(selected);
+
+
     }
 }
