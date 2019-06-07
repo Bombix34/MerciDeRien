@@ -30,6 +30,7 @@ public class GameManager : Singleton<GameManager>
         playerHistoricDialogues = new List<Dialogue>();
         placeManager = GetComponent<InterestPointManager>();
         uiMainGame = DialogueUiManager.Instance.gameObject;
+        Cursor.visible = false;
     }
 
     public void EndGame(GameObject orb)

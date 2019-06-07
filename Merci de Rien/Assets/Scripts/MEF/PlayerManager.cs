@@ -233,7 +233,8 @@ public class PlayerManager : ObjectManager
         if(!result)
         {
             result = concerned.GetComponent<InteractObject>() != null && concerned.GetComponent<InteractObject>().CanInteract
-                && (concerned.GetComponent<InteractObject>().objectType==InteractObject.ObjectType.Portail || concerned.GetComponent<InteractObject>().objectType == InteractObject.ObjectType.Coffre);
+                && (concerned.GetComponent<InteractObject>().objectType==InteractObject.ObjectType.Portail || concerned.GetComponent<InteractObject>().objectType == InteractObject.ObjectType.Coffre 
+                || concerned.GetComponent<InteractObject>().objectType==InteractObject.ObjectType.LittleAxo || concerned.GetComponent<InteractObject>().objectType==InteractObject.ObjectType.Pancarte);
         }
         return result;
     }
